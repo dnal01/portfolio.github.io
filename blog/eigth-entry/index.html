@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eigth Entry - Web Portfolio of Denys</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<!--I will add my HTML here-->
+
+<body>
+    <header>
+        <ul class="navigation">
+            <li class="navigation-item"><a class="item-link" href="/">Home</a></li>
+            <li class="navigation-item"><a class="item-link" href="/blog">Blog</a></li>
+            <li class="navigation-item"><a class="item-link" href="/projects">Projects</a></li>
+            <li class="navigation-item"><a class="item-link" href="/contact">Contact</a></li>
+        </ul>
+    </header>
+    <main>
+
+        <h1 class="title">Eigth Entry</h1>
+
+        <p class="left date">July 15, 2024</p>
+
+
+        <div class="block left">
+            <section>
+                <h3>My takeaways today</h3>
+                <h4>Overwriting defoult browser properties:</h4>
+                <p>Set a margin and pading for a body(*) to 0 to overwrite defoult behavor of different browsers as they may be different and add no needed properties.</p>
+                <h5></h5>
+                <p>There is a border box and content box. If you want to set up width without influence of padding or borders use the below properties:
+                    <pre>
+html {
+    box-sizing: border-box; // another option content-box
+}
+*, *:before, *:after {
+    box-sizing: inherit; // to inherit border-box propertie for child elements of html
+}</pre>
+                </p>
+                <h4>Units</h4>
+                <p><code>rem</code> takes size of "m" letter from the html - by defoult 16px, hovewer <code>em</code> takes size of "m" from the content of current tag, hence e.g. 1em will always provide different size based on the current text size.</p>
+                <p>px - for borders; % - for width; </p>
+                <h4>HTML, CSS and JavaScript</h4>
+                <h5>Internet</h5>
+                <p><strong>API</strong>. #.#.#.# 32 bits.</p>
+                <p><strong>TCP</strong>. Purpose - forms a package with sequences tracking and details. Garantees delivery</p>
+                <p><strong>ports</strong>. Purpose - to define type of data transfered. <code>80</code> for HTTP and <code>443</code> for HTTPS</p>
+                <p><strong>DNS</strong>. Purpose - provide API Adress of a Domain name</p>
+                <p><strong>DHCP</strong> - Dinamic Host Configuration Protocol. Purpose - provides DNS servers and routers API for your devices.</p>
+                <p><strong>HTTP</strong> - protocol that initiates and responds to a request.</p>
+                <h5>Verbs</h5>
+                <p><code>GET</code> cliking on links, does not realy pushes information to the web sites.</p>
+                <p><code>POST</code> sending information</p>
+                <p>Example GET:</p>
+                <ul>
+                    <li><code>GET / HTTP/2</code></li>
+                    <li><code>Host: www.example.com</code></li>
+                    <li><code>curl -I https://www.example.com/</code> returns code 200</li>
+                    <li><code>curl -I https://example.com/</code> returns code 301 - "moved permanently, redirection."</li>
+                </ul>
+                <p>Example received:</p>
+                <ul>
+                    <li><code>Content-Type: text/html</code></li>
+                    <li><code>HTTP/2 200</code>, where 200 - is a code:</li>
+                    <ul>
+                        <li><code>200 OK</code></li>
+                        <li><code>301 Moved Permanently</code></li>
+                        <li><code>302 Found</code></li>
+                        <li><code>304 Not Modified</code></li>
+                        <li><code>307 Temporary Redirect</code></li>
+                        <li><code>401 Unauthorized</code></li>
+                        <li><code>403 Forbidden</code></li>
+                        <li><code>404 Not Found</code></li>
+                        <li><code>418 I'm a Teapot</code></li>
+                        <li><code>500 Internal Server Error</code></li>
+                        <li><code>503 Service Unavailable</code></li>
+                    </ul>
+                </ul>
+                <h5>URL</h5>
+                <p><code>https://www.example.com/path?key=value&key=value</code></p>
+                <h5>forms</h5>
+                <p><code>&lt;form action="" method=""&gt;</code>
+                    <ul>
+                        <li><code>&lt;fieldset&gt;</code> - defines a logical sets of form</li>
+                            <ul>
+                                <li><code>&lt;legend&gt;</code> text <code>&lt;/legend&gt;</code> - defines the name of the set</li>
+                                <li><code>&lt;lable</code> - for labeling of an input field</li>
+                                    <ul>
+                                        <li><code>for="idname"&gt;</code> text or radio buttons <code>&lt;/lable</code>&gt;</code> - assosiates label with the id of input. Can be avoided if label tag wraps up input tag, normaly for radio buttons or checkboxes.</li>
+                                    </ul>
+                                <li><code>&lt;select id="" name=""&gt;</code> id, which goes into lable</li>
+                                    <ul>
+                                        <li><code>&lt;option value=""&gt;</code> text <code>&lt;/option&gt;</code></li>
+                                        <li><code>&lt;option selected&gt;</code> text <code>&lt;/option&gt;</code> - selected by defoult</li>
+                                    </ul>
+                                <li><code>&lt;/select&gt;</code></li>
+                                <li><code>&lt;textarea id="" name=""&gt;</code><code>&lt;/textarea&gt;</code> - big free text field area</li>
+                                <li><code>&lt;input</code></li>
+                                    <ul>
+                                        <li><code>id="somename"</code> is needed</li>
+                                        <li><code>autocomplete="off"</code> no automatic suggestions</li>
+                                        <li><code>autofocus</code> automatically puts a coursor on a field</li>
+                                        <li><code>name=""</code> name which gets submitted</li>
+                                        <li><code>placeholder=""</code></li>
+                                        <li><code>type=""</code></li>
+                                            <ul>
+                                                <li><code>search</code></li>
+                                                <li><code>text</code></li>
+                                                <li><code>tel</code></li>
+                                                <li><code>email</code></li>
+                                                <li><code>date</code></li>
+                                                <li><code>number</code></li>
+                                                    <ul>
+                                                        <li><code>min=""</code> AND <code>max=""</code></li>
+                                                    </ul>
+                                                <li><code>radio</code> Lebel wraps it</li>
+                                                    <ul>
+                                                        <li><code>value=""</code></li>  
+                                                        <li><code>checked</code></li>  
+                                                    </ul>
+                                                <li><code>checkbox</code> Label wraps it</li>
+                                                    <ul>
+                                                        <li><code>value=""</code></li>
+                                                        <li><code>checked</code></li>
+                                                    </ul>
+                                                <li><code>submit</code> - for buttons</li>
+                                                <li><code>hidden</code></li>
+                                            </ul>
+                                        <li><code>pattern=".+@.+\.com"&gt;</code> Text. See Regular expressions bellow:</li>
+                                    </ul>    
+                            </ul>
+                        <li><code>&lt;/fieldset&gt;</code></li>
+                        <li><code>&lt;button type="submit"&gt;</code> text <code>&lt;/button&gt;</code></li>
+                    </ul>
+                    <code>&lt;/form&gt;</code>
+                </p>
+                <h5>Regular expressions</h5>
+                <p>To validate or extract information from input</p>
+                <ul>
+                    <li><code>.</code> any single character (except line terminators)</li>
+                    <li><code>*</code> zero or more times</li>
+                    <li><code>+</code> one or more times of a next after that character</li>
+                    <li><code>?</code> 0 or 1 time</li>
+                    <li><code>{n}</code>n  occurences</li>
+                    <li><code>{n,m}</code> at least n occurences, at most m occurrences</li>
+                    <li><code>[0123456789]</code></li>
+                    <li><code>[0-9]</code> any one of the range of characters</li>
+                    <li><code>\d</code> any digit</li>
+                    <li><code>\D</code> any character that is not a digit</li>
+                </ul>
+                <p><strong>Example:</strong></p>
+                <p><code>^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$</code></p>
+                <h5>Table tag</h5>
+                    <pre>
+table>
+    thead>
+        tr>
+            th>.../th>
+            th>.../th>
+        tr>
+    thead>
+    tbody>
+        tr>
+            td>Carter/td>
+            td>+1-617-495-1000/td>
+        tr>
+    /tbody>
+/table></pre>
+                <h5>HTML tags and attributes</h5>
+                <ul>
+                    <li><code>&lt;form&gt;</code></li>
+                        <ul>
+                            <li><code>onsubmit="script/call of a function"</code></li>
+                        </ul>
+                    <li><code>&lt;blockquote&gt;</code> element defines a section that is quoted from another source</li>
+                    <ul>
+                        <li><code>cite=""</code> intended to indicate a source of a quota</li>
+                    </ul>
+                    <li><code>&lt;q&gt;</code> defines a short quotation</li>
+                    <li><code>&lt;abbr&gt;</code> defines an abbreviation or an acronym, like "HTML", "CSS", "Mr.", "Dr.", "ASAP", "ATM"</li>
+                    <ul>
+                        <li><code>title=""</code> extended meaning of an abbriviation</li>
+                    </ul>
+                    <li><code>&lt;address&gt;</code> defines the contact information for the author/owner of a document or an article</li>
+                    <li><code>&lt;cite&gt;</code> defines the title of a creative work (e.g. a book, a poem, a song, a movie, a painting, a sculpture, etc.)</li>
+                    <li><code>&lt;bdo&gt;</code> is used to override the current text direction</li>
+                    <ul>
+                        <li><code>dir="rtl"</code></li>
+                    </ul>
+                    <li><code>&lt;nav&gt;</code> for navigation - unordered list</li>
+                    <li><code>&lt;&gt;</code></li>
+                    <li><code>&lt;&gt;</code></li>
+                    <li><code>&lt;&gt;</code></li>
+                    <li><code>&lt;&gt;</code></li>
+                </ul>
+                <h5>CSS - Flex-box</h5>
+                <pre>
+div.parent-flex2 {
+    display: flex;
+
+    flex-direction + flex-wrap > flex-flow
+    flex-flow: row nowrap; // OR:
+    flex-flow: column wrap;
+    flex-flow: column wrap-reverse;
+
+    justify-content: space-around; // Horisontaly OR:
+    justify-content: flex-start: Items align to the left side of the container.
+    justify-content: flex-end: Items align to the right side of the container.
+    justify-content: center: Items align at the center of the container.
+    justify-content: space-between: Items display with equal spacing between them.
+    justify-content: space-around: Items display with equal spacing around them
+
+    align-items: flex-start: Items align to the top of the container. Vertically OR:
+    align-items: flex-end: Items align to the bottom of the container.
+    align-items: center: Items align at the vertical center of the container.
+    align-items: baseline: Items display at the baseline of the container(content).
+    align-items: stretch: Items are stretched to fit the container.
+
+    align-self: the same parameters and is for the specific item.
+
+    flex-direction: row: Items are placed the same as the text direction. OR:
+    flex-direction: row-reverse: Items are placed opposite to the text direction.
+    flex-direction: column: Items are placed top to bottom.
+    flex-direction: column-reverse: Items are placed bottom to top.
+
+    order: -2; OR -1, 0, 1, 2.
+
+    flex-basis: 10%: but a little more or less than that is OK.
+    
+    flex-grow and flex-shrink;
+
+    align-contnet;
+}</pre>
+                </ul>
+                <h5>JavaScript default functions</h5>
+                    <ul>
+                        <li><code>allert('text' + )</code></li>
+                    </ul>
+                <h5>CSS - selectors</h5>
+                    <ul>
+                        <li><code>input:not([type="radio"]):not([type="select"]) {}</code> select all in input but not "radio" and "select"</li>
+                        <li><code>input, [for="idname"] {}</code> square brakets select an attribute, so it can be used instead of classes.</li>
+                    </ul>
+
+            </section>
+            <section>
+                <h3 class="section">Links to helpful websites</h3>
+                <ul>
+                    <li><a href="developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions">Regular expressions</a></li>
+                    <li><a href="https://www.w3schools.com/tags/ref_attributes.asp">HTML Attribute Reference</a></li>
+                    <li><a href="https://www.w3schools.com/tags/default.asp">HTML Tag/Element Reference</a></li>
+                    <li><a href="https://techbrood.com/en/jsref?p=dom-obj-event">HTML DOM Events</a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                </ul>
+            </section>
+            <section>
+                <h3 class="section">Questions which I have got</h3>
+                <p></p>
+            </section>
+        </div>
+        <ul class="sticky-element">
+            <li class="left-tiem">
+                <a href="/blog/seventh-entry/index.html">
+                    <button class="arrow">
+                        <span class="arrow-previous"></span>
+                    </button>
+                </a>
+            </li>
+        </ul>
+    </main>
+</body>
+
+</html>

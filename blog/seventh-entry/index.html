@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seventh Entry - Web Portfolio of Denys</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<!--I will add my HTML here-->
+
+<body>
+    <header>
+        <ul class="navigation">
+            <li class="navigation-item"><a class="item-link" href="/">Home</a></li>
+            <li class="navigation-item"><a class="item-link" href="/blog">Blog</a></li>
+            <li class="navigation-item"><a class="item-link" href="/projects">Projects</a></li>
+            <li class="navigation-item"><a class="item-link" href="/contact">Contact</a></li>
+        </ul>
+    </header>
+    <main>
+
+        <h1 class="title">Seventh Entry</h1>
+
+        <p class="left date">July 15, 2024</p>
+
+
+        <div class="block left">
+            <section>
+                <h3>My takeaways today</h3>
+                <h4>SQL</h4>
+                <h5>Creation of .db file and import of csv file into the .db file</h5>
+                <p><code>sqlite3 FILE.db</code></p>
+                <p><code>.mode csv</code></p>
+                <p><code>.import FILE.csv table</code></p>
+                <h5>Checking of headers</h5>
+                <p><code>.schema</code></p>
+                <h5>Selecting data</h5>
+                <p><code>SELECT ...1 FROM table ...2 = 'Text here';</code></p>
+                <p>In ...1 can go either column name or function</p>
+                <ul>
+                    <li><code>AVG</code></li>
+                    <li><code>DISTINCT(columnName)</code> - list of vlaues in a column</li>
+                    <li><code>LOWER</code></li>
+                    <li><code>MAX</code></li>
+                    <li><code>MIX</code></li>
+                    <li><code>UPPER</code></li>
+                    <li><code>COUNT(*)</code> - count of all rows</li>
+                    <li><code>JOIN</code> - joins tables</li>
+                </ul>
+                <p>In ...2 go key words:</p>
+                <ul>
+                    <li><code>WHERE</code></li>
+                    <li><code>LIKE</code> - The <code>LIKE</code> operator is used in a <code>WHERE</code> clause to search for a specified pattern in a column
+                        <p>There are two wildcards often used in conjunction with the LIKE operator:</p>
+                        <ul>
+                            <li>
+                                The percent sign <code>%</code> represents zero, one, or multiple characters
+                            </li>
+                            <li>
+                                The underscore sign <code>_</code> represents one, single character
+                            </li>
+                        </ul>
+                    </li>
+                    <li><code>ORDER BY</code></li>
+                        <li><code>ASC</code> - Ascending order</li>
+                        <li><code>DCSC</code> - Descending order</li>
+                    <li><code>LIMIT</code></li>
+                    <li><code>GROUP BY</code></li>
+                    <li><code>AND</code></li>
+                    <li><code>AS</code> to treet something as something, e.g. COUNT(*) AS n. NExt time when I want to use this combination I need just to write n.</li>
+                    <li><code>IS</code></li>
+                    <li><code>IN (SELECT...)</code> in the all items from the result</li>
+                    <li><code>= (SELECT...)</code> = the single value in the result</li>
+                    <li><code>ON keyTb1 = keyTb2</code> - works with JOIN</li>
+                </ul>
+                <h5>Examples</h5>
+                <ul>
+                    <li><code>SELECT column1, column2 FROM table1 JOIN table2 ON table1Name.column_key_in_table1 = table2Name.column_key_in_table2 WHERE column2 >= value LIMIT value;</code> - join two tables based on the same key values.</li>
+                    <li><code>SELECT column1 FROM table WHERE column_key_in_table1 IN (SELECT column_key_in_table2 FROM table2 WHERE contition);</code> - search based on key value betwen two tables</li>
+                    <li><code>SELECT column1 FROM table1 WHERE column2 = (SELECT column FROM table2 WHERE column3 = 'text');</code> - search in the first table based on a value from a second.</li>
+                    <li><code>SELECT columnTb1 FROM table1 WHERE column2Tb1 IN (SELECT column1tb2 FROM table2 WHERE column2tb2 = (SELECT column1tb3 FROM table3 WHERE column2tb3 = 'Text'));</code>- search a value in a first table based on filtered result from other two tables.</li>
+                    <li><code>SELECT column1tb1 FROM tb1, tb2, tb3 WHERE tb1.cl1tb1 = tb2.cl1tb2 AND tb3.cm1tb3 = tb2.cl2tb2 AND cl2tb1 = 'TEXT';</code> - search in a first table based on filtered result from other tables.</li>
+                </ul>
+                <h5>Insertion of data</h5>
+                <p><code>INSERT INTO tableName (columnName1, columnName2) VALUES('Value1', 'Value2');</code></p>
+                <h5>Deleition of data</h5>
+                <p><code>DELETE FROM table WHERE condition;</code> - deletes a row. (e.g. WHERE column IS NULL)</p>
+                <p><code>DELETE FROM table;</code> - deletes everithing.</p>
+                <h5>Update of data</h5>
+                <p><code>UPDATE table SET column = value WHERE condition1, condition2;</code> - deletes a row.</p>
+                <h5>Creation of Tables with certain data types</h5>
+                <p><code>CREATE TABLE table (key dataType);</code> do this before mode and import command.</p>
+                <h5>Data types</h5>
+                <ul>
+                    <li><code>BLOB</code> - binery large object</li>
+                    <li><code>INTEGER</code></li>
+                    <li><code>NUMERIC</code> - dates and times</li>
+                    <li><code>REAL</code> - decimel points in it</li>
+                    <li><code>TEXT</code></li>
+                </ul>
+                <h5>Data types - key words</h5>
+                <ul>
+                    <li><code>NOT NULL</code></li>
+                    <li><code>UNIQUE</code></li>
+                    <li><code>PRIMARY KEY</code> - is the column which uniqly identifies your data</li>
+                    <li><code>FOREIGN KEY</code> - appearance of those IDs elsewhere</li>
+                </ul>
+                <h5>Turn on a timer</h5>
+                <p><code>.timer ON</code></p>
+                <h5>Indexes</h5>
+                <p><code>CREATE INDEX indexName ON table (column, ...);</code> - if search on a column frequently, prepare data to search faster.</p>
+                <h4>SQL using Python</h4>
+                <h5>Combining SQL and Python code</h5>
+                <p>
+                    <pre>
+from cs50 import SQL
+db = SQL("sqlite:///FILE.db") // Open db FILE
+var1 = input("TEXT: ")
+var2 = db.execute("SELECT COUNT(*) AS n FROM table WHERE column = ?", var1) // Gives back temproarry table
+var3 = rows[0] // To get back only the first row in that result set or temproarry table
+print(row["n"])
+                    </pre>
+                </p>
+                <h5>Execution of a code alltogether - wraping a code</h5>
+                <p>
+                    <pre>
+db.execute("BEGIN TRANSACTION")
+var1 = db.execute("SELECT column1 FROM table WHERE column2 = ?", column2);
+var1 = var1[0]["column1"]
+db.execute("UPDATE posts SET column1 = ? WHERE column2 = ?", column1 + 1, column2);
+db.execute("COMIT")
+                    </pre>
+                </p>
+            </section>
+            <section>
+                <h3 class="section">Links to helpful websites</h3>
+                <ul>
+                    <li><a href="cs50.readthedocs.io/libraries/cs50/python/#cs50.SQL">CS50 Library for Python</a></li>
+                    <li><a href="https://www.w3schools.com/sql/">SQL Tutorial</a></li>
+                    <li><a href="https://www.w3schools.com/sql/sql_ref_keywords.asp">SQL Keywords Reference</a></li>
+                    <li><a href="https://www.w3schools.com/sql/sql_wildcards.asp">SQL Wildcards</a></li>
+                    <li><a href="https://www.sqlstyle.guide">SQL Style Guide</a></li>
+                </ul>
+            </section>
+            <section>
+                <h3 class="section">Questions which I have got</h3>
+                <p></p>
+            </section>
+        </div>
+        <ul class="sticky-element">
+            <li class="left-tiem">
+                <a href="/blog/sixth-entry/index.html">
+                    <button class="arrow">
+                        <span class="arrow-previous"></span>
+                    </button>
+                </a>
+            </li>
+            <li class="right-tiem">
+                <a href="/blog/eigth-entry/index.html">
+                    <button class="arrow">
+                        <span class="arrow-next"></span>
+                    </button>
+                </a>
+            </li>
+        </ul>
+    </main>
+</body>
+
+</html>

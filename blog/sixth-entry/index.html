@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sixth Entry - Web Portfolio of Denys</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<!--I will add my HTML here-->
+
+<body>
+    <header>
+        <ul class="navigation">
+            <li class="navigation-item"><a class="item-link" href="/">Home</a></li>
+            <li class="navigation-item"><a class="item-link" href="/blog">Blog</a></li>
+            <li class="navigation-item"><a class="item-link" href="/projects">Projects</a></li>
+            <li class="navigation-item"><a class="item-link" href="/contact">Contact</a></li>
+        </ul>
+    </header>
+    <main>
+
+        <h1 class="title">Sixth Entry</h1>
+
+        <p class="left date">July 13, 2024</p>
+
+
+        <div class="block left">
+            <h3>My takeaways today</h3>
+
+            <ol>
+                <li>
+                    <h4>HTML tags</h4>
+                    <ul>
+                        <li><code>br</code> - Line Break</li>
+                        <li><code>hr</code> - Horizontal Rule</li>
+                        <li><code>nav</code> - stends for navigation. Contains linsk to different section. Located in
+                            header</li>
+                        <li><code>section</code></li>
+                        <li><code>article</code></li>
+                        <li><code>aside</code></li>
+                        <li><code>a</code>. <code>target="_blank"</code> attribute in <code>a</code> tag will open a new
+                            tab when clicking on a link instead of switching the current page.</li>
+                        <li><code>img</code>. It is a good practice to indicate <code>width</code> and
+                            <code>heigth</code> of an image block to not have jumpy web pabe.
+                        </li>
+                        <li><code>video controls muted</code> <code>source src="video.mp4" type ="video/mp4"</code></li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>HTML Character Entities</h4>
+                    <p>
+                        (!without spaces) & lt - <code>&lt;</code>; & gt - <code>&gt;</code>; & amp -
+                        <code>&amp;</code>; &
+                        copy or & #169; - <code>&copy;</code>; & nbsp; - non braking space in e.g. Hi,& nbsp;my& nbsp;name&
+                        nbsp;is...
+                        will wrap that text all together.
+                    </p>
+                </li>
+                <li>
+                    <h4>Combining selectors</h4>
+                    <ul>
+                        <li><code>p.class</code> Class selector. All p elemnets with this class;</li>
+                        <li><code>.class1.class2</code> only the elements where those two classes are applied at the
+                            same time;</li>
+                        <li><code>section > p</code> Child selector. Only on a level below, i.e. direct child;</li>
+                        <li><code>section p</code> Descendant selector. On any lower level. And it is not limited to
+                            element selectors, e.g.: <code>.color > p</code>;</li>
+                        <li><code>a, p</code> Selectors in CSS can be separated by comma, to indicate more then one
+                            selector for rules</li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>Pseudo class selectors</h4>
+                    <ul>
+                        <li><code>:link</code></li>
+                        <li><code>:visited</code></li>
+                        <li><code>:hover</code></li>
+                        <li><code>:active</code></li>
+                        <li><code>:nth-child(...)</code> active only for a specific child. In brackets indicate number
+                            or e.g. "odd" to locate number in order of child in that container.</li>
+                    </ul>
+                    <p><em>Note: They can be also combined:</em> <code>section div:nth-child(3):hover {}</code></p>
+                </li>
+                <li>
+                    <p>
+                        <strong>Conflict Resolution. Specificity (score)</strong>
+                    <table>
+                        <tr>
+                            <th>style="..."</th>
+                            <th>ID</th>
+                            <th>Class, pseudo-class, attribute</th>
+                            <th># of Element</th>
+                        </tr>
+                        <tr>
+                            <td>style="..."</td>
+                            <td>#ID</td>
+                            <td>.class1</td>
+                            <td>div p</td>
+                        </tr>
+                        <tr>
+                            <td>Example: div.class p</td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                    <p>The score is twelwe.</p>
+                    </p>
+                </li>
+                <li>
+                    <h4>Units of mesurments</h4>
+                    <p><code>em</code> multiply the size of something by its number, wether: 2em - *2; 3em - *3.
+                    </p>
+                    <p>It is a good practice to indicate the fonr-size on the body and then use ems to play with a
+                        specific text.</p>
+                </li>
+                <li>
+                    <h4>CSS Properties</h4>
+                    <p><code>background: url('name.png') no-repeat right center blue</code></p>
+                    <p><code>float:</code>
+                    <ul>
+                        <li><code>clear: both;</code></li>
+                    </ul>
+                    </p>
+                    <p>
+                    <h4>The Box Model</h4>
+                    <ul>
+                        <li>
+                            <code>box-sizing: border-box;</code> Whatever width you specify it will absorb borders and
+                            paddings as well, so it will be the total width from border to border, including the
+                            content. And it is a good practice to stick to this option rather then to
+                            <code>content-box</code>.
+                        </li>
+                        <li>
+                            <code>margin-rigth; margin-left;</code> cumulates their margins if lef or right boxes have
+                            any too. but <code>margin-top; margin-button;</code> do not they are collapsed and the
+                            bigger margin winns. But it is not true for floated elements.
+                        </li>
+                        <li>
+                            <code>overflow</code>
+                        </li>
+                    </ul>
+                    </p>
+                    <p>
+                        <h4>Relative and Absolute</h3>
+                            <ul>
+                                <li>
+                                    <h4>Static Position</h4>
+                                    <p>
+                                        Being in a static position - normal document flow, i.e. not Relative and Absolute, the element will ignore any offsets (right, left, top...).
+                                    </p>
+                                </li>
+                                <li>
+                                    <h4>Relative</h4>
+                                    <p>
+                                        An element is positioned relative to its normal position, i.e. its original spot is preserved.
+
+                                        Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h4>Absolute</h4>
+                                    <p>
+                                        An element with position: absolute; is positioned relative to the nearest positioned ancestor (positioned relative or absolute).
+                                    </p>
+                                    <p>
+                                        However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.
+                                    </p>
+                                    <p>
+                                        <strong>Note:</strong> Absolute positioned elements are removed from the normal flow, and can overlap elements.
+                                    </p>
+                                </li>
+                            </ul>
+                        
+                    </p>
+                    <p>
+                        <h4>Inheritment</h4>
+                        <p>
+                            Some elements are not Inherited, meaning they do not give their property to child elements,
+                            as e.g. <code>box-sizing</code>.
+                        </p>
+                        <p>
+                            This behavior can be overwritten by adding such elements to a <code>* {}</code> property,
+                            which literally during rendition adds properties to each of the element.
+                        </p>
+                        <p>
+                            Short hands without "-" overwrites above properties with "-".
+                        </p>
+                    </p>
+                </li>
+                <li>
+                    <h4>Responsive website - Logical operators</h4>
+                    <p>
+                        <ul>
+                            <li><strong>AND</strong>. <code>@media (min-width: 768px) <strong>and</strong> (max-width: 991px) {...}</code>.</li>
+                            <li><strong>OR</strong>. <code>@media (min-width: 768px)<strong>,</strong> (max-width: 991px) {...}</code>.</li>
+                            <li></li>
+                        </ul>
+                        <em>Do not overlap range boundaries!</em>
+                        <em>It is best practice to include media after declarating of other styles.</em>
+                    </p>
+                    <h4>Devise sizes</h4>
+                        <ul>
+                            <li><strong>Large</strong> - <code>(min-width: 1200px) {...}</code></li>
+                            <li><strong>Medium</strong> - <code>(min-width: 992px) and (max-width: 1199px) {...}</code></li>
+                        </ul>
+                    <h4>Sizing</h4>
+                    <p><code>meta name="viewport" content="width=device-width, initial-scale=1.0"</code> This will set the viewport of your page, which will give the browser instructions on how to control the page's dimensions and scaling.</p>
+                    <p>Use the "vw" unit when sizing the text. 10vw will set the size to 10% of the viewport width.</p>
+                    <code>style="font-size:5vw;"</code>
+                    <p>Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.</p>
+                    <p>Use float.</p>                 
+                </li>
+            </ol>
+            <section>
+                <h3 class="section">Links to helpful websites</h3>
+                <ul>
+                    <li><a href="https://clearlydecoded.com/recommended-books/" target="_blank">Recommended Books</a></li>
+                    <li><a href="https://jsfiddle.net" target="_blank">Collabaorate on a code solution</a></li>
+                    <li><a href="https://html.spec.whatwg.org/multipage/syntax.html#void-elements" target="_blank">HTML
+                            Living Standard</a></li>
+                    <li><a href="https://www.w3.org/TR/2011/WD-html5-20110525/content-models.html" target="_blank">3.2.5.1
+                            Kinds of HTML content</a></li>
+                </ul>
+            </section>
+            <section>
+                <h3 class="section">Questions which I have got</h3>
+                <p><code>:target</code> does not work on navigation buttons.</p>
+            </section>
+        </div>
+        <ul class="sticky-element">
+            <li class="left-tiem">
+                <a href="/blog/fifth-entry/index.html">
+                    <button class="arrow">
+                        <span class="arrow-previous"></span>
+                    </button>
+                </a>
+            </li>
+            <li class="right-tiem">
+                <a href="/blog/seventh-entry/index.html">
+                    <button class="arrow">
+                        <span class="arrow-next"></span>
+                    </button>
+                </a>
+            </li>
+        </ul>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Fourth Entry - Web Portfolio of Denys</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<!--I will add my HTML here-->
+
+<body>
+    <header>
+        <ul class="navigation">
+            <li class="navigation-item"><a class="item-link" href="/">Home</a></li>
+            <li class="navigation-item"><a class="item-link" href="/blog">Blog</a></li>
+            <li class="navigation-item"><a class="item-link" href="/projects">Projects</a></li>
+            <li class="navigation-item"><a class="item-link" href="/contact">Contact</a></li>
+        </ul>
+    </header>
+    <main>
+
+        <h1 class="title">Fourth Entry</h1>
+
+        <p class="left date">July 07, 2024</p>
+
+
+        <div class="block left">
+            <h3>My takeaways today</h3>
+
+            <p>During the time from previous post I have learned:</p>
+
+            <ol>
+                <li><strong>Animations. </strong><code>@keyframes</code> tag in css is responsible fo animation. You also need to name the animation, simlpy adding the name before opening breckets. Then make some configuration and in the css class add <code>animation-name:</code> and other animation atributes.</li>
+                <li><strong>Flex. </strong>With flex you can position content as you want: verticaly and gorisontaly: add spaces betwen; create cards or represent boxes in reverse order using <code>justify-content</code> property. There is a good article I have placed below. I have tried that with the blog section, check it out below.</li>
+                <li><strong>Box-sizing. </strong>But not that the tag itself. Using <code>display:flex</code> in content (child element) itself can reasize entire parent container to the size of child element, if parent element did no have sizes specified. Thats cool becouse I do not need to specify sizes twice.</li>
+                <li><strong>href. </strong>IDs are useful for inserting a link which directs directly to them on a page. For that when seting up a link, after .html without spaces add # and id name. Or if referencing to the current page then just # and id name.</li>
+                <li><strong><code>overflow-x: scroll or auto</code>. </strong>overflow with <code>display: flex</code> creates a block where you will need to scroll.</li>
+                <li><strong>Responsive website. </strong><code>@media all and (min-width: 1000px)</code> {class {parameters which will be replaced if width is more then 1000px}}.</li>
+                <li><strong>Additional Tags:</strong>
+                    <ul>
+                        <li><code>aside</code> - for information that does not realy belong to the page.
+                        <li><code>span</code> - for adding extra css code.</li>
+                        <li><code>pre</code> - for banch of code. Format stays as it was written.</li>
+                    </ul>
+                </li>
+                <li><strong>Page layouts. </strong><code>display: grid</code> - Container layout. First add it to a container together with <code>grid-template-rows:; grid-template-columns:; grid-template-areas:;</code>. And then add <code>grid-area:;</code> into a child element:
+                <pre>
+/* Parent element */
+.myPageLayoutGrid {
+display: grid;
+
+/* Additional configurations */
+grid-column-gap: 0.5em;
+grid-row-gap: 1em;
+/* Additional configurations */
+
+grid-template-rows: auto;
+grid-template-columns: 1fr 2fr 7fr;
+grid-template-areas:
+    "egArticle egAside2 egAside3"
+    "egArticle egAside2 egAside3"
+    "egAside1 egAside1 egAside1";
+}
+
+/* Child elements */
+.myGridArticle {
+    grid-area: egArticle;
+}...</pre>      </li>
+                <li><strong>New CSS styles:</strong>
+                    <ul>
+                        <li><code>text-wrap:</code> - wraps text. Useful for <code>pre</code> tag, when, by default, wraping is disabled.</li>
+                        <p><strong>Special effects:</strong></p>
+                        <li><code>transform: translateY()</code> moves a block.</li>
+                        <li><code>rgba</code> where a - is a trancperency value betwen 0 and 1, where 0 is complitely invisible</li>
+                        <li><code>transition:</code> transition-property, transition-duration, transition-timing-function, transition-delay, and transition-behavior. It is better to add to a class itself to reverse changes smoothly.</li>
+                        <li><code>:active</code> like <code>:hover</code> but adds effect when click.</li>
+                        <li><code>:target</code>. Gets applied whenever the target of the last link clicked.</li>
+                        <li><code>position: fixed</code>. The possition will stay put when you scroll.</li>
+                        <li><code>visibility: hidden</code>. Hide an element.</li>
+                    </ul>
+                </li>
+                <li><strong>Photo collage. </strong>Make a container for photos and then position each photo where would you like by using different classes. Use <code>z-index</code> to set some on front, the higher the fronter.</li>
+                <li><strong>Lightbox. </strong>It is composed of two links. In the first link you are going to include what you want to appear after you click on a second link: picture, some text, etc. The first link should has <code>href="#_"</code> and an id. The second link - consist of what you will click on to activate a first link. The second link should have <code>href="#<em>id of a first link</em>"</code>. Then in CSS there are three magor thins to be included in class of a lightbox: <code>position: fixed; visibility: hidden: z-index: 999;</code> then add <code>:target</code> and add <code>visibility: visible</code></li>
+            </ol>
+            
+            <h3 class="section">Links to helpful websites</h3>
+            <p>
+                <ul>
+                    <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Guide to Flexbox</a></li>
+                    <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">Guide to CSS Grid</a></li>
+                </ul>
+            </p>
+
+            <h3 class="section">Questions which I have got</h3>
+
+            <p>When I work with lists, is it better to include link inside a lsit or list inside a link?</p>
+
+            <p>How to add a horisontal slide bar or buttons to rotate a bar when I use overflow <code>overflow-x</code>?</p>
+
+            <p>When selecting text on a page, selection goes beyond the content box, i.e. selects padding as well. How to avoid that?</p>
+        </div>
+        <ul class="sticky-element">
+            <li class="left-tiem">
+                <a href="/blog/third-entry/index.html">
+                    <button class="arrow">
+                        <span class="arrow-previous"></span>
+                    </button>
+                </a>
+            </li>
+            <li class="right-tiem">
+                <a href="/blog/fifth-entry/index.html">
+                    <button class="arrow">
+                        <span class="arrow-next"></span>
+                    </button>
+                </a>
+            </li>
+        </ul>
+    </main>
+</body>
+
+</html>

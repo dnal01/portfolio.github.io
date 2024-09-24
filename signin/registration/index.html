@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Denys</title>
+    <link rel="stylesheet" href="/main.css">
+    
+</head>
+<!--I will add my HTML here-->
+
+<body>
+    <header>
+        <ul class="navigation">
+            <li class="navigation-item"><a class="item-link" href="/">Home</a></li>
+            <li class="navigation-item"><a class="item-link" href="/blog">Blog</a></li>
+            <li class="navigation-item"><a class="item-link" href="/projects">Projects</a></li>
+            <li class="navigation-item"><a class="item-link" href="/contact">Contact</a></li>
+        </ul>
+    </header>
+    <main>
+        <div>
+            <h1>Create your Grocery ID</h1>
+            <form class="signInForm" method="post">
+                <div>
+                    <input type="text" name="firtsName" required aria-labelledby="firstName_field_lable">
+                    <span aria-hidden="true" id="firstName_field_lable">First name</span>
+
+                    <input type="text" name="lastName" required aria-labelledby="password_field_lable">
+                    <span aria-hidden="true" id="lastName_field_lable">Last name</span>
+                </div>
+
+                <div>
+                    <h3>Country / Region</h3>
+                    <select name="countryRegion">
+                        <option value="ukraine">Ukraine</option>
+                        <option value="switzerland">Switzerland</option>
+                        <option value="europe">Europe</option>
+                    </select>                    
+                </div>
+                <div>
+                    <input type="date" name="birthday" required placeholder="Birthday">
+                    
+                </div>
+                <div>
+                    <input type="email" name="email" required placeholder="name@example.com">
+                </div>
+                <div>
+                    <input type="password" name="password" required aria-labelledby="password_field_lable">
+                    <span aria-hidden="true" id="password_field_lable">Password</span>
+                </div>
+                <div>
+                    <input type="number" name="number" required placeholder="Phone number">
+                </div>
+                <input type="submit" value="Register">
+            </form>
+        </div>
+    </main>
+</body>
+

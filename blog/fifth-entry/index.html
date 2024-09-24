@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Fifth Entry - Web Portfolio of Denys</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<!--I will add my HTML here-->
+
+<body>
+    <header>
+        <ul class="navigation">
+            <li class="navigation-item"><a class="item-link" href="/">Home</a></li>
+            <li class="navigation-item"><a class="item-link" href="/blog">Blog</a></li>
+            <li class="navigation-item"><a class="item-link" href="/projects">Projects</a></li>
+            <li class="navigation-item"><a class="item-link" href="/contact">Contact</a></li>
+        </ul>
+    </header>
+    <main>
+
+        <h1 class="title">Fifth Entry</h1>
+
+        <p class="left date">July 10, 2024</p>
+
+
+        <div class="block left">
+            <h3>My takeaways today</h3>
+
+            <p>JavaScript time:</p>
+
+            <ol>
+                <li><strong>Variables. </strong><code>var name = "String"; or var name = 123;</code></li>
+                <li><strong>Print to console. </strong><code>console.log(name[5]);</code></li>
+                <li><strong>Specific behavor:</strong>
+                    <ul>
+                        <li><code>"Hello" + 5 * 10</code> will return Hello50</li>
+                        <li><code>\"</code> will return ". <code>\n</code> will return a new line. <code>\t</code> will return tab.</li>
+                        <li>Truthy and Falsy. <code>' ' == false</code>, as well as <code>null undefined 0 NaN</code> Returns: true. Both the operands on either side of the == operator are first converted to zero, before comparison. <code>"Hi" == true</code> as well as <code>24 true</code> will return true.</li>
+                    </ul>
+                </li>
+                <li><strong>Alert messages: </strong>NaN - when the math calculation failed; undefined - when the variable has no value or when tere is no return value from a function.</li>
+                <li><strong>Strict equality. </strong> === / !==. "1" === 1  will be false, becouse "1" is a string with another code value.</li>
+                <li><strong><code>%</code></strong> - Reminder which returns the remainder left over when one operand is divided by a second operand. It always takes the sign of the dividend.</li>
+                <li><strong>Standard functions: </strong>
+                    <ul>
+                        <li><strong><code>name.charCodeAt()</code></strong>. returns an ASCII code of a character.</li>
+                        <li><strong><code>name.charAt()</code> or <code>name()</code></strong>. Returns character of a string.</li>
+                        <li><strong><code>name.toFxed(2)</code></strong>. Returns number with 2 decimals, e.g. 250.00.</li>
+                        <li><strong><code>Number(varName);</code></strong> converts string to a number, works well with toFixed, but as a string.</li>
+                        <li><strong><code>name.toLocaleString("en-US")</code></strong>. Passes a value with comas as per the locale "en-US.</li>
+                        <li><strong><code>name.length()</code></strong> - returns the length of a string or an array.</li>
+                        <li><strong><code>name.toUpperCase()</code></strong> - returns the value in upper case.</li>                        
+                    </ul>
+                </li>
+                <li><strong>Ternary operator. </strong><code>conditional ? (if condition is true) : (if condition is false)</code>. I also can include as many as I want others conditions in true or false place. Example <code>x % y === 0 ? 1 : 2;</code>.
+                    <em>The ternary operator evaluates to an expression and expressions can't contain a return statement. However, you could very well return the result of a ternary operator, i.e. <code>return name.length >= 7 ? true : false;</code></em>
+                </li>
+                <li><strong>Switch Statement. </strong> If each condition is based on the same value. <code>switch (var name) {case 1: "action"; case 2: "action for 2nd case";}</code>,  etc. After it founds a case by bypising the variable value then it cintinues executing other cases below. To prevent that use <code>break</code> operator. It works with all data types. You can add a <code>default:</code> case to a switch statement and it will be executed when none of the values match the value of the switch expression.</li>
+                <li><strong>Operators. </strong><code>x *= 2</code> same as <code>x = x*  2</code>. Instead of * can me any symbol.</li>
+                <li><strong>Block scope. </strong>It is a variable that is writhen in the {} and should be declared using <code>let</code> instead of <code class ="line-threw">var</code>, because variables declared with the `var` keyword can not have Block Scope.</li>
+                <li><strong>Variable declarations:</strong>
+                    <ul>
+                        <li><code>let</code> - it is a new way to declare a variable in any scope - Global, Local, or Block. The value of this variable can be changed or reassigned anytime within its scope.</li>
+                        <li><code>const</code> - it is also a way to declare constants in any scope - Global, Local, or Block. Once you are assigned a value to a <code>const</code> variable, the value of this variable CANNOT be changed or reassigned throughout the code.</li>
+                        <li><code>var</code> - this is the old way of declaring variables in only two scope - Global, or Local. Variables declared with the var keyword can not have Block Scope. The value of this variable can be changed or reassigned anytime within its scope.</li>
+                    </ul>
+                </li>
+                <li><strong>Functions:</strong>
+                    <p><strong>Function declaration. </strong><code>function name(x, y) { // Your code here };</code></p>
+                    <p><strong>Function expression. </strong><code>var name = function(parameter) { // Your code here };</code> Store functions in variables (anonimus functions). But the function expressions are not hoisted.
+                        <em><strong>Functions as parameters. </strong><code>name();</code> You can call a function using as a parameter a variable with anonimus function. It will not work with the Named function expression.</em></p>
+                    <p><strong>Inline function expressions. </strong>When you pass a function inline as an argument to another function.
+                        <pre>
+function movies(messageFunction, name) // two parameters of the frist and second arguments
+{
+    messageFunction(name);
+}
+
+movies(function displayFavorite(movieName) // the first argument starts
+{
+    console.log("My favorite movie is " + movieName); // the first argument finishes
+}, "Finding Nemo"); // the second argument</pre>              
+                    </p>
+                </li>
+                <li><strong>Shadowing. </strong>When you have a global variable you can create the same name variable on a function level but add <code>var</code> before that, so in this way you declare a new variale and global one will not be overwrithen.</li>
+                <li><strong>Hoisting. </strong>It is a way JavaScript moves your code when compiling, i.e. you can ask function before the function is rithen or print out a variable which is declared letter. But it is not reccomended to do so, becouse of some bugs may accure.</li>
+                
+                <li><strong>VSCode Short keys:</strong>
+                    <ul>
+                        <li><code>⇧⌘K</code> Delete Line</li>
+                        <li><code>⌘Enter</code> Insert Line Below</li>
+                        <li><code>⇧⌘Enter</code> Insert Line Above</li>
+                        <li><code>⌥↓</code> Move Line Down</li>
+                        <li><code>⇧⌥↓</code> Copy Line Down</li>
+                        <li><code>⇧⌘L</code> Select all occurrences of current selection</li>
+                        <li><code>⇧⌘Z</code> redo</li>
+                        <li><code>⌥⌘↓</code> Insert Cursor Below</li>
+                        <li><code>⌘]</code> Indent Line (space)</li>
+                        <li><code>⌘/</code> Toggle Line Comment</li>
+                        <li><code>⇧⌥A</code> Toggle Block Comment</li>
+                    </ul>
+                </li>
+                <li><strong>Creating an Array. </strong> <code>var name = ["First", "Second", "Third"];</code> You can even store an array in an array to create a nested array!</li>
+                
+                <li><strong>Array Properties and Methods:</strong></li>
+                    <ul>
+                        <li><strong>Length. </strong><code>name.length</code> - length of the array.</li>
+                        <li><strong>Push. </strong><code>name.push("value")</code> - push an additional value to the end of an array.</li>
+                        <li><strong>Pop. </strong><code>name.pop();</code> - removes the last item in the list. Also, pop() returns the element that has been removed in case you need to use it.</li>
+                        <li><strong>Shift. </strong><code>name.shift();</code> removes first item in the list.</li>
+                        <li><strong>Splice. </strong><code>arrayName.splice(arg1, arg2, item1, ....., itemX);</code> where,
+                            <ul>
+                                <li><code>arg1</code> = Mandatory argument. Specifies the starting index position to add/remove items. You can use a negative value to specify the position from the end of the array e.g., -1 specifies the last element.</li>
+                                <li><code>arg2</code> = Optional argument. Specifies the count of elements to be removed. If set to 0, no items will be removed.</li>
+                                <li><code>item1, ....., itemX</code> are the items to be added at index position arg1.
+                            </ul> splice() method returns the item(s) that were removed.</li>
+                        <li><strong>Reverse. </strong><code>name.reverse();</code> Reverses the array.</li>
+                        <li><strong>The forEach() loop. </strong><code>name.forEach(callbackFn);</code> Executes a provided function once for each array element. The function is called with the following arguments:
+                            <ul>
+                                <li>
+                                    <code>element</code>
+                                    <p>The current element being processed in the array.</p>
+                                </li>
+                                <li>
+                                    <code>index</code>
+                                    <p>The index of the current element being processed in the array.</p>
+                                </li>
+                                <li>
+                                    <code>array</code>
+                                    <p>The array <code>forEach()</code> was called upon.</p>
+                                </li>
+                            </ul>
+                            <p>The forEach() method gives you an alternative way to iterate over an array, and manipulate each element in the array with an <strong>inline function expression</strong>.</p>
+                            <p>Notice that the forEach() method iterates over the array without the need of an explicitly defined index. In the example above, donut corresponds to the element in the array itself. This is different from a for or while loop where an index is used to access each element in the array.</p>
+                            <p>E.g.:
+                                <pre>
+words = ["cat", "in", "hat"];
+words.forEach(function(word, num, all) {
+    console.log("Word " + num + " in " + all.toString() + " is " + word);
+});
+                                </pre>
+                                <pre>
+Prints:
+Word 0 in cat,in,hat is cat
+Word 1 in cat,in,hat is in
+Word 2 in cat,in,hat is hat</pre>
+                            </p>
+                        </li>
+                        <li><strong>The map() loop. </strong>Works the same as forEach() loop, but creates and returns a new array populated with the results of calling. So it is a good idea to store it in a variable, using function expression. Just include a return keyword with a value inside a function.</li>
+                        <li>... Others like sort, join, concat, etc., see threw the link: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">Methods for modifying arrays.</a></li>
+                        </li>
+                    </ul>
+                <li>Objects:
+                    <ul>
+                        <li>
+                            <h4>Declaration of an object</h4>
+                            <pre>
+var myObject = { // The entire object is wrapped inside curly braces { }
+    property1: "pink", // key: value,
+    property2: true,
+    open: function() {
+        if (myObject.property2 === true) {
+            return "text";
+        } else {
+            myObject.property2 = true;
+            return "text";
+        }
+    },
+    // another method
+};</pre>
+                            <li>
+                                <h4>Accesing of an information from the object</h4>
+                                <code>myObject.property2;</code>
+                                <code>myObject["property2"];</code>
+                                <code>myObject.open();</code>
+                            </li>
+                            <li>
+                                <h4>Adding methods</h4>
+                                <p>You can aslo add methods to an object. The syntaxis is the same, the difference only that the value pair will be a function. See example above.</p>
+                            </li>
+                            <li>
+                                <h4>Naming Convention</h4>
+                                <p>No numbers at the begining, if it is needed then you will need to cover property name in Quotation marks: 
+                                    <code>"property1": "pink"</code></p>
+                                <p>No spaces and hyphens, use camel casing.</p>
+                            </li>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Inserting JS into HTML</strong>
+                    <ul>
+                        <li><strong>Declaration of JS in HTML file</strong>
+                            <p>Put up a script tag into <code>head</code> section</p>
+                            <pre>
+script
+    function name()
+    {
+        alert('text, ' + document.querySelector('#idName').value);
+    }
+script</pre>
+                            <p>Then in a body add the folowing</p>
+                            <pre>
+form onsubmit="greet(); return false;">
+    input autocomplete="off" autofocus id="name" placeholder="Name" type="text">
+    input type="submit">
+/form></pre>
+                        </li>
+                        <li>
+                            <strong>Using declared function in tags as an argument</strong>
+                            <p>
+                                <code>onsubmit="functionName(); return false;"</code> - as an argument to a form tag. <code>return false;</code> mean do not send a data to a server
+                            </p>
+                            <p>
+                                <code>id="name"</code> - add an id to an input tag
+                            </p>
+                        </li>
+                        <li>
+                            <strong>Anather advanced way</strong> ommiting  onsubmit argument in the form tag
+                            <pre>
+script
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('form').addEventListener('submit', function(e) {
+            alert('hello, ' + document.querySelector('#name').value);
+            e.preventDefault();
+        });
+    });
+
+script</pre>
+                        </li>
+                        <li>
+                            <strong>User interface, by changing the color</strong>
+                            <pre>
+script
+
+    let body = document.querySelector('body');
+    document.querySelector('#red').addEventListener('click', function() {
+        body.style.backgroundColor = 'red';
+    });
+    document.querySelector('#green').addEventListener('click', function() {
+        body.style.backgroundColor = 'green';
+    });
+    document.querySelector('#blue').addEventListener('click', function() {
+        body.style.backgroundColor = 'blue';
+    });
+
+script</pre>
+                        </li>
+                        <li>
+                            <strong>Create own function</strong>
+                            <pre>
+script
+
+    // Toggles visibility of greeting
+    function blink()
+    {
+        let body = document.querySelector('body');
+        if (body.style.visibility == 'hidden')
+        {
+            body.style.visibility = 'visible';
+        }
+        else
+        {
+            body.style.visibility = 'hidden';
+        }
+    }
+
+    // Blink every 500ms
+    window.setInterval(blink, 500);
+
+script</pre>
+                        </li>
+                        <li>
+                            <strong>Autocomplete function</strong>
+                            <pre>
+input autocomplete="off" autofocus placeholder="Query" type="text">
+
+ul>ul>
+
+script src="large.js">script>
+script>
+
+    let input = document.querySelector('input');
+    input.addEventListener('keyup', function(event) {
+        let html = '';
+        if (input.value) {
+            for (word of WORDS) {
+                if (word.startsWith(input.value)) {
+                    html += `li>${word}li>`;
+                }
+            }
+        }
+        document.querySelector('ul').innerHTML = html;
+    });
+
+script</pre>
+                        </li>
+                        <li>
+                            <strong>Find geolocation</strong>
+                            <pre>
+script>
+
+    navigator.geolocation.getCurrentPosition(function(position) {
+        document.write(position.coords.latitude + ", " + position.coords.longitude);
+    });
+
+script</pre>
+                        </li>
+                        <li>
+                            <strong>Events</strong>
+                            <ul>
+                                <li><code>blur</code></li>
+                                <li><code>change</code></li>
+                                <li><code>click</code></li>
+                                <li><code>drag</code></li>
+                                <li><code>focus</code></li>
+                                <li><code>keyup</code></li>
+                                <li><code>load</code></li>
+                                <li><code>mousedown</code></li>
+                                <li><code>mouseover</code></li>
+                                <li><code>mouseup</code></li>
+                                <li><code>submit</code></li>
+                                <li><code>touchmove</code></li>
+                                <li><code>unload</code></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </li>
+            </ol>
+                <h3 class="section">Links to helpful websites</h3>
+            <p>
+                <ul>
+                    <li><a href="http://udacity.github.io/frontend-nanodegree-styleguide/javascript.html" target="_blank">Style Guide</a></li>
+                    <li><a href="https://google.github.io/styleguide/jsguide.html" target="_blank">JavaScript Style Guide</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#using_special_characters_in_strings" target="_blank">JavaScript's Special characters</a></li>
+                    <li><a href="https://www.ascii-code.com" target="_blank">ASCII</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Remainder_()" target="_blank">Expressions and operators</a></li>
+                    <li><a href="https://learn.udacity.com/courses/ud356/lessons/d10dce26-16d4-4dc5-b17c-4544c8e97b9e/concepts/7eb90531-ab21-450a-b0fd-639c3fbf98d5" target="_blank">Harmony, ES6, ES2015</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">Methods for modifying arrays</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank">Array.prototype.splice()</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">JavaScript Documentation</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank">Document: querySelector() method</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll" target="_blank">Document: querySelectorAll() method</a></li>
+                </ul>
+            </p>
+
+            <h3 class="section">Questions which I have got</h3>
+
+            <p></p>
+
+            <p></p>
+
+            <p></p>
+        </div>
+        <ul class="sticky-element">
+            <li class="left-tiem">
+                <a href="/blog/fourth-entry/index.html">
+                    <button class="arrow">
+                        <span class="arrow-previous"></span>
+                    </button>
+                </a>
+            </li>
+            <li class="right-tiem">
+                <a href="/blog/sixth-entry/index.html">
+                    <button class="arrow">
+                        <span class="arrow-next"></span>
+                    </button>
+                </a>
+            </li>
+        </ul>
+    </main>
+</body>
+</html>

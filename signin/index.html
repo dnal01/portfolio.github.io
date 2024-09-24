@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Denys</title>
+    <link rel="stylesheet" href="/main.css">
+    
+</head>
+<!--I will add my HTML here-->
+
+<body>
+    <header>
+        <ul class="navigation">
+            <li class="navigation-item"><a class="item-link" href="/">Home</a></li>
+            <li class="navigation-item"><a class="item-link" href="/blog">Blog</a></li>
+            <li class="navigation-item"><a class="item-link" href="/projects">Projects</a></li>
+            <li class="navigation-item"><a class="item-link" href="/contact">Contact</a></li>
+        </ul>
+    </header>
+    <main>
+        <div>
+            <h1>Sing in with your Grocery ID</h1>
+            <form class="signInForm" method="post">
+                <div>
+                    <input type="email" name="email" required>
+                    <span aria-hidden="true">Email or Phone number</span>
+                </div>
+                <div>
+                    <input type="password" name="password" required aria-labelledby="password_field_lable">
+                    <span aria-hidden="true" id="password_field_lable">Password</span>
+                </div>
+                <input type="submit" value="Sing in">
+            </form>
+        </div>
+        <div>
+            <span class="fat">
+              Don’t have an Grocery&nbsp;ID?</span>
+            <a id="create-link" href="registration/index.html" target="_blank">
+              Create yours now.</a>
+          </div>
+    </main>
+</body>

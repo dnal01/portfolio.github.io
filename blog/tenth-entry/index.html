@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenth Entry - Web Portfolio of Denys</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<!--I will add my HTML here-->
+
+<body>
+    <header>
+        <ul class="navigation">
+            <li class="navigation-item"><a class="item-link" href="/">Home</a></li>
+            <li class="navigation-item"><a class="item-link" href="/blog">Blog</a></li>
+            <li class="navigation-item"><a class="item-link" href="/projects">Projects</a></li>
+            <li class="navigation-item"><a class="item-link" href="/contact">Contact</a></li>
+        </ul>
+    </header>
+    <main>
+
+        <h1 class="title">Tenth Entry</h1>
+
+        <p class="left date">September 19, 2024</p>
+
+        <div class="block left">
+            <section>
+                <h2>My takeaways today</h2>
+                <h3>GIT Version control commands</h3>
+                    <h4>Global set up</h4>
+                        <ul>
+                            <li><code>git config --global user.name</code>Sets the default name for Git to use when you commit</li>
+                            <li><code>git config --global user.email</code>-//-</li>
+                            <li><code>git config --global init.defaultbranch</code> Sets the default branch to the name "main" instead of "master"</li>
+                            <li><code>git config --global core.editor</code> Sets the default editor to VSC</li>
+                            <li><code>git config --list</code></li>
+                        </ul>
+
+                    <h4>Creating an ssh key for your computer</h4>
+                        <ul>
+                            <li><code>ssh-keygen</code> Hit enter twice. This generates two files, one ending in .pub. This is the public key that you can share with others.</li>
+                            <li><code>cat ~/.ssh/id_rsa.pub</code> displays public key. Paste it into GitHub account settings > SSH keys > add new. You'll be able to clone/push to GitHub from this computer for authorized repositories!</li>
+                        </ul>
+                    
+                    <h4>Syncronising local repository with remote GitHub</h4>
+                        <strong>Before setting up Git you need to initialise a repository</strong>
+                        <ul>
+                            <li><code>git remote add origin GitHubRepositoryURL</code> Sinhronise Git with dekstop</li>
+                            <li><code>git remote -v</code> to view configured remotes</li>
+                            <li><code>git push -u origin main</code> first time
+                                <p>-u flag is used to set origin as the upstream remote in your git config. You only have to do that the first time and then can use push and pull without arguments.</p></li>
+                            <li><code>git push</code> after that. Use this after <code>git add</code> and <code>git commit</code> to push cnahges to the GitHub.</li>
+                            <li><code>git pull</code></li>
+                            <li><code>git pull origin main</code> Before you start working on a repo that day.</li>
+                        </ul>
+                                    
+                    <h4>Restoring changes</h4>
+                        <ul>
+                            <li><code>git restore fileName</code> restores files in working repository (not added or commited).</li>
+                            <li><code>git reset</code> Unstage a file and keep changes unless you restore it</li>
+                            <li><code>git restore --staged fileName</code> Alternative for a reset.</li>
+                            <li><code>git reset --soft HEAD~1</code> Uncommiting, but keeps changes</li>
+                            <li><code>git reset --hard HEAD~1</code> Uncommiting, but removing (unstaging) changes</li>
+                                <ul>
+                                    <li><code>HEAD</code> The most recent commit is called like that</li>
+                                    <li><code>~1</code> Move back by one commit</li>
+                                    <li><code>--soft</code> keep changes</li>
+                                    <li><code>--hard</code> undo changes</li>
+                                </ul>
+                        </ul>
+                    <h4>Branches</h4>
+                        <ul>
+                            <li><code>git branch</code> See the current branch</li>
+                            <li><code>git switch -c branchName</code> create a branch</li>
+                                <ul>
+                                    <li><code>switch</code> Hops me over to that branch.</li>
+                                    <li><code>-c</code> Creates new branch.</li>
+                                </ul>
+                            <li><code>git merge anotherBranchName -m ""</code> merge branchName with a current branch where you are</li>
+                            <li><code>git branch -d branchName</code> Deletes a branch.</li>
+                            <li><code></code> - add first push for branch?</li>
+                        </ul> 
+            </section>
+            <section>
+                <h2 class="section">Links to helpful websites</h3>
+                    
+            </section>
+            <section>
+                <h2 class="section">Questions which I have got</h3>
+                <p></p>
+            </section>
+        </div>
+        <ul class="sticky-element">
+            <li class="left-tiem">
+                <a href="/blog/seventh-entry/index.html">
+                    <button class="arrow">
+                        <span class="arrow-previous"></span>
+                    </button>
+                </a>
+            </li>
+        </ul>
+    </main>
+</body>
+
+</html>
