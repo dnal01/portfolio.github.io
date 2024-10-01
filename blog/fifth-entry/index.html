@@ -57,7 +57,8 @@
                 <li><strong>Ternary operator. </strong><code>conditional ? (if condition is true) : (if condition is false)</code>. I also can include as many as I want others conditions in true or false place. Example <code>x % y === 0 ? 1 : 2;</code>.
                     <em>The ternary operator evaluates to an expression and expressions can't contain a return statement. However, you could very well return the result of a ternary operator, i.e. <code>return name.length >= 7 ? true : false;</code></em>
                 </li>
-                <li><strong>Switch Statement. </strong> If each condition is based on the same value. <code>switch (var name) {case 1: "action"; case 2: "action for 2nd case";}</code>,  etc. After it founds a case by bypising the variable value then it cintinues executing other cases below. To prevent that use <code>break</code> operator. It works with all data types. You can add a <code>default:</code> case to a switch statement and it will be executed when none of the values match the value of the switch expression.</li>
+                <li><strong>Switch Statement. </strong> If each condition is based on the same value. <code>switch (varName) {case 1 (e.g. 'text'): "action"; case 2: "action for 2nd case";}</code>,  etc. After it founds a case by bypising the variable value then it cintinues executing other cases below. To prevent that use <code>break</code> operator. It works with all data types. You can add a <code>default:</code> case to a switch statement and it will be executed when none of the values match the value of the switch expression.</li>
+                <li><code>continue</code> statement breaks only one iteration in the loop and continues with the next iteration.</li>
                 <li><strong>Operators. </strong><code>x *= 2</code> same as <code>x = x*  2</code>. Instead of * can me any symbol.</li>
                 <li><strong>Block scope. </strong>It is a variable that is writhen in the {} and should be declared using <code>let</code> instead of <code class ="line-threw">var</code>, because variables declared with the `var` keyword can not have Block Scope.</li>
                 <li><strong>Variable declarations:</strong>
@@ -83,6 +84,14 @@ movies(function displayFavorite(movieName) // the first argument starts
     console.log("My favorite movie is " + movieName); // the first argument finishes
 }, "Finding Nemo"); // the second argument</pre>              
                     </p>
+                    <p><strong>Arrow function. </strong><code>(parameters) => {statements}</code> or <code>parameter => statement</code></p>
+                        <ul>
+                            <li><code>(parameters)</code> are arguments, i.e. function (arg1, arg2, ...), where arg1 is a parameter</li>
+                            <li><code>{statements}</code> simple code. You can ommit <code>return</code> word if there is only one statement.</li>
+                            <li><code></code></li>
+                            <li><code></code></li>
+                            <li><code></code></li>
+                        </ul>
                 </li>
                 <li><strong>Shadowing. </strong>When you have a global variable you can create the same name variable on a function level but add <code>var</code> before that, so in this way you declare a new variale and global one will not be overwrithen.</li>
                 <li><strong>Hoisting. </strong>It is a way JavaScript moves your code when compiling, i.e. you can ask function before the function is rithen or print out a variable which is declared letter. But it is not reccomended to do so, becouse of some bugs may accure.</li>
@@ -102,56 +111,91 @@ movies(function displayFavorite(movieName) // the first argument starts
                         <li><code>⇧⌥A</code> Toggle Block Comment</li>
                     </ul>
                 </li>
-                <li><strong>Creating an Array. </strong> <code>var name = ["First", "Second", "Third"];</code> You can even store an array in an array to create a nested array!</li>
-                
-                <li><strong>Array Properties and Methods:</strong></li>
+                <li><strong>Creating an Array.</strong></li>
                     <ul>
-                        <li><strong>Length. </strong><code>name.length</code> - length of the array.</li>
-                        <li><strong>Push. </strong><code>name.push("value")</code> - push an additional value to the end of an array.</li>
-                        <li><strong>Pop. </strong><code>name.pop();</code> - removes the last item in the list. Also, pop() returns the element that has been removed in case you need to use it.</li>
-                        <li><strong>Shift. </strong><code>name.shift();</code> removes first item in the list.</li>
-                        <li><strong>Splice. </strong><code>arrayName.splice(arg1, arg2, item1, ....., itemX);</code> where,
-                            <ul>
-                                <li><code>arg1</code> = Mandatory argument. Specifies the starting index position to add/remove items. You can use a negative value to specify the position from the end of the array e.g., -1 specifies the last element.</li>
-                                <li><code>arg2</code> = Optional argument. Specifies the count of elements to be removed. If set to 0, no items will be removed.</li>
-                                <li><code>item1, ....., itemX</code> are the items to be added at index position arg1.
-                            </ul> splice() method returns the item(s) that were removed.</li>
-                        <li><strong>Reverse. </strong><code>name.reverse();</code> Reverses the array.</li>
-                        <li><strong>The forEach() loop. </strong><code>name.forEach(callbackFn);</code> Executes a provided function once for each array element. The function is called with the following arguments:
-                            <ul>
-                                <li>
-                                    <code>element</code>
-                                    <p>The current element being processed in the array.</p>
-                                </li>
-                                <li>
-                                    <code>index</code>
-                                    <p>The index of the current element being processed in the array.</p>
-                                </li>
-                                <li>
-                                    <code>array</code>
-                                    <p>The array <code>forEach()</code> was called upon.</p>
-                                </li>
-                            </ul>
-                            <p>The forEach() method gives you an alternative way to iterate over an array, and manipulate each element in the array with an <strong>inline function expression</strong>.</p>
-                            <p>Notice that the forEach() method iterates over the array without the need of an explicitly defined index. In the example above, donut corresponds to the element in the array itself. This is different from a for or while loop where an index is used to access each element in the array.</p>
-                            <p>E.g.:
-                                <pre>
-words = ["cat", "in", "hat"];
-words.forEach(function(word, num, all) {
-    console.log("Word " + num + " in " + all.toString() + " is " + word);
-});
-                                </pre>
-                                <pre>
-Prints:
-Word 0 in cat,in,hat is cat
-Word 1 in cat,in,hat is in
-Word 2 in cat,in,hat is hat</pre>
-                            </p>
-                        </li>
-                        <li><strong>The map() loop. </strong>Works the same as forEach() loop, but creates and returns a new array populated with the results of calling. So it is a good idea to store it in a variable, using function expression. Just include a return keyword with a value inside a function.</li>
-                        <li>... Others like sort, join, concat, etc., see threw the link: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">Methods for modifying arrays.</a></li>
-                        </li>
+                        <li><code>var name = ["First", "Second", "Third"];</code> You can even store an array in an array to create a nested array!</li>
+                        <li><code>var name = new Array(); name[0] = "HTML"</code>...</li>
                     </ul>
+                    <p><strong></strong></p>
+                    <ol>
+                        <li><strong>Array Properties and Methods:</strong></li>
+                            <ul>
+                                <li><strong>Length. </strong><code>name.length</code> - length of the array.</li>
+                                <li><strong>Push. </strong><code>name.push("value")</code> - push an additional value to the end of an array.</li>
+                                <li><strong>Pop. </strong><code>name.pop();</code> - removes the last item in the list. Also, pop() returns the element that has been removed in case you need to use it.</li>
+                                <li><strong>Shift. </strong><code>name.shift();</code> removes first item in the list.</li>
+                                <li><code>name.toString()</code> transforms all values in a list into a string</li>
+                                <li><code>arrayName.concat(anotherArray)</code> combines arrays into one</li>
+                                <li><code>name.sort</code> sorts a list in alphabetical order with numbers first</li>
+                                <li><strong>Splice. </strong><code>arrayName.splice(arg1, arg2, item1, ....., itemX);</code> where,
+                                    <ul>
+                                        <li><code>arg1</code> = Mandatory argument. Specifies the starting index position to add/remove items. You can use a negative value to specify the position from the end of the array e.g., -1 specifies the last element.</li>
+                                        <li><code>arg2</code> = Optional argument. Specifies the count of elements to be removed. If set to 0, no items will be removed.</li>
+                                        <li><code>item1, ....., itemX</code> are the items to be added at index position arg1.
+                                    </ul> splice() method returns the item(s) that were removed.</li>
+                                <li><strong>Reverse. </strong><code>name.reverse();</code> Reverses the array.</li>
+                                <li><code>for...of</code> for each item in a list or word</li>
+                                    <pre>
+                                    let list = ["doors", "windows", "rooms"];
+                                    for (let item of list) OR (let item of "word") {
+                                        console.log(item);
+                                    }</pre>
+                                <li><strong>The forEach() loop. </strong><code>name.forEach(callbackFn);</code> Executes a provided function once for each array element. The function is called with the following arguments:
+                                    <ul>
+                                        <li>
+                                            <code>element</code>
+                                            <p>The current element being processed in the array.</p>
+                                        </li>
+                                        <li>
+                                            <code>index</code>
+                                            <p>The index of the current element being processed in the array.</p>
+                                        </li>
+                                        <li>
+                                            <code>array</code>
+                                            <p>The array <code>forEach()</code> was called upon.</p>
+                                        </li>
+                                    </ul>
+                                    <p>The forEach() method gives you an alternative way to iterate over an array, and manipulate each element in the array with an <strong>inline function expression</strong>.</p>
+                                    <p>Notice that the forEach() method iterates over the array without the need of an explicitly defined index. In the example above, donut corresponds to the element in the array itself. This is different from a for or while loop where an index is used to access each element in the array.</p>
+                                    <p>E.g.:
+                                        <pre>
+                                            words = ["cat", "in", "hat"];
+                                            words.forEach(function(word, num, all) {
+                                                console.log("Word " + num + " in " + all.toString() + " is " + word);
+                                            });</pre>
+                                        <pre>
+                                            Prints:
+                                            Word 0 in cat,in,hat is cat
+                                            Word 1 in cat,in,hat is in
+                                            Word 2 in cat,in,hat is hat</pre>
+                                    </p>
+                                </li>
+                                <li><strong>The map() loop. </strong>Works the same as forEach() loop, but creates and returns a new array populated with the results of calling. So it is a good idea to store it in a variable, using function expression. Just include a return keyword with a value inside a function.</li>
+                                <li><code>.filter(callbackFn, thisArg)</code> </li>
+                                        <ul>
+                                            <li><code>callbackFn</code> or any other function types</li>
+                                            <li><code>thisArg</code> additional value to compare with</li>
+                                            <p>Example:
+                                            <pre>
+                                            const fruits = ["apple", "banana", "grapes", "mango", "orange"];
+
+                                            function filterItems(arr, query) {
+                                                return arr.filter((el) => el.toLowerCase().includes(query.toLowerCase()));
+                                            }
+                                            OR const result = words.filter((word) => word.length > 6); //the "word" cna ectually be named anyhow
+
+                                            console.log(filterItems(fruits, "ap")); // ['apple', 'grapes']</pre></p>
+                                        </ul>    
+                                <li><code>name.reduce(callbackFn, initialValue)</code></li>
+                                        <ul>
+                                            <li><code>initialValue</code> is the number whichwill be added to each value in the list</li>
+                                        </ul>
+                                <li><code></code></li>
+                                <li>... Others like sort, join, concat, etc., see threw the link: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">Methods for modifying arrays.</a></li>
+            
+                            </li>
+                            </ul>
+                    </ol>
                 <li>Objects:
                     <ul>
                         <li>
@@ -162,6 +206,7 @@ var myObject = { // The entire object is wrapped inside curly braces { }
     property2: true,
     open: function() {
         if (myObject.property2 === true) {
+            console.log(this.property1) //myObject.property1 will not work if referencing to the same object we are in
             return "text";
         } else {
             myObject.property2 = true;
@@ -185,6 +230,13 @@ var myObject = { // The entire object is wrapped inside curly braces { }
                                 <p>No numbers at the begining, if it is needed then you will need to cover property name in Quotation marks: 
                                     <code>"property1": "pink"</code></p>
                                 <p>No spaces and hyphens, use camel casing.</p>
+                            </li>
+                            <li>
+                                <h4>Standard objects</h4>
+                                <ul>
+                                    <li><code>Math</code></li>
+                                    <li><code>Date</code> today`s date.</li>
+                                </ul>
                             </li>
                         </li>
                     </ul>
@@ -327,7 +379,6 @@ script</pre>
                             </ul>
                         </li>
                     </ul>
-
                 </li>
             </ol>
                 <h3 class="section">Links to helpful websites</h3>
@@ -346,14 +397,7 @@ script</pre>
                     <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll" target="_blank">Document: querySelectorAll() method</a></li>
                 </ul>
             </p>
-
             <h3 class="section">Questions which I have got</h3>
-
-            <p></p>
-
-            <p></p>
-
-            <p></p>
         </div>
         <ul class="sticky-element">
             <li class="left-tiem">
