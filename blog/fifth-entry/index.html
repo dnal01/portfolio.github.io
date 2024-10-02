@@ -52,6 +52,7 @@
                         <li><strong><code>name.toLocaleString("en-US")</code></strong>. Passes a value with comas as per the locale "en-US.</li>
                         <li><strong><code>name.length()</code></strong> - returns the length of a string or an array.</li>
                         <li><strong><code>name.toUpperCase()</code></strong> - returns the value in upper case.</li>                        
+                        <li><strong><code>setInterval(func/code, delay);</code></strong> - prints "current time" with a delay in miliseconds.</li>                        
                     </ul>
                 </li>
                 <li><strong>Ternary operator. </strong><code>conditional ? (if condition is true) : (if condition is false)</code>. I also can include as many as I want others conditions in true or false place. Example <code>x % y === 0 ? 1 : 2;</code>.
@@ -177,20 +178,29 @@ movies(function displayFavorite(movieName) // the first argument starts
                                             <li><code>thisArg</code> additional value to compare with</li>
                                             <p>Example:
                                             <pre>
-                                            const fruits = ["apple", "banana", "grapes", "mango", "orange"];
+const fruits = ["apple", "banana", "grapes", "mango", "orange"];
 
-                                            function filterItems(arr, query) {
-                                                return arr.filter((el) => el.toLowerCase().includes(query.toLowerCase()));
-                                            }
-                                            OR const result = words.filter((word) => word.length > 6); //the "word" cna ectually be named anyhow
+function filterItems(arr, query) {
+    return arr.filter((el) => el.toLowerCase().includes(query.toLowerCase()));
+}
 
-                                            console.log(filterItems(fruits, "ap")); // ['apple', 'grapes']</pre></p>
+const result = words.filter((word) => word.length > 6); //the "word" cna ectually be named anyhow
+
+console.log(filterItems(fruits, "ap")); // ['apple', 'grapes']
+
+// OR
+let me = names.filter(name => {
+    return name==="Susanne";
+    });</pre></p>
                                         </ul>    
                                 <li><code>name.reduce(callbackFn, initialValue)</code></li>
                                         <ul>
                                             <li><code>initialValue</code> is the number whichwill be added to each value in the list</li>
                                         </ul>
-                                <li><code></code></li>
+                                <li><code>.find()</code></li>
+                                <li><code>.findIndexOf()</code></li>
+                                <li><code>.fill(a, b)</code></li>
+                                <li><code>.some()</code></li>
                                 <li>... Others like sort, join, concat, etc., see threw the link: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">Methods for modifying arrays.</a></li>
             
                             </li>
@@ -220,6 +230,10 @@ var myObject = { // The entire object is wrapped inside curly braces { }
                                 <code>myObject.property2;</code>
                                 <code>myObject["property2"];</code>
                                 <code>myObject.open();</code>
+                                <h4>Accesing of an information from the objects in an array</h4>
+                                <code>myObject[index].property2;</code>
+                                <code>myObject[index]["property2"];</code>
+                                <code>myObject[index].open();</code>
                             </li>
                             <li>
                                 <h4>Adding methods</h4>
@@ -234,9 +248,37 @@ var myObject = { // The entire object is wrapped inside curly braces { }
                             <li>
                                 <h4>Standard objects</h4>
                                 <ul>
-                                    <li><code>Math</code></li>
-                                    <li><code>Date</code> today`s date.</li>
+                                    <li><code>Math.stdFunction()</code>
+                                        <ul>
+                                            <li>Math.floor();</li>
+                                            <li>Math.round();</li>
+                                            <li>Math.ceil();</li>
+                                            <li>Math.random();</li>
+                                        </ul>
+                                    </li>
+                                    <li><code>Date()</code> today`s date.
+                                        <ul>
+                                            <li>name.getFullYear();</li>
+                                            <li>name.getMont();</li>
+                                            <li>name.getDate();</li>
+                                            <li>name.getHours();</li>
+                                            <li>name.getSeconds();</li>
+                                        </ul>
+                                    </li>
                                 </ul>
+                            </li>
+                            <li>
+                                <h4>looping trough an object</h4>
+                                <pre>
+let obj = {doors: 2, windows: 8, rooms: 5};
+Object.keys(obj).forEach(function(property_name){
+    console.log(obj[property_name]);
+});</pre> OR
+                                <pre>
+let obj = {doors: 2, windows: 8, rooms: 5};
+Object.values(obj).forEach(function(property_value){
+    console.log(property_value);
+});</pre>
                             </li>
                         </li>
                     </ul>
