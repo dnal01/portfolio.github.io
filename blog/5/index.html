@@ -31,37 +31,37 @@
 
             <ol>
                 <li><strong>Variables. </strong><code>var name = "String"; or var name = 123;</code></li>
-                <li><code>let varName = condition1 || or && expensiveFunction</code> you can use operators to decide which value to assgin to the varName bases on conditions or functions.</li>
+                <li><code>let varName = condition1 || or && expensiveFunction</code> you can use operators to decide which value to assign to the varName bases on conditions or functions.</li>
                 <li><strong>Print to console. </strong><code>console.log(name[5]);</code></li>
-                <li><strong>Specific behavor:</strong>
+                <li><strong>Specific behavior:</strong>
                     <ul>
                         <li><code>"Hello" + 5 * 10</code> will return Hello50</li>
                         <li><code>\"</code> will return ". <code>\n</code> will return a new line. <code>\t</code> will return tab.</li>
                         <li>Truthy and Falsy. <code>' ' == false</code>, as well as <code>null undefined 0 NaN</code> Returns: true. Both the operands on either side of the == operator are first converted to zero, before comparison. <code>"Hi" == true</code> as well as <code>24 true</code> will return true.</li>
                     </ul>
                 </li>
-                <li><strong>Alert messages: </strong>NaN - when the math calculation failed; undefined - when the variable has no value or when tere is no return value from a function.</li>
-                <li><strong>Strict equality. </strong> === / !==. "1" === 1  will be false, becouse "1" is a string with another code value.</li>
+                <li><strong>Alert messages: </strong>NaN - when the math calculation failed; undefined - when the variable has no value or when there is no return value from a function.</li>
+                <li><strong>Strict equality. </strong> === / !==. "1" === 1  will be false, because "1" is a string with another code value.</li>
                 <li><strong><code>%</code></strong> - Reminder which returns the remainder left over when one operand is divided by a second operand. It always takes the sign of the dividend.</li>
                 <li><strong>Standard functions: </strong>
                     <ul>
                         <li><strong><code>name.charCodeAt()</code></strong>. returns an ASCII code of a character.</li>
                         <li><strong><code>name.charAt()</code> or <code>name()</code></strong>. Returns character of a string.</li>
-                        <li><strong><code>name.toFxed(2)</code></strong>. Returns number with 2 decimals, e.g. 250.00.</li>
+                        <li><strong><code>name.toFixed(2)</code></strong>. Returns number with 2 decimals, e.g. 250.00.</li>
                         <li><strong><code>Number(varName);</code></strong> converts string to a number, works well with toFixed, but as a string.</li>
                         <li><strong><code>name.toLocaleString("en-US")</code></strong>. Passes a value with comas as per the locale "en-US.</li>
                         <li><strong><code>name.length()</code></strong> - returns the length of a string or an array.</li>
                         <li><strong><code>name.toUpperCase()</code></strong> - returns the value in upper case.</li>                        
-                        <li><strong><code>setInterval(func/code, delay);</code></strong> - prints "current time" with a delay in miliseconds.</li>                        
+                        <li><strong><code>setInterval(func/code, delay);</code></strong> - prints "current time" with a delay in milliseconds.</li>                        
                     </ul>
                 </li>
                 <li><strong>Ternary operator. </strong><code>conditional ? (if condition is true) : (if condition is false)</code>. I also can include as many as I want others conditions in true or false place. Example <code>x % y === 0 ? 1 : 2;</code>.
                     <em>The ternary operator evaluates to an expression and expressions can't contain a return statement. However, you could very well return the result of a ternary operator, i.e. <code>return name.length >= 7 ? true : false;</code></em>
                 </li>
-                <li><strong>Switch Statement. </strong> If each condition is based on the same value. <code>switch (varName) {case 1 (e.g. 'text'): "action"; case 2: "action for 2nd case";}</code>,  etc. After it founds a case by bypising the variable value then it cintinues executing other cases below. To prevent that use <code>break</code> operator. It works with all data types. You can add a <code>default:</code> case to a switch statement and it will be executed when none of the values match the value of the switch expression.</li>
+                <li><strong>Switch Statement. </strong> If each condition is based on the same value. <code>switch (varName) {case 1 (e.g. 'text'): "action"; case 2: "action for 2nd case";}</code>,  etc. After it founds a case by bypassing the variable value then it continues executing other cases below. To prevent that use <code>break</code> operator. It works with all data types. You can add a <code>default:</code> case to a switch statement and it will be executed when none of the values match the value of the switch expression.</li>
                 <li><code>continue</code> statement breaks only one iteration in the loop and continues with the next iteration.</li>
                 <li><strong>Operators. </strong><code>x *= 2</code> same as <code>x = x*  2</code>. Instead of * can me any symbol.</li>
-                <li><strong>Block scope. </strong>It is a variable that is writhen in the {} and should be declared using <code>let</code> instead of <code class ="line-threw">var</code>, because variables declared with the `var` keyword can not have Block Scope.</li>
+                <li><strong>Block scope. </strong>It is a variable that is written in the {} and should be declared using <code>let</code> instead of <code class ="line-threw">var</code>, because variables declared with the `var` keyword can not have Block Scope.</li>
                 <li><strong>Variable declarations:</strong>
                     <ul>
                         <li><code>let</code> - it is a new way to declare a variable in any scope - Global, Local, or Block. The value of this variable can be changed or reassigned anytime within its scope.</li>
@@ -71,11 +71,11 @@
                 </li>
                 <li><strong>Functions:</strong>
                     <p><strong>Function declaration. </strong><code>function name(x, y) { // Your code here };</code></p>
-                    <p><strong>Function expression. </strong><code>var name = function(parameter) { // Your code here };</code> Store functions in variables (anonimus functions). But the function expressions are not hoisted.
-                        <em><strong>Functions as parameters. </strong><code>name();</code> You can call a function using as a parameter a variable with anonimus function. It will not work with the Named function expression.</em></p>
+                    <p><strong>Function expression. </strong><code>var name = function(parameter) { // Your code here };</code> Store functions in variables (anonymous functions). But the function expressions are not hoisted.
+                        <em><strong>Functions as parameters. </strong><code>name();</code> You can call a function using as a parameter a variable with anonymous function. It will not work with the Named function expression.</em></p>
                     <p><strong>Inline function expressions. </strong>When you pass a function inline as an argument to another function.
                         <pre>
-function movies(messageFunction, name) // two parameters of the frist and second arguments
+function movies(messageFunction, name) // two parameters of the first and second arguments
 {
     messageFunction(name);
 }
@@ -88,14 +88,14 @@ movies(function displayFavorite(movieName) // the first argument starts
                     <p><strong>Arrow function. </strong><code>(parameters) => {statements}</code> or <code>parameter => statement</code></p>
                         <ul>
                             <li><code>(parameters)</code> are arguments, i.e. function (arg1, arg2, ...), where arg1 is a parameter</li>
-                            <li><code>{statements}</code> simple code. You can ommit <code>return</code> word if there is only one statement.</li>
+                            <li><code>{statements}</code> simple code. You can omit <code>return</code> word if there is only one statement.</li>
                             <li><code></code></li>
                             <li><code></code></li>
                             <li><code></code></li>
                         </ul>
                 </li>
-                <li><strong>Shadowing. </strong>When you have a global variable you can create the same name variable on a function level but add <code>var</code> before that, so in this way you declare a new variale and global one will not be overwrithen.</li>
-                <li><strong>Hoisting. </strong>It is a way JavaScript moves your code when compiling, i.e. you can ask function before the function is rithen or print out a variable which is declared letter. But it is not reccomended to do so, becouse of some bugs may accure.</li>
+                <li><strong>Shadowing. </strong>When you have a global variable you can create the same name variable on a function level but add <code>var</code> before that, so in this way you declare a new variable and global one will not be overwritten.</li>
+                <li><strong>Hoisting. </strong>It is a way JavaScript moves your code when compiling, i.e. you can ask function before the function is writhen or print out a variable which is declared letter. But it is not recommended to do so, because of some bugs may accrue.</li>
                 
                 <li><strong>VSCode Short keys:</strong>
                     <ul>
@@ -184,7 +184,7 @@ function filterItems(arr, query) {
     return arr.filter((el) => el.toLowerCase().includes(query.toLowerCase()));
 }
 
-const result = words.filter((word) => word.length > 6); //the "word" cna ectually be named anyhow
+const result = words.filter((word) => word.length > 6); //the "word" can actually be named anyhow
 
 console.log(filterItems(fruits, "ap")); // ['apple', 'grapes']
 
@@ -195,7 +195,7 @@ let me = names.filter(name => {
                                         </ul>    
                                 <li><code>name.reduce(callbackFn, initialValue)</code></li>
                                         <ul>
-                                            <li><code>initialValue</code> is the number whichwill be added to each value in the list</li>
+                                            <li><code>initialValue</code> is the number which will be added to each value in the list</li>
                                         </ul>
                                 <li><code>.find()</code></li>
                                 <li><code>.findIndexOf()</code></li>
@@ -226,22 +226,22 @@ var myObject = { // The entire object is wrapped inside curly braces { }
     // another method
 };</pre>
                             <li>
-                                <h4>Accesing of an information from the object</h4>
+                                <h4>Accessing of an information from the object</h4>
                                 <code>myObject.property2;</code>
                                 <code>myObject["property2"];</code>
                                 <code>myObject.open();</code>
-                                <h4>Accesing of an information from the objects in an array</h4>
+                                <h4>Accessing of an information from the objects in an array</h4>
                                 <code>myObject[index].property2;</code>
                                 <code>myObject[index]["property2"];</code>
                                 <code>myObject[index].open();</code>
                             </li>
                             <li>
                                 <h4>Adding methods</h4>
-                                <p>You can aslo add methods to an object. The syntaxis is the same, the difference only that the value pair will be a function. See example above.</p>
+                                <p>You can also add methods to an object. The syntax is the same, the difference only that the value pair will be a function. See example above.</p>
                             </li>
                             <li>
                                 <h4>Naming Convention</h4>
-                                <p>No numbers at the begining, if it is needed then you will need to cover property name in Quotation marks: 
+                                <p>No numbers at the beginning, if it is needed then you will need to cover property name in Quotation marks: 
                                     <code>"property1": "pink"</code></p>
                                 <p>No spaces and hyphens, use camel casing.</p>
                             </li>
@@ -294,7 +294,7 @@ script
         alert('text, ' + document.querySelector('#idName').value);
     }
 script</pre>
-                            <p>Then in a body add the folowing</p>
+                            <p>Then in a body add the following</p>
                             <pre>
 form onsubmit="greet(); return false;">
     input autocomplete="off" autofocus id="name" placeholder="Name" type="text">
@@ -311,7 +311,7 @@ form onsubmit="greet(); return false;">
                             </p>
                         </li>
                         <li>
-                            <strong>Anather advanced way</strong> ommiting  onsubmit argument in the form tag
+                            <strong>Another advanced way</strong> omitting  onsubmit argument in the form tag
                             <pre>
 script
 

@@ -32,7 +32,7 @@
                         <ul>
                             <li><code>git config --global user.name</code>Sets the default name for Git to use when you commit</li>
                             <li><code>git config --global user.email</code>-//-</li>
-                            <li><code>git config --global init.defaultbranch</code> Sets the default branch to the name "main" instead of "master"</li>
+                            <li><code>git config --global init.defaultBranch</code> Sets the default branch to the name "main" instead of "master"</li>
                             <li><code>git config --global core.editor</code> Sets the default editor to VSC</li>
                             <li><code>git config --list</code></li>
                         </ul>
@@ -43,21 +43,21 @@
                             <li><code>cat ~/.ssh/id_rsa.pub</code> displays public key. Paste it into GitHub account settings > SSH keys > add new. You'll be able to clone/push to GitHub from this computer for authorized repositories!</li>
                         </ul>
                     
-                    <h4>Syncronising local repository with remote GitHub</h4>
-                        <strong>Before setting up Git you need to initialise a repository</strong>
+                    <h4>Synchronizing local repository with remote GitHub</h4>
+                        <strong>Before setting up Git you need to initialize a repository</strong>
                         <ul>
-                            <li><code>git remote add origin GitHubRepositoryURL</code> Sinhronise Git with dekstop</li>
+                            <li><code>git remote add origin GitHubRepositoryURL</code> Synchronize Git with desktop</li>
                             <li><code>git remote -v</code> to view configured remotes</li>
                             <li><code>git push -u origin main</code> first time
                                 <p>-u flag is used to set origin as the upstream remote in your git config. You only have to do that the first time and then can use push and pull without arguments.</p></li>
-                            <li><code>git push</code> after that. Use this after <code>git add</code> and <code>git commit</code> to push cnahges to the GitHub.</li>
+                            <li><code>git push</code> after that. Use this after <code>git add</code> and <code>git commit</code> to push changes to the GitHub.</li>
                             <li><code>git pull</code></li>
                             <li><code>git pull origin main</code> Before you start working on a repo that day.</li>
                         </ul>
                                     
                     <h4>Restoring changes</h4>
                         <ul>
-                            <li><code>git restore fileName</code> restores files in working repository (not added or commited).</li>
+                            <li><code>git restore fileName</code> restores files in working repository (not added or committed).</li>
                             <li><code>git reset</code> Unstage a file and keep changes unless you restore it</li>
                             <li><code>git restore --staged fileName</code> Alternative for a reset.</li>
                             <li><code>git reset --soft HEAD~1</code> Uncommiting, but keeps changes</li>

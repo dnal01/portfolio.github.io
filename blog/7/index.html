@@ -40,7 +40,7 @@
                 <p>In ...1 can go either column name or function</p>
                 <ul>
                     <li><code>AVG</code></li>
-                    <li><code>DISTINCT(columnName)</code> - list of vlaues in a column</li>
+                    <li><code>DISTINCT(columnName)</code> - list of values in a column</li>
                     <li><code>LOWER</code></li>
                     <li><code>MAX</code></li>
                     <li><code>MIX</code></li>
@@ -68,7 +68,7 @@
                     <li><code>LIMIT</code></li>
                     <li><code>GROUP BY</code></li>
                     <li><code>AND</code></li>
-                    <li><code>AS</code> to treet something as something, e.g. COUNT(*) AS n. NExt time when I want to use this combination I need just to write n.</li>
+                    <li><code>AS</code> to treat something as something, e.g. COUNT(*) AS n. NExt time when I want to use this combination I need just to write n.</li>
                     <li><code>IS</code></li>
                     <li><code>IN (SELECT...)</code> in the all items from the result</li>
                     <li><code>= (SELECT...)</code> = the single value in the result</li>
@@ -77,33 +77,33 @@
                 <h5>Examples</h5>
                 <ul>
                     <li><code>SELECT column1, column2 FROM table1 JOIN table2 ON table1Name.column_key_in_table1 = table2Name.column_key_in_table2 WHERE column2 >= value LIMIT value;</code> - join two tables based on the same key values.</li>
-                    <li><code>SELECT column1 FROM table WHERE column_key_in_table1 IN (SELECT column_key_in_table2 FROM table2 WHERE contition);</code> - search based on key value betwen two tables</li>
+                    <li><code>SELECT column1 FROM table WHERE column_key_in_table1 IN (SELECT column_key_in_table2 FROM table2 WHERE condition);</code> - search based on key value between two tables</li>
                     <li><code>SELECT column1 FROM table1 WHERE column2 = (SELECT column FROM table2 WHERE column3 = 'text');</code> - search in the first table based on a value from a second.</li>
                     <li><code>SELECT columnTb1 FROM table1 WHERE column2Tb1 IN (SELECT column1tb2 FROM table2 WHERE column2tb2 = (SELECT column1tb3 FROM table3 WHERE column2tb3 = 'Text'));</code>- search a value in a first table based on filtered result from other two tables.</li>
                     <li><code>SELECT column1tb1 FROM tb1, tb2, tb3 WHERE tb1.cl1tb1 = tb2.cl1tb2 AND tb3.cm1tb3 = tb2.cl2tb2 AND cl2tb1 = 'TEXT';</code> - search in a first table based on filtered result from other tables.</li>
                 </ul>
                 <h5>Insertion of data</h5>
                 <p><code>INSERT INTO tableName (columnName1, columnName2) VALUES('Value1', 'Value2');</code></p>
-                <h5>Deleition of data</h5>
+                <h5>Deletion of data</h5>
                 <p><code>DELETE FROM table WHERE condition;</code> - deletes a row. (e.g. WHERE column IS NULL)</p>
-                <p><code>DELETE FROM table;</code> - deletes everithing.</p>
+                <p><code>DELETE FROM table;</code> - deletes everything.</p>
                 <h5>Update of data</h5>
                 <p><code>UPDATE table SET column = value WHERE condition1, condition2;</code> - deletes a row.</p>
                 <h5>Creation of Tables with certain data types</h5>
                 <p><code>CREATE TABLE table (key dataType);</code> do this before mode and import command.</p>
                 <h5>Data types</h5>
                 <ul>
-                    <li><code>BLOB</code> - binery large object</li>
+                    <li><code>BLOB</code> - binary large object</li>
                     <li><code>INTEGER</code></li>
                     <li><code>NUMERIC</code> - dates and times</li>
-                    <li><code>REAL</code> - decimel points in it</li>
+                    <li><code>REAL</code> - decimal points in it</li>
                     <li><code>TEXT</code></li>
                 </ul>
                 <h5>Data types - key words</h5>
                 <ul>
                     <li><code>NOT NULL</code></li>
                     <li><code>UNIQUE</code></li>
-                    <li><code>PRIMARY KEY</code> - is the column which uniqly identifies your data</li>
+                    <li><code>PRIMARY KEY</code> - is the column which uniquely identifies your data</li>
                     <li><code>FOREIGN KEY</code> - appearance of those IDs elsewhere</li>
                 </ul>
                 <h5>Turn on a timer</h5>
@@ -117,12 +117,12 @@
 from cs50 import SQL
 db = SQL("sqlite:///FILE.db") // Open db FILE
 var1 = input("TEXT: ")
-var2 = db.execute("SELECT COUNT(*) AS n FROM table WHERE column = ?", var1) // Gives back temproarry table
-var3 = rows[0] // To get back only the first row in that result set or temproarry table
+var2 = db.execute("SELECT COUNT(*) AS n FROM table WHERE column = ?", var1) // Gives back temporary table
+var3 = rows[0] // To get back only the first row in that result set or temporary table
 print(row["n"])
                     </pre>
                 </p>
-                <h5>Execution of a code alltogether - wraping a code</h5>
+                <h5>Execution of a code altogether - wrapping a code</h5>
                 <p>
                     <pre>
 db.execute("BEGIN TRANSACTION")
