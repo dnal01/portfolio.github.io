@@ -172,6 +172,14 @@ movies(function displayFavorite(movieName) // the first argument starts
                                     </p>
                                 </li>
                                 <li><strong>The map() loop. </strong>Works the same as forEach() loop, but creates and returns a new array populated with the results of calling. So it is a good idea to store it in a variable, using function expression. Just include a return keyword with a value inside a function.</li>
+                                <li><strong><code>for ... of</code></strong> only for arrays</li>
+                                <pre>
+    const array1 = ['a', 'b', 'c'];
+
+for (const element of array1) {
+  console.log(element);
+}</pre>
+                                <li><strong><code>for ... in</code></strong> for objects and arrays. Syntaxes is the same as and for for ... in.</li>
                                 <li><code>.filter(callbackFn, thisArg)</code> </li>
                                         <ul>
                                             <li><code>callbackFn</code> or any other function types</li>
