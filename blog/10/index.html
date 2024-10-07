@@ -7,7 +7,6 @@
     <title>Tenth Entry - Web Portfolio of Denys</title>
     <link rel="stylesheet" href="https://dnal01.github.io/portfolio.github.io/main.css">
 </head>
-<!--I will add my HTML here-->
 
 <body>
     <header>
@@ -19,11 +18,8 @@
         </ul>
     </header>
     <main>
-
         <h1 class="title">Tenth Entry</h1>
-
         <p class="left date">September 19, 2024</p>
-
         <div class="block left">
             <section>
                 <h2>My takeaways today</h2>
@@ -36,13 +32,11 @@
                             <li><code>git config --global core.editor</code> Sets the default editor to VSC</li>
                             <li><code>git config --list</code></li>
                         </ul>
-
                     <h4>Creating an ssh key for your computer</h4>
                         <ul>
                             <li><code>ssh-keygen</code> Hit enter twice. This generates two files, one ending in .pub. This is the public key that you can share with others.</li>
                             <li><code>cat ~/.ssh/id_rsa.pub</code> displays public key. Paste it into GitHub account settings > SSH keys > add new. You'll be able to clone/push to GitHub from this computer for authorized repositories!</li>
                         </ul>
-                    
                     <h4>Synchronizing local repository with remote GitHub</h4>
                         <strong>Before setting up Git you need to initialize a repository</strong>
                         <ul>
@@ -53,8 +47,7 @@
                             <li><code>git push</code> after that. Use this after <code>git add</code> and <code>git commit</code> to push changes to the GitHub.</li>
                             <li><code>git pull</code></li>
                             <li><code>git pull origin main</code> Before you start working on a repo that day.</li>
-                        </ul>
-                                    
+                        </ul>                 
                     <h4>Restoring changes</h4>
                         <ul>
                             <li><code>git restore fileName</code> restores files in working repository (not added or committed).</li>
@@ -78,16 +71,21 @@
                                     <li><code>-c</code> Creates new branch.</li>
                                 </ul>
                             <li><code>git merge anotherBranchName -m ""</code> merge branchName with a current branch where you are</li>
-                            <li><code>git branch -d branchName</code> Deletes a branch.</li>
-                            <li><code></code> - add first push for branch?</li>
+                            <li><code>git push -u origin main</code> - add first push for branch?</li>
+                            <li><code>git branch -d branchName</code> Deletes a local branch.</li>
+                            <li><code>git push -d origin branchName</code> - removes remote branch</li>
                         </ul> 
+                    <h4>General</h4>
+                        <ul>
+                            <li><code>git pull --rebase</code> collects all the changes from all branches and rewrite your local files with them?</li>
+                        </ul>
             </section>
             <section>
-                <h2 class="section">Links to helpful websites</h3>
-                    
+                <h2 class="section">Links to helpful websites</h2>
+                <p></p>
             </section>
             <section>
-                <h2 class="section">Questions which I have got</h3>
+                <h2 class="section">Questions which I have got</h2>
                 <p></p>
             </section>
         </div>
@@ -109,5 +107,4 @@
         </ul>
     </main>
 </body>
-
 </html>

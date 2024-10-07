@@ -7,7 +7,6 @@
     <title>Sixth Entry - Web Portfolio of Denys</title>
     <link rel="stylesheet" href="https://dnal01.github.io/portfolio.github.io/main.css">
 </head>
-<!--I will add my HTML here-->
 
 <body>
     <header>
@@ -19,15 +18,10 @@
         </ul>
     </header>
     <main>
-
         <h1 class="title">Sixth Entry</h1>
-
         <p class="left date">July 13, 2024</p>
-
-
         <div class="block left">
             <h3>My takeaways today</h3>
-
             <ol>
                 <li>
                     <h4>HTML tags</h4>
@@ -83,8 +77,7 @@
                     <p><em>Note: They can be also combined:</em> <code>section div:nth-child(3):hover {}</code></p>
                 </li>
                 <li>
-                    <p>
-                        <strong>Conflict Resolution. Specificity (score)</strong>
+                    <h4>Conflict Resolution. Specificity (score)</h4>
                     <table>
                         <tr>
                             <th>style="..."</th>
@@ -109,100 +102,67 @@
                         </tr>
                     </table>
                     <p>The score is twelve.</p>
-                    </p>
                 </li>
                 <li>
                     <h4>Units of measurements</h4>
-                    <p><code>em</code> multiply the size of something by its number, wether: 2em - *2; 3em - *3.
-                    </p>
-                    <p>It is a good practice to indicate the font-size on the body and then use ems to play with a
-                        specific text.</p>
+                    <p><code>em</code> multiply the size of something by its number, wether: 2em - *2; 3em - *3.</p>
+                    <p>It is a good practice to indicate the font-size on the body and then use ems to play with a specific text.</p>
                 </li>
                 <li>
                     <h4>CSS Properties</h4>
                     <p><code>background: url('name.png') no-repeat right center blue</code></p>
-                    <p><code>float:</code>
-                    <ul>
-                        <li><code>clear: both;</code></li>
-                    </ul>
-                    </p>
-                    <p>
-                    <h4>The Box Model</h4>
-                    <ul>
-                        <li>
-                            <code>box-sizing: border-box;</code> Whatever width you specify it will absorb borders and
-                            paddings as well, so it will be the total width from border to border, including the
-                            content. And it is a good practice to stick to this option rather then to
-                            <code>content-box</code>.
-                        </li>
-                        <li>
-                            <code>margin-right; margin-left;</code> cumulates their margins if left or right boxes have
-                            any too. but <code>margin-top; margin-button;</code> do not they are collapsed and the
-                            bigger margin wins. But it is not true for floated elements.
-                        </li>
-                        <li>
-                            <code>overflow</code>
-                        </li>
-                    </ul>
-                    </p>
-                    <p>
+                    <p><code>float:</code></p>
+                        <ul>
+                            <li><code>clear: both;</code></li>
+                        </ul>
+                    <section>
+                        <h4>The Box Model</h4>
+                        <ul>
+                            <li>
+                                <code>box-sizing: border-box;</code> Whatever width you specify it will absorb borders and paddings as well, so it will be the total width from border to border, including the content. And it is a good practice to stick to this option rather then to <code>content-box</code>.
+                            </li>
+                            <li>
+                                <code>margin-right; margin-left;</code> cumulates their margins if left or right boxes have any too. but <code>margin-top; margin-button;</code> do not they are collapsed and the bigger margin wins. But it is not true for floated elements.
+                            </li>
+                            <li><code>overflow</code></li>
+                        </ul>
+                    </section>
+                    <section>
                         <h4>Relative and Absolute</h3>
                             <ul>
                                 <li>
                                     <h4>Static Position</h4>
-                                    <p>
-                                        Being in a static position - normal document flow, i.e. not Relative and Absolute, the element will ignore any offsets (right, left, top...).
-                                    </p>
+                                    <p>Being in a static position - normal document flow, i.e. not Relative and Absolute, the element will ignore any offsets (right, left, top...).</p>
                                 </li>
                                 <li>
                                     <h4>Relative</h4>
-                                    <p>
-                                        An element is positioned relative to its normal position, i.e. its original spot is preserved.
-
-                                        Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.
-                                    </p>
+                                    <p>An element is positioned relative to its normal position, i.e. its original spot is preserved. Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.</p>
                                 </li>
                                 <li>
                                     <h4>Absolute</h4>
-                                    <p>
-                                        An element with position: absolute; is positioned relative to the nearest positioned ancestor (positioned relative or absolute).
-                                    </p>
-                                    <p>
-                                        However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.
-                                    </p>
-                                    <p>
-                                        <strong>Note:</strong> Absolute positioned elements are removed from the normal flow, and can overlap elements.
-                                    </p>
+                                    <p>An element with position: absolute; is positioned relative to the nearest positioned ancestor (positioned relative or absolute).</p>
+                                    <p>However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.</p>
+                                    <p><strong>Note:</strong> Absolute positioned elements are removed from the normal flow, and can overlap elements.</p>
                                 </li>
                             </ul>
-                        
-                    </p>
-                    <p>
+                    </section>
+                    <section>
                         <h4>Inheritance</h4>
-                        <p>
-                            Some elements are not Inherited, meaning they do not give their property to child elements,
-                            as e.g. <code>box-sizing</code>.
-                        </p>
-                        <p>
-                            This behavior can be overwritten by adding such elements to a <code>* {}</code> property,
-                            which literally during rendition adds properties to each of the element.
-                        </p>
-                        <p>
-                            Short hands without "-" overwrites above properties with "-".
-                        </p>
-                    </p>
+                        <p>Some elements are not Inherited, meaning they do not give their property to child elements, as e.g. <code>box-sizing</code>.</p>
+                        <p>This behavior can be overwritten by adding such elements to a <code>* {}</code> property, which literally during rendition adds properties to each of the element.</p>
+                        <p>Short hands without "-" overwrites above properties with "-".</p>
+                    </section>
                 </li>
                 <li>
                     <h4>Responsive website - Logical operators</h4>
-                    <p>
+                    <section>
                         <ul>
                             <li><strong>AND</strong>. <code>@media (min-width: 768px) <strong>and</strong> (max-width: 991px) {...}</code>.</li>
                             <li><strong>OR</strong>. <code>@media (min-width: 768px)<strong>,</strong> (max-width: 991px) {...}</code>.</li>
-                            <li></li>
                         </ul>
                         <em>Do not overlap range boundaries!</em>
                         <em>It is best practice to include media after declaring of other styles.</em>
-                    </p>
+                    </section>
                     <h4>Devise sizes</h4>
                         <ul>
                             <li><strong>Large</strong> - <code>(min-width: 1200px) {...}</code></li>
@@ -221,10 +181,8 @@
                 <ul>
                     <li><a href="https://clearlydecoded.com/recommended-books/" target="_blank">Recommended Books</a></li>
                     <li><a href="https://jsfiddle.net" target="_blank">Collaborate on a code solution</a></li>
-                    <li><a href="https://html.spec.whatwg.org/multipage/syntax.html#void-elements" target="_blank">HTML
-                            Living Standard</a></li>
-                    <li><a href="https://www.w3.org/TR/2011/WD-html5-20110525/content-models.html" target="_blank">3.2.5.1
-                            Kinds of HTML content</a></li>
+                    <li><a href="https://html.spec.whatwg.org/multipage/syntax.html#void-elements" target="_blank">HTML Living Standard</a></li>
+                    <li><a href="https://www.w3.org/TR/2011/WD-html5-20110525/content-models.html" target="_blank">3.2.5.1 Kinds of HTML content</a></li>
                 </ul>
             </section>
             <section>
@@ -250,5 +208,4 @@
         </ul>
     </main>
 </body>
-
 </html>

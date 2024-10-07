@@ -7,7 +7,6 @@
     <title>Seventh Entry - Web Portfolio of Denys</title>
     <link rel="stylesheet" href="https://dnal01.github.io/portfolio.github.io/main.css">
 </head>
-<!--I will add my HTML here-->
 
 <body>
     <header>
@@ -19,12 +18,8 @@
         </ul>
     </header>
     <main>
-
         <h1 class="title">Seventh Entry</h1>
-
         <p class="left date">July 15, 2024</p>
-
-
         <div class="block left">
             <section>
                 <h3>My takeaways today</h3>
@@ -112,29 +107,23 @@
                 <p><code>CREATE INDEX indexName ON table (column, ...);</code> - if search on a column frequently, prepare data to search faster.</p>
                 <h4>SQL using Python</h4>
                 <h5>Combining SQL and Python code</h5>
-                <p>
                     <pre>
 from cs50 import SQL
 db = SQL("sqlite:///FILE.db") // Open db FILE
 var1 = input("TEXT: ")
 var2 = db.execute("SELECT COUNT(*) AS n FROM table WHERE column = ?", var1) // Gives back temporary table
 var3 = rows[0] // To get back only the first row in that result set or temporary table
-print(row["n"])
-                    </pre>
-                </p>
+print(row["n"])</pre>
                 <h5>Execution of a code altogether - wrapping a code</h5>
-                <p>
                     <pre>
 db.execute("BEGIN TRANSACTION")
 var1 = db.execute("SELECT column1 FROM table WHERE column2 = ?", column2);
 var1 = var1[0]["column1"]
 db.execute("UPDATE posts SET column1 = ? WHERE column2 = ?", column1 + 1, column2);
-db.execute("COMIT")
-                    </pre>
-                </p>
+db.execute("COMIT")</pre>
             </section>
             <section>
-                <h3 class="section">Links to helpful websites</h3>
+                <h2 class="section">Links to helpful websites</h2>
                 <ul>
                     <li><a href="cs50.readthedocs.io/libraries/cs50/python/#cs50.SQL">CS50 Library for Python</a></li>
                     <li><a href="https://www.w3schools.com/sql/">SQL Tutorial</a></li>
@@ -144,7 +133,7 @@ db.execute("COMIT")
                 </ul>
             </section>
             <section>
-                <h3 class="section">Questions which I have got</h3>
+                <h2 class="section">Questions which I have got</h2>
                 <p></p>
             </section>
         </div>

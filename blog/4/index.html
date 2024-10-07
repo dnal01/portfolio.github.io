@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fourth Entry - Web Portfolio of Denys</title>
     <link rel="stylesheet" href="https://dnal01.github.io/portfolio.github.io/main.css">
 </head>
-<!--I will add my HTML here-->
 
 <body>
     <header>
@@ -18,17 +18,11 @@
         </ul>
     </header>
     <main>
-
         <h1 class="title">Fourth Entry</h1>
-
         <p class="left date">July 07, 2024</p>
-
-
         <div class="block left">
             <h3>My takeaways today</h3>
-
             <p>During the time from previous post I have learned:</p>
-
             <ol>
                 <li><strong>Animations. </strong><code>@keyframes</code> tag in css is responsible for animation. You also need to name the animation, simply adding the name before opening brackets. Then make some configuration and in the css class add <code>animation-name:</code> and other animation attributes.</li>
                 <li><strong>Flex. </strong>With flex you can position content as you want: vertically and horizontally: add spaces between; create cards or represent boxes in reverse order using <code>justify-content</code> property. There is a good article I have placed below. I have tried that with the blog section, check it out below.</li>
@@ -82,22 +76,19 @@ grid-template-areas:
                 <li><strong>Photo collage. </strong>Make a container for photos and then position each photo where would you like by using different classes. Use <code>z-index</code> to set some on front, the higher the closer to the front.</li>
                 <li><strong>Lightbox. </strong>It is composed of two links. In the first link you are going to include what you want to appear after you click on a second link: picture, some text, etc. The first link should has <code>href="#_"</code> and an id. The second link - consist of what you will click on to activate a first link. The second link should have <code>href="#<em>id of a first link</em>"</code>. Then in CSS there are three major things to be included in class of a lightbox: <code>position: fixed; visibility: hidden: z-index: 999;</code> then add <code>:target</code> and add <code>visibility: visible</code></li>
             </ol>
-            
-            <h3 class="section">Links to helpful websites</h3>
-            <p>
+            <section>
+                <h2 class="section">Links to helpful websites</h2>
                 <ul>
                     <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Guide to Flexbox</a></li>
                     <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">Guide to CSS Grid</a></li>
                 </ul>
-            </p>
-
-            <h3 class="section">Questions which I have got</h3>
-
-            <p>When I work with lists, is it better to include link inside a list or list inside a link?</p>
-
-            <p>How to add a horizontal slide bar or buttons to rotate a bar when I use overflow <code>overflow-x</code>?</p>
-
-            <p>When selecting text on a page, selection goes beyond the content box, i.e. selects padding as well. How to avoid that?</p>
+            </section>
+            <section>
+                <h2 class="section">Questions which I have got</h2>
+                <p>When I work with lists, is it better to include link inside a list or list inside a link?</p>
+                <p>How to add a horizontal slide bar or buttons to rotate a bar when I use overflow <code>overflow-x</code>?</p>
+                <p>When selecting text on a page, selection goes beyond the content box, i.e. selects padding as well. How to avoid that?</p>
+            </section>
         </div>
         <ul class="sticky-element">
             <li class="left-tiem">

@@ -7,7 +7,6 @@
     <title>Eighth Entry - Web Portfolio of Denys</title>
     <link rel="stylesheet" href="https://dnal01.github.io/portfolio.github.io/main.css">
 </head>
-<!--I will add my HTML here-->
 
 <body>
     <header>
@@ -19,19 +18,14 @@
         </ul>
     </header>
     <main>
-
         <h1 class="title">Eighth Entry</h1>
-
         <p class="left date">July 15, 2024</p>
-
-
         <div class="block left">
             <section>
                 <h3>My takeaways today</h3>
                 <h4>Overwriting default browser properties:</h4>
                 <p>Set a margin and padding for a body(*) to 0 to overwrite default behavior of different browsers as they may be different and add no needed properties.</p>
-                <h5></h5>
-                <p>There is a border box and content box. If you want to set up width without influence of padding or borders use the below properties:
+                <p>There is a border box and content box. If you want to set up width without influence of padding or borders use the below properties:</p>
                     <pre>
 html {
     box-sizing: border-box; // another option content-box
@@ -39,10 +33,9 @@ html {
 *, *:before, *:after {
     box-sizing: inherit; // to inherit border-box property for child elements of html
 }</pre>
-                </p>
                 <h4>Units</h4>
                 <p><code>rem</code> takes size of "m" letter from the html - by default 16px, hoverer <code>em</code> takes size of "m" from the content of current tag, hence e.g. 1em will always provide different size based on the current text size.</p>
-                <p>px - for borders; % - for width; </p>
+                <p>px - for borders; % - for width;</p>
                 <h4>HTML, CSS and JavaScript</h4>
                 <h5>Internet</h5>
                 <p><strong>API</strong>. #.#.#.# 32 bits.</p>
@@ -81,62 +74,63 @@ html {
                 </ul>
                 <h5>URL</h5>
                 <p><code>https://www.example.com/path?key=value&key=value</code></p>
-                <h5>forms</h5>
-                <p><code>&lt;form action="" method=""&gt;</code>
-                    <ul>
-                        <li><code>&lt;fieldset&gt;</code> - defines a logical sets of form</li>
-                            <ul>
-                                <li><code>&lt;legend&gt;</code> text <code>&lt;/legend&gt;</code> - defines the name of the set</li>
-                                <li><code>&lt;label</code> - for labeling of an input field</li>
-                                    <ul>
-                                        <li><code>for="idname"&gt;</code> text or radio buttons <code>&lt;/label</code>&gt;</code> - associates label with the id of input. Can be avoided if label tag wraps up input tag, normally for radio buttons or checkboxes.</li>
-                                    </ul>
-                                <li><code>&lt;select id="" name=""&gt;</code> id, which goes into label</li>
-                                    <ul>
-                                        <li><code>&lt;option value=""&gt;</code> text <code>&lt;/option&gt;</code></li>
-                                        <li><code>&lt;option selected&gt;</code> text <code>&lt;/option&gt;</code> - selected by default</li>
-                                    </ul>
-                                <li><code>&lt;/select&gt;</code></li>
-                                <li><code>&lt;textarea id="" name=""&gt;</code><code>&lt;/textarea&gt;</code> - big free text field area</li>
-                                <li><code>&lt;input</code></li>
-                                    <ul>
-                                        <li><code>id="somename"</code> is needed</li>
-                                        <li><code>autocomplete="off"</code> no automatic suggestions</li>
-                                        <li><code>autofocus</code> automatically puts a cursor on a field</li>
-                                        <li><code>name=""</code> name which gets submitted</li>
-                                        <li><code>placeholder=""</code></li>
-                                        <li><code>type=""</code></li>
-                                            <ul>
-                                                <li><code>search</code></li>
-                                                <li><code>text</code></li>
-                                                <li><code>tel</code></li>
-                                                <li><code>email</code></li>
-                                                <li><code>date</code></li>
-                                                <li><code>number</code></li>
-                                                    <ul>
-                                                        <li><code>min=""</code> AND <code>max=""</code></li>
-                                                    </ul>
-                                                <li><code>radio</code> Label wraps it</li>
-                                                    <ul>
-                                                        <li><code>value=""</code></li>  
-                                                        <li><code>checked</code></li>  
-                                                    </ul>
-                                                <li><code>checkbox</code> Label wraps it</li>
-                                                    <ul>
-                                                        <li><code>value=""</code></li>
-                                                        <li><code>checked</code></li>
-                                                    </ul>
-                                                <li><code>submit</code> - for buttons</li>
-                                                <li><code>hidden</code></li>
-                                            </ul>
-                                        <li><code>pattern=".+@.+\.com"&gt;</code> Text. See Regular expressions bellow:</li>
-                                    </ul>    
-                            </ul>
-                        <li><code>&lt;/fieldset&gt;</code></li>
-                        <li><code>&lt;button type="submit"&gt;</code> text <code>&lt;/button&gt;</code></li>
-                    </ul>
-                    <code>&lt;/form&gt;</code>
-                </p>
+                <section>
+                    <h5>forms</h5>
+                    <p><code>&lt;form action="" method=""&gt;</code></p>
+                        <ul>
+                            <li><code>&lt;fieldset&gt;</code> - defines a logical sets of form</li>
+                                <ul>
+                                    <li><code>&lt;legend&gt;</code> text <code>&lt;/legend&gt;</code> - defines the name of the set</li>
+                                    <li><code>&lt;label</code> - for labeling of an input field</li>
+                                        <ul>
+                                            <li><code>for="idname"&gt;</code> text or radio buttons <code>&lt;/label</code>&gt;</code> - associates label with the id of input. Can be avoided if label tag wraps up input tag, normally for radio buttons or checkboxes.</li>
+                                        </ul>
+                                    <li><code>&lt;select id="" name=""&gt;</code> id, which goes into label</li>
+                                        <ul>
+                                            <li><code>&lt;option value=""&gt;</code> text <code>&lt;/option&gt;</code></li>
+                                            <li><code>&lt;option selected&gt;</code> text <code>&lt;/option&gt;</code> - selected by default</li>
+                                        </ul>
+                                    <li><code>&lt;/select&gt;</code></li>
+                                    <li><code>&lt;textarea id="" name=""&gt;</code><code>&lt;/textarea&gt;</code> - big free text field area</li>
+                                    <li><code>&lt;input</code></li>
+                                        <ul>
+                                            <li><code>id="somename"</code> is needed</li>
+                                            <li><code>autocomplete="off"</code> no automatic suggestions</li>
+                                            <li><code>autofocus</code> automatically puts a cursor on a field</li>
+                                            <li><code>name=""</code> name which gets submitted</li>
+                                            <li><code>placeholder=""</code></li>
+                                            <li><code>type=""</code></li>
+                                                <ul>
+                                                    <li><code>search</code></li>
+                                                    <li><code>text</code></li>
+                                                    <li><code>tel</code></li>
+                                                    <li><code>email</code></li>
+                                                    <li><code>date</code></li>
+                                                    <li><code>number</code></li>
+                                                        <ul>
+                                                            <li><code>min=""</code> AND <code>max=""</code></li>
+                                                        </ul>
+                                                    <li><code>radio</code> Label wraps it</li>
+                                                        <ul>
+                                                            <li><code>value=""</code></li>  
+                                                            <li><code>checked</code></li>  
+                                                        </ul>
+                                                    <li><code>checkbox</code> Label wraps it</li>
+                                                        <ul>
+                                                            <li><code>value=""</code></li>
+                                                            <li><code>checked</code></li>
+                                                        </ul>
+                                                    <li><code>submit</code> - for buttons</li>
+                                                    <li><code>hidden</code></li>
+                                                </ul>
+                                            <li><code>pattern=".+@.+\.com"&gt;</code> Text. See Regular expressions bellow:</li>
+                                        </ul>    
+                                </ul>
+                            <li><code>&lt;/fieldset&gt;</code></li>
+                            <li><code>&lt;button type="submit"&gt;</code> text <code>&lt;/button&gt;</code></li>
+                        </ul>
+                        <code>&lt;/form&gt;</code>
+                </section>
                 <h5>Regular expressions</h5>
                 <p>To validate or extract information from input</p>
                 <ul>
@@ -153,8 +147,9 @@ html {
                 </ul>
                 <p><strong>Example:</strong></p>
                 <p><code>^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$</code></p>
-                <h5>Table tag</h5>
-                    <pre>
+                <section>
+                    <h5>Table tag</h5>
+                        <pre>
 table>
     thead>
         tr>
@@ -169,35 +164,36 @@ table>
         tr>
     /tbody>
 /table></pre>
-                <h5>HTML tags and attributes</h5>
-                <ul>
-                    <li><code>&lt;form&gt;</code></li>
+                </section>
+                <section>
+                    <h5>HTML tags and attributes</h5>
+                    <ul>
+                        <li><code>&lt;form&gt;</code></li>
+                            <ul>
+                                <li><code>onsubmit="script/call of a function"</code></li>
+                            </ul>
+                        <li><code>&lt;blockquote&gt;</code> element defines a section that is quoted from another source</li>
                         <ul>
-                            <li><code>onsubmit="script/call of a function"</code></li>
+                            <li><code>cite=""</code> intended to indicate a source of a quota</li>
                         </ul>
-                    <li><code>&lt;blockquote&gt;</code> element defines a section that is quoted from another source</li>
-                    <ul>
-                        <li><code>cite=""</code> intended to indicate a source of a quota</li>
+                        <li><code>&lt;q&gt;</code> defines a short quotation</li>
+                        <li><code>&lt;abbr&gt;</code> defines an abbreviation or an acronym, like "HTML", "CSS", "Mr.", "Dr.", "ASAP", "ATM"</li>
+                        <ul>
+                            <li><code>title=""</code> extended meaning of an abbreviation</li>
+                        </ul>
+                        <li><code>&lt;address&gt;</code> defines the contact information for the author/owner of a document or an article</li>
+                        <li><code>&lt;cite&gt;</code> defines the title of a creative work (e.g. a book, a poem, a song, a movie, a painting, a sculpture, etc.)</li>
+                        <li><code>&lt;bdo&gt;</code> is used to override the current text direction</li>
+                        <ul>
+                            <li><code>dir="rtl"</code></li>
+                        </ul>
+                        <li><code>&lt;nav&gt;</code> for navigation - unordered list</li>
+                        <!-- <li><code>&lt;&gt;</code></li> -->
                     </ul>
-                    <li><code>&lt;q&gt;</code> defines a short quotation</li>
-                    <li><code>&lt;abbr&gt;</code> defines an abbreviation or an acronym, like "HTML", "CSS", "Mr.", "Dr.", "ASAP", "ATM"</li>
-                    <ul>
-                        <li><code>title=""</code> extended meaning of an abbreviation</li>
-                    </ul>
-                    <li><code>&lt;address&gt;</code> defines the contact information for the author/owner of a document or an article</li>
-                    <li><code>&lt;cite&gt;</code> defines the title of a creative work (e.g. a book, a poem, a song, a movie, a painting, a sculpture, etc.)</li>
-                    <li><code>&lt;bdo&gt;</code> is used to override the current text direction</li>
-                    <ul>
-                        <li><code>dir="rtl"</code></li>
-                    </ul>
-                    <li><code>&lt;nav&gt;</code> for navigation - unordered list</li>
-                    <li><code>&lt;&gt;</code></li>
-                    <li><code>&lt;&gt;</code></li>
-                    <li><code>&lt;&gt;</code></li>
-                    <li><code>&lt;&gt;</code></li>
-                </ul>
-                <h5>CSS - Flex-box</h5>
-                <pre>
+                </section>
+                <section>
+                    <h5>CSS - Flex-box</h5>
+                    <pre>
 div.parent-flex2 {
     display: flex;
 
@@ -234,17 +230,21 @@ div.parent-flex2 {
 
     align-content;
 }</pre>
-                </ul>
-                <h5>JavaScript default functions</h5>
-                    <ul>
-                        <li><code>alert('text' + )</code></li>
                     </ul>
-                <h5>CSS - selectors</h5>
-                    <ul>
-                        <li><code>input:not([type="radio"]):not([type="select"]) {}</code> select all in input but not "radio" and "select"</li>
-                        <li><code>input, [for="idname"] {}</code> square brackets select an attribute, so it can be used instead of classes.</li>
-                    </ul>
-
+                </section>
+                <section>
+                    <h5>JavaScript default functions</h5>
+                        <ul>
+                            <li><code>alert('text' + )</code></li>
+                        </ul>
+                </section>
+                <section>
+                    <h5>CSS - selectors</h5>
+                        <ul>
+                            <li><code>input:not([type="radio"]):not([type="select"]) {}</code> select all in input but not "radio" and "select"</li>
+                            <li><code>input, [for="idname"] {}</code> square brackets select an attribute, so it can be used instead of classes.</li>
+                        </ul>
+                </section>
             </section>
             <section>
                 <h3 class="section">Links to helpful websites</h3>
@@ -253,8 +253,6 @@ div.parent-flex2 {
                     <li><a href="https://www.w3schools.com/tags/ref_attributes.asp">HTML Attribute Reference</a></li>
                     <li><a href="https://www.w3schools.com/tags/default.asp">HTML Tag/Element Reference</a></li>
                     <li><a href="https://techbrood.com/en/jsref?p=dom-obj-event">HTML DOM Events</a></li>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
                 </ul>
             </section>
             <section>

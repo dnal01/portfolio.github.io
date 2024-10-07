@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fifth Entry - Web Portfolio of Denys</title>
     <link rel="stylesheet" href="https://dnal01.github.io/portfolio.github.io/main.css">
 </head>
-<!--I will add my HTML here-->
 
 <body>
     <header>
@@ -18,17 +18,11 @@
         </ul>
     </header>
     <main>
-
         <h1 class="title">Fifth Entry</h1>
-
-        <p class="left date">July 10, 2024</p>
-
-
+        <p class="left date">July 10, 2024 - October 4, 2024</p>
         <div class="block left">
             <h3>My takeaways today</h3>
-
             <p>JavaScript time:</p>
-
             <ol>
                 <li><strong>Variables. </strong><code>var name = "String"; or var name = 123;</code></li>
                 <li><code>let varName = condition1 || or && expensiveFunction</code> you can use operators to decide which value to assign to the varName bases on conditions or functions.</li>
@@ -71,9 +65,8 @@
                 </li>
                 <li><strong>Functions:</strong>
                     <p><strong>Function declaration. </strong><code>function name(x, y) { // Your code here };</code></p>
-                    <p><strong>Function expression. </strong><code>var name = function(parameter) { // Your code here };</code> Store functions in variables (anonymous functions). But the function expressions are not hoisted.
-                        <em><strong>Functions as parameters. </strong><code>name();</code> You can call a function using as a parameter a variable with anonymous function. It will not work with the Named function expression.</em></p>
-                    <p><strong>Inline function expressions. </strong>When you pass a function inline as an argument to another function.
+                    <p><strong>Function expression. </strong><code>var name = function(parameter) { // Your code here };</code> Store functions in variables (anonymous functions). But the function expressions are not hoisted. <em><strong>Functions as parameters. </strong><code>name();</code> You can call a function using as a parameter a variable with anonymous function. It will not work with the Named function expression.</em></p>
+                    <p><strong>Inline function expressions. </strong>When you pass a function inline as an argument to another function.</p>
                         <pre>
 function movies(messageFunction, name) // two parameters of the first and second arguments
 {
@@ -84,19 +77,14 @@ movies(function displayFavorite(movieName) // the first argument starts
 {
     console.log("My favorite movie is " + movieName); // the first argument finishes
 }, "Finding Nemo"); // the second argument</pre>              
-                    </p>
                     <p><strong>Arrow function. </strong><code>(parameters) => {statements}</code> or <code>parameter => statement</code></p>
                         <ul>
                             <li><code>(parameters)</code> are arguments, i.e. function (arg1, arg2, ...), where arg1 is a parameter</li>
                             <li><code>{statements}</code> simple code. You can omit <code>return</code> word if there is only one statement.</li>
-                            <li><code></code></li>
-                            <li><code></code></li>
-                            <li><code></code></li>
                         </ul>
                 </li>
                 <li><strong>Shadowing. </strong>When you have a global variable you can create the same name variable on a function level but add <code>var</code> before that, so in this way you declare a new variable and global one will not be overwritten.</li>
                 <li><strong>Hoisting. </strong>It is a way JavaScript moves your code when compiling, i.e. you can ask function before the function is written or print out a variable which is declared letter. But it is not recommended to do so, because of some bugs may accrue.</li>
-                
                 <li><strong>VSCode Short keys:</strong>
                     <ul>
                         <li><code>⇧⌘K</code> Delete Line</li>
@@ -117,7 +105,6 @@ movies(function displayFavorite(movieName) // the first argument starts
                         <li><code>var name = ["First", "Second", "Third"];</code> You can even store an array in an array to create a nested array!</li>
                         <li><code>var name = new Array(); name[0] = "HTML"</code>...</li>
                     </ul>
-                    <p><strong></strong></p>
                     <ol>
                         <li><strong>Array Properties and Methods:</strong></li>
                             <ul>
@@ -137,10 +124,10 @@ movies(function displayFavorite(movieName) // the first argument starts
                                 <li><strong>Reverse. </strong><code>name.reverse();</code> Reverses the array.</li>
                                 <li><code>for...of</code> for each item in a list or word</li>
                                     <pre>
-                                    let list = ["doors", "windows", "rooms"];
-                                    for (let item of list) OR (let item of "word") {
-                                        console.log(item);
-                                    }</pre>
+let list = ["doors", "windows", "rooms"];
+for (let item of list) OR (let item of "word") {
+    console.log(item);
+}</pre>
                                 <li><strong>The forEach() loop. </strong><code>name.forEach(callbackFn);</code> Executes a provided function once for each array element. The function is called with the following arguments:
                                     <ul>
                                         <li>
@@ -157,19 +144,17 @@ movies(function displayFavorite(movieName) // the first argument starts
                                         </li>
                                     </ul>
                                     <p>The forEach() method gives you an alternative way to iterate over an array, and manipulate each element in the array with an <strong>inline function expression</strong>.</p>
-                                    <p>Notice that the forEach() method iterates over the array without the need of an explicitly defined index. In the example above, donut corresponds to the element in the array itself. This is different from a for or while loop where an index is used to access each element in the array.</p>
-                                    <p>E.g.:
+                                    <p>Notice that the forEach() method iterates over the array without the need of an explicitly defined index. In the example above, donut corresponds to the element in the array itself. This is different from a for or while loop where an index is used to access each element in the array. E.g.:</p>
                                         <pre>
-                                            words = ["cat", "in", "hat"];
-                                            words.forEach(function(word, num, all) {
-                                                console.log("Word " + num + " in " + all.toString() + " is " + word);
-                                            });</pre>
+words = ["cat", "in", "hat"];
+words.forEach(function(word, num, all) {
+    console.log("Word " + num + " in " + all.toString() + " is " + word);
+});</pre>
                                         <pre>
-                                            Prints:
-                                            Word 0 in cat,in,hat is cat
-                                            Word 1 in cat,in,hat is in
-                                            Word 2 in cat,in,hat is hat</pre>
-                                    </p>
+Prints:
+Word 0 in cat,in,hat is cat
+Word 1 in cat,in,hat is in
+Word 2 in cat,in,hat is hat</pre>
                                 </li>
                                 <li><strong>The map() loop. </strong>Works the same as forEach() loop, but creates and returns a new array populated with the results of calling. So it is a good idea to store it in a variable, using function expression. Just include a return keyword with a value inside a function.</li>
                                 <li><strong><code>for ... of</code></strong> only for arrays</li>
@@ -183,8 +168,7 @@ for (const element of array1) {
                                 <li><code>.filter(callbackFn, thisArg)</code> </li>
                                         <ul>
                                             <li><code>callbackFn</code> or any other function types</li>
-                                            <li><code>thisArg</code> additional value to compare with</li>
-                                            <p>Example:
+                                            <li><code>thisArg</code> additional value to compare with. Example:</li>
                                             <pre>
 const fruits = ["apple", "banana", "grapes", "mango", "orange"];
 
@@ -199,7 +183,7 @@ console.log(filterItems(fruits, "ap")); // ['apple', 'grapes']
 // OR
 let me = names.filter(name => {
     return name==="Susanne";
-    });</pre></p>
+    });</pre>
                                         </ul>    
                                 <li><code>name.reduce(callbackFn, initialValue)</code></li>
                                         <ul>
@@ -210,7 +194,6 @@ let me = names.filter(name => {
                                 <li><code>.fill(a, b)</code></li>
                                 <li><code>.some()</code></li>
                                 <li>... Others like sort, join, concat, etc., see threw the link: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">Methods for modifying arrays.</a></li>
-            
                             </li>
                             </ul>
                     </ol>
@@ -311,12 +294,8 @@ form onsubmit="greet(); return false;">
                         </li>
                         <li>
                             <strong>Using declared function in tags as an argument</strong>
-                            <p>
-                                <code>onsubmit="functionName(); return false;"</code> - as an argument to a form tag. <code>return false;</code> mean do not send a data to a server
-                            </p>
-                            <p>
-                                <code>id="name"</code> - add an id to an input tag
-                            </p>
+                            <p><code>onsubmit="functionName(); return false;"</code> - as an argument to a form tag. <code>return false;</code> mean do not send a data to a server</p>
+                            <p><code>id="name"</code> - add an id to an input tag</p>
                         </li>
                         <li>
                             <strong>Another advanced way</strong> omitting  onsubmit argument in the form tag
@@ -431,8 +410,8 @@ script</pre>
                     </ul>
                 </li>
             </ol>
-                <h3 class="section">Links to helpful websites</h3>
-            <p>
+            <section>
+                <h2 class="section">Links to helpful websites</h2>
                 <ul>
                     <li><a href="http://udacity.github.io/frontend-nanodegree-styleguide/javascript.html" target="_blank">Style Guide</a></li>
                     <li><a href="https://google.github.io/styleguide/jsguide.html" target="_blank">JavaScript Style Guide</a></li>
@@ -446,8 +425,8 @@ script</pre>
                     <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank">Document: querySelector() method</a></li>
                     <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll" target="_blank">Document: querySelectorAll() method</a></li>
                 </ul>
-            </p>
-            <h3 class="section">Questions which I have got</h3>
+            </section>
+            <h2 class="section">Questions which I have got</h2>
         </div>
         <ul class="sticky-element">
             <li class="left-tiem">
