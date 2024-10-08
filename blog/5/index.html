@@ -271,6 +271,35 @@ Object.values(obj).forEach(function(property_value){
     console.log(property_value);
 });</pre>
                             </li>
+                            <li>
+                                <h4>Object constructor</h4>
+                                <p>Creation of template</p>
+                                <pre>
+let objectName = [{name: myName, age: ageNumber}]
+class Person {
+    constructor(name, age, married, functionName) {
+        this.name = name;
+        this.age = age;
+        this.isMarried = married;
+        this.hello = (arguments) => {code};
+        this.new = functionName;
+    }
+    // you can also use function here but without function word:
+    functionNam(argument1...) {
+        return something;
+    }
+}</pre>
+                                <p>Create a new variable and duplicate person object calling created template.</p>
+                                <pre>
+const susanne = new Person("Susanne", 41, false, functionName);</pre>
+                                <p>Or push a new person into an existing objects array</p>
+                                <pre>
+newNae.push(new Person());</pre>
+                                <p>You can also create a hierarchy e.g. family and children using classes. See the detailed explanation in Internet</p>
+                                    <ul>
+                                        <li><code>new</code> word is Mandatory. <code>Person</code> is imaginable.</li>
+                                    </ul>
+                            </li>
                         </li>
                     </ul>
                 </li>
