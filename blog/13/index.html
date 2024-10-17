@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thirteen Entry - Web Portfolio of Denys</title>
+    <link rel="stylesheet" href="https://dnal01.github.io/portfolio.github.io/main.css">
+</head>
+
+<body>
+    <header>
+        <ul class="navigation">
+            <li class="navigation-item"><a class="item-link" href="https://dnal01.github.io/portfolio.github.io/index.html">Home</a></li>
+            <li class="navigation-item"><a class="item-link" href="https://dnal01.github.io/portfolio.github.io/blog/index.html">Blog</a></li>
+            <li class="navigation-item"><a class="item-link" href="https://dnal01.github.io/portfolio.github.io/projects/index.html">Projects</a></li>
+            <li class="navigation-item"><a class="item-link" href="https://dnal01.github.io/portfolio.github.io/contact/index.html">Contact</a></li>
+        </ul>
+    </header>
+    <main>
+        <h1 class="title">Thirteen Entry</h1>
+        <p class="left date">October 15, 2024</p>
+        <div class="block left">
+            <section>
+                <h2>My takeaways today</h2>
+                <h3>DOOM</h3>
+                <h4>Accessing DOOM elements</h4>
+                <p><code>document.body.TextContent = "some text";</code></p>
+                <p><code>document.getElementById("")</code></p>
+                <p><code>document.getElementsByTagName("")</code></p>
+                <p><code>document.getElementsByClassName("")</code></p>
+                <p><code>document.getElementsByClassName("")[0]</code> get element by index</p>
+                <p><code>document.querySelector("li, hi")</code> access several</p>
+                <p><code>document.querySelectorAll("li, hi")</code></p>
+                <p><code>document.querySelector("li").getAttribute("")</code> provides content of attribute</p>
+                <p><code>document.querySelector("li").getAttribute("", changedText)</code> changes attribute to changedText?</p>
+                <p><code>document.querySelector("li").styleBackgroud="yellow"</code> changes styles</p>
+                <p><code>document.querySelector("li").className="newClassName"</code> changes class</p>
+                <p><code>h1.classList.add("added class name")</code> adds class</p>
+                <p><code>h1.classList.toggle("added class name")</code> changes back and forward the class</p>
+                <pre>
+let ul = document.querySelector("ul");
+let li = documet.createElement("li");
+li.appendChild(document.createTextNode("testing"));
+ul.appendChild("li");</pre>
+                <h4>Node`s properties</h4>
+                <p><code>.textContent</code> Return the text content of an element (tag)</p>
+                <p><code>.textContent = "new content text"</code> Change the textual content</p>
+            </section>
+            <section>
+                <h2 class="section">Links to helpful websites</h2>
+                <ul>
+                    <li><a href="https://www.erikkroes.nl/blog/semantics-what-does-it-mean/">Semantics, what does it mean?</a></li>
+                    <li><a href="https://caninclude.glitch.me">Which tags can be included into which</a></li>
+                    <li><a href="https://htmlandcssbook.com/extras/html-escape-codes/">HTML ESCAPE CODES</a></li>
+                    <li><a href="https://osric.com/chris/accidental-developer/2012/01/when-should-alt-text-be-blank/">When should alt text be blank?</a></li>
+                    <li><a href="https://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines (WCAG) 2.0</a></li>
+                    <li><a href="https://webaim.org/standards/wcag/checklist">WebAIM's WCAG 2 Checklist</a></li>
+                </ul>
+            </section>
+            <section>
+                <h2 class="section">Questions which I have got</h2>
+                <p>WHich tags are by best practice needs to be wrapped into which tags?</p>
+            </section>
+        </div>
+        <ul class="sticky-element">
+            <li class="left-tiem">
+                <a href="https://dnal01.github.io/portfolio.github.io/blog/11/index.html">
+                    <button class="arrow">
+                        <span class="arrow-previous"></span>
+                    </button>
+                </a>
+            </li>
+        </ul>
+    </main>
+</body>
+
+</html>
