@@ -22,52 +22,102 @@
         <p class="left date">July 15, 2024</p>
         <div class="block left">
             <section>
-                <h3>My takeaways today</h3>
-                <h4>SQL</h4>
-                <h5>Creation of .db file and import of csv file into the .db file</h5>
+                <h2>My takeaways today</h2>
+                <h3>SQL</h3>
+                <h4>Creation of .db file and import of csv file into the .db file</h4>
                 <p><code>sqlite3 FILE.db</code></p>
                 <p><code>.mode csv</code></p>
                 <p><code>.import FILE.csv table</code></p>
-                <h5>Checking of headers</h5>
+                <h4>Checking of headers</h4>
                 <p><code>.schema</code></p>
-                <h5>Selecting data</h5>
+                <h4>Selecting data</h4>
                 <p><code>SELECT ...1 FROM table ...2 = 'Text here';</code></p>
-                <p>In ...1 can go either column name or function</p>
-                <ul>
-                    <li><code>AVG</code></li>
-                    <li><code>DISTINCT(columnName)</code> - list of values in a column</li>
+                <p>In ...1 can go either column name (use "field name" for fields with spaces) or function</p>
+                <ul> 
+                    <li><code>DISTINCT(columnName)</code> - lists uniq value and combines into one column. Can work with multiple columns looking at uniq combined value without brackets, then creates two columns</li>
                     <li><code>LOWER</code></li>
-                    <li><code>MAX</code></li>
-                    <li><code>MIX</code></li>
                     <li><code>UPPER</code></li>
-                    <li><code>COUNT(*)</code> - count of all rows</li>
+                    <li><code>ROUND(number_to_round, decimal_places)</code>, decimal is optional, if avoided, rounds to 0. Can be also negative. <strong>Example: </strong><code>ROUND(AVG(budget), 2)</code></li>
                     <li><code>JOIN</code> - joins tables</li>
+                    <h5>Aggregate functions</h5>
+                    <p>Functions which performs a calculation on several values and return a single value.</p>
+                    <ul>
+                        <h5>Numeric fields only</h5>
+                        <li><code>AVG()</code></li>
+                        <li><code>SUM()</code></li>
+                    </ul>
+                    <ul>
+                        <h5>Various data types</h5>
+                        <p>A<->Z - first or last in alphabet</p>
+                        <li><code>MIN()</code></li>
+                        <li><code>MAX()</code></li>
+                        <li><code>COUNT(*)</code> - counts values in a field and <code>COUNT(field_name)</code> - counts records in a table</li>    
+                    </ul>
+                    <p>It is possible to <strong>combine functions</strong>, e.g. <code>COUNT(DISTINCT field_name)</code></p>
                 </ul>
                 <p>In ...2 go key words:</p>
                 <ul>
-                    <li><code>WHERE</code></li>
-                    <li><code>LIKE</code> - The <code>LIKE</code> operator is used in a <code>WHERE</code> clause to search for a specified pattern in a column
+                    <li><code>WHERE</code>. E.g. <code>WHERE color = 'green'</code> or <code>WHERE year <> 2020</code>
+                        <p>Note: <code><></code> - not equal to. e.g. <> 2020 - all except 2020.</p>
+                    </li>
+                    <li><code>AS</code> to treat something as something, e.g. COUNT(*) AS n. Next time when I want to use this combination I need just to write n. I.e. it may rename e.g. column after query.</li>
+                    <li><code>IS</code>. <strong>Example:</strong> <code>IS NULL</code>, <code>IS NOT NULL</code></li>
+                    <li><code>LIKE</code> or <code>NOT LIKE</code> - the <code>LIKE</code> operator is used in a <code>WHERE</code> clause to search for a specified pattern in a column
                         <p>There are two wildcards often used in conjunction with the LIKE operator:</p>
                         <ul>
                             <li>
-                                The percent sign <code>%</code> represents zero, one, or multiple characters
+                                The percent sign <code>%</code> represents zero, one, or multiple characters, e.g. 'Ade%' will find all words that contains 'Ade'
                             </li>
                             <li>
-                                The underscore sign <code>_</code> represents one, single character
+                                The underscore sign <code>_</code> represents one, single character, e.g. 'Ev_' will find only words where one character is missing, e.g. 'Eve'
+                            </li>
+                            <li>
+                                <strong>Examples:</strong>
+                                <ul>
+                                    <li><code>fieldName LIKE '%r'</code>, which ends with 'r'</li>
+                                    <li><code>fieldName LIKE '__t%'</code>, where third letter is 't' and something after</li>
+                                </ul>
                             </li>
                         </ul>
                     </li>
-                    <li><code>ORDER BY</code></li>
-                        <li><code>ASC</code> - Ascending order</li>
-                        <li><code>DCSC</code> - Descending order</li>
+                    <li><code>IN (SELECT...)</code> or <code>IN (<i>value1, value2, ...</i>)</code> or <code>NOT IN(...)</code> in the all items from the result or specified values</li>
+                    <li>
+                        <code>ORDER BY fieldName</code> +
+                        <ul>
+                            <li><code>ASC</code> - Ascending order</li>
+                            <li><code>DESC</code> - Descending order</li>
+                        </ul>
+                        <h5>Order by multiple values</h5>
+                        <code>ORDER BY field_one ASC, field_two DESC</code>. First it sorts by the first field, then by second.
+                        <p><strong>Note</strong>, that <code>fieldName</code>, when used Alias aka <code>AS</code>, needs to be an Alias name, because <code>ORDER BY</code> is executed after <code>AS</code></p>
+                    </li>
                     <li><code>LIMIT</code></li>
-                    <li><code>GROUP BY</code></li>
-                    <li><code>AND</code></li>
-                    <li><code>AS</code> to treat something as something, e.g. COUNT(*) AS n. Next time when I want to use this combination I need just to write n.</li>
-                    <li><code>IS</code></li>
-                    <li><code>IN (SELECT...)</code> in the all items from the result</li>
+                    <li><code>GROUP BY field_one, field_two ORDER BY fieldName</code></li>
+                    <li><code>HAVING</code> - filtering grouped data</li>
                     <li><code>= (SELECT...)</code> = the single value in the result</li>
                     <li><code>ON keyTb1 = keyTb2</code> - works with JOIN</li>
+                    <h5>Multiple criteria</h5>
+                    <ul>
+                        <li><code>AND</code></li>
+                        <li><code>OR</code></li>
+                        <li><code>BETWEEN 1 AND 5</code> - is inclusive</li>
+                        <section><strong>Combining examples:</strong>
+                            <ul>
+                                <li><code>(Statement1 OR Statement2) AND (Statement3 OR Statement4)</code></li>
+                                <li><code>fieldName BETWEEN 1 AND 5 AND Statement1</code></li>
+                            </ul>
+                        </section>
+                    </ul>
+                    <h5>Order of execution</h5>
+                    <ol>
+                        <li>FROM</li>
+                        <li>WHERE</li>
+                        <li>GROUP BY</li>
+                        <li>HAVING</li>
+                        <li>SELECT</li>
+                        <li>ORDER BY</li>
+                        <li>LIMIT</li>
+                    </ol>
                 </ul>
                 <h5>Examples</h5>
                 <ul>
@@ -105,6 +155,8 @@
                 <p><code>.timer ON</code></p>
                 <h5>Indexes</h5>
                 <p><code>CREATE INDEX indexName ON table (column, ...);</code> - if search on a column frequently, prepare data to search faster.</p>
+                <h5>Views</h5>
+                <p><code>CREATE VIEW viewName AS SELECT columnName FROM tableName</code> - creates a virtual view which can be accessed any time. Updates from the original table as soon as new query is initiated. I.e. it stores a query in memory.</p>
                 <h4>SQL using Python</h4>
                 <h5>Combining SQL and Python code</h5>
                     <pre>
