@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiftheen Entry - Web Portfolio of Denys</title>
+    <title>Seventeen Entry - Web Portfolio of Denys</title>
     <link rel="stylesheet" href="https://dnal01.github.io/portfolio.github.io/main.css">
 </head>
 
@@ -18,7 +18,7 @@
         </ul>
     </header>
     <main>
-        <h1 class="title">Fiftheen Entry</h1>
+        <h1 class="title">Seventeen Entry</h1>
         <p class="left date">November 30, 2024</p>
         <div class="block left">
             <section>
@@ -33,37 +33,148 @@
                     <li><code>max()</code></li>
                     <li><code>round(number, decima place to which round - by defoult is 0)</code></li>
                     <li><code>help(
-                        )</code> or <code>?functionName</code> prints a information aboud a base function</li>
+                        )</code> or <code>?functionName</code> prints a information about a base function</li>
                     <li><code>len()</code> shows length</li>
                     <li><code>str()</code>, <code>int()</code>, <code>bool()</code> and <code>float()</code> to convert into in</li>
                     <li><code>pow(base, exp, mod=None)</code>, where exp and mode are optional. Returns base to the power exp.</li>
+                    <li><code>sorted(iterable, key=None, reverse=False)</code> sorts, but does not change the original</li>
                 </ul>
                 <h4>Specifics</h4>
                 <ul>
                     <li>Variable declaration: <code>varName = value</code></li>
                     <li><code>'ab' + 'cd'</code> = <code>'abcd'</code></li>
+                    <li><code>[1, 2, 3] + varName</code> = <code>[1, 2, 3, 4, 5, 6, 7]</code></li>
                     <h4>Working with lists</h4>
+                    <p><strong>It is indexed by range of numbers</strong></p>
                     <ul>
                         <li><code>varName[-1]</code> access a list from the end</li>
-                        <li><code>varName[3:5]</code> access a list in diapasone by the rule [ start - inclusive : end - exclusive]</li>
-                        <li><code>varName[:5]</code> access a list in diapasone starting from index 0</li>
-                        <li><code>varName[3:]</code> access a list in diapasone ending wit the last index (including)</li>
-                        <li><code>varName[3:] = ['one', 1, 'two', 2]</code> replaces list wth a new values in a diapasone</li>
+                        <li><code>varName[3:5]</code> access a list in diapason by the rule [ start - inclusive : end - exclusive]</li>
+                        <li><code>varName[:5]</code> access a list in diapason starting from index 0</li>
+                        <li><code>varName[3:]</code> access a list in diapason ending wit the last index (including)</li>
+                        <li><code>varName[3:] = ['one', 1, 'two', 2]</code> replaces list wth a new values in a diapason</li>
                         <li><code>varName + ['newElement', 'newElement']</code> adds a new elements into a list</li>
                         <h4>Cooping lists</h4>
                         <li>
-                            <code>newVar = list(existingVar)</code> or <code>newVar = existingVar[:]</code> creates a new list in memory, becouse if using "=", the new variabe will point to the same adress in memory where the existed list was.
-                            <p><strong><i>Note</i></strong> any other operators, where you do not simply asign variables, but performe some operations, will also create a new list, e.g. <code>newVar = existingVar + [newEl1, newEl2]</code></p>
+                            <code>newVar = list(existingVar)</code> or <code>newVar = existingVar[:]</code> creates a new list in memory, because if using "=", the new variabe will point to the same adress in memory where the existed list was.
+                            <p><strong><i>Note</i></strong> any other operators, where you do not simply assign variables, but perform some operations, will also create a new list, e.g. <code>newVar = existingVar + [newEl1, newEl2]</code></p>
                         </li>
                     </ul>
                 </ul>
                 <h4>Python lists</h4>
                 <p><code>varNam = [['one', 1, True], ['two', 2, False]]</code>. It can consist of any types and even other lists</p>
+                <h4>Methods</h4>
+                <p>Methods: Functions that belongs to objects - <code>object.method()</code></p>
+                <ul>
+                    <li><code>str</code></li>
+                    <ul>
+                        <li><code>capitalize()</code> returns a string with the first letter capitalized</li>
+                        <li><code>replace(from, to)</code> replaces from on to</li>
+                        <li><code>index(char)</code> returns an index of a character</li>
+                        <li><code>upper()</code> capitalize all the characters, but does not change the original</li>
+                    </ul>
+                    <li><code>float</code></li>
+                    <ul>
+                        <li><code>bit_length()</code></li>
+                        <li><code>conjugate()</code></li>
+                    </ul>
+                    <li><code>list</code></li>
+                    <ul>
+                        <li><code>index()</code> returns index of element you want to get the index for - e.g. a string or number</li>
+                        <li><code>count()</code> returns a number of times the element occurs in the list</li>
+                        <li><code>append()</code> appends an element to the end of the list</li>
+                        <li><code>reverse()</code> reverses the list</li>
+                    </ul>
+                </ul>
+                <h4>Packages</h4>
+                <p>Packages are directories of Python Scripts. Each script = module. Some of the popular packages:</p>
+                <ul>
+                    <li>NumPy - for arrays</li>
+                    <li>Matplotlib - for data visualization</li>
+                    <li>pandas - for manipulation of data in tables</li>
+                    <li>scikit-learn - for machine learning</li>
+                    <h4>Installation of Python package</h4>
+                    <ul>
+                        <li>Download <code>get-pip.py</code></li>
+                        <li><code>python3 get-pip.py</code></li>
+                        <li><code>pip3 install numpy</code></li>
+                        <li>
+                            <pre>import numpy as np</pre> 
+                            or 
+                            <pre>from numpy import array</pre> 
+                            <code>as</code> is to shorten a name to refer when need to use a package module. If there are subpackage use as following
+                            <pre>from package.subpackage import module</pre></li>
+                        <p><i>Note</i> that the number 3 in python and pip represents the version of python.</p>
+                        <p>To use a module then you need to write a package name before a dot, e.g. numpy or np (if "as" statement was used) np.array([1, 2, 3])</p>
+                    </ul>
+                    <h4>NumPy functions</h4>
+                    <ul>
+                        <li><code>array()</code></li>
+                        <ul>
+                            <li>NumPy arrays: contain only one type</li>
+                            <li>If multiple data types within an array, everything will be converted to a string</li>
+                            <li>When performed any calculation on two and more numpy arrays, it will calculate the first with the first, then second with the second and so on. E.g. numpy_array + numpy_array = ([2, 4, 6]), rather than [1, 2, 3, 4, 5, 6]</li>
+                            <li><code>NumPyArray > 25</code> returns array([True - where the value more than 25, False - when otherwise])</li>
+                            <li><code>NumPyArray[NumPyArray > 25]</code> returns values which are above 25</li>
+                            <li><code>npArray.shape</code> returns shape of an array</li>
+                            <h4>2D NumPy Arrays</h4>
+                            <li><code>np.array([[1, 2, 3], [4, 5, 6]])</code>. To access specific value use one of two methods: <code>npArray[0][2]</code> or <code>npArray[0 , 2]</code>; <code>npArray[:, 1:2]</code> will return all rows<code>[2, 3], [5, 6]</code> and <code>npArray[1, :]</code> will return second row with all array</li>
+                            <li><code></code></li>
+                        </ul>
+                        <li><code>mean()</code>. It finds average in an array</li>
+                        <li><code>median()</code>. Orders all data points and returns the one in the middle </li>
+                        <li><code>corrcoef(npArray1, npArray2)</code> to check if arrays are correlated</li>
+                        <li><code>std()</code> for standard deviation</li>
+                        <li><code>sum()</code></li>
+                        <li><code>sort()</code></li>
+                        <li><code>random.normal(loc=0.0, scale=1.0, size=None)</code> generates random numbers, where loc is the number around what it should build numbers; scale - max deviation +-; size - e.g. if <code>size=(2, 3), then 2D array with 3 values in each will be generated</code></li>
+                        <li><code>column_stack((array1, array2))</code> creates a new stacked array where array1 transforms into the first column and array2 into a second.</li>
+                    </ul>
+                    <h4>Matplotlib</h4>
+                    <ul>
+                        <li><code>import Matplotlib.pyplot as plt</code></li>
+                        <li><code>plt.plot(x = pltArray1Horizontal, y = pltArray2Vertical, s = None, alpha = 1)</code> generates a chart with a line. <code>alpha</code> - opacity; <code>s</code> - size</li>
+                        <li><code>plt.scatter(pltArray1Horizontal, pltArray2Vertical, s = arrayWithSize, c = colorArray)</code> generates a chart as dot point</li>
+                        <li><code>plt.hist(x, bins=None, density=False)</code> draws a histogram. x - list of values. bins - distribution of dots on the histogram. bu default - 10. If there are multiple dots come under one bin, the value of the highest will be taken.</li>
+                        <li><code>plt.clf()</code> cleans a figure up again so you can start afresh</li>
+                        <li><code>plt.xlabel('')</code> and <code>plt.ylabel('')</code> adds a label</li>
+                        <li><code>plt.title('')</code></li>
+                        <li><code>plt.yticks([0, 2, 4, 6, 8, 10], ['0', '2B', '4B', '6B', '8B', '10B'])</code> the first array customize x acis, the second renames.</li>
+                        <li><code>plt.grid(True)</code> draws a grid</li>
+                        <li><code>plt.text(x, y, s, fontdict=None, **kwargs)</code>. Add the text *s* to the Axes at location *x*, *y* in data coordinates</li>
+                        <li><code>plt.show()</code> displays a plot</li>
+                    </ul>
+                    <h4>Pandas</h4>
+                    <p>Build on NumPy. It is more general. Can work with different data types</p>
+                    <ul>
+                        <li><code>import pandas as pd</code></li>
+                        <h4>Pandas` functions</h4>
+                        <ul>
+                            <li><code>newVarTable = pd.DataFrame(varNameDictionary)</code> formats a dictionary into a table</li>
+                        </ul>
+                        <h4>Pandas` methods</h4>
+                        <ul>
+                            <li><code>newVarTable.index = ['firstIndexName', 'secondIndexName'...]</code> renames default 0, 1, 2... indexes onto specified names</li>
+                        </ul>
+                        <li><code></code></li>
+                        <li><code></code></li>
+                    </ul>
+                </ul>
+                <h4>Dictionary</h4>
+                <p><strong>It is indexed by unique keys</strong></p>
+                <ul>
+                    <li><code>varName = {"textKey": valueNumber, 'textKey2': sub-dictionaryVarName}</code> the same as in JS. Can hold other sub-dictionary by adding a variable which holds it</li>
+                    <li><code>varName['key']</code> returns value of mentioned key</li>
+                    <li><code>varName['key'] = value</code> will add a new or replace key value to a dictionary</li>
+                    <li><code>'key' in varName</code> will return true if such a key is present in a dictionary</li>
+                    <li><code>del(varName['key'])</code> removes a key in a dictionary</li>
+                    <li><code></code></li>
+                </ul>
             </section>
             <section>
                 <h2 class="section">Links to helpful websites</h2>
                 <ul>
                     <li><a href="https://docs.python.org/3/library/functions.html">Built-in Python functions</a></li>
+                    <li><a href="https://pip.pypa.io/en/stable/installation/">A package maintenance system for Python (pip) to install a package</a></li>
                 </ul>
             </section>
             <section>
