@@ -30,21 +30,24 @@
                     <li><code>print()</code> prints into a console</li>
                     <li><code>del varName[index]</code> removes item in a list by index and shifts all the others in order</li>
                     <li><code>list(varName)</code> creates a new memory and fills it with the values from the variable</li>
-                    <li><code>max()</code></li>
+                    <li><code>max(n1, n2, n3, ...)</code> The <code>max()</code> function returns the item with the highest value. If the values are strings, an alphabetically comparison is done.</li>
                     <li><code>round(number, decima place to which round - by defoult is 0)</code></li>
-                    <li><code>help(
-                        )</code> or <code>?functionName</code> prints a information about a base function</li>
+                    <li><code>help()</code> or <code>?functionName</code> prints a information about a base function</li>
                     <li><code>len()</code> shows length</li>
                     <li><code>str()</code>, <code>int()</code>, <code>bool()</code> and <code>float()</code> to convert into in</li>
+                    <li><code>charVarName.capitalize()</code></li>
                     <li><code>pow(base, exp, mod=None)</code>, where exp and mode are optional. Returns base to the power exp.</li>
                     <li><code>sorted(iterable, key=None, reverse=False)</code> sorts, but does not change the original</li>
+                    <li><code>enumerate(varName)</code> produces two values instead of one: index of a value and a value.</li>
+                    <li><code>range(start, stop, step)</code> The <code>range()</code> function returns a sequence of numbers, starting from 0 by default, and increments by 1 (by default), and stops before a specified number.</li>
                 </ul>
                 <h4>Specifics</h4>
                 <ul>
                     <li>Variable declaration: <code>varName = value</code></li>
                     <li><code>'ab' + 'cd'</code> = <code>'abcd'</code></li>
+                    <li><code>'ab' + str(12)</code> = <code> ab12</code></li>
                     <li><code>[1, 2, 3] + varName</code> = <code>[1, 2, 3, 4, 5, 6, 7]</code></li>
-                    <li><code>"carl" < "chris"</code> returns TRUE, while </li>
+                    <li><code>"carl" &lt; "chris"</code> returns TRUE, because carl is first in alphabet</li>
                     <h4>Working with lists</h4>
                     <p><strong>It is indexed by range of numbers</strong></p>
                     <ul>
@@ -63,7 +66,7 @@
                 </ul>
                 <h4>Python lists</h4>
                 <p><code>varNam = [['one', 1, True], ['two', 2, False]]</code>. It can consist of any types and even other lists</p>
-                <h4>Methods</h4>
+                <h4>List`s methods</h4>
                 <p>Methods: Functions that belongs to objects - <code>object.method()</code></p>
                 <ul>
                     <li><code>str</code></li>
@@ -86,6 +89,19 @@
                         <li><code>reverse()</code> reverses the list</li>
                     </ul>
                 </ul>
+                <h4>loops</h4>
+                    <ul>
+                        <li><code>while</code></li>
+                        <pre>while condition :
+    expression</pre>
+                        <li><code>for in</code></li>
+                        <pre>for (each)var in seq :
+    expression</pre>
+                        <pre>for index, (each)var in enumerate(seq) :
+    expression</pre>
+                        <pre>for (each)var in range(10) :
+    expression</pre>
+                        <p><i>Note</i> all in between <code>for</code> and <code>in</code> is arbitrary name and can be changed. On a string it takes each character; and on an array, each value;</li></p>
                 <h4>Packages</h4>
                 <p>Packages are directories of Python Scripts. Each script = module. Some of the popular packages:</p>
                 <ul>
@@ -108,32 +124,58 @@
                         <p>To use a module then you need to write a package name before a dot, e.g. numpy or np (if "as" statement was used) np.array([1, 2, 3])</p>
                     </ul>
                     <h4>NumPy functions</h4>
-                    <ul>
-                        <li><code>array()</code></li>
                         <ul>
-                            <li>NumPy arrays: contain only one type</li>
-                            <li>If multiple data types within an array, everything will be converted to a string</li>
-                            <li>When performed any calculation on two and more numpy arrays, it will calculate the first with the first, then second with the second and so on. E.g. numpy_array + numpy_array = ([2, 4, 6]), rather than [1, 2, 3, 4, 5, 6]</li>
-                            <li><code>NumPyArray > 25</code> returns array([True - where the value more than 25, False - when otherwise])</li>
-                            <li><code>NumPyArray[NumPyArray > 25]</code> returns values which are above 25</li>
+                            <li><code>np.array()</code></li>
+                            <ul>
+                                <li><code>np.array(varName)</code> or <code>np.array([varName1, varName2])</code></li>
+                                <li>NumPy arrays contain only one type</li>
+                                <li>If multiple data types within an array, everything will be converted to a string</li>
+                                <li>When performed any calculation on two and more numpy arrays, it will calculate the first with the first, then second with the second and so on. E.g. numpy_array + numpy_array = ([2, 4, 6]), rather than [1, 2, 3, 4, 5, 6]</li>
+                                <h4>1D NumPy Array</h4>
+                                    <ul>
+                                        <li><code>npArrayName > 25</code> returns array([True - where the value more than 25, False - when otherwise])</li>
+                                        <li><code>npArrayName[npArrayName > 25]</code> returns values which are above 25</li>
+                                    </ul>
+                                <h4>2D NumPy Arrays</h4>
+                                    <ul>
+                                        <li><code>np.array([[1, 2, 3], [4, 5, 6]])</code> creates a 2D NumPy array</li>
+                                        <p>To access specific value use one of two methods below:</p>
+                                        <li><code>npArrayName[0][2]</code></li>
+                                        <li><code>npArrayName[0 , 2]</code></li>
+                                        <li><code>npArrayName[:, 1:2]</code> will return all rows, but two columns</li>
+                                        <li><code>[2, 3], [5, 6]</code></li>
+                                        <li><code>npArrayName[1, :]</code>will return second row with all array</li>
+                                    </ul>
+                            </ul>
                             <li><code>npArray.shape</code> returns shape of an array</li>
-                            <h4>2D NumPy Arrays</h4>
-                            <li><code>np.array([[1, 2, 3], [4, 5, 6]])</code>. To access specific value use one of two methods: <code>npArray[0][2]</code> or <code>npArray[0 , 2]</code>; <code>npArray[:, 1:2]</code> will return all rows<code>[2, 3], [5, 6]</code> and <code>npArray[1, :]</code> will return second row with all array</li>
-                            <li><code></code></li>
+                            <li><code>mean()</code>. It finds average in an array</li>
+                            <li><code>median()</code>. Orders all data points and returns the one in the middle </li>
+                            <li><code>corrcoef(npArray1, npArray2)</code> to check if arrays are correlated</li>
+                            <li><code>np.std()</code> for standard deviation</li>
+                            <li><code>np.sum()</code></li>
+                            <li><code>np.sort()</code></li>
+                            <h4>Random numbers</h4>
+                                <ul>
+                                    <li><code>np.random.normal(loc=0.0, scale=1.0, size=None)</code> generates random numbers, where loc is the number around what it should build numbers; scale - max deviation +-; size - e.g. if <code>size=(2, 3), then 2D array with 3 values in each will be generated</code></li>
+                                    <li><code>np.random.rand()</code> method returns a random float between 0 and 1</li>
+                                    <p>Below is a specific set up.</p>
+                                    <li><code>np.random.seed(123)</code> initialize a number to start with, to be able to generate a random number, if not it takes a current system time</li>
+                                    <li><code>np.random.randint(0, 2)</code> Randomly generate 0 or 1</li>
+                                </ul>
+                            <li><code>column_stack((array1, array2))</code> creates a new stacked array where array1 transforms into the first column and array2 into a second.</li>
+                            <li><code>np.logical_and(statements)</code> returns true or false for each of the value</li>
+                            <li><code>np.logical_or(statements)</code></li>
+                            <li><code>np.logical_not(statement/-s)</code></li>
+                            <li><code>npArrayName[np.logical_and(statement1, statement2)]</code> returns values which are true</li>
+                            <h4>NumPy`s loop</h4>
+                                <li><code>np.nditer(npArrayName)</code> iterates trough a <strong>2D array</strong>.</li>
+                                <pre>for val in np.nditer(npArrayName) :
+    expression</pre>
                         </ul>
-                        <li><code>mean()</code>. It finds average in an array</li>
-                        <li><code>median()</code>. Orders all data points and returns the one in the middle </li>
-                        <li><code>corrcoef(npArray1, npArray2)</code> to check if arrays are correlated</li>
-                        <li><code>std()</code> for standard deviation</li>
-                        <li><code>sum()</code></li>
-                        <li><code>sort()</code></li>
-                        <li><code>random.normal(loc=0.0, scale=1.0, size=None)</code> generates random numbers, where loc is the number around what it should build numbers; scale - max deviation +-; size - e.g. if <code>size=(2, 3), then 2D array with 3 values in each will be generated</code></li>
-                        <li><code>column_stack((array1, array2))</code> creates a new stacked array where array1 transforms into the first column and array2 into a second.</li>
-                    </ul>
                     <h4>Matplotlib</h4>
                     <ul>
                         <li><code>import Matplotlib.pyplot as plt</code></li>
-                        <li><code>plt.plot(x = pltArray1Horizontal, y = pltArray2Vertical, s = None, alpha = 1)</code> generates a chart with a line. <code>alpha</code> - opacity; <code>s</code> - size</li>
+                        <li><code>plt.plot(x = pltArray1Horizontal, y = pltArray2Vertical, s = None, alpha = 1)</code> generates a chart with a line. <code>alpha</code> - opacity; <code>s</code> - size. I can pass also a list</li>
                         <li><code>plt.scatter(pltArray1Horizontal, pltArray2Vertical, s = arrayWithSize, c = colorArray)</code> generates a chart as dot point</li>
                         <li><code>plt.hist(x, bins=None, density=False)</code> draws a histogram. x - list of values. bins - distribution of dots on the histogram. bu default - 10. If there are multiple dots come under one bin, the value of the highest will be taken.</li>
                         <li><code>plt.clf()</code> cleans a figure up again so you can start afresh</li>
@@ -150,12 +192,13 @@
                         <li><code>import pandas as pd</code></li>
                         <h4>Pandas` functions</h4>
                         <ul>
-                            <li><code>newVarTable = pd.DataFrame(varNameDictionary)</code> formats a dictionary into a table</li>
-                            <li><code>newVarTable = pd.read_csv("/path/to/table.csv", index_col = 0)</code> creates a table from a csv file. Index_col shows where the header should be.</li>
-                            <li><code></code></li>
-                            <li><code></code></li>
-                            <li><code></code></li>
-                            <li><code></code></li>
+                            <li><code>pandasTableName = pd.DataFrame(varNameDictionary)</code> formats a dictionary into a table</li>
+                            <li><code>pandasTableName = pd.read_csv("/path/to/table.csv", index_col = 0)</code> creates a table from a csv file. Index_col shows where the header should be.</li>
+                            <li><code>pandasTableName['newColumnName'] = pandasTableName['columnName'].apply(len)</code> adds a new column with value of length of each country word</li>
+                            <h4>Pandas` loop</h4>
+                            <li><code>pandasTableName.iterrows()</code> iterates trough a <strong>pandas table</strong> and returns two pice: label and a data in a row</li>
+                            <pre>for val in pandasTableName.iterrows() :
+    expression</pre>
                         </ul>
                         <h4>Pandas` methods</h4>
                         <ul>
@@ -173,10 +216,14 @@
                             <li><code>newVarTable[['columnName1', 'columnName2'...]]</code> returns entire column</li>
                             <h4>Row access</h4>
                             <li><code>newVarTable[1:4]</code> returns 3 rows, excluding the 4th one and skipping a 0 header row.</li>
-                            <li><code></code></li>
+                            <h4>Filtering results in a table</h4>
+                            <ul>
+                                <li><code>tableVarName condition</code>, e.g.</li>
+                                <li><code>tableVarName["colName"] > 5</code> returns trues or falses. You can store this result in a variable and pass it to a parameters of a tableVar, or combine all in one line</li>
+                                <li><code>tableVarName[tableVarName["colName"] > 5]</code> returns filtered table.</li>
+                                <p>logical and or and not operators from NumPy will also work here.</p>    
+                            </ul>
                         </ul>
-                        <li><code></code></li>
-                        <li><code></code></li>
                     </ul>
                 </ul>
                 <h4>Dictionary</h4>
@@ -186,9 +233,29 @@
                     <li><code>varName['key']</code> returns value of mentioned key</li>
                     <li><code>varName['key'] = value</code> will add a new or replace key value to a dictionary</li>
                     <li><code>'key' in varName</code> will return true if such a key is present in a dictionary</li>
-                    <li><code>del(varName['key'])</code> removes a key in a dictionary</li>
-                    <li><code></code></li>
+                    <h4>Dictionary`s functions</h4>
+                        <ul>
+                            <li><code>del(varName['key'])</code> removes a key in a dictionary</li>
+                            <h4>Dictionary`s loop</h4>
+                                <li><code>var.items()</code> returns key and value from a <strong>Dictionary</strong>, but orders by value.</li>
+                                <pre>for key, value in dicName.items() :
+    expression</pre>
+                        </ul>
+                    <h4>Dictionary`s methods</h4>
+                    <ul>
+                        <li><code>dictionaryName.items()</code> returns keys and values</li>
+                    </ul>
                 </ul>
+                <h4>Boolean Operators</h4>
+                <ul>
+                    <li><code>and</code>, if both statements are correct, returns <code>true</code></li>
+                    <li><code>or</code>, if one statement is correct, returns <code>true</code></li>
+                    <li><code>not</code> if a statement is false, it returns true</li>
+                    <p>For the use in NumPy, see the NumPy section</p>
+                </ul>
+                <h4>if, elif, else</h4>
+                    <pre>if condition :
+    expression</pre>
             </section>
             <section>
                 <h2 class="section">Links to helpful websites</h2>
@@ -204,9 +271,16 @@
         </div>
         <ul class="sticky-element">
             <li class="left-tiem">
-                <a href="https://dnal01.github.io/portfolio.github.io/blog/11/index.html">
+                <a href="https://dnal01.github.io/portfolio.github.io/blog/16/index.html">
                     <button class="arrow">
                         <span class="arrow-previous"></span>
+                    </button>
+                </a>
+            </li>
+            <li class="right-tiem">
+                <a href="https://dnal01.github.io/portfolio.github.io/blog/18/index.html">
+                    <button class="arrow">
+                        <span class="arrow-next"></span>
                     </button>
                 </a>
             </li>

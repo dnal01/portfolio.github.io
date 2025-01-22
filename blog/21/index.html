@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twentieth First - Web Portfolio of Denys</title>
+    <link rel="stylesheet" href="https://dnal01.github.io/portfolio.github.io/main.css">
+</head>
+
+<body>
+    <header>
+        <ul class="navigation">
+            <li class="navigation-item"><a class="item-link" href="https://dnal01.github.io/portfolio.github.io/index.html">Home</a></li>
+            <li class="navigation-item"><a class="item-link" href="https://dnal01.github.io/portfolio.github.io/blog/index.html">Blog</a></li>
+            <li class="navigation-item"><a class="item-link" href="https://dnal01.github.io/portfolio.github.io/projects/index.html">Projects</a></li>
+            <li class="navigation-item"><a class="item-link" href="https://dnal01.github.io/portfolio.github.io/contact/index.html">Contact</a></li>
+        </ul>
+    </header>
+    <main>
+        <h1 class="title">Twentieth First</h1>
+        <p class="left date">January 19, 2025</p>
+        <div class="block left">
+            <section>
+                <h2>Java</h2>
+                <h3>Variable initialization - additional character</h3>
+                    <ul>
+                        <li><code>long <i>a</i> = 123125415l or L;</code></li>
+                        <li><code>float <i>b</i> = 12.5f or F;</code></li>
+                        <li><code>boolean <i>c</i> = !(x > 5 && x < 10);</code></li>
+                    </ul>
+                    <p>Default value of int equals to <code>0</code>. In case of a string, the default value is <code>null</code>.</p>
+                <h3>Mandatory code</h3>
+                    <pre>class Main {
+
+    public static void main(String[] args) {
+        ...}</pre>
+                <h3>Methods initialization and call</h3>
+                    <pre>public static double <i>subtract</i>(int a, int b) {
+    int result = a - b;
+    return (double) result;
+}
+
+int subResult = subtract(10, 5);</pre>
+                    <p>This method consist of the following parts:</p>
+                    <ul>
+                        <li><code>public static</code> - modification</li>
+                        <li><code>double</code> - type of the result that is returned</li>
+                        <li><code>subtract</code> - method name</li>
+                        <li><code>int a, int b</code> - input</li>
+                        <li><code>return (double) result</code> - if a method is a void, than write just <code>return;</code></li>
+                    </ul>
+                    <p>Name of methods should begin with a verb and written in lowerCamelCase</p>
+                <h3>Array</h3>
+                <pre>int[] numbers = {1, 2, 3};
+int numbers[] = {1, 2, 3};
+
+for (int i = 0; i < numbers.length; i++) {
+    System.out.println(numbers[i]);
+}
+
+for (int number : numbers) {
+    System.out.println(number);
+}</pre>
+                <pre>int[] numbers = new int[4];</pre>
+                <p>In this case an empty array of length of 4 is created.</p>
+                <pre>String name = "Bob";
+char[] chars = name.toCharArray();
+chars[0]; // = 'B'
+String newName = new String(chars);</pre>
+                <p>Transformation of string into array of characters and vice versa.</p>
+                <pre>import java.until.Arrays;
+String toString = Arrays.toString(numbers);</pre>
+                <p>Transforms the array into a string.</p>
+                <pre>String[] nameParts = fullName.split(" ");</pre>
+                <p>Splits a string onto parts based on character</p>
+                <h3>String Methods</h3>
+                <ul>
+                    <li><code>String upperCaseName = newName.toUpperCase();</code></li>
+                    <li><code>String loverCaseName = newName.toLoverCase();</code></li>
+                    <li><code>String isEmpty = newName.isEmpty();</code></li>
+                    <li><code>String substring = newName.substring(1, 2);</code> beginIndex (including) and endIndex (excluding), where the String will be cut.</li>
+                    <li><code>int indexOf = newName.indexOf('=');</code> find an index of a specific char.</li>
+                    <li><code>char charAtIndexOne = newName.charAt(1);</code> 'o' at index 1.</li>
+                    <li><code>String stringLength = String.length();</code> It is different to .length, which works on arrays.</li>
+                    <li><code>String numberValue = String.valueOf(10);</code> It can handle converting boolean, char, char array, double, float, int, long, and Object types into their respective string representations.</li>
+                    <li><code>String equals = newName.equals("Bob");</code> Object types are compared by <code>equals()</code> method. Primitive by <code>==</code></li>
+                    <li><code></code></li>
+                </ul>
+                <h3>String builder class</h3>
+                <pre>StringBuilder builder = new StringBuilder();
+builder.append("hello").append("world").append(31);
+
+builder.reverse();
+String reverseString = builder.toString();</pre>
+                <p>The advantage of a string builder to simple concatenation is that it creates only one String in memory during appending. Less memory usage.</p>
+                <pre>String result = new String();
+char[] reverses = input.toCharArray();
+for (int i = reverses.length-1; i >= 0; i--) {
+    result += reverses[i];
+}</pre>
+                <p>Here is another, classical way of reversing a String.</p>
+            <section>
+                <h2 class="section">Links to helpful websites</h2>
+                <ul>
+                    <li><a href=""></a></li>
+                </ul>
+            </section>
+            <section>
+                <h2 class="section">Questions which I have got</h2>
+            </section>
+        </div>
+        <ul class="sticky-element">
+            <li class="left-tiem">
+                <a href="https://dnal01.github.io/portfolio.github.io/blog/20/index.html">
+                    <button class="arrow">
+                        <span class="arrow-previous"></span>
+                    </button>
+                </a>
+            </li>
+        </ul>
+    </main>
+</body>
+
+</html>
