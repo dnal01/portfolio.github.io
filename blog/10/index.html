@@ -37,6 +37,12 @@
                             <li><code>ssh-keygen</code> Hit enter twice. This generates two files, one ending in .pub. This is the public key that you can share with others.</li>
                             <li><code>cat ~/.ssh/id_rsa.pub</code> displays public key. Paste it into GitHub account settings > SSH keys > add new. You'll be able to clone/push to GitHub from this computer for authorized repositories!</li>
                         </ul>
+                    <h4>Adding SSH key to the GitHub</h4>
+                        <ul>
+                            <li>In the gitHub go to the Settings</li>
+                            <li>Select SSH and GPG keys</li>
+                            <li>Click New SSH key</li>
+                        </ul>
                     <h4>Synchronizing local repository with remote GitHub</h4>
                         <strong>Before setting up Git you need to initialize a repository</strong>
                         <ul>
@@ -56,11 +62,12 @@
                             <li><code>git reset --soft HEAD~1</code> Uncommiting, but keeps changes</li>
                             <li><code>git reset --hard HEAD~1</code> Uncommiting, but removing (unstaging) changes</li>
                                 <ul>
-                                    <li><code>HEAD</code> The most recent commit is called like that</li>
+                                    <li><code>HEAD</code> The most recent commit is called like that. You can also use hash number of a specific commit.</li>
                                     <li><code>~1</code> Move back by one commit</li>
                                     <li><code>--soft</code> keep changes</li>
                                     <li><code>--hard</code> undo changes</li>
                                 </ul>
+                            <li><code>git revert --no-commit HEAD~1</code> Inverts the changes made by the commit and generates a new commit with the inverted content. Used to save history.</li>
                         </ul>
                     <h4>Branches</h4>
                         <ul>
@@ -71,13 +78,26 @@
                                     <li><code>-c</code> Creates new branch.</li>
                                 </ul>
                             <li><code>git merge anotherBranchName -m ""</code> merge branchName with a current branch where you are</li>
-                            <li><code>git push -u origin main</code> - add first push for branch?</li>
+                            <li><code>git push -u origin branchName</code> - for the first push for branch</li>
                             <li><code>git branch -d branchName</code> Deletes a local branch.</li>
                             <li><code>git push -d origin branchName</code> - removes remote branch</li>
                         </ul> 
                     <h4>General</h4>
                         <ul>
-                            <li><code>git pull --rebase</code> collects all the changes from all branches and rewrite your local files with them?</li>
+                            <li><code>git pull --rebase</code> Collects all the changes from all branches and rewrite your local files with them?</li>
+                            <li><code></code></li>
+                            <li><code>git commit --amend</code> This will replace the last commit with a new one. It's best to do this only with commits that haven't been shared yet. If you need to fix your last commit, maybe to change the message or add something you forgot.</li>
+
+                        </ul>
+                    <h4>Logs and reports</h4>
+                        <ul>
+                            <li><code>git diff branch1..branch2</code> Compares HEADS of two branches.</li>
+                            <li><code>git log --all --oneline --graph</code></li>
+                                <ul>
+                                    <li><code>-all</code> Shows a log throughout all branches</li>
+                                    <li><code>--oneline</code> Makes each commit in one line</li>
+                                    <li><code>--graph</code> Highlights commits of different branches</li>
+                                </ul>
                         </ul>
             </section>
             <section>
