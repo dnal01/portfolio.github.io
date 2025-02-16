@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twentieth First - Web Portfolio of Denys</title>
     <link rel="stylesheet" href="https://dnal01.github.io/portfolio.github.io/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
 </head>
 
 <body>
@@ -57,12 +58,12 @@
                         </ul>
                     <p>Override of methods - change of the functional in a sub-class, if a sub-class has the same method, which is defined in a parent class (super class).</p>
                 <h3>Mandatory code</h3>
-                    <pre>public class nameOfTheFile {
+                    <pre><code>public class nameOfTheFile {
     public static void main(String[] args) {
-- Classes goes here}</pre>
+- Classes goes here}</code></pre>
                 <h3>Classes initialization and usage</h3>
                     <p>new Classes need to be in another <code>.java</code> file. <i>This information needs to be confirmed.</i></p>
-                    <pre>public class Customer {
+                    <pre><code>public class Customer {
     - data (called fields);
     String name;
     String size = "S";
@@ -73,23 +74,23 @@
     String getSize() {
         return size;
     }                         
-}</pre>
+}</code></pre>
                     <p>Then use the class in methods of other classes</p>
-                    <pre>Customer person1 = new Customer();
+                    <pre><code>Customer person1 = new Customer();
     person1.name = "Bob";
-    System.out.println(person1.name);</pre>
+    System.out.println(person1.name);</code></pre>
                 <h3>Methods initialization</h3>
-                    <pre>&lt;access modifier&gt; &lt;return type&gt; &lt;method name&gt; (&lt;parameter list&gt;) {
+                    <pre><code>&lt;access modifier&gt; &lt;return type&gt; &lt;method name&gt; (&lt;parameter list&gt;) {
     /* method body */
     /* return statement */
 }
-                    </pre>
-                    <pre>public static double <i>subtract</i>(int a, int b) {
+                    </code></pre>
+                    <pre><code>public static double <i>subtract</i>(int a, int b) {
     int result = a - b;
     return (double) result;
 }
 
-int subResult = subtract(10, 5); // the method call</pre>
+int subResult = subtract(10, 5); // the method call</code></pre>
                     <p>This method consist of the following parts:</p>
                     <ul>
                         <li><code>public static</code> - modification</li>
@@ -136,23 +137,23 @@ int subResult = subtract(10, 5); // the method call</pre>
                             </ul>
                     </ul>
                     <p>Overloading is convenient for invokers.</p>
-                    <pre>public class Clothing {
+                    <pre><code>public class Clothing {
     public boolean fit(int size) {...}
     public boolean fit(String size) {...}
     public boolean fit(int height, int width) {...}
-}</pre>
+}</code></pre>
                 <h3>Variable Shadowing</h3>
-                <pre>public class Clothing {
+                <pre><code>public class Clothing {
     double <strong>price</strong>;
     public void setPrice(String <strong style="color: red;">price</strong>) {
         <strong>this.price</strong> = <strong style="color: red;">price</strong>;
     }
-}</pre>
+}</code></pre>
                 <h3>Package initialization</h3>
-                    <pre>package duke.choice;</pre>
+                    <pre><code>package duke.choice;</code></pre>
                     <p><code>duke</code> - is the main folder; <code>choice</code> - is a subfolder.</p>
                 <h3>Switch Statement</h3>
-                <pre>... String condition = "Used";
+                <pre><code>... String condition = "Used";
     switch (condition) {
     case "Damaged", "Returned":
         discount = price * 0.1;
@@ -162,9 +163,9 @@ int subResult = subtract(10, 5); // the method call</pre>
         break;
     default:
         discount = price;
-                </pre>
+                </code></pre>
                 <h3>Array</h3>
-                <pre>int[] numbers = {1, 2, 3};
+                <pre><code>int[] numbers = {1, 2, 3};
 int numbers[] = {1, 2, 3};
 
 for (int i = 0; i < numbers.length; i++) {
@@ -173,19 +174,19 @@ for (int i = 0; i < numbers.length; i++) {
 
 for (int number : numbers) {
     System.out.println(number);
-}</pre>
+}</code></pre>
                 <p>Loops are running until an expression is false.</p>
-                <pre>int[] numbers = new int[4];</pre>
+                <pre><code>int[] numbers = new int[4];</code></pre>
                 <p>In this case an empty array of length of 4 is created.</p>
-                <pre>String name = "Bob";
+                <pre><code>String name = "Bob";
 char[] chars = name.toCharArray();
 chars[0]; // = 'B'
-String newName = new String(chars);</pre>
+String newName = new String(chars);</code></pre>
                 <p>Transformation of string into array of characters and vice versa.</p>
-                <pre>import java.until.Arrays;
-String toString = Arrays.toString(numbers);</pre>
+                <pre><code>import java.until.Arrays;
+String toString = Arrays.toString(numbers);</code></pre>
                 <p>Transforms the array into a string.</p>
-                <pre>String[] nameParts = fullName.split(" ");</pre>
+                <pre><code>String[] nameParts = fullName.split(" ");</code></pre>
                 <p>Splits a string onto parts based on character</p>
                 <h3>String Methods</h3>
                 <ul>
@@ -202,17 +203,17 @@ String toString = Arrays.toString(numbers);</pre>
                     <li><code>String concat = newName.concat(previousName);</code> Or use <code>+</code>`s.</li>
                 </ul>
                 <h3>String builder class</h3>
-                <pre>StringBuilder builder = new StringBuilder();
+                <pre><code>StringBuilder builder = new StringBuilder();
 builder.append("hello").append("world").append(31);
 
 builder.reverse();
-String reverseString = builder.toString();</pre>
+String reverseString = builder.toString();</code></pre>
                 <p>The advantage of a string builder to simple concatenation is that it creates only one String in memory during appending. Less memory usage.</p>
-                <pre>String result = new String();
+                <pre><code>String result = new String();
 char[] reverses = input.toCharArray();
 for (int i = reverses.length-1; i >= 0; i--) {
     result += reverses[i];
-}</pre>
+}</code></pre>
                 <p>Here is another, classical way of reversing a String.</p>
                 <h3>Cmd codes</h3>
                 <ul>
@@ -226,31 +227,31 @@ for (int i = reverses.length-1; i >= 0; i--) {
                         <th>Clothing</th>
                     </tr>
                     <tr>
-                        <td><pre>name
+                        <td><pre><code>name
 size
-Clothing [] items</pre></td>
-                        <td><pre>description
-price</pre></td>
+Clothing [] items</code></pre></td>
+                        <td><pre><code>description
+price</code></pre></td>
                     </tr>
                     <tr>
-                        <td><pre>getName()
+                        <td><pre><code>getName()
 getSize()
 getItems() {return items;}
-inspectWardrobe()</pre></td>
-                        <td><pre>gerPrice()</pre></td>
+inspectWardrobe()</code></pre></td>
+                        <td><pre><code>gerPrice()</code></pre></td>
                     </tr>
                 </table>
                 <p>Access Clothing objects referenced by Customer</p>
-                <pre>Customer customer01 = new Customer();
+                <pre><code>Customer customer01 = new Customer();
 for (Clothing item: customer01.getItems()) {
     item.getPrice();
-}</pre>
+}</code></pre>
                 <h3>References and Objects in Memory</h3>
                 <p>There are two memory areas when the Java virtual machine starts: The <strong>Stack</strong>, which stores variables and values or pointers (an address of an objects) and the <strong>Heap</strong>, which stores objects.</p>
-                <pre>Clothing[] items = {
+                <pre><code>Clothing[] items = {
     new Clothing(),
     new Clothing()
-};</pre>
+};</code></pre>
                 <table>
                     <tr>
                         <th>Stack</th>
@@ -317,7 +318,7 @@ for (Clothing item: customer01.getItems()) {
                 <p><i>Note also that when it comes to the values reassignment, the new value gets assigned but not an address to object which holds it.</i></p>
                 <p><i>Arrays are handled by an implicit Array object, therefore the array variable is an object reference.</i></p>
                 <h3>Initializing Object Using the Constructor Method</h3>
-                <pre>public class Clothing {
+                <pre><code>public class Clothing {
     private String description;
     public double price;
     public Clothing () {
@@ -328,29 +329,29 @@ for (Clothing item: customer01.getItems()) {
         this.price = price;
     } // Another Constructor
     /* remaining methods */
-}</pre>
+}</code></pre>
                 <p>Initialize an object</p>
-                <pre>public static void main (String[] args) {
+                <pre><code>public static void main (String[] args) {
     Clothing item = <strong>new Clothing ();</strong>
     // invoke set methods for item1 to initialize data
     Clothing item = <strong>new Clothing ("Jacket", 20.99, "M");</strong>
     // item2 is already initialized
-}</pre>
+}</code></pre>
                 <h3>Static Methods</h3>
-                <p>It is a e.g. a <strong>static variable value</strong> that is shared by all objects of a class. Or it can be a <code>public static void filter(Database data){...}</code> method of a class, which you want to execute some process to perform a action.</p>
+                <p>It is a e.g. a <strong>static variable value</strong> that is shared by all objects of a class. Or it can be a <code>public static void filter(Database data){...}</code> method of a class, which you want to execute some process to perform an action.</p>
                 <ul>
                     <li>Is <i>not specific</i> to any object instance</li>
                     <li>Can be accessed without instantiating the class (<code>new</code>), e.g. <code>Math.random()</code>.</li>
                     <li>Static variables sees only other static variables, therefor can not access instance (internal) variables.</li>
                 </ul>
                 <h3>Handling Exceptions - the <code>try/catch</code> Block</h3>
-                <pre><strong>try {</strong>
+                <pre><code><strong>try {</strong>
     Clothing[] items = new Clothing[10];
     items[0].description = "Pink Boiler Suit";
 <strong>}   catch (NullPointerException e) {</strong>
     String errMsg = e.getMessage();
     e.printStackTrace();
-<strong>}   catch (Expectation e) { ... }</strong></pre>
+<strong>}   catch (Expectation e) { ... }</strong></code></pre>
                 <ul>
                     <li><code>try</code> block contains logic that can potentially result in expectations.</li>
                     <li><code>catch</code> block contain logic that handles expectations.</li>
@@ -364,28 +365,28 @@ for (Clothing item: customer01.getItems()) {
                 <p>Sometimes, inheritance is unwelcome. Therefore, classes which must not be extended are marked with a <code>final</code> access modifier. E.g. <code>public final class Animal {...}</code></p>
                 <p>Object is the top-level class in a Java class hierarchy.</p>
                 <div>                    
-                    <pre>public static void main(String[] args) {
+                    <pre><code>public static void main(String[] args) {
     Clothing[] items = new Clothing[2];
     items[0] = new Tailored();
     items[1] = new Standard();
     for (Clothing item: items) {
         item.getPrice();
     }
-}</pre>
-                    <pre>public class Clothing extends Object { // No need to specify extend Object words here for the SuperClass
+}</code></pre>
+                    <pre><code>public class Clothing extends Object { // No need to specify extend Object words here for the SuperClass
     private double price;
     public double getPrice() {
         return price;
     }
-}</pre>
+}</code></pre>
                     <p>The code below override common behaver.</p>
-                    <pre>public class Tailored <strong>extends</strong> Clothing { // The extend word here is mandatory
+                    <pre><code>public class Tailored <strong>extends</strong> Clothing { // The extend word here is mandatory
     private double fee;
     @Override
     public double getPrice() {
         return super.getPrice() + fee;
     }
-}</pre>
+}</code></pre>
                 </div>
                 <p>A method in a subclass must have exactly the same name, return type, and parameters as the method in the parent class, that is, the method signature. If they do not match, the method will not be overridden.</p>
                 <p>The access level cannot be more restrictive in the subclass. For example, if a method in the parent class is public, the overridden method in the subclass cannot be private or protected.</p>
@@ -396,6 +397,13 @@ for (Clothing item: customer01.getItems()) {
                             <li>Hierarchical</li>
                             <li>Multiple/Hybrid/Diamond - is not allowed in Java, but can be achieved by Interfaces</li>
                         </ul>
+                <h3>Abstract abd Interface classes - common behaver</h3>
+                    <p>There are several common principles between abstract and</p>
+                    <ul>
+                        <li>Both classes cannot be directly instantiated (creating new instances of objects to be used in a program), if it is marked with the Abstract/Interface keyword.</li>
+                        <li>The Abstract/Interface classes` purpose is to be extended by one or more concrete subclasses.</li>
+                        <li>A subclass derived from an Abstract/Interface class must either implement all the base class’s abstract methods or be abstract itself.</li>
+                    </ul>
                 <h3>Define Abstract Classes & Methods</h3>
                 <p>The Abstract keyword can be used to encourage class extensibility. It is vise versa to Inheritance method. Is used when there is no shared pice of code whatsoever and all subclasses uses their uniq execution. So that is to provide a design and polymorphism.</p>
                 <ul>
@@ -407,18 +415,18 @@ for (Clothing item: customer01.getItems()) {
                     <li>A subclass derived from an abstract class must either implement all the base class’s abstract methods or be abstract itself.</li>
                     <li>A sub-class can inherit only one abstract class.</li>
                 </ul>
-                <pre>public <strong>abstract</strong> class Clothing {
+                <pre><code><code>public <strong>abstract</strong> class Clothing {
     public <strong>abstract</strong> double refund();
     void changeColor() {
         System.out.println("Color is green");
     }
-}</pre>
-                <pre>
+}</code></code></pre>
+                <pre><code>
 // A sub-class MUST override all abstract methods
 // of the abstract class;
 // A sub-class MAY override all non-abstract methods
-// of an abstract class.</pre>
-                <pre>public class <strong>Tailored</strong> extends Closing {
+// of an abstract class.</code></pre>
+                <pre><code><code>public class <strong>Tailored</strong> extends Closing {
     // MUST be overridden
     Public double refound() {
         <strong>Return 0;</strong>
@@ -428,8 +436,8 @@ for (Clothing item: customer01.getItems()) {
     void changeColor() {
         System.out.println("Color is red");
     }
-}</pre>
-                <pre>public class <strong>Standard</strong> extends Clothing {
+}</code></pre>
+                <pre><code>public class <strong>Standard</strong> extends Clothing {
     public double refund() {
         // MUST be overridden
         <strong>return getPrice();</strong>
@@ -439,50 +447,51 @@ for (Clothing item: customer01.getItems()) {
             System.out.println("Price is 30 $");
         }
     }
-}</pre>
+}</code></pre>
                 
-                <pre style="color: rgb(246, 69, 69);"><strong>Clothing</strong> jacket1 = new <strong>Clothing</strong>();</pre>
+                <pre style="color: rgb(246, 69, 69);"><strong>Clothing</strong> jacket1 = new <strong>Clothing</strong>();</code></pre>
                 <p>Abstract classes can be used to create references to objects.</p>
-                <pre style="color: green;"><strong>Clothing[]</strong> items = new <strong>Clothing</strong>[3];</pre>
-                <pre>
+                <pre style="color: green;"><strong>Clothing[]</strong> items = new <strong>Clothing</strong>[3];</code></pre>
+                <pre><code><code>
 <strong>Clothing</strong> jacket2 = new <strong>Tailored</strong>();
 jacket2.refund();
-jacket2.changeColor(); // "Color is red"</pre>
-                <pre>
+jacket2.changeColor(); // "Color is red"</code></pre>
+                <pre><code>
 <strong>Clothing</strong> jacket3 = new <strong>Standard</strong>();
 jacket3.refund();
 jacket3.changeColor(); // "Color is green."
 // ERROR
 // addPrice() method does not exist in Clothing.
 // jacket3.addPrice();
-// Then we need to:</pre>
-                <pre>
+// Then we need to:</code></pre>
+                <pre><code>
 <strong>Standard</strong> jacket4 = new <strong>Standard</strong>();
 jacket4.refund();
-jacket4.addPrice();</pre>
+jacket4.addPrice();</code></pre>
                 <h3>Java Interfaces</h3>
                 <p>An interface defines a set of features that can be applied to various other classes.</p>
                 <ul>
-                    <li>Instance methods are by default public and abstract.</li>
+                    <li>Instance methods are by default public, static and abstract.</li>
+                    <li>Class cannot be directly instantiated, if it is marked with the Interface keyword.</li>
                     <li>They can contain concrete methods only if they are either default, private, or static. In case of default this means that, the classes which implements this interface can not inherit its methods. You can access Interface methods by calling them directly.</li>
                     <li>They can contain constants but not variables.</li>
                 </ul>
-                <pre>public <strong>interface</strong> Recyclable {
+                <pre><code>public <strong>interface</strong> Recyclable {
     <strong>void recycle();</strong>
-}</pre>
-                <pre>public class Clothing <strong>implements</strong> Recyclable {
+}</code></pre>
+                <pre><code>public class Clothing <strong>implements</strong> Recyclable {
     // The compiler will now require that method recycle
     // be implemented. Compilation will fail if this
     // method is missing from this class.
     <strong>public void recycle() {
         /* clothing specific implementation */
     }</strong>
-}</pre>
-                <pre>public class Bottle <strong>implements</strong> Recyclable {
+}</code></pre>
+                <pre><code>public class Bottle <strong>implements</strong> Recyclable {
     <strong>public void recycle() {
         /* bottle specific implementation */
     }</strong>
-}</pre>
+}</code></pre>
                 <p><strong>Notes</strong>: Interface resembles an abstract class, except no variables or regular concrete methods are allowed.</p>
                 <h4>Implement Interfaces</h4>
                 <ul>
@@ -490,10 +499,10 @@ jacket4.addPrice();</pre>
                     <li>Depending on the point of view, a given class may require different parents (to be of more than one type.)</li>
                     <li>Different features can be defined by different interfaces.</li>
                     <li>A class can implement as many interfaces as required.
-                        <pre>public class Clothing <strong>implements</strong> Recyclable, Comparable {
+                        <pre><code>public class Clothing <strong>implements</strong> Recyclable, Comparable {
     <strong>public void recycle() { ... }
     public int void compareTo(Object other) { ... }</strong>
-    }</pre></li>
+    }</code></pre></li>
                 </ul>
                 <section>
                 <h2 class="section">Links to helpful websites</h2>
@@ -515,6 +524,8 @@ jacket4.addPrice();</pre>
             </li>
         </ul>
     </main>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </body>
 
 </html>
