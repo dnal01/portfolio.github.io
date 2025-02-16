@@ -415,18 +415,18 @@ for (Clothing item: customer01.getItems()) {
                     <li>A subclass derived from an abstract class must either implement all the base class’s abstract methods or be abstract itself.</li>
                     <li>A sub-class can inherit only one abstract class.</li>
                 </ul>
-                <pre><code><code>public <strong>abstract</strong> class Clothing {
+                <pre><code>public <strong>abstract</strong> class Clothing {
     public <strong>abstract</strong> double refund();
     void changeColor() {
         System.out.println("Color is green");
     }
-}</code></code></pre>
+}</code></pre>
                 <pre><code>
 // A sub-class MUST override all abstract methods
 // of the abstract class;
 // A sub-class MAY override all non-abstract methods
 // of an abstract class.</code></pre>
-                <pre><code><code>public class <strong>Tailored</strong> extends Closing {
+                <pre><code>public class <strong>Tailored</strong> extends Closing {
     // MUST be overridden
     Public double refound() {
         <strong>Return 0;</strong>
@@ -449,10 +449,10 @@ for (Clothing item: customer01.getItems()) {
     }
 }</code></pre>
                 
-                <pre style="color: rgb(246, 69, 69);"><strong>Clothing</strong> jacket1 = new <strong>Clothing</strong>();</code></pre>
+                <pre style="color: rgb(246, 69, 69);"><code><strong>Clothing</strong> jacket1 = new <strong>Clothing</strong>();</code></pre>
                 <p>Abstract classes can be used to create references to objects.</p>
-                <pre style="color: green;"><strong>Clothing[]</strong> items = new <strong>Clothing</strong>[3];</code></pre>
-                <pre><code><code>
+                <pre style="color: green;"><code><strong>Clothing[]</strong> items = new <strong>Clothing</strong>[3];</code></pre>
+                <pre><code>
 <strong>Clothing</strong> jacket2 = new <strong>Tailored</strong>();
 jacket2.refund();
 jacket2.changeColor(); // "Color is red"</code></pre>
