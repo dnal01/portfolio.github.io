@@ -150,20 +150,11 @@ h2 {
     background-color: rgb(222, 222, 222);
 }
 
-code {
-    background-color: #eee;
-    border-radius: 3px;
-    font-family: courier, monospace;
-    padding: 0 3px;
+code.highlighter-rouge {
+    color: inherit;
+    padding: calc(.2rem - 1px) 0.2rem;
+    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
 }
-
-/* pre {
-    background-color: #eee;
-    padding: 12px;
-
-    text-wrap: wrap;
-    border: 1px solid #ccc;
-  } */
 
 @media all and (min-width: 1600px) {
     .navigation {
