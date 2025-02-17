@@ -27,20 +27,20 @@
                 <h3>Variable initialization - additional character</h3>
                     <ul>
                         <li><code class="highlighter-rouge">int cost = 133_452_667</code> stores from -2,147,483,684 to 2,147,483,647. <code>_</code> is for readability.</li>
-                        <li><code>long <i>a</i> = 123125415l or L;</code></li>
-                        <li><code>float <i>b</i> = 2.1E12f or F;</code></li>
-                        <li><code>boolean <i>c</i> = !(x > 5 && x < 10);</code></li>
-                        <li><code>String <i>d</i> = new String(arrayName);</code></li>
-                        <li><code>double price1 = 9.99, price2 = 12.99;</code></li>
+                        <li><code class="highlighter-rouge">long <i>a</i> = 123125415l or L;</code></li>
+                        <li><code class="highlighter-rouge">float <i>b</i> = 2.1E12f or F;</code></li>
+                        <li><code class="highlighter-rouge">boolean <i>c</i> = !(x > 5 && x < 10);</code></li>
+                        <li><code class="highlighter-rouge">String <i>d</i> = new String(arrayName);</code></li>
+                        <li><code class="highlighter-rouge">double price1 = 9.99, price2 = 12.99;</code></li>
                     </ul>
                     <p>If uninitialized, variables have a default value:</p>
                     <ul>
-                        <li><code>int</code>: <strong>0</strong></li>
-                        <li><code>String</code>: <strong>null</strong></li>
-                        <li><code>boolean</code>: <strong>false</strong></li>
+                        <li><code class="highlighter-rouge">int</code>: <strong>0</strong></li>
+                        <li><code class="highlighter-rouge">String</code>: <strong>null</strong></li>
+                        <li><code class="highlighter-rouge">boolean</code>: <strong>false</strong></li>
                     </ul>
                     <h3>Constants</h3>
-                    <p>Use <code>final</code> word before initialization of a variable.</p>
+                    <p>Use <code class="highlighter-rouge">final</code> word before initialization of a variable.</p>
                 <h3>Theory</h3>
                     <p>Classes consist of methods and data; Packages - folder where the class will be saved;</p>
                     <p>Classes are Templates (they are singles), Objects are Individual elements created from classes.</p>
@@ -62,7 +62,7 @@
     public static void main(String[] args) {
 - Classes goes here}</code></pre>
                 <h3>Classes initialization and usage</h3>
-                    <p>new Classes need to be in another <code>.java</code> file. <i>This information needs to be confirmed.</i></p>
+                    <p>new Classes need to be in another <code class="highlighter-rouge">.java</code> file. <i>This information needs to be confirmed.</i></p>
                     <pre><code>public class Customer {
     - data (called fields);
     String name;
@@ -92,11 +92,11 @@
 int subResult = subtract(10, 5); // the method call</code></pre>
                     <p>This method consist of the following parts:</p>
                     <ul>
-                        <li><code>public static</code> - modification</li>
-                        <li><code>double</code> - type of the result that is returned</li>
-                        <li><code>subtract</code> - method name</li>
-                        <li><code>int a, int b</code> - input</li>
-                        <li><code>return (double) result</code> - if a method is a void, than write just <code>return;</code></li>
+                        <li><code class="highlighter-rouge">public static</code> - modification</li>
+                        <li><code class="highlighter-rouge">double</code> - type of the result that is returned</li>
+                        <li><code class="highlighter-rouge">subtract</code> - method name</li>
+                        <li><code class="highlighter-rouge">int a, int b</code> - input</li>
+                        <li><code class="highlighter-rouge">return (double) result</code> - if a method is a void, than write just <code>return;</code></li>
                     </ul>
                     <p>Name of methods should begin with a verb and written in lowerCamelCase.</p>
                     <h3>Access Modifiers</h3>
@@ -106,11 +106,11 @@ int subResult = subtract(10, 5); // the method call</code></pre>
                             <th>Visibility Scope</th>
                         </tr>
                         <tr>
-                            <td><code>public</code></td>
+                            <td><code class="highlighter-rouge">public</code></td>
                             <td>All classes</td>
                         </tr>
                         <tr>
-                            <td><code>protected</code></td>
+                            <td><code class="highlighter-rouge">protected</code></td>
                             <td>Classes in the same package and subclasses.<br>This is true even if the subclass is not located in the same package as the superclass.</td>
                         </tr>
                         <tr>
@@ -118,7 +118,7 @@ int subResult = subtract(10, 5); // the method call</code></pre>
                             <td>Classes in the same package</td>
                         </tr>
                         <tr>
-                            <td><code>private</code></td>
+                            <td><code class="highlighter-rouge">private</code></td>
                             <td>Same Class</td>
                         </tr>
                     </table>
@@ -150,7 +150,7 @@ int subResult = subtract(10, 5); // the method call</code></pre>
 }</code></pre>
                 <h3>Package initialization</h3>
                     <pre><code>package duke.choice;</code></pre>
-                    <p><code>duke</code> - is the main folder; <code>choice</code> - is a subfolder.</p>
+                    <p><code class="highlighter-rouge">duke</code> - is the main folder; <code class="highlighter-rouge">choice</code> - is a subfolder.</p>
                 <h3>Switch Statement</h3>
                 <pre><code>... String condition = "Used";
     switch (condition) {
@@ -189,17 +189,17 @@ String toString = Arrays.toString(numbers);</code></pre>
                 <p>Splits a string onto parts based on character</p>
                 <h3>String Methods</h3>
                 <ul>
-                    <li><code>String upperCaseName = newName.toUpperCase();</code></li>
-                    <li><code>String loverCaseName = newName.toLoverCase();</code></li>
-                    <li><code>String isEmpty = newName.isEmpty();</code></li>
-                    <li><code>String substring = newName.substring(1, 2);</code> beginIndex (including) and endIndex (excluding), where the String will be cut.</li>
-                    <li><code>int indexOf = newName.indexOf('=');</code> find an index of a specific char.</li>
-                    <li><code>char charAtIndexOne = newName.charAt(1);</code> 'o' at index 1.</li>
-                    <li><code>String stringLength = String.length();</code> It is different to .length, which works on arrays.</li>
-                    <li><code>String trim = " How ".trim()</code> Eliminates spaces.</li>
-                    <li><code>String numberValue = String.valueOf(10);</code> It can handle converting boolean, char, char array, double, float, int, long, and Object types into their respective string representations.</li>
-                    <li><code>String equals = newName.equals("Bob");</code> Object types are compared by <code>equals()</code> method. Primitive by <code>==</code>. There is also a <code>equalsIgnoreCase()</code> method.</li>
-                    <li><code>String concat = newName.concat(previousName);</code> Or use <code>+</code>`s.</li>
+                    <li><code class="highlighter-rouge">String upperCaseName = newName.toUpperCase();</code></li>
+                    <li><code class="highlighter-rouge">String loverCaseName = newName.toLoverCase();</code></li>
+                    <li><code class="highlighter-rouge">String isEmpty = newName.isEmpty();</code></li>
+                    <li><code class="highlighter-rouge">String substring = newName.substring(1, 2);</code> beginIndex (including) and endIndex (excluding), where the String will be cut.</li>
+                    <li><code class="highlighter-rouge">int indexOf = newName.indexOf('=');</code> find an index of a specific char.</li>
+                    <li><code class="highlighter-rouge">char charAtIndexOne = newName.charAt(1);</code> 'o' at index 1.</li>
+                    <li><code class="highlighter-rouge">String stringLength = String.length();</code> It is different to .length, which works on arrays.</li>
+                    <li><code class="highlighter-rouge">String trim = " How ".trim()</code> Eliminates spaces.</li>
+                    <li><code class="highlighter-rouge">String numberValue = String.valueOf(10);</code> It can handle converting boolean, char, char array, double, float, int, long, and Object types into their respective string representations.</li>
+                    <li><code class="highlighter-rouge">String equals = newName.equals("Bob");</code> Object types are compared by <code>equals()</code> method. Primitive by <code>==</code>. There is also a <code>equalsIgnoreCase()</code> method.</li>
+                    <li><code class="highlighter-rouge">String concat = newName.concat(previousName);</code> Or use <code>+</code>`s.</li>
                 </ul>
                 <h3>String builder class</h3>
                 <pre><code>StringBuilder builder = new StringBuilder();
@@ -216,8 +216,8 @@ for (int i = reverses.length-1; i >= 0; i--) {
                 <p>Here is another, classical way of reversing a String.</p>
                 <h3>Cmd codes</h3>
                 <ul>
-                    <li><code>javac OrderClass.java</code> Compiles java code into a binary code.</li>
-                    <li><code>java OrderClass</code> Executes binary code (Application).</li>
+                    <li><code class="highlighter-rouge">javac OrderClass.java</code> Compiles java code into a binary code.</li>
+                    <li><code class="highlighter-rouge">java OrderClass</code> Executes binary code (Application).</li>
                 </ul>
                 <h3>Object Referencing Other Objects as a Property</h3>
                 <table>
@@ -337,13 +337,13 @@ for (Clothing item: customer01.getItems()) {
     // item2 is already initialized
 }</code></pre>
                 <h3>Static Methods</h3>
-                <p>It is a e.g. a <strong>static variable value</strong> that is shared by all objects of a class. Or it can be a <code>public static void filter(Database data){...}</code> method of a class, which you want to execute some process to perform an action.</p>
+                <p>It is a e.g. a <strong>static variable value</strong> that is shared by all objects of a class. Or it can be a <code class="highlighter-rouge">public static void filter(Database data){...}</code> method of a class, which you want to execute some process to perform an action.</p>
                 <ul>
                     <li>Is <i>not specific</i> to any object instance</li>
-                    <li>Can be accessed without instantiating the class (<code>new</code>), e.g. <code>Math.random()</code>.</li>
+                    <li>Can be accessed without instantiating the class (<code class="highlighter-rouge">new</code>), e.g. <code class="highlighter-rouge">Math.random()</code>.</li>
                     <li>Static variables sees only other static variables, therefor can not access instance (internal) variables.</li>
                 </ul>
-                <h3>Handling Exceptions - the <code>try/catch</code> Block</h3>
+                <h3>Handling Exceptions - the <code class="highlighter-rouge">try/catch</code> Block</h3>
                 <pre><code><strong>try {</strong>
     Clothing[] items = new Clothing[10];
     items[0].description = "Pink Boiler Suit";
@@ -352,8 +352,8 @@ for (Clothing item: customer01.getItems()) {
     e.printStackTrace();
 <strong>}   catch (Expectation e) { ... }</strong></code></pre>
                 <ul>
-                    <li><code>try</code> block contains logic that can potentially result in expectations.</li>
-                    <li><code>catch</code> block contain logic that handles expectations.</li>
+                    <li><code class="highlighter-rouge">try</code> block contains logic that can potentially result in expectations.</li>
+                    <li><code class="highlighter-rouge">catch</code> block contain logic that handles expectations.</li>
                 </ul>
                 <h3>Object-Oriented Approach to Code Reuse</h3>
                 <h3>Inheritance</h3>
@@ -450,20 +450,17 @@ for (Clothing item: customer01.getItems()) {
                 <pre style="color: rgb(246, 69, 69);"><code><strong>Clothing</strong> jacket1 = new <strong>Clothing</strong>();</code></pre>
                 <p>Abstract classes can be used to create references to objects.</p>
                 <pre style="color: green;"><code><strong>Clothing[]</strong> items = new <strong>Clothing</strong>[3];</code></pre>
-                <pre><code>
-<strong>Clothing</strong> jacket2 = new <strong>Tailored</strong>();
+                <pre><code><strong>Clothing</strong> jacket2 = new <strong>Tailored</strong>();
 jacket2.refund();
 jacket2.changeColor(); // "Color is red"</code></pre>
-                <pre><code>
-<strong>Clothing</strong> jacket3 = new <strong>Standard</strong>();
+                <pre><code><strong>Clothing</strong> jacket3 = new <strong>Standard</strong>();
 jacket3.refund();
 jacket3.changeColor(); // "Color is green."
 // ERROR
 // addPrice() method does not exist in Clothing.
 // jacket3.addPrice();
 // Then we need to:</code></pre>
-                <pre><code>
-<strong>Standard</strong> jacket4 = new <strong>Standard</strong>();
+                <pre><code><strong>Standard</strong> jacket4 = new <strong>Standard</strong>();
 jacket4.refund();
 jacket4.addPrice();</code></pre>
                 <h3>Java Interfaces</h3>
@@ -506,7 +503,7 @@ jacket4.addPrice();</code></pre>
                         <pre><code>public class Clothing <strong>implements</strong> Recyclable, Comparable {
     <strong>public void recycle() { ... }
     public int void compareTo(Object other) { ... }</strong>
-    }</code></pre>
+}</code></pre>
                     </li>
                     <li>
                         It is also possible for an interface(s) to inherit (extend) from an interface.
