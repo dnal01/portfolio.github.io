@@ -83,8 +83,7 @@
                     <pre><code>&lt;access modifier&gt; &lt;return type&gt; &lt;method name&gt; (&lt;parameter list&gt;) {
     /* method body */
     /* return statement */
-}
-                    </code></pre>
+}</code></pre>
                     <pre><code>public static double <i>subtract</i>(int a, int b) {
     int result = a - b;
     return (double) result;
@@ -420,8 +419,7 @@ for (Clothing item: customer01.getItems()) {
     void changeColor() {
         System.out.println("Color is green");
     }
-}</code></pre>
-                <pre><code>
+}
 // A sub-class MUST override all abstract methods
 // of the abstract class;
 // A sub-class MAY override all non-abstract methods
@@ -496,13 +494,26 @@ jacket4.addPrice();</code></pre>
                 <h4>Implement Interfaces</h4>
                 <ul>
                     <li>Object-oriented inheritance is not flexible.</li>
-                    <li>Depending on the point of view, a given class may require different parents (to be of more than one type.)</li>
+                    <li>
+                        Depending on the point of view, a given class may require different parents (to be of more than one type.)
+                        <pre><code>public class ColorCircle extends Circle implements Shape {
+    ...
+}</code></pre>
+                    </li>
                     <li>Different features can be defined by different interfaces.</li>
-                    <li>A class can implement as many interfaces as required.
+                    <li>
+                        A class can implement as many interfaces as required.
                         <pre><code>public class Clothing <strong>implements</strong> Recyclable, Comparable {
     <strong>public void recycle() { ... }
     public int void compareTo(Object other) { ... }</strong>
-    }</code></pre></li>
+    }</code></pre>
+                    </li>
+                    <li>
+                        It is also possible for an interface(s) to inherit (extend) from an interface.
+                        <pre><code>public interface ProductC extends ProductA, ProductB {
+    void getProductCInfo();
+}</code></pre>
+                    </li>
                 </ul>
                 <section>
                 <h2 class="section">Links to helpful websites</h2>

@@ -26,45 +26,45 @@
                 <h3>DOOM</h3>
                 <h4>Accessing DOOM elements</h4>
                 <p></p>
-                <p><code>document.getElementById("")</code></p>
-                <p><code>document.getElementsByTagName("")</code></p>
-                <p><code>document.getElementsByClassName("")</code></p>
-                <p><code>document.getElementsByClassName("")[0]</code> get element by index</p>
-                <p><code>document.querySelector("li, hi")</code> access several</p>
-                <p><code>document.querySelectorAll("li, hi")</code></p>
-                <p><code>document.querySelector("li").getAttribute("")</code> provides content of attribute</p>
-                <p><code>document.querySelector("li").getAttribute("", changedText)</code> changes attribute to changedText?</p>
-                <p><code>document.querySelector("li").styleBackground="yellow"</code> changes styles</p>
-                <p><code>document.querySelector("li").className="newClassName"</code> changes class</p>
-                <p><code>h1.classList.add("added class name")</code> adds class</p>
-                <p><code>h1.classList.toggle("added class name")</code> changes back and forward the class</p>
-                <pre>
+                <p><code class="highlighter-rouge">document.getElementById("")</code></p>
+                <p><code class="highlighter-rouge">document.getElementsByTagName("")</code></p>
+                <p><code class="highlighter-rouge">document.getElementsByClassName("")</code></p>
+                <p><code class="highlighter-rouge">document.getElementsByClassName("")[0]</code> get element by index</p>
+                <p><code class="highlighter-rouge">document.querySelector("li, hi")</code> access several</p>
+                <p><code class="highlighter-rouge">document.querySelectorAll("li, hi")</code></p>
+                <p><code class="highlighter-rouge">document.querySelector("li").getAttribute("")</code> provides content of attribute</p>
+                <p><code class="highlighter-rouge">document.querySelector("li").getAttribute("", changedText)</code> changes attribute to changedText?</p>
+                <p><code class="highlighter-rouge">document.querySelector("li").styleBackground="yellow"</code> changes styles</p>
+                <p><code class="highlighter-rouge">document.querySelector("li").className="newClassName"</code> changes class</p>
+                <p><code class="highlighter-rouge">h1.classList.add("added class name")</code> adds class</p>
+                <p><code class="highlighter-rouge">h1.classList.toggle("added class name")</code> changes back and forward the class</p>
+                <pre><code>
 let ul = document.querySelector("ul");
 let li = documet.createElement("li");
 li.appendChild(document.createTextNode("testing"));
-ul.appendChild("li");</pre>
+ul.appendChild("li");</code></pre>
                 <h4>Node`s properties</h4>
                 <h5>textContent</h5>
                 <ul>
-                    <li><code>.textContent</code> Return the text content of an element (tag)document.body.textContent</li>
-                    <li><code>.textContent = "new content text"</code> Change the textual content</li>
-                    <p><strong>Example1: </strong><code>document.body.textContent = "some text";</code></p>
-                    <p><strong>Example2: </strong><code>let text = document.getElementById("divA").textContent;</code></p>
+                    <li><code class="highlighter-rouge">.textContent</code> Return the text content of an element (tag)document.body.textContent</li>
+                    <li><code class="highlighter-rouge">.textContent = "new content text"</code> Change the textual content</li>
+                    <p><strong>Example1: </strong><code class="highlighter-rouge">document.body.textContent = "some text";</code></p>
+                    <p><strong>Example2: </strong><code class="highlighter-rouge">let text = document.getElementById("divA").textContent;</code></p>
                     
                 </ul>
                 <h5>getElement(-s)By...</h5>
                 <ul>
-                    <li><code>document.getElementById("id")</code></li>
-                    <li><code>document.getElementsByClassName("classname")</code></li>
-                    <li><code>document.getElementsByTagName("tagname")</code></li>
+                    <li><code class="highlighter-rouge">document.getElementById("id")</code></li>
+                    <li><code class="highlighter-rouge">document.getElementsByClassName("classname")</code></li>
+                    <li><code class="highlighter-rouge">document.getElementsByTagName("tagname")</code></li>
                     <p><i> Both of the last two return all of the elements as a list. Thus, you can call single elements by their index, e.g. [0] or loop through them.</i></p>
-                    <p><strong>Example1: </strong><code>const x = document.getElementById("main");</code></p>
-                    <p><strong>Example2: </strong><code>const y = x.getElementsByTagName("p");</code></p>
+                    <p><strong>Example1: </strong><code class="highlighter-rouge">const x = document.getElementById("main");</code></p>
+                    <p><strong>Example2: </strong><code class="highlighter-rouge">const y = x.getElementsByTagName("p");</code></p>
                     <p><i> This example finds the element with id="main", and then finds all "p" elements inside "main"</i></p>
-                    <li><code></code></li>
-                    <li><code></code></li>
-                    <li><code></code></li>
-                    <li><code></code></li>
+                    <li><code class="highlighter-rouge"></code></li>
+                    <li><code class="highlighter-rouge"></code></li>
+                    <li><code class="highlighter-rouge"></code></li>
+                    <li><code class="highlighter-rouge"></code></li>
                 </ul>
             </section>
             <section>

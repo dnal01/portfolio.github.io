@@ -25,37 +25,37 @@
             <ol>
                 <li>
                     <h4>HTML video tag</h4>
-<pre>
+<pre><code>
 &lt;video controls muted&gt;
     &lt;source src="video.mp4" type ="video/mp4"&gt;
     &lt;source src="video.ogg" type ="video/oog"&gt;
     Your browser does not support the video tag.
-&lt;/video&gt;</pre>
+&lt;/video&gt;</code></pre>
                 </li>
                 <li>
                     <h4>Combining selectors</h4>
                     <ul>
-                        <li><code>p.class</code> Class selector. All p elements with this class;</li>
-                        <li><code>.class1.class2</code> only the elements where those two classes are applied at the
+                        <li><code class="highlighter-rouge">p.class</code> Class selector. All p elements with this class;</li>
+                        <li><code class="highlighter-rouge">.class1.class2</code> only the elements where those two classes are applied at the
                             same time;</li>
-                        <li><code>section > p</code> Child selector. Only on a level below, i.e. direct child;</li>
-                        <li><code>section p</code> Descendant selector. On any lower level. And it is not limited to
-                            element selectors, e.g.: <code>.color > p</code>;</li>
-                        <li><code>a, p</code> Selectors in CSS can be separated by comma, to indicate more then one
+                        <li><code class="highlighter-rouge">section > p</code> Child selector. Only on a level below, i.e. direct child;</li>
+                        <li><code class="highlighter-rouge">section p</code> Descendant selector. On any lower level. And it is not limited to
+                            element selectors, e.g.: <code class="highlighter-rouge">.color > p</code>;</li>
+                        <li><code class="highlighter-rouge">a, p</code> Selectors in CSS can be separated by comma, to indicate more then one
                             selector for rules</li>
                     </ul>
                 </li>
                 <li>
                     <h4>Pseudo class selectors</h4>
                     <ul>
-                        <li><code>:link</code></li>
-                        <li><code>:visited</code></li>
-                        <li><code>:hover</code></li>
-                        <li><code>:active</code></li>
-                        <li><code>:nth-child(...)</code> active only for a specific child. In brackets indicate number
+                        <li><code class="highlighter-rouge">:link</code></li>
+                        <li><code class="highlighter-rouge">:visited</code></li>
+                        <li><code class="highlighter-rouge">:hover</code></li>
+                        <li><code class="highlighter-rouge">:active</code></li>
+                        <li><code class="highlighter-rouge">:nth-child(...)</code> active only for a specific child. In brackets indicate number
                             or e.g. "odd" to locate number in order of child in that container.</li>
                     </ul>
-                    <p><em>Note: They can be also combined:</em> <code>section div:nth-child(3):hover {}</code></p>
+                    <p><em>Note: They can be also combined:</em> <code class="highlighter-rouge">section div:nth-child(3):hover {}</code></p>
                 </li>
                 <li>
                     <h4>Conflict Resolution. Specificity (score)</h4>
@@ -100,26 +100,26 @@
                 </li>
                 <li>
                     <h4>Units of measurements</h4>
-                    <p><code>em</code> multiply the size of something by its number, wether: 2em - *2; 3em - *3.</p>
+                    <p><code class="highlighter-rouge">em</code> multiply the size of something by its number, wether: 2em - *2; 3em - *3.</p>
                     <p>It is a good practice to indicate the font-size on the body and then use ems to play with a specific text.</p>
                 </li>
                 <li>
                     <h4>CSS Properties</h4>
-                    <p><code>background: url('name.png') no-repeat right center blue</code></p>
-                    <p><code>float:</code></p>
+                    <p><code class="highlighter-rouge">background: url('name.png') no-repeat right center blue</code></p>
+                    <p><code class="highlighter-rouge">float:</code></p>
                         <ul>
-                            <li><code>clear: both;</code></li>
+                            <li><code class="highlighter-rouge">clear: both;</code></li>
                         </ul>
                     <section>
                         <h4>The Box Model</h4>
                         <ul>
                             <li>
-                                <code>box-sizing: border-box;</code> Whatever width you specify it will absorb borders and paddings as well, so it will be the total width from border to border, including the content. And it is a good practice to stick to this option rather then to <code>content-box</code>.
+                                <code class="highlighter-rouge">box-sizing: border-box;</code> Whatever width you specify it will absorb borders and paddings as well, so it will be the total width from border to border, including the content. And it is a good practice to stick to this option rather then to <code class="highlighter-rouge">content-box</code>.
                             </li>
                             <li>
-                                <code>margin-right; margin-left;</code> cumulates their margins if left or right boxes have any too. but <code>margin-top; margin-button;</code> do not they are collapsed and the bigger margin wins. But it is not true for floated elements.
+                                <code class="highlighter-rouge">margin-right; margin-left;</code> cumulates their margins if left or right boxes have any too. but <code class="highlighter-rouge">margin-top; margin-button;</code> do not they are collapsed and the bigger margin wins. But it is not true for floated elements.
                             </li>
-                            <li><code>overflow</code></li>
+                            <li><code class="highlighter-rouge">overflow</code></li>
                         </ul>
                     </section>
                     <section>
@@ -143,8 +143,8 @@
                     </section>
                     <section>
                         <h4>Inheritance</h4>
-                        <p>Some elements are not Inherited, meaning they do not give their property to child elements, as e.g. <code>box-sizing</code>.</p>
-                        <p>This behavior can be overwritten by adding such elements to a <code>* {}</code> property, which literally during rendition adds properties to each of the element.</p>
+                        <p>Some elements are not Inherited, meaning they do not give their property to child elements, as e.g. <code class="highlighter-rouge">box-sizing</code>.</p>
+                        <p>This behavior can be overwritten by adding such elements to a <code class="highlighter-rouge">* {}</code> property, which literally during rendition adds properties to each of the element.</p>
                         <p>Short hands without "-" overwrites above properties with "-".</p>
                     </section>
                 </li>
@@ -152,21 +152,21 @@
                     <h4>Responsive website - Logical operators</h4>
                     <section>
                         <ul>
-                            <li><strong>AND</strong>. <code>@media (min-width: 768px) <strong>and</strong> (max-width: 991px) {...}</code>.</li>
-                            <li><strong>OR</strong>. <code>@media (min-width: 768px)<strong>,</strong> (max-width: 991px) {...}</code>.</li>
+                            <li><strong>AND</strong>. <code class="highlighter-rouge">@media (min-width: 768px) <strong>and</strong> (max-width: 991px) {...}</code>.</li>
+                            <li><strong>OR</strong>. <code class="highlighter-rouge">@media (min-width: 768px)<strong>,</strong> (max-width: 991px) {...}</code>.</li>
                         </ul>
                         <em>Do not overlap range boundaries!</em>
                         <em>It is best practice to include media after declaring of other styles.</em>
                     </section>
                     <h4>Devise sizes</h4>
                         <ul>
-                            <li><strong>Large</strong> - <code>(min-width: 1200px) {...}</code></li>
-                            <li><strong>Medium</strong> - <code>(min-width: 992px) and (max-width: 1199px) {...}</code></li>
+                            <li><strong>Large</strong> - <code class="highlighter-rouge">(min-width: 1200px) {...}</code></li>
+                            <li><strong>Medium</strong> - <code class="highlighter-rouge">(min-width: 992px) and (max-width: 1199px) {...}</code></li>
                         </ul>
                     <h4>Sizing</h4>
-                    <p><code>meta name="viewport" content="width=device-width, initial-scale=1.0"</code> This will set the viewport of your page, which will give the browser instructions on how to control the page's dimensions and scaling.</p>
+                    <p><code class="highlighter-rouge">meta name="viewport" content="width=device-width, initial-scale=1.0"</code> This will set the viewport of your page, which will give the browser instructions on how to control the page's dimensions and scaling.</p>
                     <p>Use the "vw" unit when sizing the text. 10vw will set the size to 10% of the viewport width.</p>
-                    <code>style="font-size:5vw;"</code>
+                    <code class="highlighter-rouge">style="font-size:5vw;"</code>
                     <p>Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.</p>
                     <p>Use float.</p>                 
                 </li>
@@ -182,7 +182,7 @@
             </section>
             <section>
                 <h3 class="section">Questions which I have got</h3>
-                <p><code>:target</code> does not work on navigation buttons.</p>
+                <p><code class="highlighter-rouge">:target</code> does not work on navigation buttons.</p>
             </section>
         </div>
         <ul class="sticky-element">
