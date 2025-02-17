@@ -119,7 +119,7 @@ int subResult = subtract(10, 5); // the method call</code></pre>
                         </tr>
                         <tr>
                             <td><code class="highlighter-rouge">private</code></td>
-                            <td>Same Class</td>
+                            <td>Some Classes</td>
                         </tr>
                     </table>
                     <p><i>Note that classes can only be either default or public.</i></p>
@@ -342,6 +342,7 @@ for (Clothing item: customer01.getItems()) {
                     <li>Is <i>not specific</i> to any object instance</li>
                     <li>Can be accessed without instantiating the class (<code class="highlighter-rouge">new</code>), e.g. <code class="highlighter-rouge">Math.random()</code>.</li>
                     <li>Static variables sees only other static variables, therefor can not access instance (internal) variables.</li>
+                    <li>Can not be overridden by other classes.</li>
                 </ul>
                 <h3>Handling Exceptions - the <code class="highlighter-rouge">try/catch</code> Block</h3>
                 <pre><code><strong>try {</strong>
@@ -468,13 +469,23 @@ jacket4.addPrice();</code></pre>
                 <ul>
                     <li>Instance methods are by default public, static and abstract.</li>
                     <li>Class cannot be directly instantiated, if it is marked with the Interface keyword.</li>
-                    <li>They can contain concrete methods only if they are either default, private, or static. In case of default this means that, the classes which implements this interface can not inherit its methods. You can access Interface methods by calling them directly.</li>
+                    <li>They can contain concrete methods, but only if the methods are either <code class="highlighter-rouge">default</code>, <code class="highlighter-rouge">private</code>, or <code class="highlighter-rouge">static</code>. In case of <code class="highlighter-rouge">default</code> this means that, the classes which implements this interface can not inherit its methods. You can access Interface methods by calling them directly.</li>
                     <li>They can contain constants but not variables.</li>
+                    <li>
+                        By default, constants are MARKED AS <code class="highlighter-rouge">public static final</code> and constants can be used in an implementation class WITHOUT an interface name prefix.
+                        <em>Note that, IF by coincidence the name of a class variable/constant matches a constant defined in an implemented interface, the local class variable/constant overrides the interface constant. The constant is converted to a variable and can be changed as many times as desired.</em>
+                    </li>
                 </ul>
                 <pre><code>public <strong>interface</strong> Recyclable {
+    // A Constant in the Interface
+    String MEASURE = "meter";            
     <strong>void recycle();</strong>
 }</code></pre>
                 <pre><code>public class Clothing <strong>implements</strong> Recyclable {
+    // Use of the constant
+    // without an interact prefix "Recyclable."
+    String measure = MEASURE;
+
     // The compiler will now require that method recycle
     // be implemented. Compilation will fail if this
     // method is missing from this class.
@@ -506,7 +517,7 @@ jacket4.addPrice();</code></pre>
 }</code></pre>
                     </li>
                     <li>
-                        It is also possible for an interface(s) to inherit (extend) from an interface.
+                        It is also possible for an interface(s) to inherit (extend) from an interface. And then even another class can implement the extended interface.
                         <pre><code>public interface ProductC extends ProductA, ProductB {
     void getProductCInfo();
 }</code></pre>
