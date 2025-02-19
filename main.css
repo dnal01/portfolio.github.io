@@ -187,3 +187,34 @@ th {
     background-color: #04AA6D;
     color: white;
 }
+
+.container_JMS {
+    display: grid;
+    color: red;
+    grid-template-areas:
+    "con-1 con-2 con-3 con-4 con-5";
+    grid-template-rows: 1fr;
+    gap: 5px;
+    background-color: #2196F3;
+    padding: 5px;
+}
+
+.container_JMS > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+  }
+  .container_JMS > div.con-1 {
+    grid-area: con-1;
+  }
+  .container_JMS > div.coin-2 {
+    grid-area: con-2;
+  }
+  .container_JMS > div.con-3 {
+    grid-area: con-3;
+  }
+  .container_JMS > div.con-4 {
+    grid-area: con-4;
+  }
+  .container_JMS > div.con-5 {
+    grid-area: con-5;
+  }
