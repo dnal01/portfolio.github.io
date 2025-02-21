@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fifth Entry - Web Portfolio of Denys</title>
     <link rel="stylesheet" href="../../main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
 </head>
 
 <body>
@@ -85,21 +86,6 @@ movies(function displayFavorite(movieName) // the first argument starts
                 </li>
                 <li><strong>Shadowing. </strong>When you have a global variable you can create the same name variable on a function level but add <code class="highlighter-rouge">var</code> before that, so in this way you declare a new variable and global one will not be overwritten.</li>
                 <li><strong>Hoisting. </strong>It is a way JavaScript moves your code when compiling, i.e. you can ask function before the function is written or print out a variable which is declared letter. But it is not recommended to do so, because of some bugs may accrue.</li>
-                <li><strong>VSCode Short keys:</strong>
-                    <ul>
-                        <li><code class="highlighter-rouge">⇧⌘K</code> Delete Line</li>
-                        <li><code class="highlighter-rouge">⌘Enter</code> Insert Line Below</li>
-                        <li><code class="highlighter-rouge">⇧⌘Enter</code> Insert Line Above</li>
-                        <li><code class="highlighter-rouge">⌥↓</code> Move Line Down</li>
-                        <li><code class="highlighter-rouge">⇧⌥↓</code> Copy Line Down</li>
-                        <li><code class="highlighter-rouge">⇧⌘L</code> Select all occurrences of current selection</li>
-                        <li><code class="highlighter-rouge">⇧⌘Z</code> redo</li>
-                        <li><code class="highlighter-rouge">⌥⌘↓</code> Insert Cursor Below</li>
-                        <li><code class="highlighter-rouge">⌘]</code> Indent Line (space)</li>
-                        <li><code class="highlighter-rouge">⌘/</code> Toggle Line Comment</li>
-                        <li><code class="highlighter-rouge">⇧⌥A</code> Toggle Block Comment</li>
-                    </ul>
-                </li>
                 <li><strong>Creating an Array.</strong></li>
                     <ul>
                         <li><code class="highlighter-rouge">var name = ["First", "Second", "Third"];</code> You can even store an array in an array to create a nested array!</li>
@@ -474,5 +460,7 @@ script</code></pre>
             </li>
         </ul>
     </main>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </body>
 </html>

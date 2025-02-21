@@ -320,6 +320,58 @@ for (Clothing item: customer01.getItems()) {
                 </table>
                 <p><i>Note also that when it comes to the values reassignment, the new value gets assigned but not an address to object which holds it.</i></p>
                 <p><i>Arrays are handled by an implicit Array object, therefore the array variable is an object reference.</i></p>
+                <h3>Java Memory Management</h3>
+                <h4>Java Memory Structure</h4>
+                <div class="container_grid_common container_JMS">
+                    <div style="background-color: inherit; grid-area: con-1;"></div>
+                    <div style="font-style: italic; background-color: inherit; border-bottom: solid 1px rgb(51, 51, 51); padding: 0;  grid-area: con-3;">Stack area</div>
+                    <div style="background-color: inherit;  grid-area: con-4;"></div>
+                    <div style="background-color: rgb(127, 150, 190); grid-area: con-6;">Method Area</div>
+                    <div style="background-color: rgb(163, 217, 230); grid-area: con-7;">Heap Area</div>
+                    <div style="background-color: rgb(198, 183, 158); grid-area: con-8;">
+                        <table>
+                            <tr>
+                                <td colspan="3">Thread 1</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">Stack Frame</td>
+                            </tr>
+                            <tr>
+                                <td>LVA</td>
+                                <td>OS</td>
+                                <td>FD</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="background-color: rgb(170, 230, 189); grid-area: con-9;">PC Register for Thread 1</div>
+                    <div style="background-color: rgb(157, 193, 254); grid-area: con-10;">Native Method</div>
+                </div>
+                <ul>
+                    <li><strong>Method Area</strong> stores superclass name, interface name and constructors.</li>
+                    <li><strong>Heap memory</strong> - area of run time data, from which the dynamic memory for objects is dedicated. It can be accessed by any Thread/Stack.</li>
+                    <li><strong>Stack area</strong> stores method specific values that are short-lived and are referenced to other objects in the heap.</li>
+                    <li><strong>Stack frame</strong> Every frame  consist of own Local Variable Array (LVA), Frame Data (FD) and Operand Stack (OS). Only one frame is active in a Heap - current frame.</li>
+                </ul>
+                <h4>Garbage Collector</h4>
+                    <p>Any object that is not accessible to any thread is considered dereferenced and becomes available for GC.</p>
+                    <div class="container_grid_common container_GC">
+                        <div style="background-color: inherit; grid-area: con-1;"></div>
+                        <div style="font-style: italic; background-color: inherit; padding: 0; border-bottom: solid 1px rgb(51, 51, 51); grid-area: con-2;">Survivor Space</div>
+                        <div style="background-color: inherit;  grid-area: con-3;"></div>
+                        <div style="background-color: rgb(127, 150, 190); grid-area: con-4;">eden</div>
+                        <div style="background-color: rgb(163, 217, 230); grid-area: con-5;">S0</div>
+                        <div style="background-color: rgb(198, 183, 158); grid-area: con-6;">S1</div>
+                        <div style="background-color: rgb(170, 230, 189); grid-area: con-7;">Tenured</div>
+                        <div style="background-color: rgb(157, 193, 254); grid-area: con-8;">Permanent</div>
+                        <div style="font-style: italic; background-color: inherit; border-top: solid 1px rgb(51, 51, 51); grid-area: con-9;">Young Generation</div>
+                        <div style="font-style: italic; background-color: inherit; border-top: solid 1px rgb(51, 51, 51); grid-area: con-10;">Old Generation</div>
+                        <div style="font-style: italic; background-color: inherit; border-top: solid 1px rgb(51, 51, 51); grid-area: con-11;">Metaspace</div>
+                    </div>
+                    <ol>
+                        <li><strong>Young Generation</strong> - all new objects. A minor GC occurs here.</li>
+                        <li><strong>Tenured Generation</strong> - long surviving objects.</li>
+                        <li><strong>Metaspace</strong> Stores static data, which is accessible anytime.</li>
+                    </ol>
                 <h3>Initializing Object Using the Constructor Method</h3>
                 <pre><code>public class Clothing {
     private String description;
@@ -528,42 +580,14 @@ jacket4.addPrice();</code></pre>
                     </li>
                 </ul>
                 <h3>Enums</h3>
-                <p><code class=""></code></p>
-                <h3>Java Memory Management</h3>
-                <ul>
-                    <li>
-                        Java Memory Structure
-                        
-                    </li>
-                    <li>Garbage Collector</li>
-                </ul>
+                <p><code class="highlighter-rouge"></code></p>
+                
                 <section>
                 <h2 class="section">Links to helpful websites</h2>
                 <ul>
                     <li><a href=""></a></li>
                 </ul>
             </section>
-            <div class="container_JMS">
-                <div class="con-1">Method Area</div>
-                <div class="con-2">Heap Area</div>
-                <div class="con-3">
-                    <table>
-                        <tr>
-                            <td>Thread 1</td>
-                        </tr>
-                        <tr>
-                            <td>Stack Frame</td>
-                        </tr>
-                        <tr>
-                            <td>LVA</td>
-                            <td>OS</td>
-                            <td>FD</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="con-4">PC Register for Thread 1</div>
-                <div class="con-5">Native Method</div>
-            </div>
             <section>
                 <h2 class="section">Questions which I have got</h2>
             </section>
