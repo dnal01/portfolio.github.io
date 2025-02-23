@@ -61,10 +61,16 @@
                             <li>The access modifiers are not specified.</li>
                         </ul>
                     <p>Override of methods - change of the functional in a sub-class, if a sub-class has the same method, which is defined in a parent class (super class).</p>
+                <h3>Data Conversion</h3>
+                <p>Downgrade of a type is possible only with explicit conversion, e.g. int into a char.</p>
+<pre><code>int a = 128;
+long b = a; // Implicit Type Data conversion
+long b = (long) a; // Explicit Type Data Conversion</code></pre>
                 <h3>Mandatory code</h3>
                     <pre><code>public class nameOfTheFile {
     public static void main(String[] args) {
-- Classes goes here}</code></pre>
+- Classes goes here}
+}</code></pre>
                 <h3>Classes initialization and usage</h3>
                     <p>new Classes need to be in another <code class="highlighter-rouge">.java</code> file. <i>This information needs to be confirmed.</i></p>
                     <pre><code>public class Customer {
@@ -372,6 +378,19 @@ for (Clothing item: customer01.getItems()) {
                         <li><strong>Tenured Generation</strong> - long surviving objects.</li>
                         <li><strong>Metaspace</strong> Stores static data, which is accessible anytime.</li>
                     </ol>
+                <h4>Java Volatile Keyword</h4>
+                <p>The Java volatile keyword is used to mark a Java variable as "being stored in main memory" (RAM). Every write to a volatile variable will be written to main memory, and not just to the CPU registers. E.g.:</p>
+                <pre><code>public <strong>volatile</strong> int counter = 0;</code></pre>
+                <p>Declaring a variable volatile thus guarantees the visibility for other threads of writes to that variable.</p>
+                <p><em>if two threads are both reading and writing to a shared variable, then using the volatile keyword for that is not enough.</em> You need to use a synchronized in that case to guarantee that the reading and writing of the variable is atomic. Reading or writing a volatile variable does not block threads reading or writing. For this to happen you must use the synchronized keyword around critical sections.</p>
+                <p>As an alternative to a synchronized block you could also use one of the many atomic data types found in the java.util.concurrent package. For instance, the AtomicLong or AtomicReference or one of the others.</p>
+                <p>In case only one thread reads and writes the value of a volatile variable and other threads only read the variable, then the reading threads are guaranteed to see the latest value written to the volatile variable. Without making the variable volatile, this would not be guaranteed.</p>
+                <h4>Java Synchronized Blocks</h4>
+                <p>A Java synchronized block marks a method or a block of code as synchronized. A synchronized block in Java can only be executed a single thread at a time (depending on how you use it). Java synchronized blocks can thus be used to avoid <strong>race condition</strong>.</p>
+                <p>If two or more threads share an object, and more than one thread updates variables in that shared object, <strong>race conditions</strong> may occur.</p>
+<pre><code>public <strong>synchronized</strong> void add(int value){
+    this.count += value;
+}</code></pre>
                 <h3>Initializing Object Using the Constructor Method</h3>
                 <pre><code>public class Clothing {
     private String description;
@@ -581,11 +600,47 @@ jacket4.addPrice();</code></pre>
                 </ul>
                 <h3>Enums</h3>
                 <p><code class="highlighter-rouge"></code></p>
-                
+                <h3>Java Classes</h3>
+                <h4>Classes-Wrappers</h4>
+                <p>Classes-Wrappers are used to transform primitive data into an Object.</p>
+<pre><code>int num = 55;
+String strByte = "25"
+
+// Convert a primitive or a String into an Object
+Integer obj = Integer.valueOf(num); 
+Integer obj1 = Integer.valueOf(strByte); 
+
+// Convert an Object or a String to primitive
+int var01 = obj.intValue();
+int var02 = Integer.parseInt(strByte);</code></pre>
+                <h4>Scanner for cmd line input</h4>
+<pre><code>Scanner scanner = new Scanner(System.in);
+String strA = scanner.nextLine();
+int input = Integer.parseInt(scanner.nextLine());</code></pre>
+                <h4>ArrayList</h4>
+                <p>The <code class="highlighter-rouge">ArrayList</code> class is a resizable array. Elements in an ArrayList are actually objects. To use other types, such as int, you must specify an equivalent wrapper class, e.g.: <code class="highlighter-rouge">Integer</code>.</p>
+                <p>The difference between a built-in array and an <code class="highlighter-rouge">ArrayList</code> in Java, is that the size of an array cannot be modified (if you want to add or remove elements to/from an array, you have to create a new one). While elements can be added and removed from an <code class="highlighter-rouge">ArrayList</code> whenever you want.</p>
+<pre><code>Character a = 'a';
+ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();
+list.add(a);
+// Access an item by the collection index
+list.get(0);
+// Change an item
+list.set(0, "b");
+// Remove an item or all the elements
+list.remove(0);
+list.clear();
+
+list.size();
+</code></pre>
+                <h4>Collections</h4>
+                <p>The <code class="highlighter-rouge">Collections</code> class has a useful <code class="highlighter-rouge">sort()</code> method</p>
+<pre><code>Collections.sort(list);</code></pre>
                 <section>
                 <h2 class="section">Links to helpful websites</h2>
                 <ul>
-                    <li><a href=""></a></li>
+                    <li><a href="https://jenkov.com/tutorials/java-concurrency/java-memory-model.html">The Java Memory Model And The Hardware Memory Architecture</a></li>
+                    <li><a href="https://jenkov.com/tutorials/java-concurrency/volatile.html">Java Volatile Keyword</a></li>
                 </ul>
             </section>
             <section>

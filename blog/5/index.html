@@ -68,8 +68,7 @@
                     <p><strong>Function declaration. </strong><code class="highlighter-rouge">function name(x, y) { // Your code here };</code></p>
                     <p><strong>Function expression. </strong><code class="highlighter-rouge">var name = function(parameter) { // Your code here };</code> Store functions in variables (anonymous functions). But the function expressions are not hoisted. <em><strong>Functions as parameters. </strong><code class="highlighter-rouge">name();</code> You can call a function using as a parameter a variable with anonymous function. It will not work with the Named function expression.</em></p>
                     <p><strong>Inline function expressions. </strong>When you pass a function inline as an argument to another function.</p>
-                        <pre><code>
-function movies(messageFunction, name) // two parameters of the first and second arguments
+<pre><code>function movies(messageFunction, name) // two parameters of the first and second arguments
 {
     messageFunction(name);
 }
@@ -109,8 +108,7 @@ movies(function displayFavorite(movieName) // the first argument starts
                                     </ul> splice() method returns the item(s) that were removed.</li>
                                 <li><strong>Reverse. </strong><code class="highlighter-rouge">name.reverse();</code> Reverses the array.</li>
                                 <li><code class="highlighter-rouge">for...of</code> for each item in a list or word</li>
-                                    <pre><code>
-let list = ["doors", "windows", "rooms"];
+<pre><code>let list = ["doors", "windows", "rooms"];
 for (let item of list) OR (let item of "word") {
     console.log(item);
 }</code></pre>
@@ -131,21 +129,18 @@ for (let item of list) OR (let item of "word") {
                                     </ul>
                                     <p>The forEach() method gives you an alternative way to iterate over an array, and manipulate each element in the array with an <strong>inline function expression</strong>.</p>
                                     <p>Notice that the forEach() method iterates over the array without the need of an explicitly defined index. In the example above, donut corresponds to the element in the array itself. This is different from a for or while loop where an index is used to access each element in the array. E.g.:</p>
-                                        <pre><code>
-words = ["cat", "in", "hat"];
+<pre><code>words = ["cat", "in", "hat"];
 words.forEach(function(word, num, all) {
     console.log("Word " + num + " in " + all.toString() + " is " + word);
 });</code></pre>
-                                        <pre><code>
-Prints:
+<pre><code>Prints:
 Word 0 in cat,in,hat is cat
 Word 1 in cat,in,hat is in
 Word 2 in cat,in,hat is hat</code></pre>
                                 </li>
                                 <li><strong>The map() loop. </strong>Works the same as forEach() loop, but creates and returns a new array populated with the results of calling. So it is a good idea to store it in a variable, using function expression. Just include a return keyword with a value inside a function.</li>
                                 <li><strong><code class="highlighter-rouge">for ... of</code></strong> only for arrays</li>
-                                <pre><code>
-    const array1 = ['a', 'b', 'c'];
+<pre><code>const array1 = ['a', 'b', 'c'];
 
 for (const element of array1) {
   console.log(element);
@@ -155,8 +150,7 @@ for (const element of array1) {
                                         <ul>
                                             <li><code class="highlighter-rouge">callbackFn</code> or any other function types</li>
                                             <li><code class="highlighter-rouge">thisArg</code> additional value to compare with. Example:</li>
-                                            <pre><code>
-const fruits = ["apple", "banana", "grapes", "mango", "orange"];
+<pre><code>const fruits = ["apple", "banana", "grapes", "mango", "orange"];
 
 function filterItems(arr, query) {
     return arr.filter((el) => el.toLowerCase().includes(query.toLowerCase()));
@@ -169,7 +163,7 @@ console.log(filterItems(fruits, "ap")); // ['apple', 'grapes']
 // OR
 let me = names.filter(name => {
     return name==="Susanne";
-    });</code></pre>
+});</code></pre>
                                         </ul>    
                                 <li><code class="highlighter-rouge">name.reduce(callbackFn, initialValue)</code></li>
                                         <ul>
@@ -187,8 +181,7 @@ let me = names.filter(name => {
                     <ul>
                         <li>
                             <h4>Declaration of an object</h4>
-                            <pre><code>
-var myObject = { // The entire object is wrapped inside curly braces { }
+<pre><code>var myObject = { // The entire object is wrapped inside curly braces { }
     property1: "pink", // key: value,
     property2: true,
     open: function() {
@@ -246,13 +239,11 @@ var myObject = { // The entire object is wrapped inside curly braces { }
                             </li>
                             <li>
                                 <h4>looping trough an object</h4>
-                                <pre><code>
-let obj = {doors: 2, windows: 8, rooms: 5};
+<pre><code>let obj = {doors: 2, windows: 8, rooms: 5};
 Object.keys(obj).forEach(function(property_name){
     console.log(obj[property_name]);
 });</code></pre> OR
-                                <pre><code>
-let obj = {doors: 2, windows: 8, rooms: 5};
+<pre><code>let obj = {doors: 2, windows: 8, rooms: 5};
 Object.values(obj).forEach(function(property_value){
     console.log(property_value);
 });</code></pre>
@@ -260,8 +251,7 @@ Object.values(obj).forEach(function(property_value){
                             <li>
                                 <h4>Object constructor</h4>
                                 <p>Creation of template</p>
-                                <pre><code>
-let objectName = [{name: myName, age: ageNumber}]
+<pre><code>let objectName = [{name: myName, age: ageNumber}]
 class Person {
     constructor(name, age, married, functionName) {
         this.name = name;
@@ -276,11 +266,9 @@ class Person {
     }
 }</code></pre>
                                 <p>Create a new variable and duplicate person object calling created template.</p>
-                                <pre><code>
-const susanne = new Person("Susanne", 41, false, functionName);</code></pre>
+<pre><code>const susanne = new Person("Susanne", 41, false, functionName);</code></pre>
                                 <p>Or push a new person into an existing objects array</p>
-                                <pre><code>
-newNae.push(new Person());</code></pre>
+<pre><code>newNae.push(new Person());</code></pre>
                                 <p>You can also create a hierarchy e.g. family and children using classes. See the detailed explanation in Internet</p>
                                     <ul>
                                         <li><code class="highlighter-rouge">new</code> word is Mandatory. <code class="highlighter-rouge">Person</code> is imaginable.</li>
@@ -293,8 +281,7 @@ newNae.push(new Person());</code></pre>
                     <ul>
                         <li><strong>Declaration of JS in HTML file</strong>
                             <p>Put up a script tag into <code class="highlighter-rouge">head</code> section</p>
-                            <pre><code>
-script
+<pre><code>script
     function name()
     {
         alert('text, ' + document.querySelector('#idName').value);
@@ -314,8 +301,7 @@ form onsubmit="greet(); return false;">
                         </li>
                         <li>
                             <strong>Another advanced way</strong> omitting  onsubmit argument in the form tag
-                            <pre><code>
-script
+<pre><code>script
 
     document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('form').addEventListener('submit', function(e) {
@@ -328,8 +314,7 @@ script</code></pre>
                         </li>
                         <li>
                             <strong>User interface, by changing the color</strong>
-                            <pre><code>
-script
+<pre><code>script
 
     let body = document.querySelector('body');
     document.querySelector('#red').addEventListener('click', function() {
@@ -346,8 +331,7 @@ script</code></pre>
                         </li>
                         <li>
                             <strong>Create own function</strong>
-                            <pre><code>
-script
+<pre><code>script
 
     // Toggles visibility of greeting
     function blink()
@@ -370,8 +354,7 @@ script</code></pre>
                         </li>
                         <li>
                             <strong>Autocomplete function</strong>
-                            <pre><code>
-input autocomplete="off" autofocus placeholder="Query" type="text">
+<pre><code>input autocomplete="off" autofocus placeholder="Query" type="text">
 
 ul>ul>
 
@@ -395,8 +378,7 @@ script</code></pre>
                         </li>
                         <li>
                             <strong>Find geolocation</strong>
-                            <pre><code>
-script>
+<pre><code>script>
 
     navigator.geolocation.getCurrentPosition(function(position) {
         document.write(position.coords.latitude + ", " + position.coords.longitude);
