@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="witdh=device-witdh, initial-scale=1.0">
     <title>Twentieth First - Web Portfolio of Denys</title>
     <link rel="stylesheet" type="text/css" href="../../main.css">
 
@@ -21,16 +21,15 @@
         </ul>
     </header>
     <main>
-        <h1 class="title">Twentieth First</h1>
+        <h1 class="title">Java</h1>
         <p class="left date">January 19, 2025</p>
         <div class="block left">
             <section>
-                <h2>Java</h2>
                 <h3>Variable initialization - additional character</h3>
                     <ul>
                         <li><code class="highlighter-rouge">byte a = 10;</code> 8 bit. Range from -128 to 127;</li>
                         <li><code class="highlighter-rouge">short s = 10000;</code> 16 bit. Range from -32768 to 32767;</li>
-                        <li><code class="highlighter-rouge">int cost = 133_452_667</code> Range from -2,147,483,684 to 2,147,483,647. <code>_</code> is for readability;</li>
+                        <li><code class="highlighter-rouge">int cost = 133_452_667</code> Range from -2,147,483,684 to 2,147,483,647. <code class="highlighter-rouge">_</code> is for readability;</li>
                         <li><code class="highlighter-rouge">long <i>a</i> = 123125415l or L;</code></li>
                         <li><code class="highlighter-rouge">float <i>b</i> = 2.1E12f or F;</code></li>
                         <li><code class="highlighter-rouge">boolean <i>c</i> = !(x > 5 && x < 10);</code></li>
@@ -61,11 +60,41 @@
                             <li>The access modifiers are not specified.</li>
                         </ul>
                     <p>Override of methods - change of the functional in a sub-class, if a sub-class has the same method, which is defined in a parent class (super class).</p>
+                    <p>If variables contain the same value, the value memory address is the same. However, if <code class="highlighter-rouge">new</code> keyword is used, new value will be created. But, interning rows involves storing only ONE copy, e.g.:</p>
+<pre><code>String product5 = new String("Round cube").intern();</code></pre>
+                    <p><strong>Resources</strong> - an Object which needs to be closed after end of the work with a program.</p>
                 <h3>Data Conversion</h3>
                 <p>Downgrade of a type is possible only with explicit conversion, e.g. int into a char.</p>
 <pre><code>int a = 128;
 long b = a; // Implicit Type Data conversion
 long b = (long) a; // Explicit Type Data Conversion</code></pre>
+                <h3>Escape characters</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Esc. Char</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>\\</td>
+                            <td>Translated into a single \ character in the String</td>
+                        </tr>
+                        <tr>
+                            <td>\t</td>
+                            <td>Translated into a single tab character in the string</td>
+                        </tr>
+                        <tr>
+                            <td>\r</td>
+                            <td>Translated into a single carriage return character in the string</td>
+                        </tr>
+                        <tr>
+                            <td>\n</td>
+                            <td>Translated into a single new line character in the string</td>
+                        </tr>
+                    </tbody>
+                </table>
                 <h3>Mandatory code</h3>
                     <pre><code>public class nameOfTheFile {
     public static void main(String[] args) {
@@ -94,7 +123,7 @@ long b = (long) a; // Explicit Type Data Conversion</code></pre>
     /* method body */
     /* return statement */
 }</code></pre>
-                    <pre><code>public static double <i>subtract</i>(int a, int b) {
+                    <pre><code>public static double <i>subtract</i>(int a, int b, String...params) {
     int result = a - b;
     return (double) result;
 }
@@ -105,8 +134,8 @@ int subResult = subtract(10, 5); // the method call</code></pre>
                         <li><code class="highlighter-rouge">public static</code> - modification</li>
                         <li><code class="highlighter-rouge">double</code> - type of the result that is returned</li>
                         <li><code class="highlighter-rouge">subtract</code> - method name</li>
-                        <li><code class="highlighter-rouge">int a, int b</code> - input</li>
-                        <li><code class="highlighter-rouge">return (double) result</code> - if a method is a void, than write just <code>return;</code></li>
+                        <li><code class="highlighter-rouge">int a, int b, String...params</code> - input. Type...params - can receive as many such parameters as needed.</li>
+                        <li><code class="highlighter-rouge">return (double) result</code> - if a method is a void, than write just <code class="highlighter-rouge">return;</code></li>
                     </ul>
                     <p>Name of methods should begin with a verb and written in lowerCamelCase.</p>
                     <h3>Access Modifiers</h3>
@@ -149,7 +178,7 @@ int subResult = subtract(10, 5); // the method call</code></pre>
                     <pre><code>public class Clothing {
     public boolean fit(int size) {...}
     public boolean fit(String size) {...}
-    public boolean fit(int height, int width) {...}
+    public boolean fit(int height, int witdh) {...}
 }</code></pre>
                 <h3>Variable Shadowing</h3>
                 <pre><code>public class Clothing {
@@ -200,30 +229,180 @@ String toString = Arrays.toString(numbers);</code></pre>
                 <h3>String Methods</h3>
                 <ul>
                     <li><code class="highlighter-rouge">String upperCaseName = newName.toUpperCase();</code></li>
-                    <li><code class="highlighter-rouge">String loverCaseName = newName.toLoverCase();</code></li>
-                    <li><code class="highlighter-rouge">String isEmpty = newName.isEmpty();</code></li>
+                    <li><code class="highlighter-rouge">String lowerCaseName = newName.toLowerCase();</code></li>
+                    <li><code class="highlighter-rouge">String isEmpty = newName.isEmpty();</code> Sees space</li>
+                    <li><code class="highlighter-rouge">String isEmpty = newName.isBlank();</code> Does`t sees space</li>
                     <li><code class="highlighter-rouge">String substring = newName.substring(1, 2);</code> beginIndex (including) and endIndex (excluding), where the String will be cut.</li>
-                    <li><code class="highlighter-rouge">int indexOf = newName.indexOf('=');</code> find an index of a specific char.</li>
+                    <li><code class="highlighter-rouge">int indexOf = newName.indexOf('=');</code> find an index of a specific char or sequence of characters.</li>
                     <li><code class="highlighter-rouge">char charAtIndexOne = newName.charAt(1);</code> 'o' at index 1.</li>
                     <li><code class="highlighter-rouge">String stringLength = String.length();</code> It is different to .length, which works on arrays.</li>
                     <li><code class="highlighter-rouge">String trim = " How ".trim()</code> Eliminates spaces.</li>
                     <li><code class="highlighter-rouge">String numberValue = String.valueOf(10);</code> It can handle converting boolean, char, char array, double, float, int, long, and Object types into their respective string representations.</li>
-                    <li><code class="highlighter-rouge">String equals = newName.equals("Bob");</code> Object types are compared by <code>equals()</code> method. Primitive by <code>==</code>. There is also a <code>equalsIgnoreCase()</code> method.</li>
-                    <li><code class="highlighter-rouge">String concat = newName.concat(previousName);</code> Or use <code>+</code>`s.</li>
+                    <li><code class="highlighter-rouge">String equals = newName.equals("Bob");</code> Object types are compared by <code class="highlighter-rouge">equals()</code> method. Primitive by <code class="highlighter-rouge">==</code>. There is also a <code class="highlighter-rouge">equalsIgnoreCase()</code> method.</li>
+                    <li><code class="highlighter-rouge">int compare = name.compareTo("Bob");</code> The comparison is based on the Unicode value of each character in the strings. The method returns 0 if the string is equal to the other string. A value less than 0 is returned if the string is less than the other string (less characters) and a value greater than 0 if the string is greater than the other string (more characters). There is also a <code class="highlighter-rouge">CompareToIgnoreCase()</code></li>
+                    <li>
+                        <code class="highlighter-rouge">boolean regionMatches = name.regionMatches(boolean ignoreCase, int offset, String other, int otherOffset, int length);</code>
+<pre><code>String myStr1 = "Hello, World!";
+String myStr2 = "New World";
+boolean regionMatches = name.regionMatches(7, myStr2, 4, 5); // True</code></pre>
+                    </li>
+                    <li><code class="highlighter-rouge">String contains = name.contains("ob");</code> Returns a boolean on a consequent of characters in a given array.</li>
+                    <li><code class="highlighter-rouge">String concat = newName.concat(previousName);</code> Or use <code class="highlighter-rouge">+</code>`s.</li>
+                    <li><code class="highlighter-rouge">String join = String.join(name, "", " goes to bed ", " launches Rockets");</code> Places delimiter between elements.</li>
+                    <li><code class="highlighter-rouge">String replace = name.replace("Bo", "C");</code> or <code class="highlighter-rouge">name.replaceFirst(stringVar, "c");</code></li>
+                    <li><code class="highlighter-rouge">boolean startsWith = name.startsWith("b", 2);</code> 2 is optional, indicates starting index number.</li>
+                    <li><code class="highlighter-rouge">boolean endsWith = name.endsWith("b");</code></li>
+                    <li><code class="highlighter-rouge">String[] split = name.split("o", 1);</code> 1 - number of elements which will be returned</li>
+                    <li><code class="highlighter-rouge">String repeat = name.repeat(4);</code> repeats name *4 times;</li>
+                    <li><code class="highlighter-rouge">String format = String.format("%2$,3.2f %1$s", "meters", 1260.5052);</code> Formats a string using placeholders and parameters</li>
+                    <li>
+                        <code class="highlighter-rouge">String format = strVar.formatted(name, salary); String strVar = "%s receives CHF %.2f";</code>. The difference compared to <code class="highlighter-rouge">String.format()</code> is in passing the ready string.
+                        <h4>Placeholders</h4>
+                        <p><code class="highlighter-rouge">%[arg$][flags][width][.precision]conversion</code>. The components in [square brackets] are optional.</p>
+                        <ul>
+                            <li><code class="highlighter-rouge">arg$</code> A number followed by a $ sign which indicates which of the additional arguments to use, argument numbers start at 1. This can be replaced with a <code class="highlighter-rouge">&lt;</code> which specifies that the argument from the previous placeholder should be used.</li>
+                            <li><code class="highlighter-rouge">flags</code> A sequence of any of the following characters:
+                              <ul>
+                                <li><code class="highlighter-rouge">-</code> - Makes the output left-justified by adding any padding spaces to the right instead of to the left.</li>
+                                <li><code class="highlighter-rouge">#</code> - Shows an alternate representation of the formatted data depending on the conversion.</li>
+                                <li><code class="highlighter-rouge">+</code> - Causes positive numbers to always be prefixed with "+".</li>
+                                <li><code class="highlighter-rouge"> </code> - (A space character) This prefixes a space to positive numbers, primarily so that the digits can be lined up with the digits of negative numbers.</li>
+                                <li><code class="highlighter-rouge">0</code> - Pads numbers with zeroes on the left.</li>
+                                <li><code class="highlighter-rouge">,</code> - Groups digits (for example by thousands) and puts separators between the groups. This is affected by the locale.</li>
+                                <li><code class="highlighter-rouge">(</code> - Encloses negative numbers in parentheses.</li>
+                              </ul>
+                            </li>
+                            <li><code class="highlighter-rouge">width</code> A whole number specifying the minimum number of characters that the output should occupy. If necessary spaces are added to the right to reach this number, or to the left if the <code class="highlighter-rouge">-</code> flag is used.</li>
+                            <li><code class="highlighter-rouge">.precision</code> A <code class="highlighter-rouge">.</code> followed by a whole number indicating how many decimal digits to show in the formatted data.</li>
+                            <li><code class="highlighter-rouge">conversion</code> A character which indicates how an argument's data should be represented. If the character is uppercase the data will be formatted in uppercase where possible. The list of possible characters is shown in the table below.</li>
+                          </ul>
+                        <h4>List of conversions</h4>
+                        <table>
+                            <tr>
+                                <th>Specifier</th>
+                                <th>Meaning</th>
+                            </tr>
+                            <tr>
+                                <td>%s or %S</td>
+                                <td>String</td>
+                            </tr>
+                            <tr>
+                                <td>%d</td>
+                                <td>integer: byte, short, int, long</td>
+                            </tr>
+                            <tr>
+                                <td>%f</td>
+                                <td>real number: float, double</td>
+                            </tr>
+                            <tr>
+                                <td>%b or %B</td>
+                                <td>boolean</td>
+                            </tr>
+                            <tr>
+                                <td>%c or %C</td>
+                                <td>char</td>
+                            </tr>
+                            <tr>
+                                <td>%t or %T</td>
+                                <td>Date</td>
+                            </tr>
+                            <tr>
+                                <td>%%</td>
+                                <td>displays % character</td>
+                            </tr>
+                            <tr>
+                                <td>%n</td>
+                                <td>Line break</td>
+                            </tr>
+                            <tr>
+                                <td>%.2f</td>
+                                <td>number of decimal points after coma</td>
+                            </tr>
+                        </table>
+                    </li>
                 </ul>
-                <h3>String builder class</h3>
-                <pre><code>StringBuilder builder = new StringBuilder();
+                <h3>Formatter class</h3>
+                <p>Works the same as <code class="highlighter-rouge">String.format()</code></p>
+<pre><code>String[] products = new String[] {"orange", "apple", "mango", "kiwi"};
+StringBuilder builder = new StringBuilder();
+Formatter formatter = new Formatter(builder);
+int count = 0;
+
+formatter.format("List for %tD %tT:%n",
+        LocalDate.now(), LocalTime.now());
+
+for (String item : products) {
+    count++;
+    builder.append(count).append(") ")
+            .append(item).append("\n");
+}
+
+System.out.println(builder);</code></pre>
+                <h3>printf</h3>
+                <code class="highlighter-rouge">System.out.printf("1) User: %s %s, email: %s%n", firstName, lastName, email);</code>
+                <h3>DecimalFormat class</h3>
+<pre><code>String strCost1 = new DecimalFormat("0.00").format(cost1);
+System.out.println("2) Non-rounded is " + cost1 + ", rounded is " + strCost1);
+
+String strCost2 = new DecimalFormat("#.##", new DecimalFormatSymbols(Locale.ENGLISH)).format(cost);
+System.out.println("3) Non-rounded is " + cost + ", rounded is " + strCost2);</code></pre>
+                <h3>Random class</h3>
+<pre><code>Random random = new Random();
+
+String generatedString = random.ints(leftLimit, rightLimit + 1)
+    .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
+    .limit(targetStringLength)
+    .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+    .toString();</code></pre>
+                <h3>StringBuilder class</h3>
+<pre><code>StringBuilder builder = new StringBuilder();
 builder.append("hello").append("world").append(31);
 
 builder.reverse();
 String reverseString = builder.toString();</code></pre>
-                <p>The advantage of a string builder to simple concatenation is that it creates only one String in memory during appending. Less memory usage.</p>
-                <pre><code>String result = new String();
+                                <p>The advantage of a string builder to simple concatenation is that it creates only one String in memory during appending. Less memory usage.</p>
+<pre><code>String result = new String();
 char[] reverses = input.toCharArray();
 for (int i = reverses.length-1; i >= 0; i--) {
-    result += reverses[i];
+result += reverses[i];
 }</code></pre>
-                <p>Here is another, classical way of reversing a String.</p>
+                                <p>Here is another, classical way of reversing a String.</p>
+                                <h3>String buffer class</h3>
+                                <p>StringBuffer is synchronized. This means that multiple threads cannot call the methods of StringBuffer simultaneously. StringBuilder is asynchronized.</p>
+                                <h4>StringBuffer / StringBuilder Methods</h4>
+                                <ul>
+                                    <li><code class="highlighter-rouge">obj.append(var or "")</code></li>
+                                    <li><code class="highlighter-rouge">obj.insert(2,"App")</code> At a position</li>
+                                    <li><code class="highlighter-rouge">obj.replace(2,4,"App")</code> Starting and ending at</li>
+                                    <li><code class="highlighter-rouge">obj.delete(2, 4)</code> Starting and ending at</li>
+                                </ul>
+                                <h3>StringJoiner class</h3>
+                                <p>Is used to join Strings.</p>
+                                <h4>StringJoiner Constructor</h4>
+                                <code class="highlighter-rouge">StringJoiner(CharSequence delimiter, CharSequence prefix, CharSequence suffix)</code>
+                                <h4>StringJoiner Methods</h4>
+                                <ul>
+                                    <li><code class="highlighter-rouge">obj.add("String")</code> adds a String</li>
+                                    <li><code class="highlighter-rouge">obj.merge(StringJoiner other)</code> Merges two StringJoiners</li>
+                                </ul>
+<pre><code>private final static String PREFIX = "[";
+private final static String SUFFIX = "]";
+StringJoiner joiner = new StringJoiner(", ", PREFIX, SUFFIX);
+joiner.add("orange").add("palm");
+// RESULT: [orange, palm]
+StringJoiner vegesJoiner = new StringJoiner("-", PREFIX, SUFFIX);
+vegesJoiner.add("potato").add("carrot");
+StringJoiner mergedJoiner = joiner.merge(vegesJoiner);
+// RESULT: [orange, palm, potato-carrot]</code></pre>
+                <h3>Character Methods</h3>
+                <ul>
+                    <li><code class="highlighter-rouge">char lowerCase = Character.toLowerCase(name);</code> or <code class="highlighter-rouge">toUpperCase();</code></li>
+                    <li><code class="highlighter-rouge">char a = (char) 82;</code> Changes number to a relevant character.</li>
+                    <li><code class="highlighter-rouge">boolean isLetter = Character.isLetter('A');</code></li>
+                    <li><code class="highlighter-rouge">boolean isDigit = Character.isDigit(2);</code></li>
+                    <li><code class="highlighter-rouge">boolean isWSp = Character.isWhitespace('\t');</code> Prints true.</li>
+                    <li><code class="highlighter-rouge">boolean isUCase = Character.isUpperCase('A');</code> or <code class="highlighter-rouge">isLowerCase();</code></li>
+                </ul>
                 <h3>Cmd codes</h3>
                 <ul>
                     <li><code class="highlighter-rouge">javac OrderClass.java</code> Compiles java code into a binary code.</li>
@@ -423,21 +602,76 @@ for (Clothing item: customer01.getItems()) {
                 <pre><code><strong>try {</strong>
     Clothing[] items = new Clothing[10];
     items[0].description = "Pink Boiler Suit";
-<strong>}   catch (NullPointerException e) {</strong>
+<strong>}   catch (NullPointerException e) { // Name of the exception</strong>
     String errMsg = e.getMessage();
     e.printStackTrace();
-<strong>}   catch (Expectation e) { ... }</strong></code></pre>
+<strong>}   catch (Expectation e) {
+    ...
+}</strong><strong>   finally { ... }</strong> // May be used. Runs always, independently from catching an exception.</code></pre>
                 <ul>
                     <li><code class="highlighter-rouge">try</code> block contains logic that can potentially result in expectations.</li>
                     <li><code class="highlighter-rouge">catch</code> block contain logic that handles expectations.</li>
                 </ul>
+                <p>Nested try blocks can be used when some specific section an a big code can cause a specific exception.</p>
+                <h4>Exception classes</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>RuntimeException</td>
+                            <td>Exceptions that can occur during normal operation of the Java virtual machine.</td>
+                        </tr>
+                        <tr>
+                            <td>NullPointerException</td>
+                            <td>Occurs when a method attempts to access an object member through a null reference.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>Exception invokers</h4>
+                <p>The <code class="highlighter-rouge">throw</code> keyword is used to create an exception. We specify the exception object that should be thrown. The exception contains a message describing the error. These exceptions can be related, for example, to validating input data for correctness, compliance with a certain criterion, etc.</p>
+<pre><code>throw new ArithmeticException("The age is not right!"); // The string becomes a e.getMessage() value</code></pre>
+                <p>The <code class="highlighter-rouge">throws</code> keyword is used to declare exceptions; indicates that an exception may occur in a method; does not throw an exception; always used with a method signature. The method must provide a throws clause that lists the exceptions.</p>
+<pre><code>public void myMethod() throws SpaceInvadersException
+{
+    /* Code that might throw an exception */
+}
+
+public void callingMethod()
+{
+    try {
+    myMethod();
+    }
+    catch (SpaceInvadersException exception) {
+    /* Complicated error handling code */
+    }
+}</code></pre>
+                <h4>Custom Exceptions</h4>
+                <p>When we implement a custom exception, the <code class="highlighter-rouge">RuntimeException</code> - for not checked or <code class="highlighter-rouge">Exception</code> - for checked Class need to be extended:</p>
+<pre><code>public class myException extends RuntimeException {
+    public myException(String msg, Throwable cause) {
+        super(msg, cause);
+    }
+}
+...
+return new myException("An exception: ", e).getMessage();</code></pre>
+                <h4>Try with resources</h4>
+<pre><code>try (FileOutputStream fos = new FileOutputStream(Constants.BASE_PATH + "myfile2.txt");
+BufferedReader br = new BufferedReader(new FileReader(Constants.BASE_PATH + "myfile.txt"))) {
+    ...
+} catch {...}</code></pre>
+                <p>The <code class="highlighter-rouge">FileOutputStream</code> implements a AutoCloseable, hence the file will be automatically closed after the process is done.</p>
                 <h3>Object-Oriented Approach to Code Reuse</h3>
                 <h3>Inheritance</h3>
                 <p>We create a Class "Gadget" for Subclasses "Camera()" and "TV()", which is called a Superclass.</p>
                 <p>Super class stores common attributes and behavers, subclasses however may overwrite them and have more specific execution.</p>
                 <p>Hoverer, "Gadget" Superclass can not have is record a video method and change a chanel, because it will be not common for all Gadgets.</p>
                 <p>There could be any number of levels in the hierarchy, from very general to very specific child types.</p>
-                <p>Sometimes, inheritance is unwelcome. Therefore, classes which must not be extended are marked with a <code>final</code> access modifier. E.g. <code>public final class Animal {...}</code></p>
+                <p>Sometimes, inheritance is unwelcome. Therefore, classes which must not be extended are marked with a <code class="highlighter-rouge">final</code> access modifier. E.g. <code class="highlighter-rouge">public final class Animal {...}</code></p>
                 <p>Object is the top-level class in a Java class hierarchy.</p>
                 <div>                    
                     <pre><code>public static void main(String[] args) {
@@ -523,9 +757,9 @@ for (Clothing item: customer01.getItems()) {
     }
 }</code></pre>
                 
-                <pre style="color: rgb(246, 69, 69);"><code><strong>Clothing</strong> jacket1 = new <strong>Clothing</strong>();</code></pre>
+                <pre style="color: rgb(246, 69, 69);"><code class="highlighter-rouge"><strong>Clothing</strong> jacket1 = new <strong>Clothing</strong>();</code></pre>
                 <p>Abstract classes can be used to create references to objects.</p>
-                <pre style="color: green;"><code><strong>Clothing[]</strong> items = new <strong>Clothing</strong>[3];</code></pre>
+                <pre style="color: green;"><code class="highlighter-rouge"><strong>Clothing[]</strong> items = new <strong>Clothing</strong>[3];</code></pre>
                 <pre><code><strong>Clothing</strong> jacket2 = new <strong>Tailored</strong>();
 jacket2.refund();
 jacket2.changeColor(); // "Color is red"</code></pre>
@@ -601,7 +835,7 @@ jacket4.addPrice();</code></pre>
                 <h3>Enums</h3>
                 <p><code class="highlighter-rouge"></code></p>
                 <h3>Java Classes</h3>
-                <h4>Classes-Wrappers</h4>
+                <h3>Classes-Wrappers</h3>
                 <p>Classes-Wrappers are used to transform primitive data into an Object.</p>
 <pre><code>int num = 55;
 String strByte = "25"
@@ -613,11 +847,11 @@ Integer obj1 = Integer.valueOf(strByte);
 // Convert an Object or a String to primitive
 int var01 = obj.intValue();
 int var02 = Integer.parseInt(strByte);</code></pre>
-                <h4>Scanner for cmd line input</h4>
+                <h3>Scanner for cmd line input</h3>
 <pre><code>Scanner scanner = new Scanner(System.in);
 String strA = scanner.nextLine();
 int input = Integer.parseInt(scanner.nextLine());</code></pre>
-                <h4>ArrayList</h4>
+                <h3>ArrayList</h3>
                 <p>The <code class="highlighter-rouge">ArrayList</code> class is a resizable array. Elements in an ArrayList are actually objects. To use other types, such as int, you must specify an equivalent wrapper class, e.g.: <code class="highlighter-rouge">Integer</code>.</p>
                 <p>The difference between a built-in array and an <code class="highlighter-rouge">ArrayList</code> in Java, is that the size of an array cannot be modified (if you want to add or remove elements to/from an array, you have to create a new one). While elements can be added and removed from an <code class="highlighter-rouge">ArrayList</code> whenever you want.</p>
 <pre><code>Character a = 'a';
@@ -633,14 +867,289 @@ list.clear();
 
 list.size();
 </code></pre>
-                <h4>Collections</h4>
+                <h3>Collections</h3>
                 <p>The <code class="highlighter-rouge">Collections</code> class has a useful <code class="highlighter-rouge">sort()</code> method</p>
 <pre><code>Collections.sort(list);</code></pre>
+                <h3>Regular Expressions, Regex</h3>
+                <p>Regular expressions are patterns used to match character combinations in strings. Regular expressions are also objects.</p>
+                <h4>Regex specific</h4>
+                <ul>
+                    <li><strong>Coupling</strong> <code class="highlighter-rouge">ab</code> - forms an expression, i.e. AND</li>
+                    <li><strong>Alternation</strong> <code class="highlighter-rouge">a|b</code> - OR</li>
+                    <li><strong>Clothing</strong> <code class="highlighter-rouge">a*</code> - all variating: a, aa, aaa</li>
+                </ul>
+                <h4>Regex classes</h4>
+                <ul>
+                    <li>
+                        <code class="highlighter-rouge">Class Pattern</code>
+                        <p>A compiled representation of a regular expression.</p>
+                        <p>A regular expression, specified as a string, must first be compiled into an instance of this class. The resulting pattern can then be used to create a Matcher object that can match arbitrary character sequences against the regular expression. All of the state involved in performing a match resides in the matcher, so many matchers can share the same pattern.</p>
+<pre><code>Pattern p = Pattern.compile("a*b");
+Matcher m = p.matcher("aaaaab");
+boolean b = m.matches();</code></pre>
+<pre><code>boolean b = Pattern.matches("a*b", "aaaaab");</code></pre>
+                        <p>The statement above is equivalent to the three first above, though for repeated matches it is less efficient since it does not allow the compiled pattern to be reused.</p>
+                    </li>
+                    <li>
+                        <code class="highlighter-rouge">Class Matcher</code> An engine that performs match operations on a character sequence by interpreting a Pattern.
+                        <p>A matcher is created from a pattern by invoking the pattern's matcher method. Once created, a matcher can be used to perform three different kinds of match operations:</p>
+                        <ul>
+                            <li>The <code class="highlighter-rouge">matches</code> method attempts to match the entire input sequence against the pattern.</li>
+                            <li>The <code class="highlighter-rouge">lookingAt</code> method attempts to match the input sequence, starting at the beginning, against the pattern.</li>
+                            <li>The <code class="highlighter-rouge">find</code> method scans the input sequence looking for the next subsequence that matches the pattern. If multiple occurrences are found in the string, then the first call to find() will jump to the first occurrence. Thereafter, each subsequent call to the find() method will go to the next matching occurrence, one by one.</li>
+                        </ul>
+                        <p>Each of these methods returns a boolean indicating success or failure.</p>
+<pre><code>Pattern pattern = Pattern.compile("sho*", Pattern.CASE_INSENSITIVE);
+Matcher mtch = pattern.matcher("Sunny shop is a good shop");
+    
+while (mtch.find()) {
+    System.out.println("Pattern found from " + mtch.start() + " to " + (mtch.end() - 1));
+}</code></pre>
+                    </li>
+                    <li><code class="highlighter-rouge">Class PatternSyntaxException</code> Unchecked exception thrown to indicate a syntax error in a regular-expression pattern.</li>
+                    <li>
+                        <code class="highlighter-rouge">Interface MatchResult</code> The result of a match operation.
+                        <p>This interface contains query methods used to determine the results of a match against a regular expression. The match boundaries, groups and group boundaries can be seen but not modified through a MatchResult.</p>
+                    </li>
+                </ul>
+                <h4>Creating a regular expression</h4>
+                <p>You construct a regular expression in one of two ways:</p>
+                <ul>
+                    <li>
+                        <p><strong>String Literals</strong> - exact match.</p>
+<pre><code>Pattern.matches("abc", "abc") // Returns true</code></pre>
+                    </li>
+                    <li>
+                        <p><strong>Character Classes</strong> - either.</p>
+<pre><code>Pattern.matches("[pqr]", "r"); // Returns true</code></pre>
+                        <p>Example: <code class="highlighter-rouge">[Cc]ompany</code> will match all occurrences of the string "company" with the letter C in either lowercase or uppercase.</p>
+                    </li>
+                </ul>
+                <h3>Regex methods</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>matcher.group();</td>
+                            <td>Returns the input subsequence matched by the previous match. I.e. returns matched result</td>
+                        </tr>
+                        <tr>
+                            <td>matcher.start();</td>
+                            <td>Returns the start index of the previous match</td>
+                        </tr>
+                        <tr>
+                            <td>matcher.end();</td>
+                            <td>Returns the end index of the previous match</td>
+                        </tr>
+                        <tr>
+                            <td>matcher.replaceFirst(String replacement);</td>
+                            <td>Replaces the first subsequence of the input sequence that matches the pattern with the given replacement string</td>
+                        </tr>
+                        <tr>
+                            <td>matcher.replaceAll(String replacement);</td>
+                            <td>Replaces every subsequence of the input sequence that matches the pattern with the given replacement string</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>Regex Character classes</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Character Class</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>[xyz]</td>
+                            <td>x,y or z</td>
+                        </tr>
+                        <tr>
+                            <td>[^xyz]</td>
+                            <td>Any single character other than x,y or z</td>
+                        </tr>
+                        <tr>
+                            <td>[a-zA-Z]</td>
+                            <td>Characters from range a to z or A to Z.</td>
+                        </tr>
+                        <tr>
+                            <td>[a-f[m-t]]</td>
+                            <td>Union of a to f and m to t.</td>
+                        </tr>
+                        <tr>
+                            <td>[a-z && p-y]</td>
+                            <td>All the range of elements intersection between two ranges</td>
+                        </tr>
+                        <tr>
+                            <td>[a-z && [^bc]]</td>
+                            <td>a to z union with except b and c</td>
+                        </tr>
+                        <tr>
+                            <td>[a-z && [^m-p]]</td>
+                            <td>a to z union with except range m to p</td>
+                        </tr>
+                    </tbody>
+                </table>
+<pre><code>// Returns True
+Pattern.matches("[tT]im|[jJ]in", "Tim");
+Pattern.matches(".*abc.*", "deabcpq");
+Pattern.matches("[a-zA-Z][a-zA-Z][a-zA-Z]", "aPz");
+Pattern.matches("\\D*", "abcde");</code></pre>
+                <h4>Predefined character classes</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Regex</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>.</td>
+                            <td>Any character</td>
+                        </tr>
+                        <tr>
+                            <td>\d</td>
+                            <td>Any digits, [0-9]</td>
+                        </tr>
+                        <tr>
+                            <td>\D</td>
+                            <td>Any non-digit, [^0-9]</td>
+                        </tr>
+                        <tr>
+                            <td>\s</td>
+                            <td>Whitespace character, [\t\n\x0B\f\r]</td>
+                        </tr>
+                        <tr>
+                            <td>\S</td>
+                            <td>ANon-whitespace character, [^\s]</td>
+                        </tr>
+                        <tr>
+                            <td>\w</td>
+                            <td>Word character, [a-zA-Z_0-9]</td>
+                        </tr>
+                        <tr>
+                            <td>\W</td>
+                            <td>Non-word character, [^\w]</td>
+                        </tr>
+                        <tr>
+                            <td>\b</td>
+                            <td>Word boundary</td>
+                        </tr>
+                        <tr>
+                            <td>\B</td>
+                            <td>Non -Word boundary</td>
+                        </tr>
+                    </tbody>
+                </table>
+<pre><code>Pattern.matches("...p", "qdqp") // Returns True</code></pre>
+                <h4>Boundary Matchers</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Regex</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>^</td>
+                            <td>The beginning of a line</td>
+                        </tr>
+                        <tr>
+                            <td>$</td>
+                            <td>The end of a line</td>
+                        </tr>
+                        <tr>
+                            <td>\b</td>
+                            <td>A word boundary</td>
+                        </tr>
+                        <tr>
+                            <td>\B</td>
+                            <td>A non-word boundary</td>
+                        </tr>
+                        <tr>
+                            <td>\A</td>
+                            <td>The beginning of the input</td>
+                        </tr>
+                        <tr>
+                            <td>\G</td>
+                            <td>The end of the previous match</td>
+                        </tr>
+                        <tr>
+                            <td>\Z</td>
+                            <td>The end of the input but for the final terminator, if any</td>
+                        </tr>
+                        <tr>
+                            <td>\z</td>
+                            <td>The end of the input</td>
+                        </tr>
+                    </tbody>
+                </table>
+<pre><code>Pattern.matches("^Hello$", "Greetings! Hello"); // Returns False</code></pre>
+                <p>Quantifiers. Quantification – searching for sequences</p>
+                <h4>Greedy quantifiers</h4>
+                <p>Greedy quantifiers try to cover everything they can — to the end of the line</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Regex</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>X?</td>
+                            <td>X appears once or not</td>
+                        </tr>
+                        <tr>
+                            <td>X+</td>
+                            <td>X appears once or more than once</td>
+                        </tr>
+                        <tr>
+                            <td>X*</td>
+                            <td>X appears zero or not once</td>
+                        </tr>
+                        <tr>
+                            <td>X{n}</td>
+                            <td>X appears n times</td>
+                        </tr>
+                        <tr>
+                            <td>X{n,}</td>
+                            <td>X appears n times or more than n</td>
+                        </tr>
+                        <tr>
+                            <td>X{n,m}</td>
+                            <td>X appears greater than equal to n times and less than m times.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>Reluctant quantifiers</h4>
+                <p>Reluctant quantifiers cover a minimum set of characters and expand it if subsequent concatenated expressions fail.</p>
+                <p>Adds <code class="highlighter-rouge">?</code> to a Greedy quantifiers</p>        
+                <h4>Possessive quantifiers</h4>
+                <p>Possessive quantifiers unlike regular (greedy) quantification, possessive quantification not only tries to find the longest possible variant, but also does not allow the algorithm to go back to previous search steps in order to find possible matches for the remaining part of the regular expression.</p>
+                <p>Adds <code class="highlighter-rouge">+</code> to a Greedy quantifiers</p>
+                <h3>FileOutputStream</h3>
+                <p>A file output stream is an output stream for writing data to a File or to a FileDescriptor.</p>
+                <h3>Work with Files</h3>
+                <p>When working with files, try-catch block needs to wrap code with works with file up.</p>
+<pre><code>File file = new File(Constants.BASE_PATH + "notes.txt");</code></pre>
+<pre><code>FileWriter fw = new FileWriter(Constants.BASE_PATH + "notes.txt");
+fw.write(content);
+fw.close();</code></pre>
                 <section>
                 <h2 class="section">Links to helpful websites</h2>
                 <ul>
                     <li><a href="https://jenkov.com/tutorials/java-concurrency/java-memory-model.html">The Java Memory Model And The Hardware Memory Architecture</a></li>
                     <li><a href="https://jenkov.com/tutorials/java-concurrency/volatile.html">Java Volatile Keyword</a></li>
+                    <li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String Object</a></li>
+                    <li><a href="https://www.baeldung.com/java-string-operations">Common String Operations</a></li>
                 </ul>
             </section>
             <section>
