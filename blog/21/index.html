@@ -27,23 +27,23 @@
             <section>
                 <h3>Variable initialization - additional character</h3>
                     <ul>
-                        <li><code class="highlighter-rouge">byte a = 10;</code> 8 bit. Range from -128 to 127;</li>
-                        <li><code class="highlighter-rouge">short s = 10000;</code> 16 bit. Range from -32768 to 32767;</li>
-                        <li><code class="highlighter-rouge">int cost = 133_452_667</code> Range from -2,147,483,684 to 2,147,483,647. <code class="highlighter-rouge">_</code> is for readability;</li>
-                        <li><code class="highlighter-rouge">long <i>a</i> = 123125415l or L;</code></li>
-                        <li><code class="highlighter-rouge">float <i>b</i> = 2.1E12f or F;</code></li>
-                        <li><code class="highlighter-rouge">boolean <i>c</i> = !(x > 5 && x < 10);</code></li>
-                        <li><code class="highlighter-rouge">String <i>d</i> = new String(arrayName);</code></li>
-                        <li><code class="highlighter-rouge">double price1 = 9.99, price2 = 12.99;</code></li>
+                        <li><code>byte a = 10;</code> 8 bit. Range from -128 to 127;</li>
+                        <li><code>short s = 10000;</code> 16 bit. Range from -32768 to 32767;</li>
+                        <li><code>int cost = 133_452_667</code> Range from -2,147,483,684 to 2,147,483,647. <code>_</code> is for readability;</li>
+                        <li><code>long <i>a</i> = 123125415l or L;</code></li>
+                        <li><code>float <i>b</i> = 2.1E12f or F;</code></li>
+                        <li><code>boolean <i>c</i> = !(x > 5 && x < 10);</code></li>
+                        <li><code>String <i>d</i> = new String(arrayName);</code></li>
+                        <li><code>double price1 = 9.99, price2 = 12.99;</code></li>
                     </ul>
                     <p>If uninitialized, variables have a default value:</p>
                     <ul>
-                        <li><code class="highlighter-rouge">int</code>: <strong>0</strong></li>
-                        <li><code class="highlighter-rouge">String</code>: <strong>null</strong></li>
-                        <li><code class="highlighter-rouge">boolean</code>: <strong>false</strong></li>
+                        <li><code>int</code>: <strong>0</strong></li>
+                        <li><code>String</code>: <strong>null</strong></li>
+                        <li><code>boolean</code>: <strong>false</strong></li>
                     </ul>
-                    <h3>Constants</h3>
-                    <p>Use <code class="highlighter-rouge">final</code> word before initialization of a variable.</p>
+                    <h4>Constants</h4>
+                    <p>Use <code>final</code> word before initialization of a variable.</p>
                 <h3>Theory</h3>
                     <p>Classes consist of methods and data; Packages - folder where the class will be saved;</p>
                     <p>Classes are Templates (they are singles), Objects are Individual elements created from classes.</p>
@@ -60,7 +60,7 @@
                             <li>The access modifiers are not specified.</li>
                         </ul>
                     <p>Override of methods - change of the functional in a sub-class, if a sub-class has the same method, which is defined in a parent class (super class).</p>
-                    <p>If variables contain the same value, the value memory address is the same. However, if <code class="highlighter-rouge">new</code> keyword is used, new value will be created. But, interning rows involves storing only ONE copy, e.g.:</p>
+                    <p>If variables contain the same value, the value memory address is the same. However, if <code>new</code> keyword is used, new value will be created. But, interning rows involves storing only ONE copy, e.g.:</p>
 <pre><code>String product5 = new String("Round cube").intern();</code></pre>
                     <p><strong>Resources</strong> - an Object which needs to be closed after end of the work with a program.</p>
                 <h3>Data Conversion</h3>
@@ -101,7 +101,7 @@ long b = (long) a; // Explicit Type Data Conversion</code></pre>
 - Classes goes here}
 }</code></pre>
                 <h3>Classes initialization and usage</h3>
-                    <p>new Classes need to be in another <code class="highlighter-rouge">.java</code> file. <i>This information needs to be confirmed.</i></p>
+                    <p>new Classes need to be in another <code>.java</code> file. <i>This information needs to be confirmed.</i></p>
                     <pre><code>public class Customer {
     - data (called fields);
     String name;
@@ -131,11 +131,11 @@ long b = (long) a; // Explicit Type Data Conversion</code></pre>
 int subResult = subtract(10, 5); // the method call</code></pre>
                     <p>This method consist of the following parts:</p>
                     <ul>
-                        <li><code class="highlighter-rouge">public static</code> - modification</li>
-                        <li><code class="highlighter-rouge">double</code> - type of the result that is returned</li>
-                        <li><code class="highlighter-rouge">subtract</code> - method name</li>
-                        <li><code class="highlighter-rouge">int a, int b, String...params</code> - input. Type...params - can receive as many such parameters as needed.</li>
-                        <li><code class="highlighter-rouge">return (double) result</code> - if a method is a void, than write just <code class="highlighter-rouge">return;</code></li>
+                        <li><code>public static</code> - modification</li>
+                        <li><code>double</code> - type of the result that is returned</li>
+                        <li><code>subtract</code> - method name</li>
+                        <li><code>int a, int b, String...params</code> - input. Type...params - can receive as many such parameters as needed.</li>
+                        <li><code>return (double) result</code> - if a method is a void, than write just <code>return;</code></li>
                     </ul>
                     <p>Name of methods should begin with a verb and written in lowerCamelCase.</p>
                     <h3>Access Modifiers</h3>
@@ -145,11 +145,11 @@ int subResult = subtract(10, 5); // the method call</code></pre>
                             <th>Visibility Scope</th>
                         </tr>
                         <tr>
-                            <td><code class="highlighter-rouge">public</code></td>
+                            <td><code>public</code></td>
                             <td>All classes</td>
                         </tr>
                         <tr>
-                            <td><code class="highlighter-rouge">protected</code></td>
+                            <td><code>protected</code></td>
                             <td>Classes in the same package and subclasses.<br>This is true even if the subclass is not located in the same package as the superclass.</td>
                         </tr>
                         <tr>
@@ -157,7 +157,7 @@ int subResult = subtract(10, 5); // the method call</code></pre>
                             <td>Classes in the same package</td>
                         </tr>
                         <tr>
-                            <td><code class="highlighter-rouge">private</code></td>
+                            <td><code>private</code></td>
                             <td>Some Classes</td>
                         </tr>
                     </table>
@@ -189,7 +189,7 @@ int subResult = subtract(10, 5); // the method call</code></pre>
 }</code></pre>
                 <h3>Package initialization</h3>
                     <pre><code>package duke.choice;</code></pre>
-                    <p><code class="highlighter-rouge">duke</code> - is the main folder; <code class="highlighter-rouge">choice</code> - is a subfolder.</p>
+                    <p><code>duke</code> - is the main folder; <code>choice</code> - is a subfolder.</p>
                 <h3>Switch Statement</h3>
                 <pre><code>... String condition = "Used";
     switch (condition) {
@@ -228,53 +228,53 @@ String toString = Arrays.toString(numbers);</code></pre>
                 <p>Splits a string onto parts based on character</p>
                 <h3>String Methods</h3>
                 <ul>
-                    <li><code class="highlighter-rouge">String upperCaseName = newName.toUpperCase();</code></li>
-                    <li><code class="highlighter-rouge">String lowerCaseName = newName.toLowerCase();</code></li>
-                    <li><code class="highlighter-rouge">String isEmpty = newName.isEmpty();</code> Sees space</li>
-                    <li><code class="highlighter-rouge">String isEmpty = newName.isBlank();</code> Does`t sees space</li>
-                    <li><code class="highlighter-rouge">String substring = newName.substring(1, 2);</code> beginIndex (including) and endIndex (excluding), where the String will be cut.</li>
-                    <li><code class="highlighter-rouge">int indexOf = newName.indexOf('=');</code> find an index of a specific char or sequence of characters.</li>
-                    <li><code class="highlighter-rouge">char charAtIndexOne = newName.charAt(1);</code> 'o' at index 1.</li>
-                    <li><code class="highlighter-rouge">String stringLength = String.length();</code> It is different to .length, which works on arrays.</li>
-                    <li><code class="highlighter-rouge">String trim = " How ".trim()</code> Eliminates spaces.</li>
-                    <li><code class="highlighter-rouge">String numberValue = String.valueOf(10);</code> It can handle converting boolean, char, char array, double, float, int, long, and Object types into their respective string representations.</li>
-                    <li><code class="highlighter-rouge">String equals = newName.equals("Bob");</code> Object types are compared by <code class="highlighter-rouge">equals()</code> method. Primitive by <code class="highlighter-rouge">==</code>. There is also a <code class="highlighter-rouge">equalsIgnoreCase()</code> method.</li>
-                    <li><code class="highlighter-rouge">int compare = name.compareTo("Bob");</code> The comparison is based on the Unicode value of each character in the strings. The method returns 0 if the string is equal to the other string. A value less than 0 is returned if the string is less than the other string (less characters) and a value greater than 0 if the string is greater than the other string (more characters). There is also a <code class="highlighter-rouge">CompareToIgnoreCase()</code></li>
+                    <li><code>String upperCaseName = newName.toUpperCase();</code></li>
+                    <li><code>String lowerCaseName = newName.toLowerCase();</code></li>
+                    <li><code>String isEmpty = newName.isEmpty();</code> Sees space</li>
+                    <li><code>String isEmpty = newName.isBlank();</code> Does`t sees space</li>
+                    <li><code>String substring = newName.substring(1, 2);</code> beginIndex (including) and endIndex (excluding), where the String will be cut.</li>
+                    <li><code>int indexOf = newName.indexOf('=');</code> find an index of a specific char or sequence of characters.</li>
+                    <li><code>char charAtIndexOne = newName.charAt(1);</code> 'o' at index 1.</li>
+                    <li><code>String stringLength = String.length();</code> It is different to .length, which works on arrays.</li>
+                    <li><code>String trim = " How ".trim()</code> Eliminates spaces.</li>
+                    <li><code>String numberValue = String.valueOf(10);</code> It can handle converting boolean, char, char array, double, float, int, long, and Object types into their respective string representations.</li>
+                    <li><code>String equals = newName.equals("Bob");</code> Object types are compared by <code>equals()</code> method. Primitive by <code>==</code>. There is also a <code>equalsIgnoreCase()</code> method.</li>
+                    <li><code>int compare = name.compareTo("Bob");</code> The comparison is based on the Unicode value of each character in the strings. The method returns 0 if the string is equal to the other string. A value less than 0 is returned if the string is less than the other string (less characters) and a value greater than 0 if the string is greater than the other string (more characters). There is also a <code>CompareToIgnoreCase()</code></li>
                     <li>
-                        <code class="highlighter-rouge">boolean regionMatches = name.regionMatches(boolean ignoreCase, int offset, String other, int otherOffset, int length);</code>
+                        <code>boolean regionMatches = name.regionMatches(boolean ignoreCase, int offset, String other, int otherOffset, int length);</code>
 <pre><code>String myStr1 = "Hello, World!";
 String myStr2 = "New World";
 boolean regionMatches = name.regionMatches(7, myStr2, 4, 5); // True</code></pre>
                     </li>
-                    <li><code class="highlighter-rouge">String contains = name.contains("ob");</code> Returns a boolean on a consequent of characters in a given array.</li>
-                    <li><code class="highlighter-rouge">String concat = newName.concat(previousName);</code> Or use <code class="highlighter-rouge">+</code>`s.</li>
-                    <li><code class="highlighter-rouge">String join = String.join(name, "", " goes to bed ", " launches Rockets");</code> Places delimiter between elements.</li>
-                    <li><code class="highlighter-rouge">String replace = name.replace("Bo", "C");</code> or <code class="highlighter-rouge">name.replaceFirst(stringVar, "c");</code></li>
-                    <li><code class="highlighter-rouge">boolean startsWith = name.startsWith("b", 2);</code> 2 is optional, indicates starting index number.</li>
-                    <li><code class="highlighter-rouge">boolean endsWith = name.endsWith("b");</code></li>
-                    <li><code class="highlighter-rouge">String[] split = name.split("o", 1);</code> 1 - number of elements which will be returned</li>
-                    <li><code class="highlighter-rouge">String repeat = name.repeat(4);</code> repeats name *4 times;</li>
-                    <li><code class="highlighter-rouge">String format = String.format("%2$,3.2f %1$s", "meters", 1260.5052);</code> Formats a string using placeholders and parameters</li>
+                    <li><code>String contains = name.contains("ob");</code> Returns a boolean on a consequent of characters in a given array.</li>
+                    <li><code>String concat = newName.concat(previousName);</code> Or use <code>+</code>`s.</li>
+                    <li><code>String join = String.join(name, "", " goes to bed ", " launches Rockets");</code> Places delimiter between elements.</li>
+                    <li><code>String replace = name.replace("Bo", "C");</code> or <code>name.replaceFirst(stringVar, "c");</code></li>
+                    <li><code>boolean startsWith = name.startsWith("b", 2);</code> 2 is optional, indicates starting index number.</li>
+                    <li><code>boolean endsWith = name.endsWith("b");</code></li>
+                    <li><code>String[] split = name.split("o", 1);</code> 1 - number of elements which will be returned</li>
+                    <li><code>String repeat = name.repeat(4);</code> repeats name *4 times;</li>
+                    <li><code>String format = String.format("%2$,3.2f %1$s", "meters", 1260.5052);</code> Formats a string using placeholders and parameters</li>
                     <li>
-                        <code class="highlighter-rouge">String format = strVar.formatted(name, salary); String strVar = "%s receives CHF %.2f";</code>. The difference compared to <code class="highlighter-rouge">String.format()</code> is in passing the ready string.
+                        <code>String format = strVar.formatted(name, salary); String strVar = "%s receives CHF %.2f";</code>. The difference compared to <code>String.format()</code> is in passing the ready string.
                         <h4>Placeholders</h4>
-                        <p><code class="highlighter-rouge">%[arg$][flags][width][.precision]conversion</code>. The components in [square brackets] are optional.</p>
+                        <p><code>%[arg$][flags][width][.precision]conversion</code>. The components in [square brackets] are optional.</p>
                         <ul>
-                            <li><code class="highlighter-rouge">arg$</code> A number followed by a $ sign which indicates which of the additional arguments to use, argument numbers start at 1. This can be replaced with a <code class="highlighter-rouge">&lt;</code> which specifies that the argument from the previous placeholder should be used.</li>
-                            <li><code class="highlighter-rouge">flags</code> A sequence of any of the following characters:
+                            <li><code>arg$</code> A number followed by a $ sign which indicates which of the additional arguments to use, argument numbers start at 1. This can be replaced with a <code>&lt;</code> which specifies that the argument from the previous placeholder should be used.</li>
+                            <li><code>flags</code> A sequence of any of the following characters:
                               <ul>
-                                <li><code class="highlighter-rouge">-</code> - Makes the output left-justified by adding any padding spaces to the right instead of to the left.</li>
-                                <li><code class="highlighter-rouge">#</code> - Shows an alternate representation of the formatted data depending on the conversion.</li>
-                                <li><code class="highlighter-rouge">+</code> - Causes positive numbers to always be prefixed with "+".</li>
-                                <li><code class="highlighter-rouge"> </code> - (A space character) This prefixes a space to positive numbers, primarily so that the digits can be lined up with the digits of negative numbers.</li>
-                                <li><code class="highlighter-rouge">0</code> - Pads numbers with zeroes on the left.</li>
-                                <li><code class="highlighter-rouge">,</code> - Groups digits (for example by thousands) and puts separators between the groups. This is affected by the locale.</li>
-                                <li><code class="highlighter-rouge">(</code> - Encloses negative numbers in parentheses.</li>
+                                <li><code>-</code> - Makes the output left-justified by adding any padding spaces to the right instead of to the left.</li>
+                                <li><code>#</code> - Shows an alternate representation of the formatted data depending on the conversion.</li>
+                                <li><code>+</code> - Causes positive numbers to always be prefixed with "+".</li>
+                                <li><code> </code> - (A space character) This prefixes a space to positive numbers, primarily so that the digits can be lined up with the digits of negative numbers.</li>
+                                <li><code>0</code> - Pads numbers with zeroes on the left.</li>
+                                <li><code>,</code> - Groups digits (for example by thousands) and puts separators between the groups. This is affected by the locale.</li>
+                                <li><code>(</code> - Encloses negative numbers in parentheses.</li>
                               </ul>
                             </li>
-                            <li><code class="highlighter-rouge">width</code> A whole number specifying the minimum number of characters that the output should occupy. If necessary spaces are added to the right to reach this number, or to the left if the <code class="highlighter-rouge">-</code> flag is used.</li>
-                            <li><code class="highlighter-rouge">.precision</code> A <code class="highlighter-rouge">.</code> followed by a whole number indicating how many decimal digits to show in the formatted data.</li>
-                            <li><code class="highlighter-rouge">conversion</code> A character which indicates how an argument's data should be represented. If the character is uppercase the data will be formatted in uppercase where possible. The list of possible characters is shown in the table below.</li>
+                            <li><code>width</code> A whole number specifying the minimum number of characters that the output should occupy. If necessary spaces are added to the right to reach this number, or to the left if the <code>-</code> flag is used.</li>
+                            <li><code>.precision</code> A <code>.</code> followed by a whole number indicating how many decimal digits to show in the formatted data.</li>
+                            <li><code>conversion</code> A character which indicates how an argument's data should be represented. If the character is uppercase the data will be formatted in uppercase where possible. The list of possible characters is shown in the table below.</li>
                           </ul>
                         <h4>List of conversions</h4>
                         <table>
@@ -322,7 +322,7 @@ boolean regionMatches = name.regionMatches(7, myStr2, 4, 5); // True</code></pre
                     </li>
                 </ul>
                 <h3>Formatter class</h3>
-                <p>Works the same as <code class="highlighter-rouge">String.format()</code></p>
+                <p>Works the same as <code>String.format()</code></p>
 <pre><code>String[] products = new String[] {"orange", "apple", "mango", "kiwi"};
 StringBuilder builder = new StringBuilder();
 Formatter formatter = new Formatter(builder);
@@ -339,7 +339,7 @@ for (String item : products) {
 
 System.out.println(builder);</code></pre>
                 <h3>printf</h3>
-                <code class="highlighter-rouge">System.out.printf("1) User: %s %s, email: %s%n", firstName, lastName, email);</code>
+                <code>System.out.printf("1) User: %s %s, email: %s%n", firstName, lastName, email);</code>
                 <h3>DecimalFormat class</h3>
 <pre><code>String strCost1 = new DecimalFormat("0.00").format(cost1);
 System.out.println("2) Non-rounded is " + cost1 + ", rounded is " + strCost1);
@@ -371,19 +371,19 @@ result += reverses[i];
                                 <p>StringBuffer is synchronized. This means that multiple threads cannot call the methods of StringBuffer simultaneously. StringBuilder is asynchronized.</p>
                                 <h4>StringBuffer / StringBuilder Methods</h4>
                                 <ul>
-                                    <li><code class="highlighter-rouge">obj.append(var or "")</code></li>
-                                    <li><code class="highlighter-rouge">obj.insert(2,"App")</code> At a position</li>
-                                    <li><code class="highlighter-rouge">obj.replace(2,4,"App")</code> Starting and ending at</li>
-                                    <li><code class="highlighter-rouge">obj.delete(2, 4)</code> Starting and ending at</li>
+                                    <li><code>obj.append(var or "")</code></li>
+                                    <li><code>obj.insert(2,"App")</code> At a position</li>
+                                    <li><code>obj.replace(2,4,"App")</code> Starting and ending at</li>
+                                    <li><code>obj.delete(2, 4)</code> Starting and ending at</li>
                                 </ul>
                                 <h3>StringJoiner class</h3>
                                 <p>Is used to join Strings.</p>
                                 <h4>StringJoiner Constructor</h4>
-                                <code class="highlighter-rouge">StringJoiner(CharSequence delimiter, CharSequence prefix, CharSequence suffix)</code>
+                                <code>StringJoiner(CharSequence delimiter, CharSequence prefix, CharSequence suffix)</code>
                                 <h4>StringJoiner Methods</h4>
                                 <ul>
-                                    <li><code class="highlighter-rouge">obj.add("String")</code> adds a String</li>
-                                    <li><code class="highlighter-rouge">obj.merge(StringJoiner other)</code> Merges two StringJoiners</li>
+                                    <li><code>obj.add("String")</code> adds a String</li>
+                                    <li><code>obj.merge(StringJoiner other)</code> Merges two StringJoiners</li>
                                 </ul>
 <pre><code>private final static String PREFIX = "[";
 private final static String SUFFIX = "]";
@@ -396,17 +396,17 @@ StringJoiner mergedJoiner = joiner.merge(vegesJoiner);
 // RESULT: [orange, palm, potato-carrot]</code></pre>
                 <h3>Character Methods</h3>
                 <ul>
-                    <li><code class="highlighter-rouge">char lowerCase = Character.toLowerCase(name);</code> or <code class="highlighter-rouge">toUpperCase();</code></li>
-                    <li><code class="highlighter-rouge">char a = (char) 82;</code> Changes number to a relevant character.</li>
-                    <li><code class="highlighter-rouge">boolean isLetter = Character.isLetter('A');</code></li>
-                    <li><code class="highlighter-rouge">boolean isDigit = Character.isDigit(2);</code></li>
-                    <li><code class="highlighter-rouge">boolean isWSp = Character.isWhitespace('\t');</code> Prints true.</li>
-                    <li><code class="highlighter-rouge">boolean isUCase = Character.isUpperCase('A');</code> or <code class="highlighter-rouge">isLowerCase();</code></li>
+                    <li><code>char lowerCase = Character.toLowerCase(name);</code> or <code>toUpperCase();</code></li>
+                    <li><code>char a = (char) 82;</code> Changes number to a relevant character.</li>
+                    <li><code>boolean isLetter = Character.isLetter('A');</code></li>
+                    <li><code>boolean isDigit = Character.isDigit(2);</code></li>
+                    <li><code>boolean isWSp = Character.isWhitespace('\t');</code> Prints true.</li>
+                    <li><code>boolean isUCase = Character.isUpperCase('A');</code> or <code>isLowerCase();</code></li>
                 </ul>
                 <h3>Cmd codes</h3>
                 <ul>
-                    <li><code class="highlighter-rouge">javac OrderClass.java</code> Compiles java code into a binary code.</li>
-                    <li><code class="highlighter-rouge">java OrderClass</code> Executes binary code (Application).</li>
+                    <li><code>javac OrderClass.java</code> Compiles java code into a binary code.</li>
+                    <li><code>java OrderClass</code> Executes binary code (Application).</li>
                 </ul>
                 <h3>Object Referencing Other Objects as a Property</h3>
                 <table>
@@ -591,14 +591,14 @@ for (Clothing item: customer01.getItems()) {
     // item2 is already initialized
 }</code></pre>
                 <h3>Static Methods</h3>
-                <p>It is a e.g. a <strong>static variable value</strong> that is shared by all objects of a class. Or it can be a <code class="highlighter-rouge">public static void filter(Database data){...}</code> method of a class, which you want to execute some process to perform an action.</p>
+                <p>It is a e.g. a <strong>static variable value</strong> that is shared by all objects of a class. Or it can be a <code>public static void filter(Database data){...}</code> method of a class, which you want to execute some process to perform an action.</p>
                 <ul>
                     <li>Is <i>not specific</i> to any object instance</li>
-                    <li>Can be accessed without instantiating the class (<code class="highlighter-rouge">new</code>), e.g. <code class="highlighter-rouge">Math.random()</code>.</li>
+                    <li>Can be accessed without instantiating the class (<code>new</code>), e.g. <code>Math.random()</code>.</li>
                     <li>Static variables sees only other static variables, therefor can not access instance (internal) variables.</li>
                     <li>Can not be overridden by other classes.</li>
                 </ul>
-                <h3>Handling Exceptions - the <code class="highlighter-rouge">try/catch</code> Block</h3>
+                <h3>Handling Exceptions - the <code>try/catch</code> Block</h3>
                 <pre><code><strong>try {</strong>
     Clothing[] items = new Clothing[10];
     items[0].description = "Pink Boiler Suit";
@@ -607,10 +607,10 @@ for (Clothing item: customer01.getItems()) {
     e.printStackTrace();
 <strong>}   catch (Expectation e) {
     ...
-}</strong><strong>   finally { ... }</strong> // May be used. Runs always, independently from catching an exception.</code></pre>
+}</strong><strong>   finally { ... }</strong> // May be used. Runs always, independently from catching an exception. May have a resource leak. Use try with resources instead.</code></pre>
                 <ul>
-                    <li><code class="highlighter-rouge">try</code> block contains logic that can potentially result in expectations.</li>
-                    <li><code class="highlighter-rouge">catch</code> block contain logic that handles expectations.</li>
+                    <li><code>try</code> block contains logic that can potentially result in expectations.</li>
+                    <li><code>catch</code> block contain logic that handles expectations.</li>
                 </ul>
                 <p>Nested try blocks can be used when some specific section an a big code can cause a specific exception.</p>
                 <h4>Exception classes</h4>
@@ -630,12 +630,16 @@ for (Clothing item: customer01.getItems()) {
                             <td>NullPointerException</td>
                             <td>Occurs when a method attempts to access an object member through a null reference.</td>
                         </tr>
+                        <tr>
+                            <td>IOException e</td>
+                            <td>Signals that an I/O exception of some sort has occurred. This class is the general class of exceptions produced by failed or interrupted I/O operations.</td>
+                        </tr>
                     </tbody>
                 </table>
                 <h4>Exception invokers</h4>
-                <p>The <code class="highlighter-rouge">throw</code> keyword is used to create an exception. We specify the exception object that should be thrown. The exception contains a message describing the error. These exceptions can be related, for example, to validating input data for correctness, compliance with a certain criterion, etc.</p>
+                <p>The <code>throw</code> keyword is used to create an exception. We specify the exception object that should be thrown. The exception contains a message describing the error. These exceptions can be related, for example, to validating input data for correctness, compliance with a certain criterion, etc.</p>
 <pre><code>throw new ArithmeticException("The age is not right!"); // The string becomes a e.getMessage() value</code></pre>
-                <p>The <code class="highlighter-rouge">throws</code> keyword is used to declare exceptions; indicates that an exception may occur in a method; does not throw an exception; always used with a method signature. The method must provide a throws clause that lists the exceptions.</p>
+                <p>The <code>throws</code> keyword is used to declare exceptions; indicates that an exception may occur in a method; does not throw an exception; always used with a method signature. The method must provide a throws clause that lists the exceptions.</p>
 <pre><code>public void myMethod() throws SpaceInvadersException
 {
     /* Code that might throw an exception */
@@ -651,7 +655,7 @@ public void callingMethod()
     }
 }</code></pre>
                 <h4>Custom Exceptions</h4>
-                <p>When we implement a custom exception, the <code class="highlighter-rouge">RuntimeException</code> - for not checked or <code class="highlighter-rouge">Exception</code> - for checked Class need to be extended:</p>
+                <p>When we implement a custom exception, the <code>RuntimeException</code> - for not checked or <code>Exception</code> - for checked Class need to be extended:</p>
 <pre><code>public class myException extends RuntimeException {
     public myException(String msg, Throwable cause) {
         super(msg, cause);
@@ -659,19 +663,20 @@ public void callingMethod()
 }
 ...
 return new myException("An exception: ", e).getMessage();</code></pre>
-                <h4>Try with resources</h4>
+                <h4 id="try-with-resources">Try with resources</h4>
+                <p>When we place references that are AutoClosable in the try declaration, then we don’t need to close the resource ourselves. The <code>try-with-resources</code> statement ensures that each resource is closed at the end of the statement. Any object that implements the <code>AutoCloseable</code> interface can be used as a resource.</p>
 <pre><code>try (FileOutputStream fos = new FileOutputStream(Constants.BASE_PATH + "myfile2.txt");
 BufferedReader br = new BufferedReader(new FileReader(Constants.BASE_PATH + "myfile.txt"))) {
     ...
 } catch {...}</code></pre>
-                <p>The <code class="highlighter-rouge">FileOutputStream</code> implements a AutoCloseable, hence the file will be automatically closed after the process is done.</p>
+                <p>The <code>FileOutputStream</code> implements a AutoCloseable, hence the file will be automatically closed after the process is done.</p>
                 <h3>Object-Oriented Approach to Code Reuse</h3>
                 <h3>Inheritance</h3>
                 <p>We create a Class "Gadget" for Subclasses "Camera()" and "TV()", which is called a Superclass.</p>
                 <p>Super class stores common attributes and behavers, subclasses however may overwrite them and have more specific execution.</p>
                 <p>Hoverer, "Gadget" Superclass can not have is record a video method and change a chanel, because it will be not common for all Gadgets.</p>
                 <p>There could be any number of levels in the hierarchy, from very general to very specific child types.</p>
-                <p>Sometimes, inheritance is unwelcome. Therefore, classes which must not be extended are marked with a <code class="highlighter-rouge">final</code> access modifier. E.g. <code class="highlighter-rouge">public final class Animal {...}</code></p>
+                <p>Sometimes, inheritance is unwelcome. Therefore, classes which must not be extended are marked with a <code>final</code> access modifier. E.g. <code>public final class Animal {...}</code></p>
                 <p>Object is the top-level class in a Java class hierarchy.</p>
                 <div>                    
                     <pre><code>public static void main(String[] args) {
@@ -757,9 +762,9 @@ BufferedReader br = new BufferedReader(new FileReader(Constants.BASE_PATH + "myf
     }
 }</code></pre>
                 
-                <pre style="color: rgb(246, 69, 69);"><code class="highlighter-rouge"><strong>Clothing</strong> jacket1 = new <strong>Clothing</strong>();</code></pre>
+                <pre style="color: rgb(246, 69, 69);"><code><strong>Clothing</strong> jacket1 = new <strong>Clothing</strong>();</code></pre>
                 <p>Abstract classes can be used to create references to objects.</p>
-                <pre style="color: green;"><code class="highlighter-rouge"><strong>Clothing[]</strong> items = new <strong>Clothing</strong>[3];</code></pre>
+                <pre style="color: green;"><code><strong>Clothing[]</strong> items = new <strong>Clothing</strong>[3];</code></pre>
                 <pre><code><strong>Clothing</strong> jacket2 = new <strong>Tailored</strong>();
 jacket2.refund();
 jacket2.changeColor(); // "Color is red"</code></pre>
@@ -778,10 +783,10 @@ jacket4.addPrice();</code></pre>
                 <ul>
                     <li>Instance methods are by default public, static and abstract.</li>
                     <li>Class cannot be directly instantiated, if it is marked with the Interface keyword.</li>
-                    <li>They can contain concrete methods, but only if the methods are either <code class="highlighter-rouge">default</code>, <code class="highlighter-rouge">private</code>, or <code class="highlighter-rouge">static</code>. In case of <code class="highlighter-rouge">default</code> this means that, the classes which implements this interface can not inherit its methods. You can access Interface methods by calling them directly.</li>
+                    <li>They can contain concrete methods, but only if the methods are either <code>default</code>, <code>private</code>, or <code>static</code>. In case of <code>default</code> this means that, the classes which implements this interface can not inherit its methods. You can access Interface methods by calling them directly.</li>
                     <li>They can contain constants but not variables.</li>
                     <li>
-                        By default, constants are MARKED AS <code class="highlighter-rouge">public static final</code> and constants can be used in an implementation class WITHOUT an interface name prefix.
+                        By default, constants are MARKED AS <code>public static final</code> and constants can be used in an implementation class WITHOUT an interface name prefix.
                         <em>Note that, IF by coincidence the name of a class variable/constant matches a constant defined in an implemented interface, the local class variable/constant overrides the interface constant. The constant is converted to a variable and can be changed as many times as desired.</em>
                     </li>
                 </ul>
@@ -833,9 +838,9 @@ jacket4.addPrice();</code></pre>
                     </li>
                 </ul>
                 <h3>Enums</h3>
-                <p><code class="highlighter-rouge"></code></p>
+                <p><code></code></p>
                 <h3>Java Classes</h3>
-                <h3>Classes-Wrappers</h3>
+                <h4>Classes-Wrappers</h4>
                 <p>Classes-Wrappers are used to transform primitive data into an Object.</p>
 <pre><code>int num = 55;
 String strByte = "25"
@@ -847,13 +852,25 @@ Integer obj1 = Integer.valueOf(strByte);
 // Convert an Object or a String to primitive
 int var01 = obj.intValue();
 int var02 = Integer.parseInt(strByte);</code></pre>
-                <h3>Scanner for cmd line input</h3>
-<pre><code>Scanner scanner = new Scanner(System.in);
-String strA = scanner.nextLine();
-int input = Integer.parseInt(scanner.nextLine());</code></pre>
-                <h3>ArrayList</h3>
-                <p>The <code class="highlighter-rouge">ArrayList</code> class is a resizable array. Elements in an ArrayList are actually objects. To use other types, such as int, you must specify an equivalent wrapper class, e.g.: <code class="highlighter-rouge">Integer</code>.</p>
-                <p>The difference between a built-in array and an <code class="highlighter-rouge">ArrayList</code> in Java, is that the size of an array cannot be modified (if you want to add or remove elements to/from an array, you have to create a new one). While elements can be added and removed from an <code class="highlighter-rouge">ArrayList</code> whenever you want.</p>
+                <h4>Scanner</h4>
+                <p><code>Scanner implements Iterator&lt;String&gt;, Closeable</code></p>
+                <h5>Constructors</h5>
+<pre><code>// Params: source – An input stream to be scanned
+Scanner(InputStream source)
+// Params: source – A file to be scanned
+Scanner(File source)</code></pre>
+                <h5>Methods</h5>
+<pre><code>// Returns: the line that was skipped
+String nextLine();
+// Params: pattern – A string specifying a delimiting pattern
+Scanner useDelimiter(String pattern)
+// Returns true if this scanner has another token in its input.
+boolean hasNext()
+// Finds and returns the next complete token from this scanner.
+String next()</code></pre>
+                <h4>ArrayList</h4>
+                <p>The <code>ArrayList</code> class is a resizable array. Elements in an ArrayList are actually objects. To use other types, such as int, you must specify an equivalent wrapper class, e.g.: <code>Integer</code>.</p>
+                <p>The difference between a built-in array and an <code>ArrayList</code> in Java, is that the size of an array cannot be modified (if you want to add or remove elements to/from an array, you have to create a new one). While elements can be added and removed from an <code>ArrayList</code> whenever you want.</p>
 <pre><code>Character a = 'a';
 ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();
 list.add(a);
@@ -866,22 +883,24 @@ list.remove(0);
 list.clear();
 
 list.size();
+
+String s = (String) list.get(0); // Hard type cast. Changing a list data type to a string
 </code></pre>
-                <h3>Collections</h3>
-                <p>The <code class="highlighter-rouge">Collections</code> class has a useful <code class="highlighter-rouge">sort()</code> method</p>
+                <h4>Collections</h4>
+                <p>The <code>Collections</code> class has a useful <code>sort()</code> method</p>
 <pre><code>Collections.sort(list);</code></pre>
-                <h3>Regular Expressions, Regex</h3>
+                <h4>Regular Expressions, Regex</h4>
                 <p>Regular expressions are patterns used to match character combinations in strings. Regular expressions are also objects.</p>
                 <h4>Regex specific</h4>
                 <ul>
-                    <li><strong>Coupling</strong> <code class="highlighter-rouge">ab</code> - forms an expression, i.e. AND</li>
-                    <li><strong>Alternation</strong> <code class="highlighter-rouge">a|b</code> - OR</li>
-                    <li><strong>Clothing</strong> <code class="highlighter-rouge">a*</code> - all variating: a, aa, aaa</li>
+                    <li><strong>Coupling</strong> <code>ab</code> - forms an expression, i.e. AND</li>
+                    <li><strong>Alternation</strong> <code>a|b</code> - OR</li>
+                    <li><strong>Clothing</strong> <code>a*</code> - all variating: a, aa, aaa</li>
                 </ul>
                 <h4>Regex classes</h4>
                 <ul>
                     <li>
-                        <code class="highlighter-rouge">Class Pattern</code>
+                        <code>Class Pattern</code>
                         <p>A compiled representation of a regular expression.</p>
                         <p>A regular expression, specified as a string, must first be compiled into an instance of this class. The resulting pattern can then be used to create a Matcher object that can match arbitrary character sequences against the regular expression. All of the state involved in performing a match resides in the matcher, so many matchers can share the same pattern.</p>
 <pre><code>Pattern p = Pattern.compile("a*b");
@@ -891,12 +910,12 @@ boolean b = m.matches();</code></pre>
                         <p>The statement above is equivalent to the three first above, though for repeated matches it is less efficient since it does not allow the compiled pattern to be reused.</p>
                     </li>
                     <li>
-                        <code class="highlighter-rouge">Class Matcher</code> An engine that performs match operations on a character sequence by interpreting a Pattern.
+                        <code>Class Matcher</code> An engine that performs match operations on a character sequence by interpreting a Pattern.
                         <p>A matcher is created from a pattern by invoking the pattern's matcher method. Once created, a matcher can be used to perform three different kinds of match operations:</p>
                         <ul>
-                            <li>The <code class="highlighter-rouge">matches</code> method attempts to match the entire input sequence against the pattern.</li>
-                            <li>The <code class="highlighter-rouge">lookingAt</code> method attempts to match the input sequence, starting at the beginning, against the pattern.</li>
-                            <li>The <code class="highlighter-rouge">find</code> method scans the input sequence looking for the next subsequence that matches the pattern. If multiple occurrences are found in the string, then the first call to find() will jump to the first occurrence. Thereafter, each subsequent call to the find() method will go to the next matching occurrence, one by one.</li>
+                            <li>The <code>matches</code> method attempts to match the entire input sequence against the pattern.</li>
+                            <li>The <code>lookingAt</code> method attempts to match the input sequence, starting at the beginning, against the pattern.</li>
+                            <li>The <code>find</code> method scans the input sequence looking for the next subsequence that matches the pattern. If multiple occurrences are found in the string, then the first call to find() will jump to the first occurrence. Thereafter, each subsequent call to the find() method will go to the next matching occurrence, one by one.</li>
                         </ul>
                         <p>Each of these methods returns a boolean indicating success or failure.</p>
 <pre><code>Pattern pattern = Pattern.compile("sho*", Pattern.CASE_INSENSITIVE);
@@ -906,9 +925,9 @@ while (mtch.find()) {
     System.out.println("Pattern found from " + mtch.start() + " to " + (mtch.end() - 1));
 }</code></pre>
                     </li>
-                    <li><code class="highlighter-rouge">Class PatternSyntaxException</code> Unchecked exception thrown to indicate a syntax error in a regular-expression pattern.</li>
+                    <li><code>Class PatternSyntaxException</code> Unchecked exception thrown to indicate a syntax error in a regular-expression pattern.</li>
                     <li>
-                        <code class="highlighter-rouge">Interface MatchResult</code> The result of a match operation.
+                        <code>Interface MatchResult</code> The result of a match operation.
                         <p>This interface contains query methods used to determine the results of a match against a regular expression. The match boundaries, groups and group boundaries can be seen but not modified through a MatchResult.</p>
                     </li>
                 </ul>
@@ -922,10 +941,10 @@ while (mtch.find()) {
                     <li>
                         <p><strong>Character Classes</strong> - either.</p>
 <pre><code>Pattern.matches("[pqr]", "r"); // Returns true</code></pre>
-                        <p>Example: <code class="highlighter-rouge">[Cc]ompany</code> will match all occurrences of the string "company" with the letter C in either lowercase or uppercase.</p>
+                        <p>Example: <code>[Cc]ompany</code> will match all occurrences of the string "company" with the letter C in either lowercase or uppercase.</p>
                     </li>
                 </ul>
-                <h3>Regex methods</h3>
+                <h4>Regex methods</h4>
                 <table>
                     <thead>
                         <tr>
@@ -956,7 +975,7 @@ while (mtch.find()) {
                         </tr>
                     </tbody>
                 </table>
-                <h4>Regex Character classes</h4>
+                <h5>Regex Character classes</h5>
                 <table>
                     <thead>
                         <tr>
@@ -1000,7 +1019,7 @@ Pattern.matches("[tT]im|[jJ]in", "Tim");
 Pattern.matches(".*abc.*", "deabcpq");
 Pattern.matches("[a-zA-Z][a-zA-Z][a-zA-Z]", "aPz");
 Pattern.matches("\\D*", "abcde");</code></pre>
-                <h4>Predefined character classes</h4>
+                <h5>Predefined character classes</h5>
                 <table>
                     <thead>
                         <tr>
@@ -1048,7 +1067,7 @@ Pattern.matches("\\D*", "abcde");</code></pre>
                     </tbody>
                 </table>
 <pre><code>Pattern.matches("...p", "qdqp") // Returns True</code></pre>
-                <h4>Boundary Matchers</h4>
+                <h5>Boundary Matchers</h5>
                 <table>
                     <thead>
                         <tr>
@@ -1093,7 +1112,7 @@ Pattern.matches("\\D*", "abcde");</code></pre>
                 </table>
 <pre><code>Pattern.matches("^Hello$", "Greetings! Hello"); // Returns False</code></pre>
                 <p>Quantifiers. Quantification – searching for sequences</p>
-                <h4>Greedy quantifiers</h4>
+                <h5>Greedy quantifiers</h5>
                 <p>Greedy quantifiers try to cover everything they can — to the end of the line</p>
                 <table>
                     <thead>
@@ -1129,20 +1148,256 @@ Pattern.matches("\\D*", "abcde");</code></pre>
                         </tr>
                     </tbody>
                 </table>
-                <h4>Reluctant quantifiers</h4>
+                <h5>Reluctant quantifiers</h5>
                 <p>Reluctant quantifiers cover a minimum set of characters and expand it if subsequent concatenated expressions fail.</p>
-                <p>Adds <code class="highlighter-rouge">?</code> to a Greedy quantifiers</p>        
-                <h4>Possessive quantifiers</h4>
+                <p>Adds <code>?</code> to a Greedy quantifiers</p>        
+                <h5>Possessive quantifiers</h5>
                 <p>Possessive quantifiers unlike regular (greedy) quantification, possessive quantification not only tries to find the longest possible variant, but also does not allow the algorithm to go back to previous search steps in order to find possible matches for the remaining part of the regular expression.</p>
-                <p>Adds <code class="highlighter-rouge">+</code> to a Greedy quantifiers</p>
+                <p>Adds <code>+</code> to a Greedy quantifiers</p>
+                <h4>Performance measure</h4>
+                <ul>
+                    <li><code>long start = System.currentTimeMillis(); System.out.println((System.currentTimeMillis() - start));</code></li>
+                </ul>
                 <h3>FileOutputStream</h3>
                 <p>A file output stream is an output stream for writing data to a File or to a FileDescriptor.</p>
-                <h3>Work with Files</h3>
-                <p>When working with files, try-catch block needs to wrap code with works with file up.</p>
-<pre><code>File file = new File(Constants.BASE_PATH + "notes.txt");</code></pre>
-<pre><code>FileWriter fw = new FileWriter(Constants.BASE_PATH + "notes.txt");
-fw.write(content);
-fw.close();</code></pre>
+                <h3>Work with Files and Folders - java.io</h3>
+                <p>When working with files, try-catch block needs to wrap code which works with file up. Check if the file is not null in finally block and use <code>close()</code> method to close it if not true. But it is a good practice to use <a href="#try-with-resources">try-with-resources</a> block to work with all mentioned classes in this section.</p>
+                <h4>Supper Classes</h4>
+                <ul>
+                    <li>
+                        <span><code>File</code></span>
+<pre><code>boolean mkdir()
+boolean createNewFile()
+// dest – The new abstract pathname for the named file.
+boolean renameTo(File dest)
+boolean delete()
+boolean exists()
+// Returns: The name of the file or directory denoted by this abstract pathname, or the empty string if this pathname's name sequence is empty
+String getName()
+// Returns: A long value representing the time the file was last modified, measured in milliseconds since the epoch (00:00:00 GMT, January 1, 1970), or 0L if the file does not exist or if an I/O error occurs. The value may be negative indicating the number of milliseconds before the epoch
+long lastModified()</code></pre>
+                    <li>
+                        <p><code>Writer</code> implements Appendable, Closeable, Flushable</p>
+<pre><code>// str - String to be written.
+void write(String str)
+// Appends the specified character to this writer.
+// Params: c – The 16-bit character to append
+Writer append(char c)</code></pre>
+                    </li>
+                    <li><code>Reader</code> implements Readable, Closeable
+<pre><code>// Returns: the character read, or -1 if the end of the stream has been reached
+int read()</code></pre>
+                    </li>
+                    <li><code>OutputStream</code> implements Closeable, Flushable
+<pre><code>// b – the data.
+// off – the start offset in the data.
+// len – the number of bytes to write.
+void write(byte[] b, int off, int len)</code></pre>
+                    </li>
+                    <li><code>InputStream</code> implements Closeable
+<pre><code>// Returns: the next byte of data, or -1 if the end of the file is reached.
+int read()
+// b – the buffer into which the data is read.
+// Returns: the total number of bytes read into the buffer, or -1 if there is no more data
+read(byte[] b, int off, int len)
+// Returns: an estimate of the number of remaining bytes that can be read (or skipped over), or 0 when the file position is beyond EOF.
+int available()</code></pre>
+                    </li>
+                </ul>
+                <h4>Classes</h4>
+                <ul>
+                    <li><code>File(String pathname)</code> implements Serializable, Comparable&lt;File&gt;</li>
+                    <li><code>FileWriter(String fileName, boolean append)</code> extends OutputStreamWriter, which extends Writer
+                        <ul>
+                            <li><code>append</code> – boolean if true, then data will be written to the end of the file rather than the beginning.</li>
+                        </ul>
+                    </li>
+                    <li><code>FileReader(String fileName)</code> extends InputStreamReader, which extends Reader</li>
+                    <li><code>FileOutputStream(String fileName)</code> extends OutputStream</li>
+                    <li><code>FileInputStream(String fileName)</code> extends InputStream</li>
+                    <li>
+                        <span><code>InputStreamReader(InputStream in, Charset cs)</code> extends Reader</span>
+                        <ul>
+                            <li><code>InputStream in</code> - e.g. <code>FileInputStream(path)</code></li>
+                            <li><code>Charset cs</code> - e.g. <code>StandardCharsets.UTF_8</code></li>
+                        </ul>
+                    </li>
+                    <li><code>BufferedWriter(Writer out)</code> extends Writer</li>
+                    <li><code>BufferedReader(Reader in)</code> extends Reader
+<pre><code>// Reads a line of text. A line is considered to be terminated by any one of a line feed ('\n'), a carriage return ('\r'), a carriage return followed immediately by a line feed, or by reaching the end-of-file (EOF).
+// Returns: A String containing the contents of the line, not including any line-termination characters, or null if the end of the stream has been reached without reading any characters
+String readLine()
+// .collect(Collectors.joining(System.lineSeparator())); - read more in future
+Stream&lt;String&gt; lines()</code></pre>
+                    </li>
+                </ul>
+                <p>Without buffering, each invocation of <code>read()</code> or others could cause bytes to be read from the file, converted into characters, and then returned, which can be very inefficient.
+                    Programs that use <code>DataInputStreams</code> or others for textual input can be localized by replacing each <code>DataInputStream</code> with an appropriate <code>BufferedReader</code> or <code>BufferWriter</code>.
+                    Therefore, Writer or Reader Classes should be passed to a relevant Buffered Class.</p>
+                <p><code>close()</code> method exists in any mentioned Classes in this section. May be used in <code>finally</code> block.</p>
+                <h3>Java NIO (New Input/Output) API</h3>
+                <ul>
+                    <li>Non-blocking IO. While the channel reads data into the buffer, the thread can do something else. The same is true for writing data to channels.</li>
+                    <li>Channels and Buffers. In the standard IO API you work with byte streams and character streams. In NIO you work with channels and buffers.</li>
+                    <li></li>
+                </ul>
+<pre><code>FileOutputStream fos = new FileOutputStream;
+byte[] contentBytes = content.getBytes();
+ByteBuffer buffer = ByteBuffer.allocate(contentBytes.length);
+buffer.put(contentBytes);
+FineChannel fileChannel = fos.getChannel();
+buffer.flip();
+fileChannel.write(buffer);
+fileChannel.close();</code></pre>
+                                <h4>Buffer Mark Reset</h4>
+<pre><code>ByteBuffer buffer = ByteBuffer.allocate(26);
+for (int i = 0; i &lt; ALPHABETS.length(); i++) {
+    byteBuffer.put((byte) ALPHABETS.charAt(i));
+}
+System.out.println("After inserting 26 characters into the buffer");
+getOutput(byteBuffer);
+
+byteBuffer.clear();
+System.out.println("Reading first five characters from buffer");
+for (int i = 0; i &lt; 5; i++) {
+    System.out.println((char) byteBuffer.get());
+}
+getOutput(byteBuffer);
+System.out.println("Marking the buffer");</code></pre>
+                <h3>Collectors</h3>
+                <p>Information to be added ...</p>
+                <h3>SimpleDateFormat</h3>
+                <p>Information to be added ...</p>
+                <h3>System</h3>
+                <p>Information to be added ...</p>
+                <h3>Application structure</h3>
+                <ul>
+                    <li><strong>controller</strong> Intermediate between Model and View. Distribute business-logic and presentation. Manipulates data flow. Assigns responsible for data calculation</li>
+                    <li><strong>entity</strong> E.g. Customer, Product.</li>
+                    <li><strong>exceptions</strong></li>
+                    <li>
+                        <strong>model</strong> Contains a business-logic (payments, etc.)
+                        <ul>
+                            <li>impl</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>units</strong>
+                        <ul>
+                            <li>constants</li>
+                        </ul>
+                    </li>
+                    <li><strong>validator</strong></li>
+                    <li>
+                        <strong>view</strong> Shows data and result of data manipulation
+                        <ul>
+                            <li><strong>fragments</strong> Such as orderDelivery, error, etc.</li>
+                        </ul>
+                    </li>
+                    <li><strong>App.js</strong> <code>AppStarter.runApp();</code></li>
+                </ul>
+                <h3>Generics Types</h3>
+                <p>Parameterized (Generics) types allow you to declare classes, interfaces, and methods where the data type they operate on is specified as a parameter, such classes, interfaces and methods are called Generics. It is used by other classes as a Generic Template for objects creation, which allows them to manipulate different types of input data using a common framework.</p>
+                <ul>
+                    <li>
+                        Generics works only with Objects, but not with the primitive type.
+                        <code>Product&lt;Integer&gt;</code>, but not <code>Product&lt;int&gt;</code>
+                    </li>
+                </ul>
+                <h4>Type Parameter Naming Conventions</h4>
+                <ul>
+                    <li><code>T</code> - Type: Float; Double, etc.</li>
+                    <li><code>V</code> - Value</li>
+                    <li><code>E</code> - Element</li>
+                    <li><code>K</code> - Key</li>
+                    <li><code>N</code> - Number</li>
+                    <li><code>S</code>, <code>U</code> etc. - 2nd, 3rd, 4th types</li>
+                </ul>
+                <h4>Generic Classes</h4>
+                <ul>
+                    <li>
+                        <strong>Create a Class</strong>
+<pre><code>public class GenericEntity&lt;T, S&gt; {
+
+    private final T propA;
+    private final S propB;
+
+    public GenericEntity(T propA, S propB) {
+        this.propA = propA;
+        this.propB = propB;
+    }
+
+    public T getPropA() {
+        return propA;
+    }
+
+    public S getPropB() {
+        return propB;
+    }
+}</code></pre>
+                    </li>
+                    <li>
+                        <strong>Initialize an Object</strong>
+<pre><code>GenericClass&lt;T&gt; object = new GenericClass&lt;&gt;();</code></pre>
+                        <p>With a specified type</p>
+<pre><code>GenericClass&lt;String, Double&gt; object = new GenericClass&lt;&gt;(name, price);</code></pre>
+                    </li>
+                </ul>
+                <h4>Generic Interface</h4>
+                <p>The Generic Interface is created in the same way as and Classes.</p>
+                <ul>
+                    <li>
+                        A class that implements a generic interface must be generic.
+<pre><code>public class ProductA&lt;T&gt; implements IProduct&lt;T&gt; { ... }</code></pre>
+                    </li>
+                    <li>
+                        A non-generic class can be used if a concrete type (Integer, String, Double, etc.) is provided with the interface in the implementation.
+<pre><code>public class ProductB implements IProduct&lt;String&gt; { ... }</code></pre>
+                    </li>
+                    <li>
+                        A generic class that implements a generic interface can have other parameters of a parameterized type.
+<pre><code>public class ProductC&lt;T, U&gt; implements IProduct&lt;T&gt; { ... }</code></pre>
+                    </li>
+                </ul>
+                <h4>Generic methods</h4>
+                <p>Does not matter what is output, the method will attach needed data Type.</p>
+<pre><code>public class GenericExample {
+    public &lt;T&gt; void displayGenType(T type) {
+        System.out.println(type.getClass().getName() + " = " + type);
+    }
+
+    public static void main(String[] args) {
+        GenericExample example = new GenericExample();
+        example.displayGenType("Hello");
+        example.displayGenType(123);
+        example.displayGenType(45.67);
+    }
+}</code></pre>
+                <h4>Bounded type</h4>
+                <p>Typically, a type parameter can accept any data type (except primitive types). However, if we want to use generic templates for only some specific types (for example, accept numeric data types, Number), we can use restricted types. In the case of restricted types, we use the <code>extends</code> keyword.</p>
+<pre><code>class Outputer&lt;T extends Number&gt; { ... }
+// List&lt;? extends Number&gt; means a list of objects that are instances of the Number class or its subclasses (for example, Integer or Double).
+// The List&lt;? extends Number&gt; list parameter uses a wildcard with an upper limit, where Number is the upper bound</code></pre>
+                <h3>Wildcard</h3>
+                <ul>
+                    <li>
+                        <strong>Upper bounded wildcard</strong>
+<pre><code>private static Double addNums(List&lt;? extends Number&gt; list) { ... }
+// List&lt;? super Double&gt; means that the list is typed either by the Double class, or its superclass Number.
+// The List&lt;? super Double&gt; list parameter uses a wildcard with a lower limit, where Double is the lower bound
+// You can use instances of Number or its subclass Double.</code></pre>
+                    </li>
+                    <li>
+                        <strong>Lower bounded wildcard</strong>
+<pre><code>private static void getNums(List&lt;? super Double&gt; list) { ... }</code></pre>
+                    </li>
+                    <li>
+                        <strong>Unbounded wildcard</strong> - 
+<pre><code>public static void displayData(List&lt;?&gt; list) { ... }
+// List&lt;?&gt; means the list is typed by any class
+</code></pre>
+                    </li>
+                </ul>
                 <section>
                 <h2 class="section">Links to helpful websites</h2>
                 <ul>

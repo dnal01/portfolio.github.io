@@ -26,86 +26,86 @@
                 <h2>My takeaways today</h2>
                 <h3>SQL</h3>
                 <h4>Creation of .db file and import of csv file into the .db file</h4>
-                <p><code class="highlighter-rouge">sqlite3 FILE.db</code></p>
-                <p><code class="highlighter-rouge">.mode csv</code></p>
-                <p><code class="highlighter-rouge">.import FILE.csv table</code></p>
+                <p><code>sqlite3 FILE.db</code></p>
+                <p><code>.mode csv</code></p>
+                <p><code>.import FILE.csv table</code></p>
                 <h4>Checking of headers</h4>
-                <p><code class="highlighter-rouge">.schema</code></p>
+                <p><code>.schema</code></p>
                 <h4>Selecting data</h4>
-                <p><code class="highlighter-rouge">SELECT .../1 FROM table .../2 = 'Text here';</code></p>
+                <p><code>SELECT .../1 FROM table .../2 = 'Text here';</code></p>
                 <p>In .../1 can go either column name (use "field name" for fields with spaces) or function</p>
                 <ul> 
-                    <li><code class="highlighter-rouge">DISTINCT(columnName)</code> - lists uniq value and combines into one column. Can work with multiple columns looking at uniq combined value without brackets, then creates two columns</li>
-                    <li><code class="highlighter-rouge">LOWER</code></li>
-                    <li><code class="highlighter-rouge">UPPER</code></li>
-                    <li><code class="highlighter-rouge">ROUND(number_to_round, decimal_places)</code>, decimal is optional, if avoided, rounds to 0. Can be also negative. <strong>Example: </strong><code class="highlighter-rouge">ROUND(AVG(budget), 2)</code></li>
-                    <li><code class="highlighter-rouge">JOIN</code> - joins tables</li>
+                    <li><code>DISTINCT(columnName)</code> - lists uniq value and combines into one column. Can work with multiple columns looking at uniq combined value without brackets, then creates two columns</li>
+                    <li><code>LOWER</code></li>
+                    <li><code>UPPER</code></li>
+                    <li><code>ROUND(number_to_round, decimal_places)</code>, decimal is optional, if avoided, rounds to 0. Can be also negative. <strong>Example: </strong><code>ROUND(AVG(budget), 2)</code></li>
+                    <li><code>JOIN</code> - joins tables</li>
                     <h5>Aggregate functions</h5>
                     <p>Functions which performs a calculation on several values and return a single value.</p>
                     <ul>
                         <h5>Numeric fields only</h5>
-                        <li><code class="highlighter-rouge">AVG()</code></li>
-                        <li><code class="highlighter-rouge">SUM()</code></li>
+                        <li><code>AVG()</code></li>
+                        <li><code>SUM()</code></li>
                     </ul>
                     <ul>
                         <h5>Various data types</h5>
                         <p>A<->Z - first or last in alphabet</p>
-                        <li><code class="highlighter-rouge">MIN()</code></li>
-                        <li><code class="highlighter-rouge">MAX()</code></li>
-                        <li><code class="highlighter-rouge">COUNT(*)</code> - counts values in a field and <code class="highlighter-rouge">COUNT(field_name)</code> - counts records in a table</li>    
+                        <li><code>MIN()</code></li>
+                        <li><code>MAX()</code></li>
+                        <li><code>COUNT(*)</code> - counts values in a field and <code>COUNT(field_name)</code> - counts records in a table</li>    
                     </ul>
-                    <p>It is possible to <strong>combine functions</strong>, e.g. <code class="highlighter-rouge">COUNT(DISTINCT field_name)</code></p>
+                    <p>It is possible to <strong>combine functions</strong>, e.g. <code>COUNT(DISTINCT field_name)</code></p>
                 </ul>
                 <p>In .../2 go key words:</p>
                 <ul>
-                    <li><code class="highlighter-rouge">WHERE</code>. E.g. <code class="highlighter-rouge">WHERE color = 'green'</code> or <code class="highlighter-rouge">WHERE year <> 2020</code>
-                        <p>Note: <code class="highlighter-rouge"><></code> - not equal to. e.g. <> 2020 - all except 2020.</p>
+                    <li><code>WHERE</code>. E.g. <code>WHERE color = 'green'</code> or <code>WHERE year <> 2020</code>
+                        <p>Note: <code><></code> - not equal to. e.g. <> 2020 - all except 2020.</p>
                     </li>
-                    <li><code class="highlighter-rouge">AS</code> to treat something as something, e.g. COUNT(*) AS n. Next time when I want to use this combination I need just to write n. I.e. it may rename e.g. column after query.</li>
-                    <li><code class="highlighter-rouge">IS</code>. <strong>Example:</strong> <code class="highlighter-rouge">IS NULL</code>, <code class="highlighter-rouge">IS NOT NULL</code></li>
-                    <li><code class="highlighter-rouge">LIKE</code> or <code class="highlighter-rouge">NOT LIKE</code> - the <code class="highlighter-rouge">LIKE</code> operator is used in a <code class="highlighter-rouge">WHERE</code> clause to search for a specified pattern in a column
+                    <li><code>AS</code> to treat something as something, e.g. COUNT(*) AS n. Next time when I want to use this combination I need just to write n. I.e. it may rename e.g. column after query.</li>
+                    <li><code>IS</code>. <strong>Example:</strong> <code>IS NULL</code>, <code>IS NOT NULL</code></li>
+                    <li><code>LIKE</code> or <code>NOT LIKE</code> - the <code>LIKE</code> operator is used in a <code>WHERE</code> clause to search for a specified pattern in a column
                         <p>There are two wildcards often used in conjunction with the LIKE operator:</p>
                         <ul>
                             <li>
-                                The percent sign <code class="highlighter-rouge">%</code> represents zero, one, or multiple characters, e.g. 'Ade%' will find all words that contains 'Ade'
+                                The percent sign <code>%</code> represents zero, one, or multiple characters, e.g. 'Ade%' will find all words that contains 'Ade'
                             </li>
                             <li>
-                                The underscore sign <code class="highlighter-rouge">_</code> represents one, single character, e.g. 'Ev_' will find only words where one character is missing, e.g. 'Eve'
+                                The underscore sign <code>_</code> represents one, single character, e.g. 'Ev_' will find only words where one character is missing, e.g. 'Eve'
                             </li>
                             <li>
                                 <strong>Examples:</strong>
                                 <ul>
-                                    <li><code class="highlighter-rouge">fieldName LIKE '%r'</code>, which ends with 'r'</li>
-                                    <li><code class="highlighter-rouge">fieldName LIKE '__t%'</code>, where third letter is 't' and something after</li>
+                                    <li><code>fieldName LIKE '%r'</code>, which ends with 'r'</li>
+                                    <li><code>fieldName LIKE '__t%'</code>, where third letter is 't' and something after</li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
-                    <li><code class="highlighter-rouge">IN (SELECT...)</code> or <code class="highlighter-rouge">IN (<i>value1, value2, ...</i>)</code> or <code class="highlighter-rouge">NOT IN(...)</code> in the all items from the result or specified values</li>
+                    <li><code>IN (SELECT...)</code> or <code>IN (<i>value1, value2, ...</i>)</code> or <code>NOT IN(...)</code> in the all items from the result or specified values</li>
                     <li>
-                        <code class="highlighter-rouge">ORDER BY fieldName</code> +
+                        <code>ORDER BY fieldName</code> +
                         <ul>
-                            <li><code class="highlighter-rouge">ASC</code> - Ascending order</li>
-                            <li><code class="highlighter-rouge">DESC</code> - Descending order</li>
+                            <li><code>ASC</code> - Ascending order</li>
+                            <li><code>DESC</code> - Descending order</li>
                         </ul>
                         <h5>Order by multiple values</h5>
-                        <code class="highlighter-rouge">ORDER BY field_one ASC, field_two DESC</code>. First it sorts by the first field, then by second.
-                        <p><strong>Note</strong>, that <code class="highlighter-rouge">fieldName</code>, when used Alias aka <code class="highlighter-rouge">AS</code>, needs to be an Alias name, because <code class="highlighter-rouge">ORDER BY</code> is executed after <code class="highlighter-rouge">AS</code></p>
+                        <code>ORDER BY field_one ASC, field_two DESC</code>. First it sorts by the first field, then by second.
+                        <p><strong>Note</strong>, that <code>fieldName</code>, when used Alias aka <code>AS</code>, needs to be an Alias name, because <code>ORDER BY</code> is executed after <code>AS</code></p>
                     </li>
-                    <li><code class="highlighter-rouge">LIMIT</code></li>
-                    <li><code class="highlighter-rouge">GROUP BY field_one, field_two ORDER BY fieldName</code></li>
-                    <li><code class="highlighter-rouge">HAVING</code> - filtering grouped data</li>
-                    <li><code class="highlighter-rouge">= (SELECT...)</code> = the single value in the result</li>
-                    <li><code class="highlighter-rouge">ON keyTb1 = keyTb2</code> - works with JOIN</li>
+                    <li><code>LIMIT</code></li>
+                    <li><code>GROUP BY field_one, field_two ORDER BY fieldName</code></li>
+                    <li><code>HAVING</code> - filtering grouped data</li>
+                    <li><code>= (SELECT...)</code> = the single value in the result</li>
+                    <li><code>ON keyTb1 = keyTb2</code> - works with JOIN</li>
                     <h5>Multiple criteria</h5>
                     <ul>
-                        <li><code class="highlighter-rouge">AND</code></li>
-                        <li><code class="highlighter-rouge">OR</code></li>
-                        <li><code class="highlighter-rouge">BETWEEN 1 AND 5</code> - is inclusive</li>
+                        <li><code>AND</code></li>
+                        <li><code>OR</code></li>
+                        <li><code>BETWEEN 1 AND 5</code> - is inclusive</li>
                         <section><strong>Combining examples:</strong>
                             <ul>
-                                <li><code class="highlighter-rouge">(Statement1 OR Statement2) AND (Statement3 OR Statement4)</code></li>
-                                <li><code class="highlighter-rouge">fieldName BETWEEN 1 AND 5 AND Statement1</code></li>
+                                <li><code>(Statement1 OR Statement2) AND (Statement3 OR Statement4)</code></li>
+                                <li><code>fieldName BETWEEN 1 AND 5 AND Statement1</code></li>
                             </ul>
                         </section>
                     </ul>
@@ -122,42 +122,42 @@
                 </ul>
                 <h5>Examples</h5>
                 <ul>
-                    <li><code class="highlighter-rouge">SELECT column1, column2 FROM table1 JOIN table2 ON table1Name.column_key_in_table1 = table2Name.column_key_in_table2 WHERE column2 >= value LIMIT value;</code> - join two tables based on the same key values.</li>
-                    <li><code class="highlighter-rouge">SELECT column1 FROM table WHERE column_key_in_table1 IN (SELECT column_key_in_table2 FROM table2 WHERE condition);</code> - search based on key value between two tables</li>
-                    <li><code class="highlighter-rouge">SELECT column1 FROM table1 WHERE column2 = (SELECT column FROM table2 WHERE column3 = 'text');</code> - search in the first table based on a value from a second.</li>
-                    <li><code class="highlighter-rouge">SELECT columnTb1 FROM table1 WHERE column2Tb1 IN (SELECT column1tb2 FROM table2 WHERE column2tb2 = (SELECT column1tb3 FROM table3 WHERE column2tb3 = 'Text'));</code>- search a value in a first table based on filtered result from other two tables.</li>
-                    <li><code class="highlighter-rouge">SELECT column1tb1 FROM tb1, tb2, tb3 WHERE tb1.cl1tb1 = tb2.cl1tb2 AND tb3.cm1tb3 = tb2.cl2tb2 AND cl2tb1 = 'TEXT';</code> - search in a first table based on filtered result from other tables.</li>
+                    <li><code>SELECT column1, column2 FROM table1 JOIN table2 ON table1Name.column_key_in_table1 = table2Name.column_key_in_table2 WHERE column2 >= value LIMIT value;</code> - join two tables based on the same key values.</li>
+                    <li><code>SELECT column1 FROM table WHERE column_key_in_table1 IN (SELECT column_key_in_table2 FROM table2 WHERE condition);</code> - search based on key value between two tables</li>
+                    <li><code>SELECT column1 FROM table1 WHERE column2 = (SELECT column FROM table2 WHERE column3 = 'text');</code> - search in the first table based on a value from a second.</li>
+                    <li><code>SELECT columnTb1 FROM table1 WHERE column2Tb1 IN (SELECT column1tb2 FROM table2 WHERE column2tb2 = (SELECT column1tb3 FROM table3 WHERE column2tb3 = 'Text'));</code>- search a value in a first table based on filtered result from other two tables.</li>
+                    <li><code>SELECT column1tb1 FROM tb1, tb2, tb3 WHERE tb1.cl1tb1 = tb2.cl1tb2 AND tb3.cm1tb3 = tb2.cl2tb2 AND cl2tb1 = 'TEXT';</code> - search in a first table based on filtered result from other tables.</li>
                 </ul>
                 <h5>Insertion of data</h5>
-                <p><code class="highlighter-rouge">INSERT INTO tableName (columnName1, columnName2) VALUES('Value1', 'Value2');</code></p>
+                <p><code>INSERT INTO tableName (columnName1, columnName2) VALUES('Value1', 'Value2');</code></p>
                 <h5>Deletion of data</h5>
-                <p><code class="highlighter-rouge">DELETE FROM table WHERE condition;</code> - deletes a row. (e.g. WHERE column IS NULL)</p>
-                <p><code class="highlighter-rouge">DELETE FROM table;</code> - deletes everything.</p>
+                <p><code>DELETE FROM table WHERE condition;</code> - deletes a row. (e.g. WHERE column IS NULL)</p>
+                <p><code>DELETE FROM table;</code> - deletes everything.</p>
                 <h5>Update of data</h5>
-                <p><code class="highlighter-rouge">UPDATE table SET column = value WHERE condition1, condition2;</code> - deletes a row.</p>
+                <p><code>UPDATE table SET column = value WHERE condition1, condition2;</code> - deletes a row.</p>
                 <h5>Creation of Tables with certain data types</h5>
-                <p><code class="highlighter-rouge">CREATE TABLE table (key dataType);</code> do this before mode and import command.</p>
+                <p><code>CREATE TABLE table (key dataType);</code> do this before mode and import command.</p>
                 <h5>Data types</h5>
                 <ul>
-                    <li><code class="highlighter-rouge">BLOB</code> - binary large object</li>
-                    <li><code class="highlighter-rouge">INTEGER</code></li>
-                    <li><code class="highlighter-rouge">NUMERIC</code> - dates and times</li>
-                    <li><code class="highlighter-rouge">REAL</code> - decimal points in it</li>
-                    <li><code class="highlighter-rouge">TEXT</code></li>
+                    <li><code>BLOB</code> - binary large object</li>
+                    <li><code>INTEGER</code></li>
+                    <li><code>NUMERIC</code> - dates and times</li>
+                    <li><code>REAL</code> - decimal points in it</li>
+                    <li><code>TEXT</code></li>
                 </ul>
                 <h5>Data types - key words</h5>
                 <ul>
-                    <li><code class="highlighter-rouge">NOT NULL</code></li>
-                    <li><code class="highlighter-rouge">UNIQUE</code></li>
-                    <li><code class="highlighter-rouge">PRIMARY KEY</code> - is the column which uniquely identifies your data</li>
-                    <li><code class="highlighter-rouge">FOREIGN KEY</code> - appearance of those IDs elsewhere</li>
+                    <li><code>NOT NULL</code></li>
+                    <li><code>UNIQUE</code></li>
+                    <li><code>PRIMARY KEY</code> - is the column which uniquely identifies your data</li>
+                    <li><code>FOREIGN KEY</code> - appearance of those IDs elsewhere</li>
                 </ul>
                 <h5>Turn on a timer</h5>
-                <p><code class="highlighter-rouge">.timer ON</code></p>
+                <p><code>.timer ON</code></p>
                 <h5>Indexes</h5>
-                <p><code class="highlighter-rouge">CREATE INDEX indexName ON table (column, ...);</code> - if search on a column frequently, prepare data to search faster.</p>
+                <p><code>CREATE INDEX indexName ON table (column, ...);</code> - if search on a column frequently, prepare data to search faster.</p>
                 <h5>Views</h5>
-                <p><code class="highlighter-rouge">CREATE VIEW viewName AS SELECT columnName FROM tableName</code> - creates a virtual view which can be accessed any time. Updates from the original table as soon as new query is initiated. I.e. it stores a query in memory.</p>
+                <p><code>CREATE VIEW viewName AS SELECT columnName FROM tableName</code> - creates a virtual view which can be accessed any time. Updates from the original table as soon as new query is initiated. I.e. it stores a query in memory.</p>
                 <h4>SQL using Python</h4>
                 <h5>Combining SQL and Python code</h5>
                     <pre><code>

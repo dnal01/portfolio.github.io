@@ -35,119 +35,119 @@ html {
     box-sizing: inherit; // to inherit border-box property for child elements of html
 }</code></pre>
                 <h4>Units</h4>
-                <p><code class="highlighter-rouge">rem</code> takes size of "m" letter from the html - by default 16px, hoverer <code class="highlighter-rouge">em</code> takes size of "m" from the content of current tag, hence e.g. 1em will always provide different size based on the current text size.</p>
+                <p><code>rem</code> takes size of "m" letter from the html - by default 16px, hoverer <code>em</code> takes size of "m" from the content of current tag, hence e.g. 1em will always provide different size based on the current text size.</p>
                 <p>px - for borders; % - for width;</p>
                 <h4>HTML, CSS and JavaScript</h4>
                 <h5>Internet</h5>
                 <p><strong>API</strong>. #.#.#.# 32 bits.</p>
                 <p><strong>TCP</strong>. Purpose - forms a package with sequences tracking and details. Guarantees delivery</p>
-                <p><strong>ports</strong>. Purpose - to define type of data transferred. <code class="highlighter-rouge">80</code> for HTTP and <code class="highlighter-rouge">443</code> for HTTPS</p>
+                <p><strong>ports</strong>. Purpose - to define type of data transferred. <code>80</code> for HTTP and <code>443</code> for HTTPS</p>
                 <p><strong>DNS</strong>. Purpose - provide API Address of a Domain name</p>
                 <p><strong>DHCP</strong> - Dynamic Host Configuration Protocol. Purpose - provides DNS servers and routers API for your devices.</p>
                 <p><strong>HTTP</strong> - protocol that initiates and responds to a request.</p>
                 <h5>Verbs</h5>
-                <p><code class="highlighter-rouge">GET</code> clicking on links, does not really pushes information to the web sites.</p>
-                <p><code class="highlighter-rouge">POST</code> sending information</p>
+                <p><code>GET</code> clicking on links, does not really pushes information to the web sites.</p>
+                <p><code>POST</code> sending information</p>
                 <p>Example GET:</p>
                 <ul>
-                    <li><code class="highlighter-rouge">GET / HTTP/2</code></li>
-                    <li><code class="highlighter-rouge">Host: www.example.com</code></li>
-                    <li><code class="highlighter-rouge">curl -I https://www.example.com/</code> returns code 200</li>
-                    <li><code class="highlighter-rouge">curl -I https://example.com/</code> returns code 301 - "moved permanently, redirection."</li>
+                    <li><code>GET / HTTP/2</code></li>
+                    <li><code>Host: www.example.com</code></li>
+                    <li><code>curl -I https://www.example.com/</code> returns code 200</li>
+                    <li><code>curl -I https://example.com/</code> returns code 301 - "moved permanently, redirection."</li>
                 </ul>
                 <p>Example received:</p>
                 <ul>
-                    <li><code class="highlighter-rouge">Content-Type: text/html</code></li>
-                    <li><code class="highlighter-rouge">HTTP/2 200</code>, where 200 - is a code:</li>
+                    <li><code>Content-Type: text/html</code></li>
+                    <li><code>HTTP/2 200</code>, where 200 - is a code:</li>
                     <ul>
-                        <li><code class="highlighter-rouge">200 OK</code></li>
-                        <li><code class="highlighter-rouge">301 Moved Permanently</code></li>
-                        <li><code class="highlighter-rouge">302 Found</code></li>
-                        <li><code class="highlighter-rouge">304 Not Modified</code></li>
-                        <li><code class="highlighter-rouge">307 Temporary Redirect</code></li>
-                        <li><code class="highlighter-rouge">401 Unauthorized</code></li>
-                        <li><code class="highlighter-rouge">403 Forbidden</code></li>
-                        <li><code class="highlighter-rouge">404 Not Found</code></li>
-                        <li><code class="highlighter-rouge">418 I'm a Teapot</code></li>
-                        <li><code class="highlighter-rouge">500 Internal Server Error</code></li>
-                        <li><code class="highlighter-rouge">503 Service Unavailable</code></li>
+                        <li><code>200 OK</code></li>
+                        <li><code>301 Moved Permanently</code></li>
+                        <li><code>302 Found</code></li>
+                        <li><code>304 Not Modified</code></li>
+                        <li><code>307 Temporary Redirect</code></li>
+                        <li><code>401 Unauthorized</code></li>
+                        <li><code>403 Forbidden</code></li>
+                        <li><code>404 Not Found</code></li>
+                        <li><code>418 I'm a Teapot</code></li>
+                        <li><code>500 Internal Server Error</code></li>
+                        <li><code>503 Service Unavailable</code></li>
                     </ul>
                 </ul>
                 <h5>URL</h5>
-                <p><code class="highlighter-rouge">https://www.example.com/path?key=value&key=value</code></p>
+                <p><code>https://www.example.com/path?key=value&key=value</code></p>
                 <section>
                     <h5>forms</h5>
-                    <p><code class="highlighter-rouge">&lt;form action="" method=""&gt;</code></p>
+                    <p><code>&lt;form action="" method=""&gt;</code></p>
                         <ul>
-                            <li><code class="highlighter-rouge">&lt;fieldset&gt;</code> - defines a logical sets of form</li>
+                            <li><code>&lt;fieldset&gt;</code> - defines a logical sets of form</li>
                                 <ul>
-                                    <li><code class="highlighter-rouge">&lt;legend&gt;</code> text <code class="highlighter-rouge">&lt;/legend&gt;</code> - defines the name of the set</li>
-                                    <li><code class="highlighter-rouge">&lt;label</code> - for labeling of an input field</li>
+                                    <li><code>&lt;legend&gt;</code> text <code>&lt;/legend&gt;</code> - defines the name of the set</li>
+                                    <li><code>&lt;label</code> - for labeling of an input field</li>
                                         <ul>
-                                            <li><code class="highlighter-rouge">for="idname"&gt;</code> text or radio buttons <code class="highlighter-rouge">&lt;/label</code>&gt;</code> - associates label with the id of input. Can be avoided if label tag wraps up input tag, normally for radio buttons or checkboxes.</li>
+                                            <li><code>for="idname"&gt;</code> text or radio buttons <code>&lt;/label</code>&gt;</code> - associates label with the id of input. Can be avoided if label tag wraps up input tag, normally for radio buttons or checkboxes.</li>
                                         </ul>
-                                    <li><code class="highlighter-rouge">&lt;select id="" name=""&gt;</code> id, which goes into label</li>
+                                    <li><code>&lt;select id="" name=""&gt;</code> id, which goes into label</li>
                                         <ul>
-                                            <li><code class="highlighter-rouge">&lt;option value=""&gt;</code> text <code class="highlighter-rouge">&lt;/option&gt;</code></li>
-                                            <li><code class="highlighter-rouge">&lt;option selected&gt;</code> text <code class="highlighter-rouge">&lt;/option&gt;</code> - selected by default</li>
+                                            <li><code>&lt;option value=""&gt;</code> text <code>&lt;/option&gt;</code></li>
+                                            <li><code>&lt;option selected&gt;</code> text <code>&lt;/option&gt;</code> - selected by default</li>
                                         </ul>
-                                    <li><code class="highlighter-rouge">&lt;/select&gt;</code></li>
-                                    <li><code class="highlighter-rouge">&lt;textarea id="" name=""&gt;</code><code class="highlighter-rouge">&lt;/textarea&gt;</code> - big free text field area</li>
-                                    <li><code class="highlighter-rouge">&lt;input</code></li>
+                                    <li><code>&lt;/select&gt;</code></li>
+                                    <li><code>&lt;textarea id="" name=""&gt;</code><code>&lt;/textarea&gt;</code> - big free text field area</li>
+                                    <li><code>&lt;input</code></li>
                                         <ul>
-                                            <li><code class="highlighter-rouge">id="somename"</code> is needed</li>
-                                            <li><code class="highlighter-rouge">autocomplete="off"</code> no automatic suggestions</li>
-                                            <li><code class="highlighter-rouge">autofocus</code> automatically puts a cursor on a field</li>
-                                            <li><code class="highlighter-rouge">name=""</code> name which gets submitted</li>
-                                            <li><code class="highlighter-rouge">placeholder=""</code></li>
-                                            <li><code class="highlighter-rouge">type=""</code></li>
+                                            <li><code>id="somename"</code> is needed</li>
+                                            <li><code>autocomplete="off"</code> no automatic suggestions</li>
+                                            <li><code>autofocus</code> automatically puts a cursor on a field</li>
+                                            <li><code>name=""</code> name which gets submitted</li>
+                                            <li><code>placeholder=""</code></li>
+                                            <li><code>type=""</code></li>
                                                 <ul>
-                                                    <li><code class="highlighter-rouge">search</code></li>
-                                                    <li><code class="highlighter-rouge">text</code></li>
-                                                    <li><code class="highlighter-rouge">tel</code></li>
-                                                    <li><code class="highlighter-rouge">email</code></li>
-                                                    <li><code class="highlighter-rouge">date</code></li>
-                                                    <li><code class="highlighter-rouge">number</code></li>
+                                                    <li><code>search</code></li>
+                                                    <li><code>text</code></li>
+                                                    <li><code>tel</code></li>
+                                                    <li><code>email</code></li>
+                                                    <li><code>date</code></li>
+                                                    <li><code>number</code></li>
                                                         <ul>
-                                                            <li><code class="highlighter-rouge">min=""</code> AND <code class="highlighter-rouge">max=""</code></li>
+                                                            <li><code>min=""</code> AND <code>max=""</code></li>
                                                         </ul>
-                                                    <li><code class="highlighter-rouge">radio</code> Label wraps it</li>
+                                                    <li><code>radio</code> Label wraps it</li>
                                                         <ul>
-                                                            <li><code class="highlighter-rouge">value=""</code></li>  
-                                                            <li><code class="highlighter-rouge">checked</code></li>  
+                                                            <li><code>value=""</code></li>  
+                                                            <li><code>checked</code></li>  
                                                         </ul>
-                                                    <li><code class="highlighter-rouge">checkbox</code> Label wraps it</li>
+                                                    <li><code>checkbox</code> Label wraps it</li>
                                                         <ul>
-                                                            <li><code class="highlighter-rouge">value=""</code></li>
-                                                            <li><code class="highlighter-rouge">checked</code></li>
+                                                            <li><code>value=""</code></li>
+                                                            <li><code>checked</code></li>
                                                         </ul>
-                                                    <li><code class="highlighter-rouge">submit</code> - for buttons</li>
-                                                    <li><code class="highlighter-rouge">hidden</code></li>
+                                                    <li><code>submit</code> - for buttons</li>
+                                                    <li><code>hidden</code></li>
                                                 </ul>
-                                            <li><code class="highlighter-rouge">pattern=".+@.+\.com"&gt;</code> Text. See Regular expressions bellow:</li>
+                                            <li><code>pattern=".+@.+\.com"&gt;</code> Text. See Regular expressions bellow:</li>
                                         </ul>    
                                 </ul>
-                            <li><code class="highlighter-rouge">&lt;/fieldset&gt;</code></li>
-                            <li><code class="highlighter-rouge">&lt;button type="submit"&gt;</code> text <code class="highlighter-rouge">&lt;/button&gt;</code></li>
+                            <li><code>&lt;/fieldset&gt;</code></li>
+                            <li><code>&lt;button type="submit"&gt;</code> text <code>&lt;/button&gt;</code></li>
                         </ul>
-                        <code class="highlighter-rouge">&lt;/form&gt;</code>
+                        <code>&lt;/form&gt;</code>
                 </section>
                 <h5>Regular expressions</h5>
                 <p>To validate or extract information from input</p>
                 <ul>
-                    <li><code class="highlighter-rouge">.</code> any single character (except line terminators)</li>
-                    <li><code class="highlighter-rouge">*</code> zero or more times</li>
-                    <li><code class="highlighter-rouge">+</code> one or more times of a next after that character</li>
-                    <li><code class="highlighter-rouge">?</code> 0 or 1 time</li>
-                    <li><code class="highlighter-rouge">{n}</code>n  occurrences</li>
-                    <li><code class="highlighter-rouge">{n,m}</code> at least n occurrences, at most m occurrences</li>
-                    <li><code class="highlighter-rouge">[0123456789]</code></li>
-                    <li><code class="highlighter-rouge">[0-9]</code> any one of the range of characters</li>
-                    <li><code class="highlighter-rouge">\d</code> any digit</li>
-                    <li><code class="highlighter-rouge">\D</code> any character that is not a digit</li>
+                    <li><code>.</code> any single character (except line terminators)</li>
+                    <li><code>*</code> zero or more times</li>
+                    <li><code>+</code> one or more times of a next after that character</li>
+                    <li><code>?</code> 0 or 1 time</li>
+                    <li><code>{n}</code>n  occurrences</li>
+                    <li><code>{n,m}</code> at least n occurrences, at most m occurrences</li>
+                    <li><code>[0123456789]</code></li>
+                    <li><code>[0-9]</code> any one of the range of characters</li>
+                    <li><code>\d</code> any digit</li>
+                    <li><code>\D</code> any character that is not a digit</li>
                 </ul>
                 <p><strong>Example:</strong></p>
-                <p><code class="highlighter-rouge">^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$</code></p>
+                <p><code>^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$</code></p>
                 <section>
                     <h5>Table tag</h5>
                         <pre><code>
@@ -169,27 +169,27 @@ html {
                 <section>
                     <h5>HTML tags and attributes</h5>
                     <ul>
-                        <li><code class="highlighter-rouge">&lt;form&gt;</code></li>
+                        <li><code>&lt;form&gt;</code></li>
                             <ul>
-                                <li><code class="highlighter-rouge">onsubmit="script/call of a function"</code></li>
+                                <li><code>onsubmit="script/call of a function"</code></li>
                             </ul>
-                        <li><code class="highlighter-rouge">&lt;blockquote&gt;</code> element defines a section that is quoted from another source</li>
+                        <li><code>&lt;blockquote&gt;</code> element defines a section that is quoted from another source</li>
                         <ul>
-                            <li><code class="highlighter-rouge">cite=""</code> intended to indicate a source of a quota</li>
+                            <li><code>cite=""</code> intended to indicate a source of a quota</li>
                         </ul>
-                        <li><code class="highlighter-rouge">&lt;q&gt;</code> defines a short quotation</li>
-                        <li><code class="highlighter-rouge">&lt;abbr&gt;</code> defines an abbreviation or an acronym, like "HTML", "CSS", "Mr.", "Dr.", "ASAP", "ATM"</li>
+                        <li><code>&lt;q&gt;</code> defines a short quotation</li>
+                        <li><code>&lt;abbr&gt;</code> defines an abbreviation or an acronym, like "HTML", "CSS", "Mr.", "Dr.", "ASAP", "ATM"</li>
                         <ul>
-                            <li><code class="highlighter-rouge">title=""</code> extended meaning of an abbreviation</li>
+                            <li><code>title=""</code> extended meaning of an abbreviation</li>
                         </ul>
-                        <li><code class="highlighter-rouge">&lt;address&gt;</code> defines the contact information for the author/owner of a document or an article</li>
-                        <li><code class="highlighter-rouge">&lt;cite&gt;</code> defines the title of a creative work (e.g. a book, a poem, a song, a movie, a painting, a sculpture, etc.)</li>
-                        <li><code class="highlighter-rouge">&lt;bdo&gt;</code> is used to override the current text direction</li>
+                        <li><code>&lt;address&gt;</code> defines the contact information for the author/owner of a document or an article</li>
+                        <li><code>&lt;cite&gt;</code> defines the title of a creative work (e.g. a book, a poem, a song, a movie, a painting, a sculpture, etc.)</li>
+                        <li><code>&lt;bdo&gt;</code> is used to override the current text direction</li>
                         <ul>
-                            <li><code class="highlighter-rouge">dir="rtl"</code></li>
+                            <li><code>dir="rtl"</code></li>
                         </ul>
-                        <li><code class="highlighter-rouge">&lt;nav&gt;</code> for navigation - unordered list</li>
-                        <!-- <li><code class="highlighter-rouge">&lt;&gt;</code></li> -->
+                        <li><code>&lt;nav&gt;</code> for navigation - unordered list</li>
+                        <!-- <li><code>&lt;&gt;</code></li> -->
                     </ul>
                 </section>
                 <section>
@@ -236,15 +236,15 @@ div.parent-flex2 {
                 <section>
                     <h5>JavaScript default functions</h5>
                         <ul>
-                            <li><code class="highlighter-rouge">alert('text' + )</code></li>
+                            <li><code>alert('text' + )</code></li>
                         </ul>
                 </section>
                 <section>
                     <h5>CSS - selectors</h5>
                         <ul>
-                            <li><code class="highlighter-rouge">input:not([type="radio"]):not([type="select"]) {}</code> select all in input but not "radio" and "select".</li>
-                            <li><code class="highlighter-rouge">input:not(:last-child)</code> applies styling except last child element. Used e.g. for margins or paddings.</li>
-                            <li><code class="highlighter-rouge">input, [for="idname"] {}</code> square brackets select an attribute, so it can be used instead of classes.</li>
+                            <li><code>input:not([type="radio"]):not([type="select"]) {}</code> select all in input but not "radio" and "select".</li>
+                            <li><code>input:not(:last-child)</code> applies styling except last child element. Used e.g. for margins or paddings.</li>
+                            <li><code>input, [for="idname"] {}</code> square brackets select an attribute, so it can be used instead of classes.</li>
                         </ul>
                 </section>
             </section>

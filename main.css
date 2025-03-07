@@ -153,7 +153,7 @@ h2 {
     background-color: rgb(222, 222, 222);
 }
 
-code.highlighter-rouge {
+code:not(pre > code) {
     padding: calc(.2rem - 1px) 0.2rem;
     border: 1px solid rgb(73, 80, 87) !important;
     font-size: .875em;

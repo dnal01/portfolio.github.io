@@ -26,53 +26,53 @@
                 <h2>My takeaways today</h2>
                 <h3>Node.js / Express</h3>
                 <h4>Modules - introduction</h4>
-                <p>Modules - libraries. In order to connect module store it in a variable <code class="highlighter-rouge">var varName = require('moduleName');</code>[1]</p>
+                <p>Modules - libraries. In order to connect module store it in a variable <code>var varName = require('moduleName');</code>[1]</p>
                 <h4>Modules - creation of your own module</h4>
-                <p>In order to create your own module use <code class="highlighter-rouge">exports</code> keyword after which follows simple function syntax:</p>
+                <p>In order to create your own module use <code>exports</code> keyword after which follows simple function syntax:</p>
                     <ul>
-                        <li><code class="highlighter-rouge">exports.myDateTime = function() {return...};</code> or <code class="highlighter-rouge">module.exports = ...</code>. Store the code in a separate file and connect to it in the main file using:</li>
-                        <li><code class="highlighter-rouge">var varName = require('./fileName without .js')</code>. <code class="highlighter-rouge">./</code> - locate the module in the same folder as the main file. Then access the module in the main file:</li>
-                        <li><code class="highlighter-rouge">varName.functionName()</code></li>
+                        <li><code>exports.myDateTime = function() {return...};</code> or <code>module.exports = ...</code>. Store the code in a separate file and connect to it in the main file using:</li>
+                        <li><code>var varName = require('./fileName without .js')</code>. <code>./</code> - locate the module in the same folder as the main file. Then access the module in the main file:</li>
+                        <li><code>varName.functionName()</code></li>
                     </ul>
                 <h4>Modules</h4>
                 <ol>
-                    <li><code class="highlighter-rouge">var varName = require('http');</code> transfer data over http</li>
+                    <li><code>var varName = require('http');</code> transfer data over http</li>
                     <h5>Methods - http:</h5>
                     <ul>
-                        <li><code class="highlighter-rouge">http.createServer(function(req, resp){..., incl. header}).listen(8080);</code>. Creates server that listens to server ports and gives a response back to the client. The function passed into the <code class="highlighter-rouge">http.createServer()</code> method, will be executed when someone tries to access the computer on port ...</li>
+                        <li><code>http.createServer(function(req, resp){..., incl. header}).listen(8080);</code>. Creates server that listens to server ports and gives a response back to the client. The function passed into the <code>http.createServer()</code> method, will be executed when someone tries to access the computer on port ...</li>
                         <ul>
-                            <li><code class="highlighter-rouge">req</code> argument - is an object (http.IncomingMessage object).</li>
+                            <li><code>req</code> argument - is an object (http.IncomingMessage object).</li>
                             <h6>req properties</h6>
                             <ul>
-                                <li><code class="highlighter-rouge">url</code> holds the part of the url that comes after the domain name</li>
-                                <li><code class="highlighter-rouge">...</code></li>
+                                <li><code>url</code> holds the part of the url that comes after the domain name</li>
+                                <li><code>...</code></li>
                             </ul>
-                            <li><code class="highlighter-rouge">res</code> argument - </li>
+                            <li><code>res</code> argument - </li>
                         </ul>
                         <h6>http Header</h6>
                         <p>If the response from the HTTP server is supposed to be displayed as HTML, you should include an HTTP header.</p>
                         <ul>
-                            <li><code class="highlighter-rouge">res.writeHead(200, {'Content-Type': 'text/html'});</code>. The first argument is OK code, and the second is an object containing the response headers.</li>
-                            <li><code class="highlighter-rouge">res.write('Hello World!');</code> or <code class="highlighter-rouge">res.write(req.url);</code>.</li>
-                            <li><code class="highlighter-rouge">res.end();</code> appends whatever is in brackets to the end of the body</li>
+                            <li><code>res.writeHead(200, {'Content-Type': 'text/html'});</code>. The first argument is OK code, and the second is an object containing the response headers.</li>
+                            <li><code>res.write('Hello World!');</code> or <code>res.write(req.url);</code>.</li>
+                            <li><code>res.end();</code> appends whatever is in brackets to the end of the body</li>
                         </ul>
                     </ul>
-                    <li><code class="highlighter-rouge">var varName = require('url');</code> splits up a web address into readable parts</li>
+                    <li><code>var varName = require('url');</code> splits up a web address into readable parts</li>
                     <ul>
                         <i>url - 'http://localhost:8080/default.htm?year=2017&month=february'</i>
-                        <li><code class="highlighter-rouge">var q = url.parse(req.url, true).query;</code> - Use the url module to turn the querystring into an object</li>
-                        <li><code class="highlighter-rouge">console.log(q.host);</code> //returns 'localhost:8080'</li>
-                        <li><code class="highlighter-rouge">console.log(q.pathname);</code> //returns '/default.htm'</li>
-                        <li><code class="highlighter-rouge">console.log(q.search);</code> //returns '?year=2017&month=february'</li>
-                        <li><code class="highlighter-rouge">var txt = q.year + " " + q.month;</code> //"returns" '2017 february'</li>
-                        <li><code class="highlighter-rouge">res.end(txt);</code></li>
+                        <li><code>var q = url.parse(req.url, true).query;</code> - Use the url module to turn the querystring into an object</li>
+                        <li><code>console.log(q.host);</code> //returns 'localhost:8080'</li>
+                        <li><code>console.log(q.pathname);</code> //returns '/default.htm'</li>
+                        <li><code>console.log(q.search);</code> //returns '?year=2017&month=february'</li>
+                        <li><code>var txt = q.year + " " + q.month;</code> //"returns" '2017 february'</li>
+                        <li><code>res.end(txt);</code></li>
                     </ul>
-                    <li><code class="highlighter-rouge">var varName = require('fs');</code> allows you to work with the file system on your computer</li>
+                    <li><code>var varName = require('fs');</code> allows you to work with the file system on your computer</li>
                     <h5>Methods - fs:</h5>
                     <ul>
-                        <li><code class="highlighter-rouge">fs.readFile();</code></li>
-                        <li><code class="highlighter-rouge">...</code></li>
-                        <li><code class="highlighter-rouge"></code></li>
+                        <li><code>fs.readFile();</code></li>
+                        <li><code>...</code></li>
+                        <li><code></code></li>
                     </ul>
                 </ol>  
             </section>

@@ -27,16 +27,16 @@
                 <h3>GIT Version control commands</h3>
                     <h4>Global set up</h4>
                         <ul>
-                            <li><code class="highlighter-rouge">git config --global user.name</code>Sets the default name for Git to use when you commit</li>
-                            <li><code class="highlighter-rouge">git config --global user.email</code>-//-</li>
-                            <li><code class="highlighter-rouge">git config --global init.defaultBranch</code> Sets the default branch to the name "main" instead of "master"</li>
-                            <li><code class="highlighter-rouge">git config --global core.editor</code> Sets the default editor to VSC</li>
-                            <li><code class="highlighter-rouge">git config --list</code></li>
+                            <li><code>git config --global user.name</code>Sets the default name for Git to use when you commit</li>
+                            <li><code>git config --global user.email</code>-//-</li>
+                            <li><code>git config --global init.defaultBranch</code> Sets the default branch to the name "main" instead of "master"</li>
+                            <li><code>git config --global core.editor</code> Sets the default editor to VSC</li>
+                            <li><code>git config --list</code></li>
                         </ul>
                     <h4>Creating an ssh key for your computer</h4>
                         <ul>
-                            <li><code class="highlighter-rouge">ssh-keygen</code> Hit enter twice. This generates two files, one ending in .pub. This is the public key that you can share with others.</li>
-                            <li><code class="highlighter-rouge">cat ~/.ssh/id_rsa.pub</code> displays public key. Paste it into GitHub account settings > SSH keys > add new. You'll be able to clone/push to GitHub from this computer for authorized repositories!</li>
+                            <li><code>ssh-keygen</code> Hit enter twice. This generates two files, one ending in .pub. This is the public key that you can share with others.</li>
+                            <li><code>cat ~/.ssh/id_rsa.pub</code> displays public key. Paste it into GitHub account settings > SSH keys > add new. You'll be able to clone/push to GitHub from this computer for authorized repositories!</li>
                         </ul>
                     <h4>Adding SSH key to the GitHub</h4>
                         <ul>
@@ -47,57 +47,56 @@
                     <h4>Synchronizing local repository with remote GitHub</h4>
                         <strong>Before setting up Git you need to initialize a repository</strong>
                         <ul>
-                            <li><code class="highlighter-rouge">git remote add origin GitHubRepositoryURL</code> Synchronize Git with desktop</li>
-                            <li><code class="highlighter-rouge">git remote -v</code> to view configured remotes</li>
-                            <li><code class="highlighter-rouge">git push -u origin main</code> first time
+                            <li><code>git remote add origin GitHubRepositoryURL</code> Synchronize Git with desktop</li>
+                            <li><code>git remote -v</code> to view configured remotes</li>
+                            <li><code>git push -u origin main</code> first time
                                 <p>-u flag is used to set origin as the upstream remote in your git config. You only have to do that the first time and then can use push and pull without arguments.</p></li>
-                            <li><code class="highlighter-rouge">git push</code> after that. Use this after <code class="highlighter-rouge">git add</code> and <code class="highlighter-rouge">git commit</code> to push changes to the GitHub.</li>
-                            <li><code class="highlighter-rouge">git pull</code></li>
-                            <li><code class="highlighter-rouge">git pull origin main</code> Before you start working on a repo that day.</li>
+                            <li><code>git push</code> after that. Use this after <code>git add</code> and <code>git commit</code> to push changes to the GitHub.</li>
+                            <li><code>git pull</code></li>
+                            <li><code>git pull origin main</code> Before you start working on a repo that day.</li>
+                            <li><code>git fetch</code> The way you update the .git folder to contain new information from the remote. But keeps your local branches intact yet.</li>
                         </ul>                 
                     <h4>Restoring changes</h4>
                         <ul>
-                            <li><code class="highlighter-rouge">git restore fileName</code> restores files in working repository (not added or committed).</li>
-                            <li><code class="highlighter-rouge">git reset</code> Unstage a file and keep changes unless you restore it</li>
-                            <li><code class="highlighter-rouge">git restore --staged fileName</code> Alternative for a reset.</li>
-                            <li><code class="highlighter-rouge">git reset --soft HEAD~1</code> Uncommiting, but keeps changes</li>
-                            <li><code class="highlighter-rouge">git reset --hard HEAD~1</code> Uncommiting, but removing (unstaging) changes</li>
+                            <li><code>git restore fileName</code> restores files in working repository (not added or committed).</li>
+                            <li><code>git reset</code> Unstage a file and keep changes unless you restore it</li>
+                            <li><code>git restore --staged fileName</code> Alternative for a reset.</li>
+                            <li><code>git reset --soft HEAD~1</code> Uncommiting, but keeps changes</li>
+                            <li><code>git reset --hard HEAD~1</code> Uncommiting, but removing (unstaging) changes</li>
                                 <ul>
-                                    <li><code class="highlighter-rouge">HEAD</code> The most recent commit is called like that. You can also use hash number of a specific commit.</li>
-                                    <li><code class="highlighter-rouge">~1</code> Move back by one commit</li>
-                                    <li><code class="highlighter-rouge">--soft</code> keep changes</li>
-                                    <li><code class="highlighter-rouge">--hard</code> undo changes</li>
+                                    <li><code>HEAD</code> The most recent commit is called like that. You can also use hash number of a specific commit.</li>
+                                    <li><code>~1</code> Move back by one commit</li>
+                                    <li><code>--soft</code> keep changes</li>
+                                    <li><code>--hard</code> undo changes</li>
                                 </ul>
-                            <li><code class="highlighter-rouge">git revert --no-commit HEAD~1</code> Inverts the changes made by the commit and generates a new commit with the inverted content. Used to save history.</li>
+                            <li><code>git revert --no-commit HEAD~1</code> Inverts the changes made by the commit and generates a new commit with the inverted content. Used to save history.</li>
                         </ul>
                     <h4>Branches</h4>
                         <ul>
-                            <li><code class="highlighter-rouge">git branch</code> See the current branch</li>
-                            <li><code class="highlighter-rouge">git switch -c branchName</code> create a branch</li>
+                            <li><code>git branch</code> See the current branch</li>
+                            <li><code>git switch -c branchName</code> create a branch</li>
                                 <ul>
-                                    <li><code class="highlighter-rouge">switch</code> Hops me over to that branch.</li>
-                                    <li><code class="highlighter-rouge">-c</code> Creates new branch.</li>
+                                    <li><code>switch</code> Hops me over to that branch.</li>
+                                    <li><code>-c</code> Creates new branch.</li>
                                 </ul>
-                            <li><code class="highlighter-rouge">git merge anotherBranchName -m ""</code> merge branchName with a current branch where you are</li>
-                            <li><code class="highlighter-rouge">git push -u origin branchName</code> - for the first push for branch</li>
-                            <li><code class="highlighter-rouge">git branch -d branchName</code> Deletes a local branch.</li>
-                            <li><code class="highlighter-rouge">git push -d origin branchName</code> - removes remote branch</li>
+                            <li><code>git merge anotherBranchName -m ""</code> merge branchName with a current branch where you are</li>
+                            <li><code>git push -u origin branchName</code> - for the first push for branch</li>
+                            <li><code>git branch -d branchName</code> Deletes a local branch.</li>
+                            <li><code>git push -d origin branchName</code> - removes remote branch</li>
                         </ul> 
                     <h4>General</h4>
                         <ul>
-                            <li><code class="highlighter-rouge">git pull --rebase</code> Collects all the changes from all branches and rewrite your local files with them?</li>
-                            <li><code class="highlighter-rouge"></code></li>
-                            <li><code class="highlighter-rouge">git commit --amend</code> This will replace the last commit with a new one. It's best to do this only with commits that haven't been shared yet. If you need to fix your last commit, maybe to change the message or add something you forgot.</li>
-
+                            <li><code>git pull --rebase</code> Replaces local lifecycle from the moment when deviation occurred, with remote one. Plus, adding new commits on the top one by one merging all the local commits, starting from the first deviated, first with the last remote commit, then with the each last merge.</li>
+                            <li><code>git commit --amend</code> This will replace the last commit with a new one. It's best to do this only with commits that haven't been shared yet. If you need to fix your last commit, maybe to change the message or add something you forgot.</li>
                         </ul>
                     <h4>Logs and reports</h4>
                         <ul>
-                            <li><code class="highlighter-rouge">git diff branch1..branch2</code> Compares HEADS of two branches.</li>
-                            <li><code class="highlighter-rouge">git log --all --oneline --graph</code></li>
+                            <li><code>git diff branch1..branch2</code> Compares HEADS of two branches.</li>
+                            <li><code>git log --all --oneline --graph</code></li>
                                 <ul>
-                                    <li><code class="highlighter-rouge">-all</code> Shows a log throughout all branches</li>
-                                    <li><code class="highlighter-rouge">--oneline</code> Makes each commit in one line</li>
-                                    <li><code class="highlighter-rouge">--graph</code> Highlights commits of different branches</li>
+                                    <li><code>-all</code> Shows a log throughout all branches</li>
+                                    <li><code>--oneline</code> Makes each commit in one line</li>
+                                    <li><code>--graph</code> Highlights commits of different branches</li>
                                 </ul>
                         </ul>
             </section>
