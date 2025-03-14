@@ -1444,7 +1444,13 @@ public final native void notifyAll()</code></pre>
                     <p><strong>Synchronized</strong> key word has a limitation in providing methods for control of which next Thread will take a control next.</p>
                     <h4>Supper Classes</h4>
                     <ul>
-                        <li><code>public interface Lock</code> It allows explicit locking and unlocking, supports various locking strategies.</li>
+                        <li><code>public interface Lock</code> It allows explicit locking and unlocking, supports various locking strategies.
+<pre><code>// Acquires the lock.
+void lock();
+// Releases the lock.
+void unlock()</code></pre>
+                        </li>
+                        <li><code>public interface ReadWriteLock</code> The ReadWriteLock interface provides a way to distinguish between read and write locks. This allows multiple threads to read a shared resource simultaneously, while providing exclusive write access.</li>
                     </ul>
                     <h4>Classes</h4>
                     <ul>
@@ -1452,7 +1458,7 @@ public final native void notifyAll()</code></pre>
                             <h5>Methods</h5>
 <pre><code></code></pre>
                         </li>
-                        <li><code></code></li>
+                        <li><code>public class ReentrantReadWriteLock</code> implements ReadWriteLock, java.io.Serializable</li>
                         <li><code></code></li>
                     </ul>
 
