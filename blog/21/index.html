@@ -25,7 +25,7 @@
         <p class="left date">January 19, 2025</p>
         <div class="block left">
             <section>
-                <h3>Variable initialization - additional character</h3>
+                <h2>Variable initialization - additional character</h2>
                     <ul>
                         <li><code>byte a = 10;</code> 8 bit. Range from -128 to 127;</li>
                         <li><code>short s = 10000;</code> 16 bit. Range from -32768 to 32767;</li>
@@ -42,9 +42,9 @@
                         <li><code>String</code>: <strong>null</strong></li>
                         <li><code>boolean</code>: <strong>false</strong></li>
                     </ul>
-                    <h4>Constants</h4>
+                    <h3>Constants</h3>
                     <p>Use <code>final</code> word before initialization of a variable.</p>
-                <h3>Theory</h3>
+                <h2>Theory</h2>
                     <p>Classes consist of methods and data; Packages - folder where the class will be saved;</p>
                     <p>Classes are Templates (they are singles), Objects are Individual elements created from classes.</p>
                     <p>Encapsulation - definition of methods instead of using direct access to the variables.</p>
@@ -63,12 +63,12 @@
                     <p>If variables contain the same value, the value memory address is the same. However, if <code>new</code> keyword is used, new value will be created. But, interning rows involves storing only ONE copy, e.g.:</p>
 <pre><code>String product5 = new String("Round cube").intern();</code></pre>
                     <p><strong>Resources</strong> - an Object which needs to be closed after end of the work with a program.</p>
-                <h3>Data Conversion</h3>
+                <h2>Data Conversion</h2>
                 <p>Downgrade of a type is possible only with explicit conversion, e.g. int into a char.</p>
 <pre><code>int a = 128;
 long b = a; // Implicit Type Data conversion
 long b = (long) a; // Explicit Type Data Conversion</code></pre>
-                <h3>Escape characters</h3>
+                <h2>Escape characters</h2>
                 <table>
                     <thead>
                         <tr>
@@ -95,12 +95,12 @@ long b = (long) a; // Explicit Type Data Conversion</code></pre>
                         </tr>
                     </tbody>
                 </table>
-                <h3>Mandatory code</h3>
+                <h2>Mandatory code</h2>
                     <pre><code>public class nameOfTheFile {
     public static void main(String[] args) {
 - Classes goes here}
 }</code></pre>
-                <h3>Classes initialization and usage</h3>
+                <h2>Classes initialization and usage</h2>
                     <p>new Classes need to be in another <code>.java</code> file. <i>This information needs to be confirmed.</i></p>
                     <pre><code>public class Customer {
     - data (called fields);
@@ -118,7 +118,7 @@ long b = (long) a; // Explicit Type Data Conversion</code></pre>
                     <pre><code>Customer person1 = new Customer();
     person1.name = "Bob";
     System.out.println(person1.name);</code></pre>
-                <h3>Methods initialization</h3>
+                <h2>Methods initialization</h2>
                     <pre><code>&lt;access modifier&gt; &lt;return type&gt; &lt;method name&gt; (&lt;parameter list&gt;) {
     /* method body */
     /* return statement */
@@ -138,7 +138,7 @@ int subResult = subtract(10, 5); // the method call</code></pre>
                         <li><code>return (double) result</code> - if a method is a void, than write just <code>return;</code></li>
                     </ul>
                     <p>Name of methods should begin with a verb and written in lowerCamelCase.</p>
-                    <h3>Access Modifiers</h3>
+                    <h2>Access Modifiers</h2>
                     <table>
                         <tr>
                             <th>Access Modifier</th>
@@ -162,9 +162,9 @@ int subResult = subtract(10, 5); // the method call</code></pre>
                         </tr>
                     </table>
                     <p><i>Note that classes can only be either default or public.</i></p>
-                    <h3>Encapsulation</h3>
+                    <h2>Encapsulation</h2>
                     <p>Hiding variables and allowing access to data through Methods only is called <strong>Encapsulation</strong>.</p>
-                    <h3>Using Method overloading</h3>
+                    <h2>Using Method overloading</h2>
                     <p>Class can define several methods that:</p>
                     <ul>
                         <li>Have the same name</li>
@@ -180,17 +180,17 @@ int subResult = subtract(10, 5); // the method call</code></pre>
     public boolean fit(String size) {...}
     public boolean fit(int height, int witdh) {...}
 }</code></pre>
-                <h3>Variable Shadowing</h3>
+                <h2>Variable Shadowing</h2>
                 <pre><code>public class Clothing {
     double <strong>price</strong>;
     public void setPrice(String <strong style="color: red;">price</strong>) {
         <strong>this.price</strong> = <strong style="color: red;">price</strong>;
     }
 }</code></pre>
-                <h3>Package initialization</h3>
+                <h2>Package initialization</h2>
                     <pre><code>package duke.choice;</code></pre>
                     <p><code>duke</code> - is the main folder; <code>choice</code> - is a subfolder.</p>
-                <h3>Switch Statement</h3>
+                <h2>Switch Statement</h2>
                 <pre><code>... String condition = "Used";
     switch (condition) {
     case "Damaged", "Returned":
@@ -202,7 +202,7 @@ int subResult = subtract(10, 5); // the method call</code></pre>
     default:
         discount = price;
                 </code></pre>
-                <h3>Array</h3>
+                <h2>Array</h2>
                 <pre><code>int[] numbers = {1, 2, 3};
 int numbers[] = {1, 2, 3};
 
@@ -226,7 +226,7 @@ String toString = Arrays.toString(numbers);</code></pre>
                 <p>Transforms the array into a string.</p>
                 <pre><code>String[] nameParts = fullName.split(" ");</code></pre>
                 <p>Splits a string onto parts based on character</p>
-                <h3>String Methods</h3>
+                <h2>String Methods</h2>
                 <ul>
                     <li><code>String upperCaseName = newName.toUpperCase();</code></li>
                     <li><code>String lowerCaseName = newName.toLowerCase();</code></li>
@@ -257,7 +257,7 @@ boolean regionMatches = name.regionMatches(7, myStr2, 4, 5); // True</code></pre
                     <li><code>String format = String.format("%2$,3.2f %1$s", "meters", 1260.5052);</code> Formats a string using placeholders and parameters</li>
                     <li>
                         <code>String format = strVar.formatted(name, salary); String strVar = "%s receives CHF %.2f";</code>. The difference compared to <code>String.format()</code> is in passing the ready string.
-                        <h4>Placeholders</h4>
+                        <h3>Placeholders</h3>
                         <p><code>%[arg$][flags][width][.precision]conversion</code>. The components in [square brackets] are optional.</p>
                         <ul>
                             <li><code>arg$</code> A number followed by a $ sign which indicates which of the additional arguments to use, argument numbers start at 1. This can be replaced with a <code>&lt;</code> which specifies that the argument from the previous placeholder should be used.</li>
@@ -276,7 +276,7 @@ boolean regionMatches = name.regionMatches(7, myStr2, 4, 5); // True</code></pre
                             <li><code>.precision</code> A <code>.</code> followed by a whole number indicating how many decimal digits to show in the formatted data.</li>
                             <li><code>conversion</code> A character which indicates how an argument's data should be represented. If the character is uppercase the data will be formatted in uppercase where possible. The list of possible characters is shown in the table below.</li>
                           </ul>
-                        <h4>List of conversions</h4>
+                        <h3>List of conversions</h3>
                         <table>
                             <tr>
                                 <th>Specifier</th>
@@ -321,7 +321,7 @@ boolean regionMatches = name.regionMatches(7, myStr2, 4, 5); // True</code></pre
                         </table>
                     </li>
                 </ul>
-                <h3>Formatter class</h3>
+                <h2>Formatter class</h2>
                 <p>Works the same as <code>String.format()</code></p>
 <pre><code>String[] products = new String[] {"orange", "apple", "mango", "kiwi"};
 StringBuilder builder = new StringBuilder();
@@ -338,15 +338,15 @@ for (String item : products) {
 }
 
 System.out.println(builder);</code></pre>
-                <h3>printf</h3>
+                <h2>printf</h2>
                 <code>System.out.printf("1) User: %s %s, email: %s%n", firstName, lastName, email);</code>
-                <h3>DecimalFormat class</h3>
+                <h2>DecimalFormat class</h2>
 <pre><code>String strCost1 = new DecimalFormat("0.00").format(cost1);
 System.out.println("2) Non-rounded is " + cost1 + ", rounded is " + strCost1);
 
 String strCost2 = new DecimalFormat("#.##", new DecimalFormatSymbols(Locale.ENGLISH)).format(cost);
 System.out.println("3) Non-rounded is " + cost + ", rounded is " + strCost2);</code></pre>
-                <h3>Random class</h3>
+                <h2>Random class</h2>
 <pre><code>Random random = new Random();
 
 String generatedString = random.ints(leftLimit, rightLimit + 1)
@@ -354,7 +354,7 @@ String generatedString = random.ints(leftLimit, rightLimit + 1)
     .limit(targetStringLength)
     .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
     .toString();</code></pre>
-                <h3>StringBuilder class</h3>
+                <h2>StringBuilder class</h2>
 <pre><code>StringBuilder builder = new StringBuilder();
 builder.append("hello").append("world").append(31);
 
@@ -367,20 +367,20 @@ for (int i = reverses.length-1; i >= 0; i--) {
 result += reverses[i];
 }</code></pre>
                                 <p>Here is another, classical way of reversing a String.</p>
-                                <h3>String buffer class</h3>
+                                <h2>String buffer class</h2>
                                 <p>StringBuffer is synchronized. This means that multiple threads cannot call the methods of StringBuffer simultaneously. StringBuilder is asynchronized.</p>
-                                <h4>StringBuffer / StringBuilder Methods</h4>
+                                <h3>StringBuffer / StringBuilder Methods</h3>
                                 <ul>
                                     <li><code>obj.append(var or "")</code></li>
                                     <li><code>obj.insert(2,"App")</code> At a position</li>
                                     <li><code>obj.replace(2,4,"App")</code> Starting and ending at</li>
                                     <li><code>obj.delete(2, 4)</code> Starting and ending at</li>
                                 </ul>
-                                <h3>StringJoiner class</h3>
+                                <h2>StringJoiner class</h2>
                                 <p>Is used to join Strings.</p>
-                                <h4>StringJoiner Constructor</h4>
+                                <h3>StringJoiner Constructor</h3>
                                 <code>StringJoiner(CharSequence delimiter, CharSequence prefix, CharSequence suffix)</code>
-                                <h4>StringJoiner Methods</h4>
+                                <h3>StringJoiner Methods</h3>
                                 <ul>
                                     <li><code>obj.add("String")</code> adds a String</li>
                                     <li><code>obj.merge(StringJoiner other)</code> Merges two StringJoiners</li>
@@ -394,7 +394,7 @@ StringJoiner vegesJoiner = new StringJoiner("-", PREFIX, SUFFIX);
 vegesJoiner.add("potato").add("carrot");
 StringJoiner mergedJoiner = joiner.merge(vegesJoiner);
 // RESULT: [orange, palm, potato-carrot]</code></pre>
-                <h3>Character Methods</h3>
+                <h2>Character Methods</h2>
                 <ul>
                     <li><code>char lowerCase = Character.toLowerCase(name);</code> or <code>toUpperCase();</code></li>
                     <li><code>char a = (char) 82;</code> Changes number to a relevant character.</li>
@@ -403,12 +403,12 @@ StringJoiner mergedJoiner = joiner.merge(vegesJoiner);
                     <li><code>boolean isWSp = Character.isWhitespace('\t');</code> Prints true.</li>
                     <li><code>boolean isUCase = Character.isUpperCase('A');</code> or <code>isLowerCase();</code></li>
                 </ul>
-                <h3>Cmd codes</h3>
+                <h2>Cmd codes</h2>
                 <ul>
                     <li><code>javac OrderClass.java</code> Compiles java code into a binary code.</li>
                     <li><code>java OrderClass</code> Executes binary code (Application).</li>
                 </ul>
-                <h3>Object Referencing Other Objects as a Property</h3>
+                <h2>Object Referencing Other Objects as a Property</h2>
                 <table>
                     <tr>
                         <th>Customer</th>
@@ -434,7 +434,7 @@ inspectWardrobe()</code></pre></td>
 for (Clothing item: customer01.getItems()) {
     item.getPrice();
 }</code></pre>
-                <h3>References and Objects in Memory</h3>
+                <h2>References and Objects in Memory</h2>
                 <p>There are two memory areas when the Java virtual machine starts: The <strong>Stack</strong>, which stores variables and values or pointers (an address of an objects) and the <strong>Heap</strong>, which stores objects.</p>
                 <pre><code>Clothing[] items = {
     new Clothing(),
@@ -505,8 +505,8 @@ for (Clothing item: customer01.getItems()) {
                 </table>
                 <p><i>Note also that when it comes to the values reassignment, the new value gets assigned but not an address to object which holds it.</i></p>
                 <p><i>Arrays are handled by an implicit Array object, therefore the array variable is an object reference.</i></p>
-                <h3>Java Memory Management</h3>
-                <h4>Java Memory Structure</h4>
+                <h2>Java Memory Management</h2>
+                <h3>Java Memory Structure</h3>
                 <div class="container_grid_common container_JMS">
                     <div style="background-color: inherit; grid-area: con-1;"></div>
                     <div style="font-style: italic; background-color: inherit; border-bottom: solid 1px rgb(51, 51, 51); padding: 0;  grid-area: con-3;">Stack area</div>
@@ -537,7 +537,7 @@ for (Clothing item: customer01.getItems()) {
                     <li><strong>Stack area</strong> stores method specific values that are short-lived and are referenced to other objects in the heap.</li>
                     <li><strong>Stack frame</strong> Every frame  consist of own Local Variable Array (LVA), Frame Data (FD) and Operand Stack (OS). Only one frame is active in a Heap - current frame.</li>
                 </ul>
-                <h4>Garbage Collector</h4>
+                <h3>Garbage Collector</h3>
                     <p>Any object that is not accessible to any thread is considered dereferenced and becomes available for GC.</p>
                     <div class="container_grid_common container_GC">
                         <div style="background-color: inherit; grid-area: con-1;"></div>
@@ -557,20 +557,23 @@ for (Clothing item: customer01.getItems()) {
                         <li><strong>Tenured Generation</strong> - long surviving objects.</li>
                         <li><strong>Metaspace</strong> Stores static data, which is accessible anytime.</li>
                     </ol>
-                <h4>Java Volatile Keyword</h4>
+                <h3>Java Volatile Keyword</h3>
                 <p>The Java volatile keyword is used to mark a Java variable as "being stored in main memory" (RAM). Every write to a volatile variable will be written to main memory, and not just to the CPU registers. E.g.:</p>
-                <pre><code>public <strong>volatile</strong> int counter = 0;</code></pre>
+<pre><code>public <strong>volatile</strong> int counter = 0;</code></pre>
                 <p>Declaring a variable volatile thus guarantees the visibility for other threads of writes to that variable.</p>
                 <p><em>if two threads are both reading and writing to a shared variable, then using the volatile keyword for that is not enough.</em> You need to use a synchronized in that case to guarantee that the reading and writing of the variable is atomic. Reading or writing a volatile variable does not block threads reading or writing. For this to happen you must use the synchronized keyword around critical sections.</p>
                 <p>As an alternative to a synchronized block you could also use one of the many atomic data types found in the java.util.concurrent package. For instance, the AtomicLong or AtomicReference or one of the others.</p>
                 <p>In case only one thread reads and writes the value of a volatile variable and other threads only read the variable, then the reading threads are guaranteed to see the latest value written to the volatile variable. Without making the variable volatile, this would not be guaranteed.</p>
-                <h4>Java Synchronized Blocks</h4>
-                <p>A Java synchronized block marks a method or a block of code as synchronized. A synchronized block in Java can only be executed a single thread at a time (depending on how you use it). Java synchronized blocks can thus be used to avoid <strong>race condition</strong>.</p>
-                <p>If two or more threads share an object, and more than one thread updates variables in that shared object, <strong>race conditions</strong> may occur.</p>
-<pre><code>public <strong>synchronized</strong> void add(int value){
-    this.count += value;
-}</code></pre>
-                <h3>Initializing Object Using the Constructor Method</h3>
+                <h3>Java Synchronized Blocks</h3>
+                    <p>A Java synchronized block marks a method or a block of code as synchronized. A synchronized block in Java can only be executed a single thread at a time (depending on how you use it). Java synchronized blocks can thus be used to avoid <strong>race condition</strong>.</p>
+                    <p>If two or more threads share an object, and more than one thread updates variables in that shared object, <strong>race conditions</strong> may occur.</p>
+                    <p>One Thread can block section only once, and any other Thread which awaits to access a block can block a block.</p>
+<pre><code>// Synchronized method
+public <strong>synchronized</strong> void add(int value){ ... }
+// Synchronized block
+public void add(int value) { <strong>synchronized(this)</strong> { ... } }</code></pre>
+                    <p>Synchronization should be used carefully as it may block other Threads forever and make progress stop due to wait time.</p>
+                <h2>Initializing Object Using the Constructor Method</h2>
                 <pre><code>public class Clothing {
     private String description;
     public double price;
@@ -590,7 +593,7 @@ for (Clothing item: customer01.getItems()) {
     Clothing item = <strong>new Clothing ("Jacket", 20.99, "M");</strong>
     // item2 is already initialized
 }</code></pre>
-                <h3>Static Methods</h3>
+                <h2>Static Methods</h2>
                 <p>It is a e.g. a <strong>static variable value</strong> that is shared by all objects of a class. Or it can be a <code>public static void filter(Database data){...}</code> method of a class, which you want to execute some process to perform an action.</p>
                 <ul>
                     <li>Is <i>not specific</i> to any object instance</li>
@@ -598,7 +601,7 @@ for (Clothing item: customer01.getItems()) {
                     <li>Static variables sees only other static variables, therefor can not access instance (internal) variables.</li>
                     <li>Can not be overridden by other classes.</li>
                 </ul>
-                <h3>Handling Exceptions - the <code>try/catch</code> Block</h3>
+                <h2>Handling Exceptions - the <code>try/catch</code> Block</h2>
                 <pre><code><strong>try {</strong>
     Clothing[] items = new Clothing[10];
     items[0].description = "Pink Boiler Suit";
@@ -613,7 +616,7 @@ for (Clothing item: customer01.getItems()) {
                     <li><code>catch</code> block contain logic that handles expectations.</li>
                 </ul>
                 <p>Nested try blocks can be used when some specific section an a big code can cause a specific exception.</p>
-                <h4>Exception classes</h4>
+                <h3>Exception classes</h3>
                 <table>
                     <thead>
                         <tr>
@@ -636,7 +639,7 @@ for (Clothing item: customer01.getItems()) {
                         </tr>
                     </tbody>
                 </table>
-                <h4>Exception invokers</h4>
+                <h3>Exception invokers</h3>
                 <p>The <code>throw</code> keyword is used to create an exception. We specify the exception object that should be thrown. The exception contains a message describing the error. These exceptions can be related, for example, to validating input data for correctness, compliance with a certain criterion, etc.</p>
 <pre><code>throw new ArithmeticException("The age is not right!"); // The string becomes a e.getMessage() value</code></pre>
                 <p>The <code>throws</code> keyword is used to declare exceptions; indicates that an exception may occur in a method; does not throw an exception; always used with a method signature. The method must provide a throws clause that lists the exceptions.</p>
@@ -654,7 +657,7 @@ public void callingMethod()
     /* Complicated error handling code */
     }
 }</code></pre>
-                <h4>Custom Exceptions</h4>
+                <h3>Custom Exceptions</h3>
                 <p>When we implement a custom exception, the <code>RuntimeException</code> - for not checked or <code>Exception</code> - for checked Class need to be extended:</p>
 <pre><code>public class myException extends RuntimeException {
     public myException(String msg, Throwable cause) {
@@ -663,15 +666,15 @@ public void callingMethod()
 }
 ...
 return new myException("An exception: ", e).getMessage();</code></pre>
-                <h4 id="try-with-resources">Try with resources</h4>
+                <h3 id="try-with-resources">Try with resources</h3>
                 <p>When we place references that are AutoClosable in the try declaration, then we don’t need to close the resource ourselves. The <code>try-with-resources</code> statement ensures that each resource is closed at the end of the statement. Any object that implements the <code>AutoCloseable</code> interface can be used as a resource.</p>
 <pre><code>try (FileOutputStream fos = new FileOutputStream(Constants.BASE_PATH + "myfile2.txt");
 BufferedReader br = new BufferedReader(new FileReader(Constants.BASE_PATH + "myfile.txt"))) {
     ...
 } catch {...}</code></pre>
                 <p>The <code>FileOutputStream</code> implements a AutoCloseable, hence the file will be automatically closed after the process is done.</p>
-                <h3>Object-Oriented Approach to Code Reuse</h3>
-                <h3>Inheritance</h3>
+                <h2>Object-Oriented Approach to Code Reuse</h2>
+                <h2>Inheritance</h2>
                 <p>We create a Class "Gadget" for Subclasses "Camera()" and "TV()", which is called a Superclass.</p>
                 <p>Super class stores common attributes and behavers, subclasses however may overwrite them and have more specific execution.</p>
                 <p>Hoverer, "Gadget" Superclass can not have is record a video method and change a chanel, because it will be not common for all Gadgets.</p>
@@ -704,21 +707,21 @@ BufferedReader br = new BufferedReader(new FileReader(Constants.BASE_PATH + "myf
                 </div>
                 <p>A method in a subclass must have exactly the same name, return type, and parameters as the method in the parent class, that is, the method signature. If they do not match, the method will not be overridden.</p>
                 <p>The access level cannot be more restrictive in the subclass. For example, if a method in the parent class is public, the overridden method in the subclass cannot be private or protected.</p>
-                    <h4>Inheritance level</h4>
+                    <h3>Inheritance level</h3>
                         <ul>
                             <li>Single</li>
                             <li>Multi</li>
                             <li>Hierarchical</li>
                             <li>Multiple/Hybrid/Diamond - is not allowed in Java, but can be achieved by Interfaces</li>
                         </ul>
-                <h3>Abstract abd Interface classes - common behaver</h3>
+                <h2>Abstract abd Interface classes - common behaver</h2>
                     <p>There are several common principles between abstract and</p>
                     <ul>
                         <li>Both classes cannot be directly instantiated (creating new instances of objects to be used in a program), if it is marked with the Abstract/Interface keyword.</li>
                         <li>The Abstract/Interface classes` purpose is to be extended by one or more concrete subclasses.</li>
                         <li>A subclass derived from an Abstract/Interface class must either implement all the base class’s abstract methods or be abstract itself.</li>
                     </ul>
-                <h3>Define Abstract Classes & Methods</h3>
+                <h2>Define Abstract Classes & Methods</h2>
                 <p>The Abstract keyword can be used to encourage class extensibility. It is vise versa to Inheritance method. Is used when there is no shared pice of code whatsoever and all subclasses uses their uniq execution. So that is to provide a design and polymorphism.</p>
                 <ul>
                     <li>Class cannot be directly instantiated (creating new instances of objects to be used in a program), if it is marked with the abstract keyword.</li>
@@ -778,7 +781,7 @@ jacket3.changeColor(); // "Color is green."
                 <pre><code><strong>Standard</strong> jacket4 = new <strong>Standard</strong>();
 jacket4.refund();
 jacket4.addPrice();</code></pre>
-                <h3>Java Interfaces</h3>
+                <h2>Java Interfaces</h2>
                 <p>An interface defines a set of features that can be applied to various other classes.</p>
                 <ul>
                     <li>Instance methods are by default public, static and abstract.</li>
@@ -813,7 +816,7 @@ jacket4.addPrice();</code></pre>
     }</strong>
 }</code></pre>
                 <p><strong>Notes</strong>: Interface resembles an abstract class, except no variables or regular concrete methods are allowed.</p>
-                <h4>Implement Interfaces</h4>
+                <h3>Implement Interfaces</h3>
                 <ul>
                     <li>Object-oriented inheritance is not flexible.</li>
                     <li>
@@ -837,10 +840,10 @@ jacket4.addPrice();</code></pre>
 }</code></pre>
                     </li>
                 </ul>
-                <h3>Enums</h3>
+                <h2>Enums</h2>
                 <p><code></code></p>
-                <h3>Java Classes</h3>
-                <h4>Classes-Wrappers</h4>
+                <h2>Java Classes</h2>
+                <h3>Classes-Wrappers</h3>
                 <p>Classes-Wrappers are used to transform primitive data into an Object.</p>
 <pre><code>int num = 55;
 String strByte = "25"
@@ -852,23 +855,23 @@ Integer obj1 = Integer.valueOf(strByte);
 // Convert an Object or a String to primitive
 int var01 = obj.intValue();
 int var02 = Integer.parseInt(strByte);</code></pre>
-                <h4>Scanner</h4>
+                <h3>Scanner</h3>
                 <p><code>Scanner implements Iterator&lt;String&gt;, Closeable</code></p>
-                <h5>Constructors</h5>
-<pre><code>// Params: source – An input stream to be scanned
+                <h4>Constructors</h4>
+<pre><code>// Params: source - An input stream to be scanned
 Scanner(InputStream source)
-// Params: source – A file to be scanned
+// Params: source - A file to be scanned
 Scanner(File source)</code></pre>
-                <h5>Methods</h5>
+                <h4>Methods</h4>
 <pre><code>// Returns: the line that was skipped
 String nextLine();
-// Params: pattern – A string specifying a delimiting pattern
+// Params: pattern - A string specifying a delimiting pattern
 Scanner useDelimiter(String pattern)
 // Returns true if this scanner has another token in its input.
 boolean hasNext()
 // Finds and returns the next complete token from this scanner.
 String next()</code></pre>
-                <h4>ArrayList</h4>
+                <h3>ArrayList</h3>
                 <p>The <code>ArrayList</code> class is a resizable array. Elements in an ArrayList are actually objects. To use other types, such as int, you must specify an equivalent wrapper class, e.g.: <code>Integer</code>.</p>
                 <p>The difference between a built-in array and an <code>ArrayList</code> in Java, is that the size of an array cannot be modified (if you want to add or remove elements to/from an array, you have to create a new one). While elements can be added and removed from an <code>ArrayList</code> whenever you want.</p>
 <pre><code>Character a = 'a';
@@ -886,18 +889,18 @@ list.size();
 
 String s = (String) list.get(0); // Hard type cast. Changing a list data type to a string
 </code></pre>
-                <h4>Collections</h4>
+                <h3>Collections</h3>
                 <p>The <code>Collections</code> class has a useful <code>sort()</code> method</p>
 <pre><code>Collections.sort(list);</code></pre>
-                <h4>Regular Expressions, Regex</h4>
+                <h3>Regular Expressions, Regex</h3>
                 <p>Regular expressions are patterns used to match character combinations in strings. Regular expressions are also objects.</p>
-                <h4>Regex specific</h4>
+                <h3>Regex specific</h3>
                 <ul>
                     <li><strong>Coupling</strong> <code>ab</code> - forms an expression, i.e. AND</li>
                     <li><strong>Alternation</strong> <code>a|b</code> - OR</li>
                     <li><strong>Clothing</strong> <code>a*</code> - all variating: a, aa, aaa</li>
                 </ul>
-                <h4>Regex classes</h4>
+                <h3>Regex classes</h3>
                 <ul>
                     <li>
                         <code>Class Pattern</code>
@@ -931,7 +934,7 @@ while (mtch.find()) {
                         <p>This interface contains query methods used to determine the results of a match against a regular expression. The match boundaries, groups and group boundaries can be seen but not modified through a MatchResult.</p>
                     </li>
                 </ul>
-                <h4>Creating a regular expression</h4>
+                <h3>Creating a regular expression</h3>
                 <p>You construct a regular expression in one of two ways:</p>
                 <ul>
                     <li>
@@ -944,7 +947,7 @@ while (mtch.find()) {
                         <p>Example: <code>[Cc]ompany</code> will match all occurrences of the string "company" with the letter C in either lowercase or uppercase.</p>
                     </li>
                 </ul>
-                <h4>Regex methods</h4>
+                <h3>Regex methods</h3>
                 <table>
                     <thead>
                         <tr>
@@ -975,7 +978,7 @@ while (mtch.find()) {
                         </tr>
                     </tbody>
                 </table>
-                <h5>Regex Character classes</h5>
+                <h4>Regex Character classes</h4>
                 <table>
                     <thead>
                         <tr>
@@ -1019,7 +1022,7 @@ Pattern.matches("[tT]im|[jJ]in", "Tim");
 Pattern.matches(".*abc.*", "deabcpq");
 Pattern.matches("[a-zA-Z][a-zA-Z][a-zA-Z]", "aPz");
 Pattern.matches("\\D*", "abcde");</code></pre>
-                <h5>Predefined character classes</h5>
+                <h4>Predefined character classes</h4>
                 <table>
                     <thead>
                         <tr>
@@ -1067,7 +1070,7 @@ Pattern.matches("\\D*", "abcde");</code></pre>
                     </tbody>
                 </table>
 <pre><code>Pattern.matches("...p", "qdqp") // Returns True</code></pre>
-                <h5>Boundary Matchers</h5>
+                <h4>Boundary Matchers</h4>
                 <table>
                     <thead>
                         <tr>
@@ -1111,8 +1114,8 @@ Pattern.matches("\\D*", "abcde");</code></pre>
                     </tbody>
                 </table>
 <pre><code>Pattern.matches("^Hello$", "Greetings! Hello"); // Returns False</code></pre>
-                <p>Quantifiers. Quantification – searching for sequences</p>
-                <h5>Greedy quantifiers</h5>
+                <p>Quantifiers. Quantification - searching for sequences</p>
+                <h4>Greedy quantifiers</h4>
                 <p>Greedy quantifiers try to cover everything they can — to the end of the line</p>
                 <table>
                     <thead>
@@ -1148,27 +1151,27 @@ Pattern.matches("\\D*", "abcde");</code></pre>
                         </tr>
                     </tbody>
                 </table>
-                <h5>Reluctant quantifiers</h5>
+                <h4>Reluctant quantifiers</h4>
                 <p>Reluctant quantifiers cover a minimum set of characters and expand it if subsequent concatenated expressions fail.</p>
                 <p>Adds <code>?</code> to a Greedy quantifiers</p>        
-                <h5>Possessive quantifiers</h5>
+                <h4>Possessive quantifiers</h4>
                 <p>Possessive quantifiers unlike regular (greedy) quantification, possessive quantification not only tries to find the longest possible variant, but also does not allow the algorithm to go back to previous search steps in order to find possible matches for the remaining part of the regular expression.</p>
                 <p>Adds <code>+</code> to a Greedy quantifiers</p>
-                <h4>Performance measure</h4>
+                <h3>Performance measure</h3>
                 <ul>
                     <li><code>long start = System.currentTimeMillis(); System.out.println((System.currentTimeMillis() - start));</code></li>
                 </ul>
-                <h3>FileOutputStream</h3>
+                <h2>FileOutputStream</h2>
                 <p>A file output stream is an output stream for writing data to a File or to a FileDescriptor.</p>
-                <h3>Work with Files and Folders - java.io</h3>
+                <h2>Work with Files and Folders - java.io</h2>
                 <p>When working with files, try-catch block needs to wrap code which works with file up. Check if the file is not null in finally block and use <code>close()</code> method to close it if not true. But it is a good practice to use <a href="#try-with-resources">try-with-resources</a> block to work with all mentioned classes in this section.</p>
-                <h4>Supper Classes</h4>
+                <h3>Supper Classes</h3>
                 <ul>
                     <li>
                         <span><code>File</code></span>
 <pre><code>boolean mkdir()
 boolean createNewFile()
-// dest – The new abstract pathname for the named file.
+// dest - The new abstract pathname for the named file.
 boolean renameTo(File dest)
 boolean delete()
 boolean exists()
@@ -1181,7 +1184,7 @@ long lastModified()</code></pre>
 <pre><code>// str - String to be written.
 void write(String str)
 // Appends the specified character to this writer.
-// Params: c – The 16-bit character to append
+// Params: c - The 16-bit character to append
 Writer append(char c)</code></pre>
                     </li>
                     <li><code>Reader</code> implements Readable, Closeable
@@ -1189,32 +1192,37 @@ Writer append(char c)</code></pre>
 int read()</code></pre>
                     </li>
                     <li><code>OutputStream</code> implements Closeable, Flushable
-<pre><code>// b – the data.
-// off – the start offset in the data.
-// len – the number of bytes to write.
+<pre><code>// b - the data.
+// off - the start offset in the data.
+// len - the number of bytes to write.
 void write(byte[] b, int off, int len)</code></pre>
                     </li>
                     <li><code>InputStream</code> implements Closeable
 <pre><code>// Returns: the next byte of data, or -1 if the end of the file is reached.
 int read()
-// b – the buffer into which the data is read.
+// b - the buffer into which the data is read.
 // Returns: the total number of bytes read into the buffer, or -1 if there is no more data
 read(byte[] b, int off, int len)
 // Returns: an estimate of the number of remaining bytes that can be read (or skipped over), or 0 when the file position is beyond EOF.
 int available()</code></pre>
                     </li>
                 </ul>
-                <h4>Classes</h4>
+                <h3>Classes</h3>
                 <ul>
                     <li><code>File(String pathname)</code> implements Serializable, Comparable&lt;File&gt;</li>
                     <li><code>FileWriter(String fileName, boolean append)</code> extends OutputStreamWriter, which extends Writer
                         <ul>
-                            <li><code>append</code> – boolean if true, then data will be written to the end of the file rather than the beginning.</li>
+                            <li><code>append</code> - boolean if true, then data will be written to the end of the file rather than the beginning.</li>
                         </ul>
                     </li>
                     <li><code>FileReader(String fileName)</code> extends InputStreamReader, which extends Reader</li>
-                    <li><code>FileOutputStream(String fileName)</code> extends OutputStream</li>
-                    <li><code>FileInputStream(String fileName)</code> extends InputStream</li>
+                    <li><code>FileOutputStream(String fileName)</code> extends OutputStream
+<pre><code> // Is used in nio process
+FileChannel getChannel()</code></pre>
+                    </li>
+                    <li><code>FileInputStream(String fileName)</code> extends InputStream
+<pre><code>FileChannel getChannel()</code></pre>
+                    </li>
                     <li>
                         <span><code>InputStreamReader(InputStream in, Charset cs)</code> extends Reader</span>
                         <ul>
@@ -1235,42 +1243,227 @@ Stream&lt;String&gt; lines()</code></pre>
                     Programs that use <code>DataInputStreams</code> or others for textual input can be localized by replacing each <code>DataInputStream</code> with an appropriate <code>BufferedReader</code> or <code>BufferWriter</code>.
                     Therefore, Writer or Reader Classes should be passed to a relevant Buffered Class.</p>
                 <p><code>close()</code> method exists in any mentioned Classes in this section. May be used in <code>finally</code> block.</p>
-                <h3>Java NIO (New Input/Output) API</h3>
+                <h2>Java NIO (New Input/Output) API</h2>
                 <ul>
                     <li>Non-blocking IO. While the channel reads data into the buffer, the thread can do something else. The same is true for writing data to channels.</li>
                     <li>Channels and Buffers. In the standard IO API you work with byte streams and character streams. In NIO you work with channels and buffers.</li>
-                    <li></li>
+                    <li><code>java.nio</code> and <code>java.nio.file</code> packages</li>
                 </ul>
-<pre><code>FileOutputStream fos = new FileOutputStream;
-byte[] contentBytes = content.getBytes();
-ByteBuffer buffer = ByteBuffer.allocate(contentBytes.length);
-buffer.put(contentBytes);
-FineChannel fileChannel = fos.getChannel();
-buffer.flip();
-fileChannel.write(buffer);
-fileChannel.close();</code></pre>
-                                <h4>Buffer Mark Reset</h4>
-<pre><code>ByteBuffer buffer = ByteBuffer.allocate(26);
-for (int i = 0; i &lt; ALPHABETS.length(); i++) {
-    byteBuffer.put((byte) ALPHABETS.charAt(i));
-}
-System.out.println("After inserting 26 characters into the buffer");
-getOutput(byteBuffer);
+                <div class="container_grid_common container_jnio">
+                    <div style="grid-area: con-1;">Data receiver</div>
+                    <div style="grid-area: con-2;">Data source</div>
+                    <div style="grid-area: con-3;">Channel</div>
+                    <div style="grid-area: con-4;">Buffer</div>
+                    <div style="grid-area: con-5;">Buffer</div>
+                    <div style="grid-area: con-6;">Java program</div>
+                    <i style="grid-area: con-7;"  class="line-horizontal arrow-line-right"></i>
+                    <i style="grid-area: con-8;"  class="line-horizontal arrow-line-right"></i>
+                    <i style="grid-area: con-9;"  class="line-horizontal arrow-line-right"></i>
+                    <i style="grid-area: con-10;" class="line-horizontal arrow-line-left"></i>
+                    <i style="grid-area: con-11;" class="line-horizontal arrow-line-left"></i>
+                    <i style="grid-area: con-12;" class="line-horizontal arrow-line-left"></i>
+                </div>
+                <h3>Supper Classes</h3>
+                <ul>
+                    <li><code>Buffer</code>
+<pre><code>// This value is set when the buffer is created. Once the buffer is full, it must be cleared before writing to it.
+int capacity()
+// It represents the number of active elements in the buffer.
+int limit()
+// Specifies the index of the next element to read or write.
+int position()
+// Sets this buffer's mark at its position.
+// The position that is remembered. When we create a new ByteBuffer instance, the flag is undefined, the position is 0, and the limit is equal to the capacity.
+Buffer mark()
+// Flips this buffer. The limit is set to the current position and then the position is set to zero. I used to write bytes from the position 0 till limit into a file e.g.
+Buffer flip()
+// Prepares for reading. The position is set to zero, the limit is set to the capacity, and the mark is discarded.
+Buffer clear()</code></pre>
+                    <div class="container_grid_common container_buffer">
+                        <i style="grid-area: con-1;">0</i>
+                        <i style="grid-area: con-2;">1</i>
+                        <i style="grid-area: con-3;">2</i>
+                        <i style="grid-area: con-4;">3</i>
+                        <i style="grid-area: con-5;">4</i>
+                        <i style="grid-area: con-6;">5</i>
+                        <i style="grid-area: con-7;">6</i>
+                        <i style="grid-area: con-8;">7</i>
+                        <i style="grid-area: con-9;">8</i>
+                        <i style="grid-area: con-10;">9</i>
+                        <div style="grid-area: con-14;"></div>
+                        <div style="grid-area: con-15;"></div>
+                        <div style="grid-area: con-16;"></div>
+                        <div style="grid-area: con-17;"></div>
+                        <div style="grid-area: con-18;"></div>
+                        <div style="grid-area: con-19;"></div>
+                        <div style="grid-area: con-20;"></div>
+                        <div style="grid-area: con-21;"></div>
+                        <div style="grid-area: con-22;"></div>
+                        <div style="grid-area: con-23;"></div>
+                        <i style="grid-area: con-11;" class="line-vertical arrow-line-down"></i>
+                        <i style="grid-area: con-12;"></i>
+                        <i style="grid-area: con-13;" class="line-vertical arrow-line-down"></i>
+                        <i style="grid-area: con-24;">position</i>
+                        <i style="grid-area: con-25;"></i>
+                        <i style="grid-area: con-26;">limit, capacity</i>
+                    </div>
+                    </li>
+                    <li><code>AbstractInterruptibleChannel</code> implements Channel, InterruptibleChannel</li>
+                    <li><code>Charset</code> implements Comparable&lt;Charset&gt;
+<pre><code>// Returns the default charset - UTF-8.
+Charset defaultCharset()
+// Params: bb – The byte buffer to be decoded.
+// Returns: A char buffer containing the decoded characters.
+CharBuffer decode(ByteBuffer bb)</code></pre>
+                    </li>
+                    <li><code>public interface Path</code> extends Comparable&lt;Path&gt;, Iterable&lt;Path&gt;, Watchable
+<pre><code>static Path of(String first, String ... more)</code></pre>
+                    </li>
+                    <li><code>public final class Paths</code>
+<pre><code>// Converts a path String, or a sequence of strings to a Path.
+// Params: first – the path string or initial part of the path string; more – additional strings to be joined to form the path string
+static Path get(String first, String... more)</code></pre>
+                    </li>
+                    <li><code>public final class Files</code>
+<pre><code>public static Path createDirectory(Path dir, FileAttribute&lt;?&gt;... attrs)
+public static Path createFile(Path path, FileAttribute&lt;?&gt;... attrs)
+public static Path writeString(Path path, CharSequence csq, OpenOption... options)
+// The method ensures that the file is closed when all content have been read.
+public static String readString(Path path) throws IOException
+public static void delete(Path path) throws IOException</code></pre>
+                    </li>
+                </ul>
+                <h3>Classes</h3>
+                <ul>
+                    <li><code>ByteBuffer</code>, <code>CharBuffer</code>, <code>DoubleBuffer</code>, <code>FloatBuffer</code>, <code>IntBuffer</code>, <code>LongBuffer</code>, <code>ShortBuffer</code> extends Buffer implements Comparable&lt;ByteBuffer&gt;
+<pre><code>Get/put, compact; allocate, wrap</code></pre>
+                    </li>
+                    <li><code>FileChannel</code> extends AbstractInterruptibleChannel implements SeekableByteChannel, GatheringByteChannel, ScatteringByteChannel
+<pre><code>// Writes a sequence of bytes to this channel from the given buffer.
+int write(ByteBuffer src)
+// Reads a sequence of bytes from this channel into the given buffer.
+// Bytes are read starting at this channel's current file position, and then the file position is updated with the number of bytes actually read.
+int read(ByteBuffer dst)</code></pre>
+                    </li>
+                    <li><code>CharsetDecoder</code> transform chars into bytes and vise versa.</li>
+                    <li><code>SelectableChannel</code> for multiplication</li>
+                </ul>
+                <h2>Multithreading</h2>
+                    <p>Thread is a unit in a Process. Each Process has at least one Thread which consumes some of the Processes recourses and common memory area.</p>
+                    <p>A program can be divided on several Processes.</p>
+                    <p>How to create Multithreading:</p>
+                    <ul>
+                        <li>By Implementing of <code>Interface Runnable</code></li>
+                        <li>By Extending <code>Class Thread</code> extends Class Object implements Interface Runnable</li>
+                    </ul>
+                    <h3>Interface Runnable</h3>
+                        <p>The interface has only one method:</p>
+<pre><code>run()</code></pre>
+                        <p>If a Class implements the <code>Interface Runnable</code> our Class will be able to extend other basic Classes.</p>
+                        <p>If used, gives an Object, which can be utilized by several Threads. The <code>Thread</code> Class <strong>must</strong> be initialized by passing our custom Class in Thread constructor and using <code>start() method.</code></p>
+                        <p>When a start method is called using the <code>start()</code> method, then a new separate thread is allocated to execute the start method, so if more than one thread calls the <code>start()</code> method, it means that their start method is executed by separate threads (these threads execute simultaneously).</p>
+                    <h3>Class Thread</h3>
+                        <p>The class provides with the constructors and methods for creation and execution of operations on a Thread.</p>
+                        <p>If a Class extends <code>Class Thread</code>, our Class will not be able to extend other Classes because of multi Inheritance. But we can extend it to reach of basic functions of Multithreading, which are not available in <code>Interface Runnable.</code></p>
+                        <h4>Class Thread Constructor</h3>
+<pre><code>// Params: task – the object whose run method is invoked when this thread is started. 
+    public Thread(Runnable task)</code></pre>
+                        <h4>Class Thread Methods</h3>
+<pre><code>// Schedules this thread to begin execution. The thread will execute independently of the current thread.
+// A thread can be started at most once. In particular, a thread can not be restarted after it has terminated.
+public void start()
+// Causes the currently executing thread to sleep (temporarily cease execution) for the specified number of milliseconds.
+public static void sleep(long millis)
+currentThread().getName()
+// Waits for this thread to terminate. And then proceed executing below code.
+public final void join() throws InterruptedException
+// Tests if this thread is alive. A thread is alive if it has been started and has not yet terminated.
+public final boolean isAlive()
+// A hint to the scheduler that the current thread is willing to yield its current use of a processor. The scheduler is free to ignore this hint.
+public static void yield()
+// The interrupt() method allows you to interrupt a sleeping or waiting thread. An interrupt is an instruction to a thread that it should stop what it is doing and do something else. If the target thread is not in a sleep or wait state, the interrupt call will wait until the target thread enters a sleep or wait state.
+public void interrupt()
+// Tests whether the current thread has been interrupted. If this method were to be called twice in succession, the second call would return false
+public static boolean interrupted()
+public final void setPriority(int newPriority)
+// Returns the Thread object for the current thread. Used to perform final methods on.
+public static native Thread currentThread();
+public final boolean isDaemon()
+public final void setDaemon(boolean on)</code></pre>
+                            <p>Creation of a <strong>Thread</strong> is a heavy and expensive process, therefore use minimum of it.</p>
+                    <h3>Thread priorities</h3>
+                        <p>The priority of a Thread can be set up. They are represented by Integers from 1 to 10, where 1 is the lowest priority. The default priority is 5. The Threads inherit a priorities from the super Class. In Java the very first and Main Thread is the Main class.</p>
+                        <p><code>Class Thread</code> defines Constants for several default priorities:</p>
+                        <ul>
+                            <li><code>MIN_PRIORITY</code> = 1</li>
+                            <li><code>NORM_PRIORITY</code> = 5</li>
+                            <li><code>MAX_PRIORITY</code> = 10</li>
+                        </ul>
+                        <p>If a Thread with the higher priority launches, it will supersede a Thread with lower priority. It is called <strong>Context Switching</strong></p>
+                    <h3>Daemon Thread</h3>
+                        <p>The Thread has low priority and works ob a background. The common example is the GC. If all others Threads has finished their work, this thread can not stop a program from being closed.</p>
+                    <h3>Synchronizers</h3>
+                        <p>Counter of Access... To be continued</p>
+                    <h3>Atomic variables</h3>
+                        <ul>
+                            <li>In programming, an atomic action is one that effectively happens all at once. An atomic action cannot stop in the middle: it either happens completely, or it doesn't happen at all.</li>
+                            <li>Atomic classes use Compare and Swap method which is faster then blocking algorisms.</li>
+                        </ul>
+                        <h4>Atomic Classes</h4>
+                            <ul>
+                                <li><code>AtomicInteger</code>, <code>AtomicBoolean</code>, <code>AtomicLong</code> and arrays of them. Bellow definitions are based on Integer, but they have same methods.
+                                    <h5>Constructors</h5>
+<pre><code>public AtomicInteger(int initialValue)</code></pre>
+                                    <h5>Methods</h5>
+<pre><code>public final boolean compareAndSet(int expectedValue, int newValue)
+// Returns: the previous value.
+public final int getAndSet(int newValue)
+// Returns: the updated value.
+public final int addAndGet(int delta)
+// Returns: the updated value
+public final int decrementAndGet()
+public final int getAndIncrement()</code></pre>
+                                </li>
+                            </ul>
+                    <h3>Inter-Thread communication</h4>
+                    <p>Mechanism in which a thread is terminated in its critical section and another thread is allowed to enter (or block).</p>
+                    <ul>
+                        <li>The current thread must own the monitor of this object, so it should only be called from a synchronized method, otherwise it will throw an exception.</li>
+                        <li>Monitor Concept. A monitor can be thought of as a box that can only hold one thread. Once a thread enters the monitor, all other threads must wait until that thread exits the monitor.</li>
+                        <li></li>
+                    </ul>
+                    <p><code>Class Object</code></p>
+<pre><code>// Causes the current thread to wait until it is awakened, typically by being notified or interrupted or unless the specified time ends.
+public final void wait()
+public final void wait(long timeoutMillis)
+// Wakes up a single thread that is waiting on this object's monitor. If any threads are waiting on this object, one of them is chosen to be awakened.
+public final native void notify()
+// Wakes up all threads that are waiting on this object's monitor.
+public final native void notifyAll()</code></pre>
+                    <h3>Lock Objects</h3>
+                    <p><strong>Synchronized</strong> key word has a limitation in providing methods for control of which next Thread will take a control next.</p>
+                    <h4>Supper Classes</h4>
+                    <ul>
+                        <li><code>public interface Lock</code> It allows explicit locking and unlocking, supports various locking strategies.</li>
+                    </ul>
+                    <h4>Classes</h4>
+                    <ul>
+                        <li><code>public class ReentrantLock implements Lock, java.io.Serializable</code> has an advantage in being re-entrant, meaning can block a section more then once.
+                            <h5>Methods</h5>
+<pre><code></code></pre>
+                        </li>
+                        <li><code></code></li>
+                        <li><code></code></li>
+                    </ul>
 
-byteBuffer.clear();
-System.out.println("Reading first five characters from buffer");
-for (int i = 0; i &lt; 5; i++) {
-    System.out.println((char) byteBuffer.get());
-}
-getOutput(byteBuffer);
-System.out.println("Marking the buffer");</code></pre>
-                <h3>Collectors</h3>
+
+                <h2>Collectors</h2>
                 <p>Information to be added ...</p>
-                <h3>SimpleDateFormat</h3>
+                <h2>SimpleDateFormat</h2>
                 <p>Information to be added ...</p>
-                <h3>System</h3>
+                <h2>System</h2>
                 <p>Information to be added ...</p>
-                <h3>Application structure</h3>
+                <h2>Application structure</h2>
                 <ul>
                     <li><strong>controller</strong> Intermediate between Model and View. Distribute business-logic and presentation. Manipulates data flow. Assigns responsible for data calculation</li>
                     <li><strong>entity</strong> E.g. Customer, Product.</li>
@@ -1296,7 +1489,7 @@ System.out.println("Marking the buffer");</code></pre>
                     </li>
                     <li><strong>App.js</strong> <code>AppStarter.runApp();</code></li>
                 </ul>
-                <h3>Generics Types</h3>
+                <h2>Generics Types</h2>
                 <p>Parameterized (Generics) types allow you to declare classes, interfaces, and methods where the data type they operate on is specified as a parameter, such classes, interfaces and methods are called Generics. It is used by other classes as a Generic Template for objects creation, which allows them to manipulate different types of input data using a common framework.</p>
                 <ul>
                     <li>
@@ -1304,7 +1497,7 @@ System.out.println("Marking the buffer");</code></pre>
                         <code>Product&lt;Integer&gt;</code>, but not <code>Product&lt;int&gt;</code>
                     </li>
                 </ul>
-                <h4>Type Parameter Naming Conventions</h4>
+                <h3>Type Parameter Naming Conventions</h3>
                 <ul>
                     <li><code>T</code> - Type: Float; Double, etc.</li>
                     <li><code>V</code> - Value</li>
@@ -1313,7 +1506,7 @@ System.out.println("Marking the buffer");</code></pre>
                     <li><code>N</code> - Number</li>
                     <li><code>S</code>, <code>U</code> etc. - 2nd, 3rd, 4th types</li>
                 </ul>
-                <h4>Generic Classes</h4>
+                <h3>Generic Classes</h3>
                 <ul>
                     <li>
                         <strong>Create a Class</strong>
@@ -1343,7 +1536,7 @@ System.out.println("Marking the buffer");</code></pre>
 <pre><code>GenericClass&lt;String, Double&gt; object = new GenericClass&lt;&gt;(name, price);</code></pre>
                     </li>
                 </ul>
-                <h4>Generic Interface</h4>
+                <h3>Generic Interface</h3>
                 <p>The Generic Interface is created in the same way as and Classes.</p>
                 <ul>
                     <li>
@@ -1359,7 +1552,7 @@ System.out.println("Marking the buffer");</code></pre>
 <pre><code>public class ProductC&lt;T, U&gt; implements IProduct&lt;T&gt; { ... }</code></pre>
                     </li>
                 </ul>
-                <h4>Generic methods</h4>
+                <h3>Generic methods</h3>
                 <p>Does not matter what is output, the method will attach needed data Type.</p>
 <pre><code>public class GenericExample {
     public &lt;T&gt; void displayGenType(T type) {
@@ -1373,12 +1566,12 @@ System.out.println("Marking the buffer");</code></pre>
         example.displayGenType(45.67);
     }
 }</code></pre>
-                <h4>Bounded type</h4>
+                <h3>Bounded type</h3>
                 <p>Typically, a type parameter can accept any data type (except primitive types). However, if we want to use generic templates for only some specific types (for example, accept numeric data types, Number), we can use restricted types. In the case of restricted types, we use the <code>extends</code> keyword.</p>
 <pre><code>class Outputer&lt;T extends Number&gt; { ... }
 // List&lt;? extends Number&gt; means a list of objects that are instances of the Number class or its subclasses (for example, Integer or Double).
 // The List&lt;? extends Number&gt; list parameter uses a wildcard with an upper limit, where Number is the upper bound</code></pre>
-                <h3>Wildcard</h3>
+                <h2>Wildcard</h2>
                 <ul>
                     <li>
                         <strong>Upper bounded wildcard</strong>

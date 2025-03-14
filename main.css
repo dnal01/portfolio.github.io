@@ -218,9 +218,101 @@ th {
     "con-9 con-9 con-9 con-10 con-11";
 }
 
+.container_jnio > div:nth-child(3) {
+    background-color: #ace2a7;
+}
+.container_jnio > div:nth-child(6) {
+    background-color: #fb6012;
+}
+
+.container_jnio > div:nth-child(-n+2) {
+    background-color: #dafe93;
+}
+
+.container_jnio > div:nth-child(4) {
+    background-color: #c9a7e2;
+}
+.container_jnio > div:nth-child(5) {
+    background-color: #c9a7e2;
+}
+
+.container_jnio {
+    grid-template-areas: 
+    "con-1 con-10 con-3 con-11 con-4 con-12 con-6"
+    "con-2 con-7 con-3 con-8 con-5 con-9 con-6";
+}
+
+.container_buffer {
+    grid-template-areas: 
+    "con-1 con-2 con-3 con-4 con-5 con-6 con-7 con-8 con-9 con-10"
+    "con-14 con-15 con-16 con-17 con-18 con-19 con-20 con-21 con-22 con-23"
+    "con-11 con-12 con-12 con-12 con-12 con-12 con-12 con-12 con-12 con-13"
+    "con-24 con-25 con-25 con-25 con-25 con-25 con-25 con-25 con-25 con-26";
+}
+
+.container_buffer > i:nth-child(n) {
+    text-align: center;
+}
+
 h3 {
     background-color: #b8c4ca;
 }
 h4 {
     border-bottom: solid 2px rgb(108, 195, 145);
+}
+
+.line-horizontal {
+    height: 2px;    /* line width */
+    width: 50%; /* line length */
+    margin: auto;
+}
+
+.line-vertical {
+    width: 2px; /* line-width */
+    height: 50%; /* line length */
+    margin: auto;
+}
+
+.line-vertical, .line-horizontal {
+    position: relative;
+    background: #aaa;
+}
+
+.arrow-line-up:after,
+.arrow-line-down:before,
+.arrow-line-left:after,
+.arrow-line-right:before {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border: 5px solid transparent;
+}
+
+/* vertical arrows */
+.arrow-line-up:after,
+.arrow-line-down:before {
+    left: -4px;
+}
+.arrow-line-up:after {
+    top: -15px;
+    border-bottom: 15px solid #aaa;
+}
+.arrow-line-down:before {
+    bottom: -15px;
+    border-top: 15px solid #aaa;
+}
+
+/* horizontal arrows */
+.arrow-line-left:after,
+.arrow-line-right:before {
+    top: -4px;
+}
+.arrow-line-left:after {
+    left: -15px;
+    border-right: 15px solid #aaa;
+}
+.arrow-line-right:before {
+    right: -15px;
+    border-left: 15px solid #aaa;
 }
