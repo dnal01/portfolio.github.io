@@ -1450,14 +1450,37 @@ void lock();
 // Releases the lock.
 void unlock()</code></pre>
                         </li>
-                        <li><code>public interface ReadWriteLock</code> The ReadWriteLock interface provides a way to distinguish between read and write locks. This allows multiple threads to read a shared resource simultaneously, while providing exclusive write access.</li>
+                        <li><code>public interface ReadWriteLock</code> The ReadWriteLock interface provides a way to distinguish between read and write locks. This allows multiple threads to read a shared resource simultaneously, while providing exclusive write access.
+<pre><code>// Returns the lock used for reading.
+Lock readLock()
+// Returns the lock used for writing.
+Lock writeLock()</code></pre>
+                        </li>
+                        <li><code>public class Semaphore</code> implements Serializable
+                            <h5>Constructor</h5>
+<pre><code>// Creates a Semaphore with the given number of permits and nonfair fairness setting.
+Semaphore(int permits)</code></pre>
+                            <h5>Methods</h5>
+<pre><code>// Acquires a permit from this semaphore, blocking until one is available, or the thread is interrupted.
+void acquire()
+// Releases a permit, returning it to the semaphore.
+void release()</code></pre>
+                        </li>
+                        <li><code>Class CountDownLatch</code> One or several Threads are configured to wait for completion of processes in other Threads.
+                            <p>The constructor needs to be initialized in the main Thread together with the <code>await()</code> method just after the start of other Threads. The <code>countDown()</code> method needs to be called in the each N Thread after the completion of the each Thread, which dicrease the count of N by 1 till 0 of what has benn passed to the constructor.</p>
+                            <h5>Constructors</h5>
+<pre><code>// Waits for the N number of Threads to 
+CountDownLatch(int count)</code></pre>
+                            <h5>Methods</h5>
+<pre><code>// The process will stop untill other N of threads finish their work.
+await()
+// Signilize to the counter to decrement itself.
+countDown()</code></pre>
+                        </li>
                     </ul>
                     <h4>Classes</h4>
                     <ul>
-                        <li><code>public class ReentrantLock implements Lock, java.io.Serializable</code> has an advantage in being re-entrant, meaning can block a section more then once.
-                            <h5>Methods</h5>
-<pre><code></code></pre>
-                        </li>
+                        <li><code>public class ReentrantLock implements Lock, java.io.Serializable</code> has an advantage in being re-entrant, meaning can block a section more then once.</li>
                         <li><code>public class ReentrantReadWriteLock</code> implements ReadWriteLock, java.io.Serializable</li>
                         <li><code></code></li>
                     </ul>
