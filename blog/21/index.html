@@ -682,7 +682,7 @@ BufferedReader br = new BufferedReader(new FileReader(Constants.BASE_PATH + "myf
                 <p>Sometimes, inheritance is unwelcome. Therefore, classes which must not be extended are marked with a <code>final</code> access modifier. E.g. <code>public final class Animal {...}</code></p>
                 <p>Object is the top-level class in a Java class hierarchy.</p>
                 <div>                    
-                    <pre><code>public static void main(String[] args) {
+<pre><code>public static void main(String[] args) {
     Clothing[] items = new Clothing[2];
     items[0] = new Tailored();
     items[1] = new Standard();
@@ -690,14 +690,14 @@ BufferedReader br = new BufferedReader(new FileReader(Constants.BASE_PATH + "myf
         item.getPrice();
     }
 }</code></pre>
-                    <pre><code>public class Clothing extends Object { // No need to specify extend Object words here for the SuperClass
+<pre><code>public class Clothing extends Object { // No need to specify extend Object words here for the SuperClass
     private double price;
     public double getPrice() {
         return price;
     }
 }</code></pre>
                     <p>The code below override common behaver.</p>
-                    <pre><code>public class Tailored <strong>extends</strong> Clothing { // The extend word here is mandatory
+<pre><code>public class Tailored <strong>extends</strong> Clothing { // The extend word here is mandatory
     private double fee;
     @Override
     public double getPrice() {
@@ -714,7 +714,7 @@ BufferedReader br = new BufferedReader(new FileReader(Constants.BASE_PATH + "myf
                             <li>Hierarchical</li>
                             <li>Multiple/Hybrid/Diamond - is not allowed in Java, but can be achieved by Interfaces</li>
                         </ul>
-                <h2>Abstract abd Interface classes - common behaver</h2>
+                <h2>Abstract and Interface classes - common behaver</h2>
                     <p>There are several common principles between abstract and</p>
                     <ul>
                         <li>Both classes cannot be directly instantiated (creating new instances of objects to be used in a program), if it is marked with the Abstract/Interface keyword.</li>
@@ -732,7 +732,7 @@ BufferedReader br = new BufferedReader(new FileReader(Constants.BASE_PATH + "myf
                     <li>A subclass derived from an abstract class must either implement all the base class’s abstract methods or be abstract itself.</li>
                     <li>A sub-class can inherit only one abstract class.</li>
                 </ul>
-                <pre><code>public <strong>abstract</strong> class Clothing {
+<pre><code>public <strong>abstract</strong> class Clothing {
     public <strong>abstract</strong> double refund();
     void changeColor() {
         System.out.println("Color is green");
@@ -742,9 +742,9 @@ BufferedReader br = new BufferedReader(new FileReader(Constants.BASE_PATH + "myf
 // of the abstract class;
 // A sub-class MAY override all non-abstract methods
 // of an abstract class.</code></pre>
-                <pre><code>public class <strong>Tailored</strong> extends Closing {
+<pre><code>public class <strong>Tailored</strong> extends Closing {
     // MUST be overridden
-    Public double refound() {
+    public double refound() {
         <strong>Return 0;</strong>
     }
     // MAY be overridden
@@ -753,7 +753,7 @@ BufferedReader br = new BufferedReader(new FileReader(Constants.BASE_PATH + "myf
         System.out.println("Color is red");
     }
 }</code></pre>
-                <pre><code>public class <strong>Standard</strong> extends Clothing {
+<pre><code>public class <strong>Standard</strong> extends Clothing {
     public double refund() {
         // MUST be overridden
         <strong>return getPrice();</strong>
@@ -1389,8 +1389,16 @@ public final void setPriority(int newPriority)
 // Returns the Thread object for the current thread. Used to perform final methods on.
 public static native Thread currentThread();
 public final boolean isDaemon()
-public final void setDaemon(boolean on)</code></pre>
+public final void setDaemon(boolean on)
+
+*** Virtual Threads
+
+// Creates a virtual thread to execute a task. Returns: a new, and started, virtual thread. Both below are equivalents.
+public static Builder.OfVirtual ofVirtual().start(Runnable task)
+public static Thread startVirtualThread(Runnable task)
+public final boolean isVirtual()</code></pre>
                             <p>Creation of a <strong>Thread</strong> is a heavy and expensive process, therefore use minimum of it.</p>
+                            <p>While standard Thread relise on the OS executor and planner it can not handle many Threads as they require good amount of Stack memory. Therefore there is a Project LOOM, which implemented Virtual, more light weight Threads which are build and planned by the JVM, an <code>ofVirtual()</code> method to the <code>Thread</code> class.</p>
                     <h3>Thread priorities</h3>
                         <p>The priority of a Thread can be set up. They are represented by Integers from 1 to 10, where 1 is the lowest priority. The default priority is 5. The Threads inherit a priorities from the super Class. In Java the very first and Main Thread is the Main class.</p>
                         <p><code>Class Thread</code> defines Constants for several default priorities:</p>
@@ -1428,9 +1436,8 @@ public final int getAndIncrement()</code></pre>
                     <h3>Inter-Thread communication</h4>
                     <p>Mechanism in which a thread is terminated in its critical section and another thread is allowed to enter (or block).</p>
                     <ul>
-                        <li>The current thread must own the monitor of this object, so it should only be called from a synchronized method, otherwise it will throw an exception.</li>
+                        <li>The current thread must own the monitor of this object, which means that the object which has a synchronized block need to be manipulated by this thread, so it should only be called from a synchronized method, otherwise it will throw an exception.</li>
                         <li>Monitor Concept. A monitor can be thought of as a box that can only hold one thread. Once a thread enters the monitor, all other threads must wait until that thread exits the monitor.</li>
-                        <li></li>
                     </ul>
                     <p><code>Class Object</code></p>
 <pre><code>// Causes the current thread to wait until it is awakened, typically by being notified or interrupted or unless the specified time ends.
@@ -1440,7 +1447,7 @@ public final void wait(long timeoutMillis)
 public final native void notify()
 // Wakes up all threads that are waiting on this object's monitor.
 public final native void notifyAll()</code></pre>
-                    <h3>Lock Objects</h3>
+                    <h3>Advanced synchronization - Lock Objects</h3>
                     <p><strong>Synchronized</strong> key word has a limitation in providing methods for control of which next Thread will take a control next.</p>
                     <h4>Supper Classes</h4>
                     <ul>
@@ -1448,7 +1455,11 @@ public final native void notifyAll()</code></pre>
 <pre><code>// Acquires the lock.
 void lock();
 // Releases the lock.
-void unlock()</code></pre>
+void unlock()
+// lock the lock only when it the current Thread not interrupted before. If it was interrupted, the InterruptedException is thrown.
+void lockInterruptibly() throws InterruptedException
+// tries to lock a Lock within a given time. If not locked, proceeds with no lock held. Use it with if, else statement.
+boolean tryLock(long time, TimeUnit unit) throws InterruptedException;</code></pre>
                         </li>
                         <li><code>public interface ReadWriteLock</code> The ReadWriteLock interface provides a way to distinguish between read and write locks. This allows multiple threads to read a shared resource simultaneously, while providing exclusive write access.
 <pre><code>// Returns the lock used for reading.
@@ -1467,7 +1478,7 @@ void acquire()
 void release()</code></pre>
                         </li>
                         <li><code>Class CountDownLatch</code> One or several Threads are configured to wait for completion of processes in other Threads.
-                            <p>The constructor needs to be initialized in the main Thread together with the <code>await()</code> method just after the start of other Threads. The <code>countDown()</code> method needs to be called in the each N Thread after the completion of the each Thread, which dicrease the count of N by 1 till 0 of what has benn passed to the constructor.</p>
+                            <p>The constructor needs to be initialized in the main Thread together with the <code>await()</code> method, where last need to be just after the start of other Threads. The <code>countDown()</code> method needs to be called in the each N Thread after the completion of the each Thread, which dicrease the count of N by 1 till 0 of what has benn passed to the constructor.</p>
                             <h5>Constructors</h5>
 <pre><code>// Waits for the N number of Threads to 
 CountDownLatch(int count)</code></pre>
@@ -1480,9 +1491,27 @@ countDown()</code></pre>
                     </ul>
                     <h4>Classes</h4>
                     <ul>
-                        <li><code>public class ReentrantLock implements Lock, java.io.Serializable</code> has an advantage in being re-entrant, meaning can block a section more then once.</li>
-                        <li><code>public class ReentrantReadWriteLock</code> implements ReadWriteLock, java.io.Serializable</li>
-                        <li><code></code></li>
+                        <li><code>public class ReentrantLock implements Lock, java.io.Serializable</code> has an advantage in being re-entrant, meaning can block a section more then once.
+                            <p>Normally <code>Lock</code> Object is created with the <code>new ReentrantLock</code>, but it would then not have the <code>ReentrantLock</code> methods.</p>
+<pre><code>// Params: fair – true locks favor granting access to the longest-waiting thread.
+public ReentrantLock(boolean fair)
+
+// Returns: the number of holds (locks called) on this lock by the current Thread
+public int getHoldCount()
+// Returns: the number of Threads waiting for the lock
+public final int getQueueLength()
+// Queries whether the given Thread is waiting to acquire this lock.
+public final boolean hasQueuedThread(Thread thread)
+// Queries whether any threads are waiting to acquire this lock
+public final boolean hasQueuedThreads()
+public boolean isLocked()
+public boolean isHeldByCurrentThread()</code></pre>
+                        </li>
+                        <li><code>public class ReentrantReadWriteLock</code> implements ReadWriteLock, java.io.Serializable
+                            <p>Consist of <code>writeLock()</code> and <code>readLock()</code> methods. In addition with <code>lock()</code> and <code>unlock()</code> blocks Threads. The <code>writeLock()</code> can be held only by one Thread while others waiting. The <code>readLock()</code> may be held simultaneously by multiple reader threads. Each of two Locks alone will not be acquired unless another is fully unlocked by queued Threads. Whichever lock is blocked by the most waited Thread, that lock is going to be preceded next. This lock is used for e.g. update of the database in writeLock and synchronize all the resources with the database in readLock.</p>
+<pre><code>public ReentrantReadWriteLock.WriteLock writeLock()
+public ReentrantReadWriteLock.ReadLock readLock()</code></pre>
+                        </li>
                     </ul>
 
 
