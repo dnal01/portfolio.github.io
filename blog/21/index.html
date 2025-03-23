@@ -1468,6 +1468,7 @@ Lock readLock()
 Lock writeLock()</code></pre>
                         </li>
                         <li><code>public class Semaphore</code> implements Serializable
+                            <p>It works in an order that the first Thread acquires one permit from the Semaphore. Unless the ammount of permits > 0, Threads will be able to work on an Object with run method symulteniuasly. Otherwise other Threads will be waiting for the Thread which auired a permit to release it.</p>
                             <h5>Constructor</h5>
 <pre><code>// Creates a Semaphore with the given number of permits and nonfair fairness setting.
 Semaphore(int permits)</code></pre>
@@ -1477,8 +1478,8 @@ void acquire()
 // Releases a permit, returning it to the semaphore.
 void release()</code></pre>
                         </li>
-                        <li><code>Class CountDownLatch</code> One or several Threads are configured to wait for completion of processes in other Threads.
-                            <p>The constructor needs to be initialized in the main Thread together with the <code>await()</code> method, where last need to be just after the start of other Threads. The <code>countDown()</code> method needs to be called in the each N Thread after the completion of the each Thread, which dicrease the count of N by 1 till 0 of what has benn passed to the constructor.</p>
+                        <li><code>Class CountDownLatch</code>
+                            <p>The constructor needs to be initialized in the Thread which need to wait for other Threads by using a <code>await()</code> method. The <code>countDown()</code> method needs to be called in the each N Thread on the exact constructed CountDownLatch Object after the completion of the each Thread, which dicrease the count of N by 1 till 0. Then the "main" Thread will be able to preceed.</p>
                             <h5>Constructors</h5>
 <pre><code>// Waits for the N number of Threads to 
 CountDownLatch(int count)</code></pre>
@@ -1487,6 +1488,26 @@ CountDownLatch(int count)</code></pre>
 await()
 // Signilize to the counter to decrement itself.
 countDown()</code></pre>
+                        </li>
+                        <li><code>Class CyclicBarrier</code>
+                            <p>The object of the CyclicBarrier Class is constracted with the N number of Threads to wait. Threads call await() method of the Class. When the ammount of call reaches the N number then the main Thread proceeds.</p>
+                            
+<pre><code>// Creates a new CyclicBarrier that will trip (work) when the given number of parties (threads) are waiting upon it, and which will execute the given barrier action (object passed into its constructor) when the barrier is tripped (reached N ammount of waits), performed by the last thread entering the barrier.
+CyclicBarrier(int parties, Runnable barrierAction)
+
+// Stops this Thread
+await()</code></pre>
+                        </li>
+                        <li><code>public class Exchanger&lt;V&gt;</code> - Type Parameters: V - The type of objects that may be exchanged.
+                            <p>Fomrs a point where Threads can exchange information. The Threads are blocked untill they exhange the information.</p>
+<pre><code>// Waits for another thread to arrive at this exchange point (call this method passing an exchange Object into it), and then transfers the given object to it, receiving its object in return.
+exchange(V x)</code></pre>
+                        </li>
+                        <li><code>public class Phaser</code>
+                        <p></p>
+<pre><code>//
+Phaser(int parties)
+//</code></pre>
                         </li>
                     </ul>
                     <h4>Classes</h4>
