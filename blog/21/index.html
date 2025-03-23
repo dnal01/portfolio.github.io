@@ -1484,14 +1484,13 @@ void release()</code></pre>
 <pre><code>// Waits for the N number of Threads to 
 CountDownLatch(int count)</code></pre>
                             <h5>Methods</h5>
-<pre><code>// The process will stop untill other N of threads finish their work.
+<pre><code>// The process will stop until other N of threads finish their work.
 await()
-// Signilize to the counter to decrement itself.
+// Signalize to the counter to decrement itself.
 countDown()</code></pre>
                         </li>
                         <li><code>Class CyclicBarrier</code>
-                            <p>The object of the CyclicBarrier Class is constracted with the N number of Threads to wait. Threads call await() method of the Class. When the ammount of call reaches the N number then the main Thread proceeds.</p>
-                            
+                            <p>The object of the CyclicBarrier Class is constructed with the N number of Threads to wait. Threads call await() method of the Class. When the ammount of call reaches the N number then the main Thread proceeds.</p>
 <pre><code>// Creates a new CyclicBarrier that will trip (work) when the given number of parties (threads) are waiting upon it, and which will execute the given barrier action (object passed into its constructor) when the barrier is tripped (reached N ammount of waits), performed by the last thread entering the barrier.
 CyclicBarrier(int parties, Runnable barrierAction)
 
@@ -1499,15 +1498,35 @@ CyclicBarrier(int parties, Runnable barrierAction)
 await()</code></pre>
                         </li>
                         <li><code>public class Exchanger&lt;V&gt;</code> - Type Parameters: V - The type of objects that may be exchanged.
-                            <p>Fomrs a point where Threads can exchange information. The Threads are blocked untill they exhange the information.</p>
+                            <p>Forms a point where Threads can exchange information. The Threads are blocked until they exchange the information.</p>
 <pre><code>// Waits for another thread to arrive at this exchange point (call this method passing an exchange Object into it), and then transfers the given object to it, receiving its object in return.
-exchange(V x)</code></pre>
+// Returns: the object provided by the other thread nad points to the object`s address memory cell.
+public V exchange(V x) throws InterruptedException</code></pre>
                         </li>
                         <li><code>public class Phaser</code>
-                        <p></p>
-<pre><code>//
-Phaser(int parties)
-//</code></pre>
+                            <p>May consist of several phases. Each phase may consist of several parties, each have to <strong>arrive</strong> to a barrier to complete a phase.</p>
+                            <ul>
+                                <li>Registration of parties for the phaser happens through <code>register()</code> method.</li>
+                                <li>To signal that a group arrived to the phase, use <code>arrive()</code> method</li>
+                                <li>As soon as all Threads registered for the phase reach a barrier, this phase is considered to be ended and a new phase begins.</li>
+                            </ul>
+<pre><code>// Params: parties – the number of parties required to advance to the next phase
+public Phaser(int parties)
+
+***
+
+// Params: parties – the number of additional parties required to advance to the next phase
+// Returns: the arrival phase number to which this registration applied.
+public int register()
+public int bulkRegister(int parties)
+// Arrives at this phaser and deregisters from it without waiting for others to arrive. Deregistration reduces the number of parties required to advance in future phases.
+// Returns: the arrival phase number, or a negative value if terminated.
+public int arriveAndDeregister()
+// Arrives at this phaser and awaits others. 
+// Returns: the arrival phase number
+public int arriveAndAwaitAdvance()
+// Returns the current phase number.
+public final int getPhase()</code></pre>
                         </li>
                     </ul>
                     <h4>Classes</h4>
@@ -1542,6 +1561,8 @@ public ReentrantReadWriteLock.ReadLock readLock()</code></pre>
                 <p>Information to be added ...</p>
                 <h2>System</h2>
                 <p>Information to be added ...</p>
+<pre><code>// returns HashCode of an object.
+public static native int identityHashCode(Object x)</code></pre>
                 <h2>Application structure</h2>
                 <ul>
                     <li><strong>controller</strong> Intermediate between Model and View. Distribute business-logic and presentation. Manipulates data flow. Assigns responsible for data calculation</li>

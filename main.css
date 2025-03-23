@@ -316,3 +316,27 @@ h4 {
     right: -15px;
     border-left: 15px solid #aaa;
 }
+
+.resume {
+    width: 100px;
+    background-color: #f1f1f1;
+    border-radius: 15px;
+    margin: 0 auto;
+    padding: 5px;
+    font-size: 1.2rem;
+
+}
+
+.resume > a {
+    text-decoration: none;
+    color: #7d9f7a;
+    display:inline-block;
+    width:100%;
+    height:100%;
+    align-content: center;
+
+}
+
+.resume:hover {
+    background-color: #dbe4db;
+}
