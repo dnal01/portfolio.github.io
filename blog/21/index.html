@@ -1528,27 +1528,39 @@ public int arriveAndAwaitAdvance()
 // Returns the current phase number.
 public final int getPhase()</code></pre>
                         </li>
-                        <li><code>public interface Executor</code>
-                            <p>In large applications, it makes sense to separate thread management and creation from the rest of the program. The objects that encapsulate these functions are known as Executors.</p>
-                            <p>The Executor Framework contains a set of components used for efficient thread management.</p>
-                            <p>The Producer Threads delivers tasks and place them in order, which preceded further by the Consumer Threads.</p>
+                    </ul>
+                    <hr>
+                    <ol>
+                        <li>Create ExecutorService object</li>
+                        <li>Create Thread Pool from that Object</li>
+                        <li>Execute on that Object with passed tasks. You can submit instead.</li>
+                    </ol>
+                    <h4>public interface Executor</h4>
+                        <p>In large applications, it makes sense to separate thread management and creation from the rest of the program. The objects that encapsulate these functions are known as Executors.</p>
+                        <p>The Executor Framework contains a set of components used for efficient thread management.</p>
+                        <p>The Producer Threads delivers tasks and place them in order, which preceded further by the Consumer Threads.</p>
 <pre><code>// Executes the given command at some time in the future. The command may execute in a new thread, in a pooled thread, or in the calling thread, at the discretion of the Executor implementation. Delivers a task sort to say.
 // Params: command – the runnable task
 void execute(Runnable command)</code></pre>
-                        </li>
-                        <li><code>public interface ExecutorService extends Executor, AutoCloseable</code>
-                            <p>Adds more functionality to the <code>Executor</code> interface.</p>
-                            <p>The Main Thread may <strong>execute</strong> (deliver) a task to the executorService (Thread Pool), and then other Threads can take them.</p>
-<pre><code>// Shot downs the executorService when all the tasks are done.
+                    <h4>public interface ExecutorService extends Executor, AutoCloseable</h4>
+                        <p>Adds more functionality to the <code>Executor</code> interface.</p>
+                        <p>The Main Thread may <strong>execute</strong> (deliver) a task to the executorService (Thread Pool), and then other Threads can take them.</p>
+<pre><code>// Instead of execute. Gives information / status about the task.
+Future&lt;?&gt; submit(Runnable task)
+// Shots down the executorService when all the tasks are done.
 void shutdown()</code></pre>
-                        </li>
-                        <li><code>public class Executors</code>
-                            <p></p>
-<pre><code>// Params: nThreads – the number of threads in the pool
+                    <h4>public class Executors</h4>
+                        <p></p>
+<pre><code>// Params: nThreads – the number of threads in the pool. They will work in parallel. If only one Thread is allowed then there will be no parallel execution.
 // Returns: the newly created thread pool
 public static ExecutorService newFixedThreadPool(int nThreads)</code></pre>
-                        </li>
-                    </ul>
+                    <h4>public interface Future&lt;V&gt;</h4>
+                    <p>Used to store a result (status details) of <code>submit()</code> method of the <strong>ExecutorService</strong> interface.</p>
+<pre><code>// Returns true if a task is done
+boolean isDone()
+// Waits if necessary for the computation to complete, and then retrieves its result.
+// Returns: the computed result
+V get()</code></pre>
                     <h4>Classes</h4>
                     <ul>
                         <li><code>public class ReentrantLock implements Lock, java.io.Serializable</code> has an advantage in being re-entrant, meaning can block a section more then once.
