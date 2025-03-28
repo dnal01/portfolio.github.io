@@ -1528,6 +1528,38 @@ public int arriveAndAwaitAdvance()
 // Returns the current phase number.
 public final int getPhase()</code></pre>
                         </li>
+                        <li><code>public interface Executor</code>
+                            <p>In large applications, it makes sense to separate thread management and creation from the rest of the program. The objects that encapsulate these functions are known as Executors.</p>
+                            <p>The Executor Framework contains a set of components used for efficient thread management.</p>
+                            <p>The Producer Threads delivers tasks and place them in order, which preceded further by the Consumer Threads.</p>
+                            <aside>
+                                <p>
+                                    Producer-Consumer - is a parallelism shablon, where Producer Thread creates an object and Consumer Thread consumes it.
+                                </p>
+                            </aside>
+                            <p>The Main Thread may <strong>execute</strong> (deliver) a task to the executorService (Thread Pool), and then other Threads can take it.</p>
+<pre><code>// Executes the given command at some time in the future. The command may execute in a new thread, in a pooled thread, or in the calling thread, at the discretion of the Executor implementation. Delivers a task sort to say.
+// Params: command – the runnable task
+void execute(Runnable command)</code></pre>
+                        </li>
+                        <li><code>public interface ExecutorService</code> extends Executor, AutoCloseable
+                            <p>Adds more functionality to the <code>Executor</code> interface.</p>
+<pre><code>// Shots down the executorService when all the tasks are done.
+void shutdown()
+// Submits a Runnable / Callable task for execution and returns a Future representing that task. The Future's get method will return the given result upon successful completion.
+&lt;T&gt; Future&lt;T&gt; submit(Runnable task, T result)
+&lt;T&gt; Future&lt;T&gt; submit(Callable&lt;T&gt; task)
+Future&lt;?&gt; submit(Runnable task)</code></pre>
+                        </li>
+                        <li><code>public interface ScheduledExecutorService</code> extends ExecutorService
+                        <p></p>
+                        </li>
+                        <li><code>public class Executors</code>
+                            <p></p>
+<pre><code>// Params: nThreads – the number of threads in the pool
+// Returns: the newly created thread pool
+public static ExecutorService newFixedThreadPool(int nThreads)</code></pre>
+                        </li>
                     </ul>
                     <h4>Classes</h4>
                     <ul>
