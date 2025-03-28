@@ -1529,6 +1529,30 @@ public int arriveAndAwaitAdvance()
 public final int getPhase()</code></pre>
                         </li>
                     </ul>
+                    <h4>Classes</h4>
+                    <ul>
+                        <li><code>public class ReentrantLock implements Lock, java.io.Serializable</code> has an advantage in being re-entrant, meaning can block a section more then once.
+                            <p>Normally <code>Lock</code> Object is created with the <code>new ReentrantLock</code>, but it would then not have the <code>ReentrantLock</code> methods.</p>
+<pre><code>// Params: fair – true locks favor granting access to the longest-waiting thread.
+public ReentrantLock(boolean fair)
+
+// Returns: the number of holds (locks called) on this lock by the current Thread
+public int getHoldCount()
+// Returns: the number of Threads waiting for the lock
+public final int getQueueLength()
+// Queries whether the given Thread is waiting to acquire this lock.
+public final boolean hasQueuedThread(Thread thread)
+// Queries whether any threads are waiting to acquire this lock
+public final boolean hasQueuedThreads()
+public boolean isLocked()
+public boolean isHeldByCurrentThread()</code></pre>
+                        </li>
+                        <li><code>public class ReentrantReadWriteLock</code> implements ReadWriteLock, java.io.Serializable
+                            <p>Consist of <code>writeLock()</code> and <code>readLock()</code> methods. In addition with <code>lock()</code> and <code>unlock()</code> blocks Threads. The <code>writeLock()</code> can be held only by one Thread while others waiting. The <code>readLock()</code> may be held simultaneously by multiple reader threads. Each of two Locks alone will not be acquired unless another is fully unlocked by queued Threads. Whichever lock is blocked by the most waited Thread, that lock is going to be preceded next. This lock is used for e.g. update of the database in writeLock and synchronize all the resources with the database in readLock.</p>
+<pre><code>public ReentrantReadWriteLock.WriteLock writeLock()
+public ReentrantReadWriteLock.ReadLock readLock()</code></pre>
+                        </li>
+                    </ul>
                     <hr>
                     <ol>
                         <li>Create ExecutorService object</li>
@@ -1561,30 +1585,8 @@ boolean isDone()
 // Waits if necessary for the computation to complete, and then retrieves its result.
 // Returns: the computed result
 V get()</code></pre>
-                    <h4>Classes</h4>
-                    <ul>
-                        <li><code>public class ReentrantLock implements Lock, java.io.Serializable</code> has an advantage in being re-entrant, meaning can block a section more then once.
-                            <p>Normally <code>Lock</code> Object is created with the <code>new ReentrantLock</code>, but it would then not have the <code>ReentrantLock</code> methods.</p>
-<pre><code>// Params: fair – true locks favor granting access to the longest-waiting thread.
-public ReentrantLock(boolean fair)
-
-// Returns: the number of holds (locks called) on this lock by the current Thread
-public int getHoldCount()
-// Returns: the number of Threads waiting for the lock
-public final int getQueueLength()
-// Queries whether the given Thread is waiting to acquire this lock.
-public final boolean hasQueuedThread(Thread thread)
-// Queries whether any threads are waiting to acquire this lock
-public final boolean hasQueuedThreads()
-public boolean isLocked()
-public boolean isHeldByCurrentThread()</code></pre>
-                        </li>
-                        <li><code>public class ReentrantReadWriteLock</code> implements ReadWriteLock, java.io.Serializable
-                            <p>Consist of <code>writeLock()</code> and <code>readLock()</code> methods. In addition with <code>lock()</code> and <code>unlock()</code> blocks Threads. The <code>writeLock()</code> can be held only by one Thread while others waiting. The <code>readLock()</code> may be held simultaneously by multiple reader threads. Each of two Locks alone will not be acquired unless another is fully unlocked by queued Threads. Whichever lock is blocked by the most waited Thread, that lock is going to be preceded next. This lock is used for e.g. update of the database in writeLock and synchronize all the resources with the database in readLock.</p>
-<pre><code>public ReentrantReadWriteLock.WriteLock writeLock()
-public ReentrantReadWriteLock.ReadLock readLock()</code></pre>
-                        </li>
-                    </ul>
+                    <h4></h4>
+                    
 
 
                 <h2>Collectors</h2>
