@@ -1558,6 +1558,7 @@ public ReentrantReadWriteLock.ReadLock readLock()</code></pre>
                         <li>Create Thread Pool from that Object</li>
                         <li>Execute on that Object with passed tasks. You can submit instead.</li>
                     </ol>
+
                     <h4>public interface Executor</h4>
                         <p>In large applications, it makes sense to separate thread management and creation from the rest of the program. The objects that encapsulate these functions are known as Executors.</p>
                         <p>The Executor Framework contains a set of components used for efficient thread management.</p>
@@ -1570,6 +1571,7 @@ public ReentrantReadWriteLock.ReadLock readLock()</code></pre>
 <pre><code>// Executes the given command at some time in the future. The command may execute in a new thread, in a pooled thread, or in the calling thread, at the discretion of the Executor implementation. Delivers a task sort to say.
 // Params: command – the runnable task
 void execute(Runnable command)</code></pre>
+
                     <h4>public interface ExecutorService extends Executor, AutoCloseable</h4>
                         <p>Adds more functionality to the <code>Executor</code> interface.</p>
                         <p>The Main Thread may <strong>execute</strong> (deliver) a task to the executorService (Thread Pool), and then other Threads can take them.</p>
@@ -1579,30 +1581,64 @@ Future&lt;?&gt; submit(Runnable task)
 &lt;T&gt; Future&lt;T&gt; submit(Callable&lt;T&gt; task)
 // Calls whatever response first, terminates other calls just afte the first response. Used e.g. to call a server to speed up the execution.
 &lt;T&gt; T invokeAny(Collection&lt;? extends Callable&lt;T&gt;&gt; tasks)
-// Executes all items from the Collection. Retunrs a list of Futures
+// Executes all items from the Collection. Returns a list of Futures
 &lt;T&gt; List&lt;Future&lt;T&gt;&gt; invokeAll(Collection&lt;? extends Callable&lt;T&gt;&gt; tasks)
 // Shots down the executorService when all the tasks are done.
 void shutdown()
-// shuts down all the pending tasks and returns them. It returns the list imidiatelly, even when some tasks which were unable to execute, but 
-List&lt;Runnable&gt; shutdownNow()</code></pre>
+// shuts down all the pending tasks (which are waiting in que) and returns them. It returns the list immediately. The tasks which have been already running will continue to run.
+List&lt;Runnable&gt; shutdownNow()
+// shotdownNow method will not guarantee immediate shot down, as some tasks may already run. Hence you may use the following command to wait until the termination of the executor Service.
+boolean awaitTermination(long timeout, TimeUnit unit)</code></pre>
+
+                    <h4>public class ThreadPoolExecutor extends AbstractExecutorService</h4>
+                    <p><strong>AbstractExecutorService</strong> class implements <strong>ExecutorService</strong>.</p>
+                    <p>The <strong>ThreadPoolExecutor</strong> as it implements the ExecutorService, can be used to create an ExecutorService.</p>
+<pre><code>// Params:
+// corePoolSize – the number of starting threads to keep in the pool, even if they are idle, unless allowCoreThreadTimeOut is set
+// maximumPoolSize – the maximum number of threads to allow in the pool. Can be useful when a longer task comes up where you do not want other Threads to queue.
+// keepAliveTime – when the number of threads is greater than the core (starting number of threads), this is the maximum time that excess idle threads will wait for new tasks before terminating.
+// unit – the time unit for the keepAliveTime argument
+// workQueue – the queue to use for holding tasks before they are executed. This queue will hold only the Runnable tasks submitted by the execute method.
+public ThreadPoolExecutor(int corePoolSize,
+    int maximumPoolSize,
+    long keepAliveTime,
+    TimeUnit unit,
+    BlockingQueue&lt;Runnable&gt; workQueue) {
+this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue,
+Executors.defaultThreadFactory(), defaultHandler);
+}</code></pre>
                     <h4>public interface Future&lt;V&gt;</h4>
                     <p>Used to store a result (status details) of <code>submit()</code> method of the <strong>ExecutorService</strong> interface.</p>
-                    <p>It is available just after the call of the <strong>ExecutorService</strong> hence you can check the status of the task imidiatelly and not only afte it is done.</p>
+                    <p>It is available just after the call of the <strong>ExecutorService</strong> hence you can check the status of the task immediately and not only after it is done.</p>
 <pre><code>// Returns true if a task is done
 boolean isDone()
 // Waits if necessary for the computation to complete, and then retrieves its result.
 // Returns: the computed result. Result consist of whatever is returned to it.
-V get()</code></pre>
+V get()
+// Cancels a task
+boolean cancel(boolean mayInterruptIfRunning)</code></pre>
+
                     <h4>public Interface Callable&lt;V&gt;</h4>
                     <p>Has only one method <code>call()</code>, but returns a result. In this regard more flexible then <strong>Runnable</strong>. <strong>V</strong> parameter represents return type.</p>
 <pre><code>call()</code></pre>
+
                     <h4>>public interface ScheduledExecutorService extends ExecutorService</h4>
                     <p>...</p>
+
                     <h4>public class Executors</h4>
                         <p></p>
 <pre><code>// Params: nThreads – the number of threads in the pool. They will work in parallel. If only one Thread is allowed then there will be no parallel execution.
 // Returns: the newly created thread pool
-public static ExecutorService newFixedThreadPool(int nThreads)</code></pre>
+public static ExecutorService newFixedThreadPool(int nThreads)
+// Calls to execute will reuse previously constructed threads if available. If no existing thread is available, a new thread will be created and added to the pool. Threads that have not been used for sixty seconds are terminated and removed from the cache.
+// Returns the newly created thread pool
+public static ExecutorService newCachedThreadPool()
+
+// Another way to create a Thread pool. Runs after a given delay, or to execute periodically.
+// Params: corePoolSize – the number of threads to keep in the pool, even if they are idle.
+public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize)
+// Used in pairs with the newScheduledThreadPool to schedule a task.
+public ScheduledFuture&lt;?&gt; schedule(Runnable command, long delay, TimeUnit unit)</code></pre>
 
                 <h2>Collectors</h2>
                 <p>Information to be added ...</p>
