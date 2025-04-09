@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="witdh=device-witdh, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twentieth First - Web Portfolio of Denys</title>
     <link rel="stylesheet" type="text/css" href="../../main.css">
 
@@ -12,6 +12,32 @@
 </head>
 
 <body>
+    <section class="off-screen-nav-topic-menu">
+        <ul>
+        </ul>
+    </section>
+    <aside class="nav-topic-menu">
+        <nav>
+            <div class="ham-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </aside>
+    <!-- <section class="off-screen-nav-section-menu">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </section>
+    <aside class="nav-section-menu">
+        <nav>
+            <span></span>
+            <span></span>
+        </nav>
+    </aside> -->
     <header>
         <ul class="navigation">
             <li class="navigation-item"><a class="item-link" href="../../index.html">Home</a></li>
@@ -870,7 +896,8 @@ Scanner useDelimiter(String pattern)
 // Returns true if this scanner has another token in its input.
 boolean hasNext()
 // Finds and returns the next complete token from this scanner.
-String next()</code></pre>
+String next()
+public int nextInt()</code></pre>
                 <h3>ArrayList</h3>
                 <p>The <code>ArrayList</code> class is a resizable array. Elements in an ArrayList are actually objects. To use other types, such as int, you must specify an equivalent wrapper class, e.g.: <code>Integer</code>.</p>
                 <p>The difference between a built-in array and an <code>ArrayList</code> in Java, is that the size of an array cannot be modified (if you want to add or remove elements to/from an array, you have to create a new one). While elements can be added and removed from an <code>ArrayList</code> whenever you want.</p>
@@ -1348,6 +1375,9 @@ int read(ByteBuffer dst)</code></pre>
                     <li><code>CharsetDecoder</code> transform chars into bytes and vise versa.</li>
                     <li><code>SelectableChannel</code> for multiplication</li>
                 </ul>
+
+                <section class="section-content-wrapper"></section>
+
                 <h2>Multithreading</h2>
                     <p>Thread is a unit in a Process. Each Process has at least one Thread which consumes some of the Processes recourses and common memory area.</p>
                     <p>A program can be divided on several Processes.</p>
@@ -1639,6 +1669,180 @@ public static ExecutorService newCachedThreadPool()
 public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize)
 // Used in pairs with the newScheduledThreadPool to schedule a task.
 public ScheduledFuture&lt;?&gt; schedule(Runnable command, long delay, TimeUnit unit)</code></pre>
+                <article>
+                    <hgroup>
+                        <h2>Collections Framework</h2>
+                        <p>A good variant to use <code>forEach</code> method.</p>
+                    </hgroup>
+                        <p><dfn>Collections</dfn> is a collection of items of one type.</p>
+                        <p>Green boxes below are interfaces and blue are classes that implement these interfaces.</p>
+                        <div class="container_grid_common container_collections">
+                            <div style="grid-area: con-1;"></div>
+                            <div style="grid-area: con-2;">Iterable</div>
+                            <div style="grid-area: con-3;"></div>
+                            <div style="grid-area: con-4;">Collection</div>
+                            <div style="grid-area: con-5;">List</div>
+                            <div style="grid-area: con-6;">Queue</div>
+                            <div style="grid-area: con-7;">Set</div>
+                            <div style="grid-area: con-8;">ArrayList</div>
+                            <div style="grid-area: con-9;">PriorityQueue</div>
+                            <div style="grid-area: con-10;">HashSet</div>
+                            <div style="grid-area: con-11;">LinkedList</div>
+                            <div style="grid-area: con-12;"></div>
+                        </div>
+                        <p>Normally the <code>ArrayList</code> class is assigned to the <code>List</code> interface.</p>
+                        <p>Depending on a program needs you can use either <code>ArrayList</code> or <code>LinkedList</code>.</p>
+                        <p>What <code>ArrayList</code> does is, when it needs to add an element or remove it crates a new array and rewrites all into it, hence the complexity is O(N).</p>
+                        <p>However <code>LinkedList</code> just updates pointers, so here, insertion and removal complexity is O(1). But to find an element inside the list it needs to follow all the pointers, hence the complexity for searching is O(n).</p>
+                            <section>
+                                <h3>Iterable Interface</h3>
+                                <p></p>
+<pre><code>// Used on list interface. Performs the given action for each element. Instead of consumer you can use lambda expression.
+default void forEach(Consumer&lt;? super T&gt; action)</code></pre>
+                            </section>
+                            <section>
+                                <hgroup>
+                                    <h3>Collection Interface</h3>
+                                    <p></p>
+                                </hgroup>
+<pre><code>// Removes all of the elements of this collection that satisfy the given predicate. Lambda also works.
+default boolean removeIf(Predicate&lt;? super E&gt; filter);</code></pre>
+                            </section>
+                            <section>
+                                <h3>Queue Interface</h3>
+                            </section>
+                            <section>
+                                <hgroup>
+                                    <h3>List Interface</h3>
+                                    <p></p>
+                                </hgroup>
+<pre><code>public interface List&lt;E&gt; extends SequencedCollection&lt;E&gt;
+/*
+Appends the specified element to the end of this list (optional operation).
+List classes should clearly specify an element type which may be added.
+Params: e element to be appended to this list
+Returns: true
+*/
+boolean add(E e);
+default void addFirst(E e);
+default void addLast(E e);
+// Inserts the specified element at the specified position in this list (optional operation) shifting all others upfront.
+void add(int index, E element);
+/*
+Appends all of the elements in the specified collection to the end of this list.
+Params: c – collection containing elements to be added to this list
+Returns: true if this list changed as a result of the call
+*/
+boolean addAll(Collection&lt;? extends E&gt; c);
+boolean addAll(int index, Collection&lt;? extends E&gt; c);
+// Replaces the element at the specified position in this list with the specified element.
+E set(int index, E element);
+
+
+int size();
+boolean isEmpty();
+boolean contains(Object o);
+void clear();
+// Returns true if this list contains all of the elements of the specified collection. Order and quantity of items in the original list does not matter.
+boolean containsAll(Collection&lt;?&gt; c);
+// Returns an element by the given index.
+E get(int index);
+default E getFirst()
+default E getLast()
+// Returns index of the first found element.
+int indexOf(Object o);
+int lastIndexOf(Object o);
+// Removes an element at a given index shifting the others backwards.
+E remove(int index);
+default E removeFirst();
+default E removeLast();
+boolean remove(Object o);
+boolean removeAll(Collection&lt;?&gt; c);
+// Retains (keeps) only the elements in this list that are contained in the specified collection
+boolean retainAll(Collection&lt;?&gt; c);
+// Sorts this list according to the order induced by the specified Comparator.
+default void sort(Comparator&lt;? super E&gt; c);
+// Returns a list fromIndex, inclusive, and toIndex, exclusive.
+List&lt;E&gt; subList(int fromIndex, int toIndex);
+// Transforms a list into a ListIterator Interface`s object which has methods to iterate through the list. See ListIterator Interface for more information.
+ListIterator<E> listIterator();</code></pre>                
+                            </section>
+                            <section>
+                                <h3>Set Interface</h3>
+                                <p><dfn>Interface Set</dfn> is a linear list which can not contain duplicated date.</p>
+<pre><code>boolean add(E e)
+// Adds the specified element to this set if it is not already present (optional operation).
+boolean addAll(Collection&lt;? extends E&gt; c)
+// Adds all of the elements in the specified collection to this set if they're not already present (optional operation).
+void clear()
+//Removes all of the elements from this set (optional operation).
+boolean contains(Object o)
+// Returns true if this set contains the specified element.
+boolean containsAll(Collection&lt;?&gt; c)
+// Returns true if this set contains all of the elements of the specified collection.
+boolean equals(Object o)
+// Compares the specified object with this set for equality.
+int hashCode()
+//Returns the hash code value for this set.
+boolean isEmpty()
+// Returns true if this set contains no elements.
+Iterator&lt;E&gt; iterator()
+// Returns an iterator over the elements in this set.
+boolean remove(Object o)
+// Removes the specified element from this set if it is present (optional operation).
+boolean removeAll(Collection&lt;?&gt; c)
+// Removes from this set all of its elements that are contained in the specified collection (optional operation).
+boolean retainAll(Collection&lt;?&gt; c)
+Retains only the elements in this set that are contained in the specified collection (optional operation).
+int size()
+// Returns the number of elements in this set (its cardinality).
+default Spliterator&lt;E&gt; spliterator()
+// Creates a Spliterator over the elements in this set.
+Object[] toArray()
+// Returns an array containing all of the elements in this set.
+&lt;T&gt; T[] toArray(T[] a)
+// Returns an array containing all of the elements in this set; the runtime type of the returned array is that of the specified array.</code></pre>
+                            </section>
+                            <section>
+                                <h3>ArrayList Class</h3>
+                                <p></p>
+<pre><code>public class ArrayList&lt;E&gt; extends AbstractList&lt;E&gt;
+    implements List&lt;E&gt;, RandomAccess, Cloneable, java.io.Serializable</code></pre>
+                            </section>
+                            <section>
+                                <h3>PriorityQueue Class</h3>
+                            </section>
+                            <section>
+                                <h3>HashSet Class</h3>
+                            </section>
+                            <section>
+                                <h3>LinkedList Class</h3>
+                            </section>
+                </article>
+                <article>
+                    <h2>List related Interfaces</h2>
+                    <p>Interfaces which are passed to or returned from methods of <code>List</code> Interface</p>
+                    <section>
+                        <h3>Comparator interface</h3>
+                        <p>Comparator interface has only static methods.</p>
+<pre><code>public static &lt; extends Comparable&lt;? super T&gt;&gt; Comparator&lt;T&gt; naturalOrder();
+public static &lt;T extends Comparable&lt;? super T&gt;&gt; Comparator&lt;T&gt; reverseOrder();
+</code></pre>
+                    </section>
+                    <section>
+                        <h3>ListIterator Interface</h3>
+                        <p>Used to iterate through list. Most commonly used with <code>while</code> loop passing <code>hasNext()</code> method in it.</p>
+<pre><code>// Returns the next/previous element in the list
+E next();
+E previous();
+
+boolean hasNext();
+boolean hasPrevious();
+
+int nextIndex();
+int previousIndex();</code></pre>
+                    </section>
+                </article>
 
                 <h2>Collectors</h2>
                 <p>Information to be added ...</p>
@@ -1691,7 +1895,7 @@ public static native int identityHashCode(Object x)</code></pre>
                     <li><code>N</code> - Number</li>
                     <li><code>S</code>, <code>U</code> etc. - 2nd, 3rd, 4th types</li>
                 </ul>
-                <h3>Generic Classes</h3>
+                <h3>Generic Classes and Interfaces</h3>
                 <ul>
                     <li>
                         <strong>Create a Class</strong>
@@ -1808,6 +2012,7 @@ public static native int identityHashCode(Object x)</code></pre>
     </main>
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
+    <script src="../../script.js"></script>
 </body>
 
 </html>

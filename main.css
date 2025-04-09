@@ -30,10 +30,10 @@ body {
     border-radius: 10px;
 }
 
-h2 {
-    background-color: #607d8b;
-    color: #ffffff;
-    padding: 5px;
+
+
+summary > h2 {
+    display: inline-block;
 }
 
 .blogs-photo {
@@ -97,7 +97,7 @@ h2 {
 .block {
     background-color: rgb(250, 250, 250);
     border-radius: 25px;
-    padding: 30px;
+    padding: 5vw;
 }
 
 .section {
@@ -242,6 +242,22 @@ th {
     "con-2 con-7 con-3 con-8 con-5 con-9 con-6";
 }
 
+.container_collections > div:nth-child(-n+7):not(:nth-child(1)):not(:nth-child(3)) {
+    background-color: #04AA6D;
+}
+.container_collections > div:nth-child(n+7):not(:nth-child(12)) {
+    background-color: #7199e4;
+}
+
+.container_collections {
+    grid-template-areas:
+    "con-1 con-2 con-3"
+    "con-1 con-4 con-3"
+    "con-5 con-6 con-7"
+    "con-8 con-9 con-10"
+    "con-11 con-12 con-12"
+}
+
 .container_buffer {
     grid-template-areas: 
     "con-1 con-2 con-3 con-4 con-5 con-6 con-7 con-8 con-9 con-10"
@@ -339,4 +355,78 @@ h4 {
 
 .resume:hover {
     background-color: #dbe4db;
+}
+
+.off-screen-nav-topic-menu {
+    background-color:  rgb(34, 37, 49);
+    height: 100vh;
+    width: 100%;
+    max-width: 450px;
+    position: fixed;
+    overflow-y:scroll;
+    top: 0;
+    left: -450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+    text-align: left;
+    font-size: 3rem;
+    transition: .3s ease;
+}
+.off-screen-nav-topic-menu.active {
+    left: 0;
+}
+.nav-topic-menu {
+    position: fixed;
+}
+
+aside > nav {
+    padding: 1rem;
+    display: flex;
+
+}
+
+.ham-menu {
+    height: 50px;
+    width: 40px;
+    margin-left: auto;
+    position: relative;
+}
+.ham-menu span {
+    height: 5px;
+    width: 100%;
+    background-color: #6F86FF;
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+.ham-menu.active span {
+    background-color: white;
+}
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.off-screen-nav-topic-menu > ul > li{
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
 }
