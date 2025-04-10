@@ -1738,11 +1738,10 @@ boolean addAll(int index, Collection&lt;? extends E&gt; c);
 // Replaces the element at the specified position in this list with the specified element.
 E set(int index, E element);
 
-
 int size();
 boolean isEmpty();
-boolean contains(Object o);
 void clear();
+boolean contains(Object o);
 // Returns true if this list contains all of the elements of the specified collection. Order and quantity of items in the original list does not matter.
 boolean containsAll(Collection&lt;?&gt; c);
 // Returns an element by the given index.
@@ -1769,7 +1768,10 @@ ListIterator<E> listIterator();</code></pre>
                             </section>
                             <section>
                                 <h3>Set Interface</h3>
-                                <p><dfn>Interface Set</dfn> is a linear list which can not contain duplicated date.</p>
+                                <p><dfn>Interface Set</dfn> is a list which can not contain duplicated date. It has the same methods as and List, but not all of them.</p>
+                                <p>Class HashSet: has a HashMap structure. Addition order is based on the Hash code and not preserved.</p>
+                                <p>Class LinkedHashSet: has a LinkedHashMap. The order of additions is preserved.</p>
+                                <p>Class TreeSet: has a TreeMap.</p>
 <pre><code>boolean add(E e)
 // Adds the specified element to this set if it is not already present (optional operation).
 boolean addAll(Collection&lt;? extends E&gt; c)
