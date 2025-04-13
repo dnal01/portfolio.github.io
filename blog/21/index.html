@@ -916,9 +916,14 @@ list.size();
 
 String s = (String) list.get(0); // Hard type cast. Changing a list data type to a string
 </code></pre>
-                <h3>Collections</h3>
-                <p>The <code>Collections</code> class has a useful <code>sort()</code> method</p>
-<pre><code>Collections.sort(list);</code></pre>
+                <h3>Collections class</h3>
+                <p>The <code>Collections</code> class has a useful <code>sort()</code> method.</p>
+<pre><code>// Returns sorted list.
+public static &lt;T extends Comparable&lt;? super T&gt;&gt; void sort(List&lt;T&gt; list)
+
+// Returns an unmodifiable (can not be changed / modified) view of the specified set.
+public static &lt;T&gt; Set&lt;T&gt; unmodifiableSet(Set&lt;? extends T&gt; s);
+</code></pre>
                 <h3>Regular Expressions, Regex</h3>
                 <p>Regular expressions are patterns used to match character combinations in strings. Regular expressions are also objects.</p>
                 <h3>Regex specific</h3>
@@ -1690,10 +1695,6 @@ public ScheduledFuture&lt;?&gt; schedule(Runnable command, long delay, TimeUnit 
                             <div style="grid-area: con-11;">LinkedList</div>
                             <div style="grid-area: con-12;"></div>
                         </div>
-                        <p>Normally the <code>ArrayList</code> class is assigned to the <code>List</code> interface.</p>
-                        <p>Depending on a program needs you can use either <code>ArrayList</code> or <code>LinkedList</code>.</p>
-                        <p>What <code>ArrayList</code> does is, when it needs to add an element or remove it crates a new array and rewrites all into it, hence the complexity is O(N).</p>
-                        <p>However <code>LinkedList</code> just updates pointers, so here, insertion and removal complexity is O(1). But to find an element inside the list it needs to follow all the pointers, hence the complexity for searching is O(n).</p>
                             <section>
                                 <h3>Iterable Interface</h3>
                                 <p></p>
@@ -1708,14 +1709,16 @@ default void forEach(Consumer&lt;? super T&gt; action)</code></pre>
 <pre><code>// Removes all of the elements of this collection that satisfy the given predicate. Lambda also works.
 default boolean removeIf(Predicate&lt;? super E&gt; filter);</code></pre>
                             </section>
-                            <section>
-                                <h3>Queue Interface</h3>
-                            </section>
+                            
                             <section>
                                 <hgroup>
                                     <h3>List Interface</h3>
                                     <p></p>
                                 </hgroup>
+                                <p>Normally the <code>ArrayList</code> class is assigned to the <code>List</code> interface.</p>
+                                <p>Depending on a program needs you can use either <code>ArrayList</code> or <code>LinkedList</code>.</p>
+                                <p>What <code>ArrayList</code> does is, when it needs to add an element or remove it crates a new array and rewrites all into it, hence the complexity is O(N).</p>
+                                <p>However <code>LinkedList</code> just updates pointers, so here, insertion and removal complexity is O(1). But to find an element inside the list it needs to follow all the pointers, hence the complexity for searching is O(n).</p>
 <pre><code>public interface List&lt;E&gt; extends SequencedCollection&lt;E&gt;
 /*
 Appends the specified element to the end of this list (optional operation).
@@ -1771,7 +1774,9 @@ ListIterator<E> listIterator();</code></pre>
                                 <p><dfn>Interface Set</dfn> is a list which can not contain duplicated date. It has the same methods as and List, but not all of them.</p>
                                 <p>Class HashSet: has a HashMap structure. Addition order is based on the Hash code and not preserved.</p>
                                 <p>Class LinkedHashSet: has a LinkedHashMap. The order of additions is preserved.</p>
-                                <p>Class TreeSet: has a TreeMap.</p>
+                                <p>Class TreeSet: has a TreeMap. The order of additions is preserved and structured by value.</p>
+                                <p>Class NavigableSet: has a TreeMap.</p>
+                                <p>Class Immutable_Set: has a TreeMap.</p>
 <pre><code>boolean add(E e)
 // Adds the specified element to this set if it is not already present (optional operation).
 boolean addAll(Collection&lt;? extends E&gt; c)
@@ -1803,19 +1808,66 @@ default Spliterator&lt;E&gt; spliterator()
 Object[] toArray()
 // Returns an array containing all of the elements in this set.
 &lt;T&gt; T[] toArray(T[] a)
-// Returns an array containing all of the elements in this set; the runtime type of the returned array is that of the specified array.</code></pre>
+// Returns an array containing all of the elements in this set; the runtime type of the returned array is that of the specified array.
+static <E> Set<E> of(E e1, E e2, E e3)
+// Returns: an unmodifiable Set containing the specified elements.
+</code></pre>
                             </section>
+
+                            <section>
+                                <h3>SortedSet Interface</h3>
+                                <p>Provides more methods to work with returting parts of</p>
+<pre><code>public interface SortedSet&lt;E&gt;
+    extends Set&lt;E&gt;
+
+Comparator&lt;? super E&gt; comparator()
+// Returns the comparator used to order the elements in this set, or null if this set uses the natural ordering of its elements.
+E first()
+// Returns the first (lowest) element currently in this set.
+SortedSet&lt;E&gt; headSet(E toElement)
+// Returns a view of the portion of this set whose elements are strictly less than toElement. I.e. returns a SortedSet object where array is cut starting from inserted parameter.
+E last()
+// Returns the last (highest) element currently in this set.
+default Spliterator&lt;E&gt; spliterator()
+// Creates a Spliterator over the elements in this sorted set.
+SortedSet&lt;E&gt; subSet(E fromElement, E toElement)
+// Returns a view of the portion of this set whose elements range from fromElement, inclusive, to toElement, exclusive.
+SortedSet&lt;E&gt; tailSet(E fromElement)
+// Returns a view of the portion of this set whose elements are greater than or equal to fromElement.</code></pre>
+                            </section>
+                            <section>
+                                <h3>NavigableSet Interface</h3>
+                                <p>Is extended with the opportunity to find the closest match. Example is an "avocado" word which is not in the list but is located between words which starts at a and b.</p>
+<pre><code>public interface NavigableSet&lt;E&gt;
+    extends SortedSet&lt;E&gt;
+// Returns the least element greater than or equal to e.
+E ceiling(E e);
+// -//- less than -//-
+E floor(E e);
+// Returns the least element in this set strictly greater than the given element.
+E higher(E e);
+// -//- less than -//-
+E lower(E e);
+// Returns a reverse order of this set
+NavigableSet<E> descendingSet();
+</code></pre>
+                            </section>
+
+                            <section>
+                                <h3>Queue Interface</h3>
+                                <p></p>
+<pre><code>//
+boolean offer(E e);
+//
+
+</code></pre>
+                            </section>
+
                             <section>
                                 <h3>ArrayList Class</h3>
                                 <p>It has array structure and implements List Interface`s methods.</p>
 <pre><code>public class ArrayList&lt;E&gt; extends AbstractList&lt;E&gt;
     implements List&lt;E&gt;, RandomAccess, Cloneable, java.io.Serializable</code></pre>
-                            </section>
-                            <section>
-                                <h3>PriorityQueue Class</h3>
-                            </section>
-                            <section>
-                                <h3>HashSet Class</h3>
                             </section>
                             <section>
                                 <h3>LinkedList Class</h3>
@@ -1824,6 +1876,16 @@ Object[] toArray()
     extends AbstractSequentialList&lt;E&gt;
     implements List&lt;E&gt;, Deque&lt;E&gt;, Cloneable, java.io.Serializable</code></pre>
                             </section>
+                            <section>
+                                <h3>PriorityQueue Class</h3>
+                            </section>
+                            <section>
+                                <h3>HashSet Class</h3>
+                            </section>
+                            <section>
+                                <h3>Queue Interface</h3>
+                            </section>
+                            
                 </article>
                 <article>
                     <h2>List related Interfaces</h2>
