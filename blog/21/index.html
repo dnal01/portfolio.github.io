@@ -58,7 +58,7 @@
                         <li><code>int cost = 133_452_667</code> Range from -2,147,483,684 to 2,147,483,647. <code>_</code> is for readability;</li>
                         <li><code>long <i>a</i> = 123125415l or L;</code></li>
                         <li><code>float <i>b</i> = 2.1E12f or F;</code></li>
-                        <li><code>boolean <i>c</i> = !(x > 5 && x < 10);</code></li>
+                        <li><code>boolean <i>c</i> = !(x &gt; 5 && x &lt; 10);</code></li>
                         <li><code>String <i>d</i> = new String(arrayName);</code></li>
                         <li><code>double price1 = 9.99, price2 = 12.99;</code></li>
                     </ul>
@@ -1695,6 +1695,65 @@ public ScheduledFuture&lt;?&gt; schedule(Runnable command, long delay, TimeUnit 
                             <div style="grid-area: con-11;">LinkedList</div>
                             <div style="grid-area: con-12;"></div>
                         </div>
+                        <p>Relations between Interfaces and Classes:</p>
+                        <div class="container_grid_common container_collections-relations">
+                            <div style="grid-area: con-0;"></div>
+                            <div style="grid-area: con-1;">List</div>
+                            <div style="grid-area: con-1-1;"></div>
+                            <div style="grid-area: con-1-2;"></div>
+                            <div style="grid-area: con-1-3;"></div>
+                            <div style="grid-area: con-1-4;"></div>
+                            <div style="grid-area: con-1-5;"></div>
+                            <div style="grid-area: con-1-6;"></div>
+                            <div style="grid-area: con-1-7;"></div>
+                            <div style="grid-area: con-2;">Set</div>
+                            <div style="grid-area: con-2-1;"></div>
+                            <div style="grid-area: con-2-2;"></div>
+                            <div style="grid-area: con-2-3;"></div>
+                            <div style="grid-area: con-2-4;"></div>
+                            <div style="grid-area: con-2-5;"></div>
+                            <div style="grid-area: con-2-6;"></div>
+                            <div style="grid-area: con-2-7;"></div>
+                            <div style="grid-area: con-3;">SortedSet</div>
+                            <div style="grid-area: con-3-1;"></div>
+                            <div style="grid-area: con-3-2;"></div>
+                            <div style="grid-area: con-3-3;"></div>
+                            <div style="grid-area: con-3-4;"></div>
+                            <div style="grid-area: con-3-5;"></div>
+                            <div style="grid-area: con-3-6;"></div>
+                            <div style="grid-area: con-3-7;"></div>
+                            <div style="grid-area: con-4;">NavigableSet</div>
+                            <div style="grid-area: con-4-1;"></div>
+                            <div style="grid-area: con-4-2;"></div>
+                            <div style="grid-area: con-4-3;"></div>
+                            <div style="grid-area: con-4-4;"></div>
+                            <div style="grid-area: con-4-5;"></div>
+                            <div style="grid-area: con-4-6;"></div>
+                            <div style="grid-area: con-4-7;"></div>
+                            <div style="grid-area: con-5;">Queue</div>
+                            <div style="grid-area: con-5-1;"></div>
+                            <div style="grid-area: con-5-2;"></div>
+                            <div style="grid-area: con-5-3;"></div>
+                            <div style="grid-area: con-5-4;"></div>
+                            <div style="grid-area: con-5-5;"></div>
+                            <div style="grid-area: con-5-6;"></div>
+                            <div style="grid-area: con-5-7;"></div>
+                            <div style="grid-area: con-6;">Deque</div>
+                            <div style="grid-area: con-6-1;"></div>
+                            <div style="grid-area: con-6-2;"></div>
+                            <div style="grid-area: con-6-3;"></div>
+                            <div style="grid-area: con-6-4;"></div>
+                            <div style="grid-area: con-6-5;"></div>
+                            <div style="grid-area: con-6-6;"></div>
+                            <div style="grid-area: con-6-7;"></div>
+                            <div style="grid-area: con-7;">ArrayList</div>
+                            <div style="grid-area: con-8;">LinkedList</div>
+                            <div style="grid-area: con-9;">HashSet</div>
+                            <div style="grid-area: con-10;">LinkedHashSet</div>
+                            <div style="grid-area: con-11;">TreeSet</div>
+                            <div style="grid-area: con-12;">PriorityQueue</div>
+                            <div style="grid-area: con-13;">ArrayDeque</div>
+                        </div>
                             <section>
                                 <h3>Iterable Interface</h3>
                                 <p></p>
@@ -1856,36 +1915,78 @@ NavigableSet<E> descendingSet();
                             <section>
                                 <h3>Queue Interface</h3>
                                 <p></p>
-<pre><code>//
+<pre><code>// Inserts the specified element into this queue. But in comparison to add method returns false if the addition failed instead of an error.
 boolean offer(E e);
-//
-
+// Retrieves, but does not remove, the head of this queue. This method differs from peek only in that it throws an exception if this queue is empty, instead of null.
+E element();
+E peek();
+// Retrieves and removes the head of this queue. This method differs from poll() only in that it throws an exception if this queue is empty, instead of null.
+E remove();
+E poll();
 </code></pre>
                             </section>
 
                             <section>
-                                <h3>ArrayList Class</h3>
+                                <h3>Deque Interface</h3>
+                                <p>Adds items in order of additions. However provides additional methods to add, get or remove the first or the last object in an array.</p>
+<pre><code>public interface Deque&lt;E&gt; extends Queue&lt;E&gt;, SequencedCollection&lt;E&gt;
+
+// adds method throws an exception in case of not success.
+boolean add(E e);
+void addFirst(E e);
+void addLast(E e);
+boolean offer(E e);
+boolean offerFirst(E e);
+boolean offerLast(E e);
+// removes method throws an exception in case of not success.
+E removeFirst();
+E removeLast();
+E pollFirst();
+E pollLast();
+// gets method throws an exception in case of not success.
+E getFirst();
+E getLast();
+E peekFirst();
+E peekLast();
+//
+boolean contains(Object o);</code></pre>
+                            </section>
+
+                            <section>
+                                <h3>ArrayList class</h3>
                                 <p>It has array structure and implements List Interface`s methods.</p>
 <pre><code>public class ArrayList&lt;E&gt; extends AbstractList&lt;E&gt;
     implements List&lt;E&gt;, RandomAccess, Cloneable, java.io.Serializable</code></pre>
                             </section>
                             <section>
-                                <h3>LinkedList Class</h3>
+                                <h3>LinkedList class</h3>
                                 <p>It has pointers structure and implements List Interface`s methods.</p>
 <pre><code>public class LinkedList&lt;E&gt;
     extends AbstractSequentialList&lt;E&gt;
     implements List&lt;E&gt;, Deque&lt;E&gt;, Cloneable, java.io.Serializable</code></pre>
                             </section>
                             <section>
-                                <h3>PriorityQueue Class</h3>
+                                <h3>PriorityQueue class</h3>
+                                <p></p>
+<pre><code>public class PriorityQueue&lt;E&gt; extends AbstractQueue&lt;E&gt;
+    implements java.io.Serializable</code></pre>
+                            </section>
+                            <section>
+                                <h3></h3>
+                                <p></p>
+<pre><code>public class ArrayDeque&lt;E&gt; extends AbstractCollection&lt;E&gt;
+    implements Deque&lt;E&gt;, Cloneable, Serializable</code></pre>
+                            </section>
+                            <section>
+                                <h3>LinkedBlockingDeque class</h3>
+                                <p>Used to provide the limitation of the array. It has a capacity constructor.</p>
+<pre><code>public class LinkedBlockingDeque&lt;E&gt;
+    extends AbstractQueue&lt;E&gt;
+    implements BlockingDeque&lt;E&gt;, java.io.Serializable</code></pre>
                             </section>
                             <section>
                                 <h3>HashSet Class</h3>
-                            </section>
-                            <section>
-                                <h3>Queue Interface</h3>
-                            </section>
-                            
+                            </section>                            
                 </article>
                 <article>
                     <h2>List related Interfaces</h2>
