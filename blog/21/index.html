@@ -12,19 +12,6 @@
 </head>
 
 <body>
-    <section class="off-screen-nav-topic-menu">
-        <ul>
-        </ul>
-    </section>
-    <aside class="nav-topic-menu">
-        <nav>
-            <div class="ham-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </aside>
     <!-- <section class="off-screen-nav-section-menu">
         <ul>
             <li></li>
@@ -39,12 +26,29 @@
         </nav>
     </aside> -->
     <header>
-        <ul class="navigation">
-            <li class="navigation-item"><a class="item-link" href="../../index.html">Home</a></li>
-            <li class="navigation-item"><a class="item-link" href="../../blog/index.html">Blog</a></li>
-            <li class="navigation-item"><a class="item-link" href="../../projects/index.html">Projects</a></li>
-            <li class="navigation-item"><a class="item-link" href="../../contact/index.html">Contact</a></li>
-        </ul>
+        <div>
+            <section class="off-screen-nav-topic-menu">
+                <ul>
+                </ul>
+            </section>
+            <aside class="nav-topic-menu">
+                <nav>
+                    <div class="ham-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+            </aside>
+        </div>
+        <div>
+            <ul class="navigation">
+                <li class="navigation-item"><a class="item-link" href="../../index.html">Home</a></li>
+                <li class="navigation-item"><a class="item-link" href="../../blog/index.html">Blog</a></li>
+                <li class="navigation-item"><a class="item-link" href="../../projects/index.html">Projects</a></li>
+                <li class="navigation-item"><a class="item-link" href="../../contact/index.html">Contact</a></li>
+            </ul>
+        </div>
     </header>
     <main>
         <h1 class="title">Java</h1>
@@ -77,9 +81,20 @@
                     <p>Polymorphism - allows use of sub-classes` objects as object of parent. It allows a single method to interact with object from different classes.</p>
                     <p>Abstractions - defines general characteristics of objects, ignoring details of their realization. It is a compelling reason to use abstract classes, as long as the “is-a” relationship is preserved.</p>
                         <ul>
-                            <li>A class can extend only one Abstraction.</li>
+                            <li>A class can extend only one Abstraction. All methods and properties are inherited by default.</li>
+                            <li>Abstract classes are designed to hold information related to a specific group of classes which are meant to inherit from them.</li>
+                            <li>Abstract classes include abstract methods which do not have implementation. But it also can have concrete methods which are not required to be implemented by subclasses.</li>
+                            <li>The abstract classes are inherited by other classes to implement their methods in their own way.</li>
                         </ul>
                     <p>Interfaces - defines some function, which does not have concrete realization, which is then implemented by classes which use this interfaces.</p>
+                    <ul>
+                        <li>We want to be selective about which methods are class inherits. It is used when selective inheritance is needed.</li>
+                        <li>Properties are <code>public static final</code>. Properties use <code>UPPER_SNAKE_CASE</code> by convention.</li>
+                        <li>Values must be set immediately and can not be changed.</li>
+                        <li>Methods are <code>abstract</code> by default.</li>
+                        <li>Interfaces can have also concrete methods: <code>default</code> and <code>static</code>.</li>
+                        <li>Interfaces are created to be able to inherit more than one parent. As only one extension is possible, interfaces are usually smaller and focuses on specifics.</li>
+                    </ul>
                     <p>Methods form the object's interface with the outside world; the buttons on the front of your television set, for example, are the interface between you and the electrical wiring on the other side of its plastic casing. You press the "power" button to turn the television on and off.</p>
                         <ul>
                             <li>Describes the behaver, but not a type.</li>
@@ -149,7 +164,7 @@ long b = (long) a; // Explicit Type Data Conversion</code></pre>
     /* method body */
     /* return statement */
 }</code></pre>
-                    <pre><code>public static double <i>subtract</i>(int a, int b, String...params) {
+                    <pre><code>public static double subtract(int a, int b, String...params) {
     int result = a - b;
     return (double) result;
 }
@@ -204,13 +219,13 @@ int subResult = subtract(10, 5); // the method call</code></pre>
                     <pre><code>public class Clothing {
     public boolean fit(int size) {...}
     public boolean fit(String size) {...}
-    public boolean fit(int height, int witdh) {...}
+    public boolean fit(int height, int width) {...}
 }</code></pre>
                 <h2>Variable Shadowing</h2>
                 <pre><code>public class Clothing {
-    double <strong>price</strong>;
-    public void setPrice(String <strong style="color: red;">price</strong>) {
-        <strong>this.price</strong> = <strong style="color: red;">price</strong>;
+    double price;
+    public void setPrice(String price) {
+        this.price = price;
     }
 }</code></pre>
                 <h2>Package initialization</h2>
@@ -232,7 +247,7 @@ int subResult = subtract(10, 5); // the method call</code></pre>
                 <pre><code>int[] numbers = {1, 2, 3};
 int numbers[] = {1, 2, 3};
 
-for (int i = 0; i < numbers.length; i++) {
+for (int i = 0; i &lt; numbers.length; i++) {
     System.out.println(numbers[i]);
 }
 
@@ -376,7 +391,7 @@ System.out.println("3) Non-rounded is " + cost + ", rounded is " + strCost2);</c
 <pre><code>Random random = new Random();
 
 String generatedString = random.ints(leftLimit, rightLimit + 1)
-    .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
+    .filter(i -&gt; (i &lt;= 57 || i &gt;= 65) && (i &lt;= 90 || i &gt;= 97))
     .limit(targetStringLength)
     .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
     .toString();</code></pre>
@@ -389,7 +404,7 @@ String reverseString = builder.toString();</code></pre>
                                 <p>The advantage of a string builder to simple concatenation is that it creates only one String in memory during appending. Less memory usage.</p>
 <pre><code>String result = new String();
 char[] reverses = input.toCharArray();
-for (int i = reverses.length-1; i >= 0; i--) {
+for (int i = reverses.length-1; i &gt;= 0; i--) {
 result += reverses[i];
 }</code></pre>
                                 <p>Here is another, classical way of reversing a String.</p>
@@ -585,7 +600,7 @@ for (Clothing item: customer01.getItems()) {
                     </ol>
                 <h3>Java Volatile Keyword</h3>
                 <p>The Java volatile keyword is used to mark a Java variable as "being stored in main memory" (RAM). Every write to a volatile variable will be written to main memory, and not just to the CPU registers. E.g.:</p>
-<pre><code>public <strong>volatile</strong> int counter = 0;</code></pre>
+<pre><code>public volatile int counter = 0;</code></pre>
                 <p>Declaring a variable volatile thus guarantees the visibility for other threads of writes to that variable.</p>
                 <p><em>if two threads are both reading and writing to a shared variable, then using the volatile keyword for that is not enough.</em> You need to use a synchronized in that case to guarantee that the reading and writing of the variable is atomic. Reading or writing a volatile variable does not block threads reading or writing. For this to happen you must use the synchronized keyword around critical sections.</p>
                 <p>As an alternative to a synchronized block you could also use one of the many atomic data types found in the java.util.concurrent package. For instance, the AtomicLong or AtomicReference or one of the others.</p>
@@ -595,16 +610,16 @@ for (Clothing item: customer01.getItems()) {
                     <p>If two or more threads share an object, and more than one thread updates variables in that shared object, <strong>race conditions</strong> may occur.</p>
                     <p>One Thread can block section only once, and any other Thread which awaits to access a block can block a block.</p>
 <pre><code>// Synchronized method
-public <strong>synchronized</strong> void add(int value){ ... }
+public synchronized void add(int value){ ... }
 // Synchronized block
-public void add(int value) { <strong>synchronized(this)</strong> { ... } }</code></pre>
+public void add(int value) { synchronized(this) { ... } }</code></pre>
                     <p>Synchronization should be used carefully as it may block other Threads forever and make progress stop due to wait time.</p>
                 <h2>Initializing Object Using the Constructor Method</h2>
                 <pre><code>public class Clothing {
     private String description;
     public double price;
     public Clothing () {
-    } // "no-argument do-nothing Constructor" needed to be added as soon as parameterized constructor is added.
+    } // &quot;no-argument do-nothing Constructor&quot; needed to be added as soon as parameterized constructor is added.
 
     public Clothing (String description, double price) {
         this.description = description;
@@ -614,9 +629,9 @@ public void add(int value) { <strong>synchronized(this)</strong> { ... } }</code
 }</code></pre>
                 <p>Initialize an object</p>
                 <pre><code>public static void main (String[] args) {
-    Clothing item = <strong>new Clothing ();</strong>
+    Clothing item = new Clothing ();
     // invoke set methods for item1 to initialize data
-    Clothing item = <strong>new Clothing ("Jacket", 20.99, "M");</strong>
+    Clothing item = new Clothing ("Jacket", 20.99, "M");
     // item2 is already initialized
 }</code></pre>
                 <h2>Static Methods</h2>
@@ -628,15 +643,15 @@ public void add(int value) { <strong>synchronized(this)</strong> { ... } }</code
                     <li>Can not be overridden by other classes.</li>
                 </ul>
                 <h2>Handling Exceptions - the <code>try/catch</code> Block</h2>
-                <pre><code><strong>try {</strong>
+                <pre><code>try {
     Clothing[] items = new Clothing[10];
     items[0].description = "Pink Boiler Suit";
-<strong>}   catch (NullPointerException e) { // Name of the exception</strong>
+}   catch (NullPointerException e) { // Name of the exception
     String errMsg = e.getMessage();
     e.printStackTrace();
-<strong>}   catch (Expectation e) {
+}   catch (Expectation e) {
     ...
-}</strong><strong>   finally { ... }</strong> // May be used. Runs always, independently from catching an exception. May have a resource leak. Use try with resources instead.</code></pre>
+}   finally { ... } // May be used. Runs always, independently from catching an exception. May have a resource leak. Use try with resources instead.</code></pre>
                 <ul>
                     <li><code>try</code> block contains logic that can potentially result in expectations.</li>
                     <li><code>catch</code> block contain logic that handles expectations.</li>
@@ -723,7 +738,7 @@ BufferedReader br = new BufferedReader(new FileReader(Constants.BASE_PATH + "myf
     }
 }</code></pre>
                     <p>The code below override common behaver.</p>
-<pre><code>public class Tailored <strong>extends</strong> Clothing { // The extend word here is mandatory
+<pre><code>public class Tailored extends Clothing { // The extend word here is mandatory
     private double fee;
     @Override
     public double getPrice() {
@@ -758,8 +773,8 @@ BufferedReader br = new BufferedReader(new FileReader(Constants.BASE_PATH + "myf
                     <li>A subclass derived from an abstract class must either implement all the base class’s abstract methods or be abstract itself.</li>
                     <li>A sub-class can inherit only one abstract class.</li>
                 </ul>
-<pre><code>public <strong>abstract</strong> class Clothing {
-    public <strong>abstract</strong> double refund();
+<pre><code>public abstract class Clothing {
+    public abstract double refund();
     void changeColor() {
         System.out.println("Color is green");
     }
@@ -768,10 +783,10 @@ BufferedReader br = new BufferedReader(new FileReader(Constants.BASE_PATH + "myf
 // of the abstract class;
 // A sub-class MAY override all non-abstract methods
 // of an abstract class.</code></pre>
-<pre><code>public class <strong>Tailored</strong> extends Closing {
+<pre><code>public class Tailored extends Closing {
     // MUST be overridden
     public double refound() {
-        <strong>Return 0;</strong>
+        Return 0;
     }
     // MAY be overridden
     @Override
@@ -779,10 +794,10 @@ BufferedReader br = new BufferedReader(new FileReader(Constants.BASE_PATH + "myf
         System.out.println("Color is red");
     }
 }</code></pre>
-<pre><code>public class <strong>Standard</strong> extends Clothing {
+<pre><code>public class Standard extends Clothing {
     public double refund() {
         // MUST be overridden
-        <strong>return getPrice();</strong>
+        return getPrice();
 
         // Private method of this class that is NOT overridden
         void addPrice() {
@@ -791,20 +806,20 @@ BufferedReader br = new BufferedReader(new FileReader(Constants.BASE_PATH + "myf
     }
 }</code></pre>
                 
-                <pre style="color: rgb(246, 69, 69);"><code><strong>Clothing</strong> jacket1 = new <strong>Clothing</strong>();</code></pre>
+<pre style="color: rgb(246, 69, 69);"><code>Clothing jacket1 = new Clothing();</code></pre>
                 <p>Abstract classes can be used to create references to objects.</p>
-                <pre style="color: green;"><code><strong>Clothing[]</strong> items = new <strong>Clothing</strong>[3];</code></pre>
-                <pre><code><strong>Clothing</strong> jacket2 = new <strong>Tailored</strong>();
+<pre style="color: green;"><code>Clothing[] items = new Clothing[3];</code></pre>
+<pre><code>Clothing jacket2 = new Tailored();
 jacket2.refund();
 jacket2.changeColor(); // "Color is red"</code></pre>
-                <pre><code><strong>Clothing</strong> jacket3 = new <strong>Standard</strong>();
+<pre><code>Clothing jacket3 = new Standard();
 jacket3.refund();
 jacket3.changeColor(); // "Color is green."
 // ERROR
 // addPrice() method does not exist in Clothing.
 // jacket3.addPrice();
 // Then we need to:</code></pre>
-                <pre><code><strong>Standard</strong> jacket4 = new <strong>Standard</strong>();
+<pre><code>Standard jacket4 = new Standard();
 jacket4.refund();
 jacket4.addPrice();</code></pre>
                 <h2>Java Interfaces</h2>
@@ -819,12 +834,12 @@ jacket4.addPrice();</code></pre>
                         <em>Note that, IF by coincidence the name of a class variable/constant matches a constant defined in an implemented interface, the local class variable/constant overrides the interface constant. The constant is converted to a variable and can be changed as many times as desired.</em>
                     </li>
                 </ul>
-                <pre><code>public <strong>interface</strong> Recyclable {
+                <pre><code>public interface Recyclable {
     // A Constant in the Interface
     String MEASURE = "meter";            
-    <strong>void recycle();</strong>
+    void recycle();
 }</code></pre>
-                <pre><code>public class Clothing <strong>implements</strong> Recyclable {
+<pre><code>public class Clothing implements Recyclable {
     // Use of the constant
     // without an interact prefix "Recyclable."
     String measure = MEASURE;
@@ -832,14 +847,14 @@ jacket4.addPrice();</code></pre>
     // The compiler will now require that method recycle
     // be implemented. Compilation will fail if this
     // method is missing from this class.
-    <strong>public void recycle() {
+    public void recycle() {
         /* clothing specific implementation */
-    }</strong>
+    }
 }</code></pre>
-                <pre><code>public class Bottle <strong>implements</strong> Recyclable {
-    <strong>public void recycle() {
+<pre><code>public class Bottle implements Recyclable {
+    public void recycle() {
         /* bottle specific implementation */
-    }</strong>
+    }
 }</code></pre>
                 <p><strong>Notes</strong>: Interface resembles an abstract class, except no variables or regular concrete methods are allowed.</p>
                 <h3>Implement Interfaces</h3>
@@ -847,21 +862,21 @@ jacket4.addPrice();</code></pre>
                     <li>Object-oriented inheritance is not flexible.</li>
                     <li>
                         Depending on the point of view, a given class may require different parents (to be of more than one type.)
-                        <pre><code>public class ColorCircle extends Circle implements Shape {
+<pre><code>public class ColorCircle extends Circle implements Shape {
     ...
 }</code></pre>
                     </li>
                     <li>Different features can be defined by different interfaces.</li>
                     <li>
                         A class can implement as many interfaces as required.
-                        <pre><code>public class Clothing <strong>implements</strong> Recyclable, Comparable {
-    <strong>public void recycle() { ... }
-    public int void compareTo(Object other) { ... }</strong>
+                        <pre><code>public class Clothing implements Recyclable, Comparable {
+    public void recycle() { ... }
+    public int void compareTo(Object other) { ... }
 }</code></pre>
                     </li>
                     <li>
                         It is also possible for an interface(s) to inherit (extend) from an interface. And then even another class can implement the extended interface.
-                        <pre><code>public interface ProductC extends ProductA, ProductB {
+<pre><code>public interface ProductC extends ProductA, ProductB {
     void getProductCInfo();
 }</code></pre>
                     </li>
@@ -1532,7 +1547,7 @@ CyclicBarrier(int parties, Runnable barrierAction)
 // Stops this Thread
 await()</code></pre>
                         </li>
-                        <li><code>public class Exchanger&lt;V&gt;</code> - Type Parameters: V - The type of objects that may be exchanged.
+                        <li><code>public class Exchanger&lt;v></code> - Type Parameters: V - The type of objects that may be exchanged.
                             <p>Forms a point where Threads can exchange information. The Threads are blocked until they exchange the information.</p>
 <pre><code>// Waits for another thread to arrive at this exchange point (call this method passing an exchange Object into it), and then transfers the given object to it, receiving its object in return.
 // Returns: the object provided by the other thread nad points to the object`s address memory cell.
@@ -1642,7 +1657,7 @@ public ThreadPoolExecutor(int corePoolSize,
 this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue,
 Executors.defaultThreadFactory(), defaultHandler);
 }</code></pre>
-                    <h4>public interface Future&lt;V&gt;</h4>
+                    <h4>public interface Future&lt;v></h4>
                     <p>Used to store a result (status details) of <code>submit()</code> method of the <strong>ExecutorService</strong> interface.</p>
                     <p>It is available just after the call of the <strong>ExecutorService</strong> hence you can check the status of the task immediately and not only after it is done.</p>
 <pre><code>// Returns true if a task is done
@@ -1653,7 +1668,7 @@ V get()
 // Cancels a task
 boolean cancel(boolean mayInterruptIfRunning)</code></pre>
 
-                    <h4>public Interface Callable&lt;V&gt;</h4>
+                    <h4>public Interface Callable&lt;v></h4>
                     <p>Has only one method <code>call()</code>, but returns a result. In this regard more flexible then <strong>Runnable</strong>. <strong>V</strong> parameter represents return type.</p>
 <pre><code>call()</code></pre>
 
@@ -1780,7 +1795,7 @@ default boolean removeIf(Predicate&lt;? super E&gt; filter);</code></pre>
                                 <p>However <code>LinkedList</code> just updates pointers, so here, insertion and removal complexity is O(1). But to find an element inside the list it needs to follow all the pointers, hence the complexity for searching is O(n).</p>
 <pre><code>public interface List&lt;E&gt; extends SequencedCollection&lt;E&gt;
 /*
-Appends the specified element to the end of this list (optional operation).
+Appends the specified element to the end of this list.
 List classes should clearly specify an element type which may be added.
 Params: e element to be appended to this list
 Returns: true
@@ -1788,7 +1803,7 @@ Returns: true
 boolean add(E e);
 default void addFirst(E e);
 default void addLast(E e);
-// Inserts the specified element at the specified position in this list (optional operation) shifting all others upfront.
+// Inserts the specified element at the specified position in this list shifting all others upfront.
 void add(int index, E element);
 /*
 Appends all of the elements in the specified collection to the end of this list.
@@ -1826,7 +1841,7 @@ default void sort(Comparator&lt;? super E&gt; c);
 // Returns a list fromIndex, inclusive, and toIndex, exclusive.
 List&lt;E&gt; subList(int fromIndex, int toIndex);
 // Transforms a list into a ListIterator Interface`s object which has methods to iterate through the list. See ListIterator Interface for more information.
-ListIterator<E> listIterator();</code></pre>                
+ListIterator&lt;E&gt; listIterator();</code></pre>                
                             </section>
                             <section>
                                 <h3>Set Interface</h3>
@@ -1837,11 +1852,11 @@ ListIterator<E> listIterator();</code></pre>
                                 <p>Class NavigableSet: has a TreeMap.</p>
                                 <p>Class Immutable_Set: has a TreeMap.</p>
 <pre><code>boolean add(E e)
-// Adds the specified element to this set if it is not already present (optional operation).
+// Adds the specified element to this set if it is not already present.
 boolean addAll(Collection&lt;? extends E&gt; c)
-// Adds all of the elements in the specified collection to this set if they're not already present (optional operation).
+// Adds all of the elements in the specified collection to this set if they're not already present.
 void clear()
-//Removes all of the elements from this set (optional operation).
+//Removes all of the elements from this set.
 boolean contains(Object o)
 // Returns true if this set contains the specified element.
 boolean containsAll(Collection&lt;?&gt; c)
@@ -1855,11 +1870,11 @@ boolean isEmpty()
 Iterator&lt;E&gt; iterator()
 // Returns an iterator over the elements in this set.
 boolean remove(Object o)
-// Removes the specified element from this set if it is present (optional operation).
+// Removes the specified element from this set if it is present.
 boolean removeAll(Collection&lt;?&gt; c)
-// Removes from this set all of its elements that are contained in the specified collection (optional operation).
+// Removes from this set all of its elements that are contained in the specified collection.
 boolean retainAll(Collection&lt;?&gt; c)
-Retains only the elements in this set that are contained in the specified collection (optional operation).
+Retains only the elements in this set that are contained in the specified collection.
 int size()
 // Returns the number of elements in this set (its cardinality).
 default Spliterator&lt;E&gt; spliterator()
@@ -1868,9 +1883,8 @@ Object[] toArray()
 // Returns an array containing all of the elements in this set.
 &lt;T&gt; T[] toArray(T[] a)
 // Returns an array containing all of the elements in this set; the runtime type of the returned array is that of the specified array.
-static <E> Set<E> of(E e1, E e2, E e3)
-// Returns: an unmodifiable Set containing the specified elements.
-</code></pre>
+static &lt;E&gt; Set&lt;E&gt; of(E e1, E e2, E e3)
+// Returns: an unmodifiable Set containing the specified elements.</code></pre>
                             </section>
 
                             <section>
@@ -1908,8 +1922,7 @@ E higher(E e);
 // -//- less than -//-
 E lower(E e);
 // Returns a reverse order of this set
-NavigableSet<E> descendingSet();
-</code></pre>
+NavigableSet&lt;E&gt; descendingSet();</code></pre>
                             </section>
 
                             <section>
@@ -1988,7 +2001,7 @@ boolean contains(Object o);</code></pre>
                                 <h3>HashSet Class</h3>
                             </section>                            
                 </article>
-                <article>
+                <article class="collections-framework">
                     <h2>List related Interfaces</h2>
                     <p>Interfaces which are passed to or returned from methods of <code>List</code> Interface</p>
                     <section>
@@ -2010,6 +2023,226 @@ boolean hasPrevious();
 
 int nextIndex();
 int previousIndex();</code></pre>
+                    </section>
+                </article>
+
+                <article class="map-framework">
+                    <hgroup>
+                        <h2>Map Framework</h2>
+                        <p>Key-value pairs.</p>
+                    </hgroup>
+                    <div class="container_grid_common container_map">
+                        <div style="grid-area: con-0;"></div>
+                        <div style="grid-area: con-1;">Map</div>
+                        <div style="grid-area: con-1-1;"></div>
+                        <div style="grid-area: con-1-2;"></div>
+                        <div style="grid-area: con-1-3;"></div>
+    
+                        <div style="grid-area: con-2;">SortedMap</div>
+                        <div style="grid-area: con-2-1;"></div>
+                        <div style="grid-area: con-2-2;"></div>
+                        <div style="grid-area: con-2-3;"></div>
+    
+                        <div style="grid-area: con-3;">NavigableMap</div>
+                        <div style="grid-area: con-3-1;"></div>
+                        <div style="grid-area: con-3-2;"></div>
+                        <div style="grid-area: con-3-3;"></div>
+    
+                        <div style="grid-area: con-4;">HashMap</div>
+                        <div style="grid-area: con-5;">LinkedListHashMap</div>
+                        <div style="grid-area: con-6;">TreeMap</div>
+                    </div>
+                    <section>
+                        <h3>Map Interface</h3>
+<pre><code>public interface Map&lt;K, V&gt;
+V put(K key, V value)
+// Associates the specified value with the specified key in this map.
+default V putIfAbsent(K key, V value)
+// If the specified key is not already associated with a value (or is mapped to null) associates it with the given value and returns null, else returns the current value.
+// Can be used to replace null elements with some text before an output.
+void putAll(Map &lt;? extends K,? extends V&gt; m)
+// Copies all of the mappings from the specified map to this map.
+V get(Object key)
+// Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.
+default V getOrDefault(Object key, V defaultValue)
+// Returns the value to which the specified key is mapped, or defaultValue if this map contains no mapping for the key.
+// Can be used to show up a standard term, if no value found.
+boolean isEmpty()
+// Returns true if this map contains no key-value mappings.
+void clear()
+// Removes all of the mappings from this map.
+boolean containsKey(Object key)
+// Returns true if this map contains a mapping for the specified key.
+boolean containsValue(Object value)
+// Returns true if this map maps one or more keys to the specified value.
+default V replace(K key, V value)
+// Replaces the entry for the specified key only if it is currently mapped to some value.
+default boolean replace(K key, V oldValue, V newValue)
+// Replaces the entry for the specified key only if currently mapped to the specified value.
+default void replaceAll(BiFunction &lt;? super K,? super V,? extends V&gt; function)
+// Replaces each entry's value with the result of invoking the given function on that entry until all entries have been processed or the function throws an exception.
+V remove(Object key)
+// Removes the mapping for a key from this map if it is present.
+default boolean remove(Object key, Object value)
+// Removes the entry for the specified key only if it is currently mapped to the specified value.
+Collection&gt;V&gt; values()
+// Returns a Collection view of the values contained in this map.
+Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet()
+// Returns a Set view of the mappings contained in this map.
+// It is used to iterate through a map. E.g.:
+for (Map.Entry&lt;String, String&gt; m : map.entrySet()) {
+    // the Entry is an interface:
+    interface Entry&lt;K, V&gt;
+    // Entry Interface` methods:
+    K getKey();
+    V getValue();
+    V setValue(V value);
+}
+default void forEach(BiConsumer &lt;? super K,? super V&gt; action)
+// Performs the given action for each entry in this map until all entries have been processed or the action throws an exception.
+// Works with lambda, when there are two parameters: key and value.
+
+default V compute(K key, BiFunction &lt;? super K,? super V,? extends V&gt; remappingFunction)
+// Attempts to compute a mapping for the specified key and its current mapped value (or null if there is no current mapping).
+default V computeIfAbsent(K key, Function &lt;? super K,? extends V&gt; mappingFunction)
+// If the specified key is not already associated with a value (or is mapped to null), attempts to compute its value using the given mapping function and enters it into this map unless null.
+default V computeIfPresent(K key, BiFunction &lt;? super K,? super V,? extends V&gt; remappingFunction)
+// If the value for the specified key is present and non-null, attempts to compute a new mapping given the key and its current mapped value.
+boolean equals(Object o)
+// Compares the specified object with this map for equality.
+int hashCode()
+// Returns the hash code value for this map.
+Set&gt;K&gt; keySet()
+// Returns a Set view of the keys contained in this map.
+default V merge(K key, V value, BiFunction &lt;? super V,? super V,? extends V&gt; remappingFunction)
+// If the specified key is not already associated with a value or is associated with null, associates it with the given non-null value.
+int size()
+// Returns the number of key-value mappings in this map.
+</code></pre>
+                    </section>
+                    <section>
+                        <h3>SortedMap Interface</h3>
+                        <p>Adds methods to get multiple values from an array based on keys.</p>
+<pre><code>// Returns the first (lowest) key currently in this map.
+Returns the first (lowest) key currently in this map.
+// Returns the last (highest) key currently in this map.
+K lastKey();
+// Returns a SortedMap, whose keys are lower than toKey.
+SortedMap&lt;K,V&gt; headMap(K toKey);
+// Returns a SortedMap, whose keys are in a range between formerKey including and toKey excluding.
+SortedMap&lt;K,V&gt; subMap(K fromKey, K toKey);
+// Returns a SortedMap, whose keys higher or equal to fromKey.
+SortedMap&lt;K,V&gt; tailMap(K fromKey);</code></pre>
+                    </section>
+                    <section>
+                        <h3>NavigableMap Interface</h3>
+                        <p>It has methods which allows to get approximated keys.</p>
+<pre><code>// Returns key-value pair associated with the least key greater than or equal to the given key, or null if there is no such key.
+Map.Entry&lt;K,V&gt; ceilingEntry(K key);
+// Returns key-value pair associated with the greater key less than or equal to the given key, or null if there is no such key.
+Map.Entry&lt;K,V&gt; floorEntry(K key);
+// Returns key-value pair associated with the least key strictly greater than the given key, or null if there is no such key.
+Map.Entry&lt;K,V&gt; higherEntry(K key);
+//Returns key-value pair associated with the greater key strictly less than the given key, or null if there is no such key.
+Map.Entry&lt;K,V&gt; lowerEntry(K key);
+// Returns a reverse order.
+NavigableMap&lt;K,V&gt; descendingMap();</code></pre>
+                    </section>
+                    <section>
+                        <h3>Map classes</h3>
+                        <ul>
+                            <li>
+                                <p><dfn>HashMap class</dfn> is a not synchronized, not ordered hash.</p>
+                                <ul>
+                                    <li>Additions, getting and removals take O(1) time.</li>
+                                    <li>Better not to change the key as is used to calculate the HashCode.</li>
+                                    <li>Initially use LinkedList to store data, than if more than 8 items in a segment appear, then it changes to a tree structure.</li>        
+                                </ul>
+                            </li>
+                            <li>
+                                <p><dfn>LinkedHashMap class</dfn> is a not synchronized, ordered list.</p>
+                                <ul>
+                                    <li>Sorts by FIFO method.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p><dfn>TreeMap class</dfn> is a not synchronized, ordered tree.</p>
+                                <ul>
+                                    <li>Sorts by natural order of a key.</li>
+                                    <li>Can not have null key.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                </article>
+
+                <article class="functional-programming">
+                    <section>
+                        <h2>Lambda calculus</h2>
+                        <ul>
+                            <li><dfn>functional interface</dfn> is an interface only with one abstract method.</li>
+                            <li><dfn>Lambda expression</dfn> is an object and an instance of the functional interface. It realize the single abstract method (function) of the functional interface.</li>
+                        </ul>
+                        <p>To create a <i>lambda expression</i>, indicate parameters (if exist in the interface`s abstract method) in the left part of <i>lambda-operator</i> <code>( -&gt; )</code> and place an expression or a block of operators in the right side.</p>
+                        <p>For example: <code>(a, b) -&gt; a + b;</code></p>
+                        <p>To create a <i>lambda expression</i> you either can create your own functional interface or use default one, like, e.g. <code>Runnable</code>.</p>
+                        <p>If you have implemented a lambda expression once, you may avoid crating of another lambda of the same interface by other objects if they have a reference to the object where the lambda was created. Then just pass parameters to a variable name of a new referenced object.</p>
+                        <p>Lambda sees the Object around it.</p>
+                        <p>Lambda can has a final or effectively final (just is not updated anywhere) variables in the body, hence create variable in an Object can not be changed in lambda expression; static and private member values which do not need to be final.</p>
+                        <p>Below is the way how to create a functional interface:</p>
+<pre><code>interface MyFunction {
+    // String is a type of an element which will be returned and stored is a display. Consider display as a variable name.
+    String apply();
+}
+
+MyFunction function = () -&gt; {
+    "Some data.";
+};
+
+// It is like calling an Inteface`s variable.
+System.out.println(function.apply());
+
+// With parameters.
+interface MyFunction {
+    void apply(String text);
+}
+MyFunction function = (String text) -&gt; {
+    System.out.println(text);
+};
+// This time you pass an argument to an abstract method.
+System.out.println(function.apply("Hello."));
+// Also works with Collections Interface forEach method
+List&lt;String&gt; names = new ArrayList&lt;&gt;();
+names.add("Abc");
+names.forEach(
+    name -&gt; System.out.println("Name is " + name));</code></pre>
+                    </section>
+                    <section>
+                        <hgroup>
+                            <h2>Method reference</h2>
+                            <p>A shorter record of the lambda expression.</p>
+                        </hgroup>
+<pre><code>// Lambda expression
+str -> System.out.println(str)
+// Instead - method reference
+// Creating a reference
+System.out::println
+// Executing by passing a parameter
+objName.methodName(parameter)</code></pre>
+                        <p>It has a class name, then :: and finally a method name. Parameters are not specified.</p>
+                        <p>The <strong>Method Reference</strong> consist of assigning a variable to a functional method (which dictates how to execute a code) and then calling a dummy twin method passing parameters into it.</p>
+                    </section>
+
+                    <section>
+                        <hgroup>
+                            <h2>Anonymous Class</h2>
+                            <p>An inner class without a name.</p>
+                        </hgroup>
+                        <p>An object of the <strong>Anonymous class</strong> creates a separate file of the class after the compilation, where <strong>Lambda</strong> transforms onto a private method, what saves memory an time.</p>
+                        <p>the Anonymous classes are used in case of more then one abstract method, on the other hand, Lambda is specially used for <strong>Functional Interfaces</strong>, which have only one abstract method.</p>
+<pre><code>Interface name = new Class/Interface() {
+    // Override Interfaces methods
+}</code></pre>
                     </section>
                 </article>
 

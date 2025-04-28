@@ -30,3 +30,9 @@ function myFunction() {
       x.style.display = "none";
     }
   }
+
+  function asciiHtmlEscape(text) {
+    return htmlEscape(text).replace(/[^\x00-\x7F]/gu, char =>
+      `&#x${char.codePointAt(0).toString(16).toUpperCase()};`
+    );
+  }
