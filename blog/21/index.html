@@ -85,6 +85,8 @@
                             <li>Abstract classes are designed to hold information related to a specific group of classes which are meant to inherit from them.</li>
                             <li>Abstract classes include abstract methods which do not have implementation. But it also can have concrete methods which are not required to be implemented by subclasses.</li>
                             <li>The abstract classes are inherited by other classes to implement their methods in their own way.</li>
+                            <li>Methods are <code>concrete</code> by default.</li>
+                            <li>Properties are <code>public</code>.</li>
                         </ul>
                     <p>Interfaces - defines some function, which does not have concrete realization, which is then implemented by classes which use this interfaces.</p>
                     <ul>
@@ -938,6 +940,8 @@ public static &lt;T extends Comparable&lt;? super T&gt;&gt; void sort(List&lt;T&
 
 // Returns an unmodifiable (can not be changed / modified) view of the specified set.
 public static &lt;T&gt; Set&lt;T&gt; unmodifiableSet(Set&lt;? extends T&gt; s);
+// Removes all elements from a Collection if Predicate is true.
+default boolean removeIf(Predicate&lt;? super E&gt; filter) {...}
 </code></pre>
                 <h3>Regular Expressions, Regex</h3>
                 <p>Regular expressions are patterns used to match character combinations in strings. Regular expressions are also objects.</p>
@@ -2243,6 +2247,84 @@ objName.methodName(parameter)</code></pre>
 <pre><code>Interface name = new Class/Interface() {
     // Override Interfaces methods
 }</code></pre>
+                    </section>
+                    <section>
+                        <hgroup>
+                            <h2>Package java.util.function</h2>
+                            <p>A functional interfaces, which provides opportunity for lambda and method references.</p>
+                        </hgroup>
+                        <section>
+                            <h3>Consumer Interface</h3>
+                            <p><dfn>Consumer Interface</dfn> receives one argument and does not return any.</p>
+<pre><code>public interface Consumer&lt;T&gt;
+void accept(T t);
+// Usual abstract method.
+default Consumer&lt;T&gt; andThen(Consumer&lt;? super T&gt; after);
+// First executes passed Consumer and then the following command.</code></pre>
+                        </section>
+                        <section>
+                            <h3>BiConsumer Interface</h3>
+                            <p><dfn>BiConsumer Interface</dfn> receives two arguments and does not return any.</p>
+<pre><code>public interface BiConsumer&lt;T, U&gt; {
+    void accept(T t, U u);
+    default BiConsumer&lt;T, U&gt; andThen(BiConsumer&lt;? super T, ? super U&gt; after) {...}
+}</code></pre>
+                        </section>
+
+                        <section>
+                            <h3>Supplier Interface</h3>
+                            <p><dfn>Supplier Interface</dfn> receives no arguments and returns one result.</p>
+<pre><code>public interface Supplier&lt;T&gt; {
+    T get();
+}</code></pre>
+                        </section>
+
+                        <section>
+                            <h3>Function Interface</h3>
+                            <p><dfn>Function Interface</dfn> receives one argument and returns one result.</p>
+<pre><code>// Type parameters:
+// &lt;T&gt; – the type of the input to the function
+// &lt;R&gt; – the type of the result of the function
+public interface Function&lt;T, R&gt; {
+    R apply(T t);
+    // Compose() method is opposite to andThen(). First the second Function executes and then the First.
+    default &lt;V&gt; Function&lt;T, R&gt; compose(Function&lt;? super V, ? extends T&gt; before) {...}
+    default &lt;V&gt; Function&lt;T, U&gt; andThen(Function&lt;? super R, ? extends V&gt; after) {...}
+    static &lt;T&gt; Function&lt;T, T&gt; identity() {...}
+}</code></pre>
+                        </section>
+
+                        <section>
+                            <h3>BiFunction Interface</h3>
+                            <p><dfn>BiFunction Interface</dfn> receives two arguments and returns one result.</p>
+<pre><code>public interface BiFunction&lt;T, U, R&gt; {
+    R apply(T t, U u);
+    default &lt;V&gt; Function&lt;T, U, V&gt; andThen(Function&lt;? super R, ? extends V&gt; after) {...}
+}</code></pre>
+                        </section>
+
+                        <section>
+                            <h3>Predicate Interface</h3>
+                            <p><dfn>Predicate Interface</dfn> receives one argument and returns one boolean-result.</p>
+                            <p>Can be used e.g. to check a value from an array before adding to a list.</p>
+<pre><code>public interface Predicate&lt;T&gt; {
+    boolean test(T t);
+    // Check of diapason between predicate1.and(predicate2).
+    default Predicate&lt;T&gt; and(Predicate&lt;? super T&gt; other) {...}
+    // returns false if the operations is true and vise versa. Similar to ! sign.
+    default Predicate&lt;T&gt; negate() {...}
+    // or() method works similar to and().
+    default Predicate&lt;T&gt; or(Predicate&lt;? super T&gt; other) {...}
+    static &lt;T&gt; Predicate&lt;T&gt; isEqual(Object targetRef) {...}
+    static &lt;T&gt; Predicate&lt;T&gt; not(Predicate&lt;? super T&gt; target) {...}
+}</code></pre>
+                        </section>
+
+                        <section>
+                            <h3>BiPredicate Interface</h3>
+                            <p><dfn>BiPredicate Interface</dfn> receives two arguments and returns one boolean-result</p>
+                            <p>It has same method as and Predicate, but without isEqual() and not().</p>
+                        </section>
                     </section>
                 </article>
 

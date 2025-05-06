@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS Code shortcuts - Web Portfolio of Denys</title>
+    <link rel="stylesheet" href="../../main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+
+<body>
+    <header>
+        <ul class="navigation">
+            <li class="navigation-item"><a class="item-link" href="../../index.html">Home</a></li>
+            <li class="navigation-item"><a class="item-link" href="../../blog/index.html">Blog</a></li>
+            <li class="navigation-item"><a class="item-link" href="../../projects/index.html">Projects</a></li>
+            <li class="navigation-item"><a class="item-link" href="../../contact/index.html">Contact</a></li>
+        </ul>
+    </header>
+    <main>
+        <h1 class="title">SQL</h1>
+        <p class="left date">February 19, 2025</p>
+        <div class="block left">
+            <section>
+                <article>
+                    <section>
+                        <h2>MySQL</h2>
+                        <p>MySQL requires a server. You can create a server by installing MySQL on your machine. When the server is running you need to connect your data base to it.</p>
+                        <section>
+                            <h3>MySQL commands</h3>
+<pre><code>CREATE DATABASE db_name;
+
+CREATE USER 'user_name'@'localhost'
+IDENTIFIED BY 'password';
+
+GRANT CREATE, ALTER, DROP
+ON demo_db.*
+TO 'dev'@'localhost';
+
+GRANT INSERT, SELECT, UPDATE, DELETE
+ON demo_db.*
+TO 'dev'@'localhost';
+
+GRANT REFERENCES
+ON demo_db.*
+TO 'dev'@'localhost';
+
+GRANT CREATE VIEW
+ON demo_db.*
+TO 'dev'@'localhost';
+
+// Login to MySQL
+...
+
+// To start working with the dataBase specify it
+USE db_name;
+
+CREATE TABLE IF NOT EXISTS table_name
+(
+    column_name data_type NOT NULL AUTO_INCREMENT,
+    ...,
+    PRIMARY KEY (column_name)
+)
+</code></pre>
+                        </section>
+                    
+                    </section>
+                </article>
+            <section>
+            <h2 class="section">Links to helpful websites</h2>
+            <ul>
+                <li><a href=""></a></li>
+            </ul>
+        </section>
+        <section>
+            <h2 class="section">Questions which I have got</h2>
+        </section>
+        </div>
+        <ul class="sticky-element">
+            <li class="left-tiem">
+                <a href="../21/index.html">
+                    <button class="arrow">
+                        <span class="arrow-previous"></span>
+                    </button>
+                </a>
+            </li>
+        </ul>
+    </main>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>
