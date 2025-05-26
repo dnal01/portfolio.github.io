@@ -1849,9 +1849,13 @@ ListIterator&lt;E&gt; listIterator();</code></pre>
                             </section>
                             <section>
                                 <h3>Set Interface</h3>
-                                <p><dfn>Interface Set</dfn> is a list which can not contain duplicated date. It has the same methods as and List, but not all of them.</p>
-                                <p>Class HashSet: has a HashMap structure. Addition order is based on the Hash code and not preserved.</p>
-                                <p>Class LinkedHashSet: has a LinkedHashMap. The order of additions is preserved.</p>
+                                <p><dfn>Interface Set</dfn> is a list (array with some defined size) which can not contain duplicated date. It has the same methods as and List, but not all of them.</p>
+                                <p>Requires 7 times more memory. But you can optimize and remove not used memory.</p>
+                                <p>Item in an array has a link to other collection which preserves clashes.</p>
+                                <p>Getting, adding and removing in memory is O(1).</p>
+                                <p>Hash code is generated when the object is created. And hash set uses that code to generate it`s own uniq code, when assigned to a HashTable, because block of memory is created in memory and a hashvalue should consider the bounderies of hashtable.</p>
+                                <p>Class HashSet: has a HashMap structure. Addition order is based on the Hash code and not preserved. When using forEach then it is heavy, because it checks on null all the empty spaces.</p>
+                                <p>Class LinkedHashSet: has a LinkedHashMap. The order of additions is preserved. The Set has in parallel a linked list which tracks order of addition and has no empty spaces.</p>
                                 <p>Class TreeSet: has a TreeMap. The order of additions is preserved and structured by value.</p>
                                 <p>Class NavigableSet: has a TreeMap.</p>
                                 <p>Class Immutable_Set: has a TreeMap.</p>
@@ -1972,12 +1976,17 @@ boolean contains(Object o);</code></pre>
                             <section>
                                 <h3>ArrayList class</h3>
                                 <p>It has array structure and implements List Interface`s methods.</p>
+                                <p>The whole new array is recreated when I modify an array. But if you have reserved a place then it is easy to add at the end.</p>
+                                <p>The space is doubled when it reaches the limit. There is a method which asks (trim) to get rid of empty space.</p>
+                                <p>Removing an element from the ArrayList is expensive.</p>
 <pre><code>public class ArrayList&lt;E&gt; extends AbstractList&lt;E&gt;
     implements List&lt;E&gt;, RandomAccess, Cloneable, java.io.Serializable</code></pre>
                             </section>
                             <section>
                                 <h3>LinkedList class</h3>
                                 <p>It has pointers structure and implements List Interface`s methods.</p>
+                                <p>It is easy to add an element at the beginning or end.</p>
+                                <p>There is no way to get element out of order.</p>
 <pre><code>public class LinkedList&lt;E&gt;
     extends AbstractSequentialList&lt;E&gt;
     implements List&lt;E&gt;, Deque&lt;E&gt;, Cloneable, java.io.Serializable</code></pre>
