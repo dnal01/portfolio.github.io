@@ -2,213 +2,1002 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seventh Entry - Web Portfolio of Denys</title>
-    <link rel="stylesheet" href="../../main.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL - MYSQL - Web Portfolio of Denys</title>
+  <link rel="stylesheet" href="../../main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
 </head>
 
 <body>
-    <header>
-        <ul class="navigation">
-            <li class="navigation-item"><a class="item-link" href="../../index.html">Home</a></li>
-            <li class="navigation-item"><a class="item-link" href="../../blog/index.html">Blog</a></li>
-            <li class="navigation-item"><a class="item-link" href="../../projects/index.html">Projects</a></li>
-            <li class="navigation-item"><a class="item-link" href="../../contact/index.html">Contact</a></li>
+  <header>
+    <ul class="navigation">
+      <li class="navigation-item"><a class="item-link" href="../../index.html">Home</a></li>
+      <li class="navigation-item"><a class="item-link" href="../../blog/index.html">Blog</a></li>
+      <li class="navigation-item"><a class="item-link" href="../../projects/index.html">Projects</a></li>
+      <li class="navigation-item"><a class="item-link" href="../../contact/index.html">Contact</a></li>
+    </ul>
+  </header>
+  <main>
+    <h1 class="title">SQL</h1>
+    <p class="left date">February 19, 2025</p>
+    <div class="block left">
+      <section>
+        <article>
+          <section>
+            <h2>MySQL</h2>
+            <p>MySQL requires a server. You can create a server by installing MySQL on your machine. When the server is
+              running you need to connect your data base to it.</p>
+            <section class="mysql-compounds">
+              <h3>MySQL Access and Table commands</h3>
+              <pre><code>CREATE DATABASE db_name;
+
+CREATE USER 'user_name'@'localhost'
+IDENTIFIED BY 'password';
+
+GRANT CREATE, ALTER, DROP
+ON demo_db.*
+TO 'dev'@'localhost';
+
+GRANT INSERT, SELECT, UPDATE, DELETE
+ON demo_db.*
+TO 'dev'@'localhost';
+
+GRANT REFERENCES
+ON demo_db.*
+TO 'dev'@'localhost';
+
+GRANT CREATE VIEW
+ON demo_db.*
+TO 'dev'@'localhost';
+
+-- Login to MySQL
+...
+
+-- To start working with the dataBase specify it
+USE db_name;</code></pre>
+            </section>
+            <section class="mysql-constrains">
+              <h3>SQL constrains</h3>
+              <ul>
+                <li><code>NOT NULL</code> - Ensures that a column cannot have a NULL value</li>
+                <li><code>UNIQUE</code> - Ensures that all values in a column are different</li>
+                <li><code>PRIMARY KEY</code> - A combination of a <code>NOT NULL</code> and <code>UNIQUE</code>.
+                  Uniquely identifies each row in a table</li>
+                <li><code>FOREIGN KEY</code> - Prevents actions that would destroy links between tables</li>
+                <li><code>CHECK</code> - Ensures that the values in a column satisfies a specific condition</li>
+                <li><code>DEFAULT</code> - Sets a default value for a column if no value is specified</li>
+                <li><code>CREATE INDEX</code> - Used to create and retrieve data from the database very quickly</li>
+              </ul>
+            </section>
+            <section class="mysql-dataTypes">
+              <h3>SQL data types</h3>
+              <section>
+                <h4>String Data Types</h4>
+                <table frame="box" rules="all" summary="A reference that lists aggregate functions.">
+                  <colgroup>
+                    <col style="width: 28%">
+                    <col style="width: 71%">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th>Data type</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td><code>CHAR(size)</code></td>
+                      <td>A FIXED length string (can contain letters, numbers, and special characters). The
+                        <em>size</em> parameter specifies the column length in characters - can be
+                        from 0 to 255. Default is 1. The length of the char should be multiplied by 2 any number you
+                        take, e.g. 32, 64, 128 ...
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><code>VARCHAR(size)</code></td>
+                      <td>A VARIABLE length string (can contain letters, numbers, and special
+                        characters). The <em>size</em> parameter specifies the maximum column
+                        length in characters - can be from 0 to 65535</td>
+                    </tr>
+                    <tr>
+                      <td><code>BINARY(size)</code></td>
+                      <td>Equal to CHAR(), but stores binary byte strings. The <em>size</em>
+                        parameter specifies the column length in bytes. Default is 1</td>
+                    </tr>
+                    <tr>
+                      <td><code>VARBINARY(size)</code></td>
+                      <td>Equal to VARCHAR(), but stores binary byte strings. The <em>size</em>
+                        parameter specifies the maximum column length in bytes.</td>
+                    </tr>
+                    <tr>
+                      <td><code>TINYBLOB</code></td>
+                      <td>For BLOBs (Binary Large OBjects). Max length: 255 bytes</td>
+                    </tr>
+                    <tr>
+                      <td><code>TINYTEXT</code></td>
+                      <td>Holds a string with a maximum length of 255 characters</td>
+                    </tr>
+                    <tr>
+                      <td><code>TEXT(size)</code></td>
+                      <td>Holds a string with a maximum length of 65,535 bytes</td>
+                    </tr>
+                    <tr>
+                      <td><code>BLOB(size)</code></td>
+                      <td>For BLOBs (Binary Large OBjects). Holds up to 65,535 bytes of data</td>
+                    </tr>
+                    <tr>
+                      <td><code>MEDIUMTEXT</code></td>
+                      <td>Holds a string with a maximum length of 16,777,215 characters</td>
+                    </tr>
+                    <tr>
+                      <td><code>MEDIUMBLOB</code></td>
+                      <td>For BLOBs (Binary Large OBjects). Holds up to 16,777,215 bytes of data</td>
+                    </tr>
+                    <tr>
+                      <td><code>LONGTEXT</code></td>
+                      <td>Holds a string with a maximum length of 4,294,967,295 characters</td>
+                    </tr>
+                    <tr>
+                      <td><code>LONGBLOB</code></td>
+                      <td>For BLOBs (Binary Large OBjects). Holds up to 4,294,967,295 bytes of data</td>
+                    </tr>
+                    <tr>
+                      <td><code>ENUM(val1, val2, val3, ...)</code></td>
+                      <td>A string object that can have only one value, chosen from a list of possible values. You can
+                        list up to 65535 values in an ENUM list. If a value is inserted that is not in the list, a blank
+                        value will be inserted.
+                        The values are sorted in the order you enter them</td>
+                    </tr>
+                    <tr>
+                      <td><code>SET(val1, val2, val3, ...)</code></td>
+                      <td>A string object that can have 0 or more values, chosen from a list of
+                        possible values. You can list up to 64 values in a SET list</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+              <section>
+                <h4>Numeric Data Types</h4>
+                <table frame="box" rules="all" summary="A reference that lists aggregate functions.">
+                  <colgroup>
+                    <col style="width: 28%">
+                    <col style="width: 71%">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th>Data type</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td><code>BIT(<em>size</em>)</code></td>
+                      <td>A bit-value type. The number of bits per value is specified in <em>size</em>.
+                        The <em>size</em> parameter can hold a value from 1 to 64. The default
+                        value for <em>size</em> is 1.</td>
+                    </tr>
+                    <tr>
+                      <td><code>TINYINT(<em>size</em>)</code></td>
+                      <td>A very small integer. Signed range is from -128 to 127. Unsigned range
+                        is from 0 to 255. The <em>size</em> parameter specifies the maximum
+                        display width (which is 255)</td>
+                    </tr>
+                    <tr>
+                      <td><code>BOOL</code></td>
+                      <td>Zero is considered as false, nonzero values are considered as true. </td>
+                    </tr>
+                    <tr>
+                      <td><code>BOOLEAN</code></td>
+                      <td>Equal to BOOL</td>
+                    </tr>
+                    <tr>
+                      <td><code>SMALLINT(<em>size</em>)</code></td>
+                      <td>A small integer. Signed range is from -32768 to 32767. Unsigned range
+                        is from 0 to 65535. The <em>size</em> parameter specifies the maximum
+                        display width (which is 255)</td>
+                    </tr>
+                    <tr>
+                      <td><code>MEDIUMINT(<em>size</em>)</code></td>
+                      <td>A medium integer. Signed range is from -8388608 to 8388607. Unsigned
+                        range is from 0 to 16777215. The <em>size</em> parameter specifies the
+                        maximum display width (which is 255)</td>
+                    </tr>
+                    <tr>
+                      <td><code>INT(<em>size</em>)</code></td>
+                      <td>A medium integer. Signed range is from -2147483648 to 2147483647.
+                        Unsigned range is from 0 to 4294967295. The <em>size</em> parameter
+                        specifies the maximum display width (which is 255)</td>
+                    </tr>
+                    <tr>
+                      <td><code>INTEGER(<em>size</em>)</code></td>
+                      <td>Equal to INT(size)</td>
+                    </tr>
+                    <tr>
+                      <td><code>BIGINT(<em>size</em>)</code></td>
+                      <td>A large integer. Signed range is from -9223372036854775808 to
+                        9223372036854775807. Unsigned range is from 0 to 18446744073709551615. The
+                        <em>size</em> parameter specifies the maximum display width (which is 255)
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><code>FLOAT(<em>size</em>, <em>d</em>)</code></td>
+                      <td>A floating point number. The total number of digits is specified in
+                        <em>size</em>. The number of digits after the decimal point is specified
+                        in the <em>d</em> parameter. This syntax is deprecated in MySQL 8.0.17,
+                        and it will be removed in future MySQL versions
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><code>FLOAT(<em>p</em>)</code></td>
+                      <td>A floating point number. MySQL uses the <em>p</em> value to determine
+                        whether to use FLOAT or DOUBLE for the resulting data type. If <em>p</em>
+                        is from 0 to 24, the data type becomes FLOAT(). If <em>p</em> is from 25 to
+                        53, the data type becomes DOUBLE()</td>
+                    </tr>
+                    <tr>
+                      <td><code>DOUBLE(<em>size</em>, <em>d</em>)</code></td>
+                      <td>A normal-size floating point number. The total number of digits is specified in
+                        <em>size</em>. The number of digits after the decimal point is specified
+                        in the <em>d</em> parameter
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><code>DOUBLE PRECISION(<em>size</em>, <em>d</em>)</code></td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td><code>DECIMAL(<em>size</em>, <em>d</em>)</code></td>
+                      <td>An exact fixed-point number. The total number of digits is specified in
+                        <em>size</em>. The number of digits after the decimal point is specified
+                        in the <em>d</em> parameter. The maximum number for <em>size</em> is 65.
+                        The maximum number for <em>d</em> is 30. The default value for <em>size</em>
+                        is 10. The default value for <em>d</em> is 0.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><code>DEC(<em>size</em>, <em>d</em>)</code></td>
+                      <td>Equal to DECIMAL(size,d)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+              <section>
+                <h4>Date and Time Data Types</h4>
+                <table frame="box" rules="all" summary="A reference that lists aggregate functions.">
+                  <colgroup>
+                    <col style="width: 28%">
+                    <col style="width: 71%">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th>Data type</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td><code>DATE</code></td>
+                      <td>A date. Format: YYYY-MM-DD. The supported range is from '1000-01-01' to '9999-12-31'</td>
+                    </tr>
+                    <tr>
+                      <td><code>DATETIME(<em>fsp</em>)</code></td>
+                      <td>A date and time combination. Format: YYYY-MM-DD hh:mm:ss. The supported range is from
+                        '1000-01-01 00:00:00' to '9999-12-31 23:59:59'.
+                        Adding DEFAULT and ON UPDATE in the column definition to get automatic
+                        initialization and updating to the current date and time</td>
+                    </tr>
+                    <tr>
+                      <td><code>TIMESTAMP(<em>fsp</em>)</code></td>
+                      <td>A timestamp. TIMESTAMP values are stored as the number of seconds since the Unix epoch
+                        ('1970-01-01 00:00:00' UTC). Format: YYYY-MM-DD
+                        hh:mm:ss. The supported range is from '1970-01-01 00:00:01' UTC to '2038-01-09 03:14:07' UTC.
+                        Automatic initialization and updating to the current date and time can be
+                        specified using DEFAULT CURRENT_TIMESTAMP and ON UPDATE CURRENT_TIMESTAMP
+                        in the column definition</td>
+                    </tr>
+                    <tr>
+                      <td><code>TIME(<em>fsp</em>)</code></td>
+                      <td>A time. Format: hh:mm:ss. The supported range is from '-838:59:59' to '838:59:59'</td>
+                    </tr>
+                    <tr>
+                      <td><code>YEAR</code></td>
+                      <td>A year in four-digit format. Values allowed in four-digit format: 1901 to 2155, and 0000.<br>
+                        MySQL 8.0 does not support year in two-digit format.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+            </section>
+            <section class="mysql-keywords">
+              <h3>SQL key words</h3>
+              <table frame="box" rules="all" summary="A reference that lists aggregate functions.">
+                <colgroup>
+                  <col style="width: 28%">
+                  <col style="width: 71%">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th>Keyword</th>
+                    <th>Description</th>
+                  </tr>
+                  <tr>
+                    <td><code>ADD</code></td>
+                    <td>Adds a column in an existing table</td>
+                  </tr>
+                  <tr>
+                    <td><code>ADD CONSTRAINT</code></td>
+                    <td>Adds a constraint after a table is already created</td>
+                  </tr>
+                  <tr>
+                    <td><code>ALL</code></td>
+                    <td>Returns true if all of the subquery values meet the
+                      condition</td>
+                  </tr>
+                  <tr>
+                    <td><code>ALTER</code></td>
+                    <td>Adds, deletes, or modifies columns in a table, or changes the data
+                      type of a column in a table</td>
+                  </tr>
+                  <tr>
+                    <td><code>ALTER COLUMN</code></td>
+                    <td>Changes the data type of a column in a table</td>
+                  </tr>
+                  <tr>
+                    <td><code>ALTER TABLE</code></td>
+                    <td>Adds, deletes, or modifies columns in a table</td>
+                  </tr>
+                  <tr>
+                    <td><code>AND</code></td>
+                    <td>Only includes rows where both conditions is true</td>
+                  </tr>
+                  <tr>
+                    <td><code>ANY</code></td>
+                    <td>Returns true if any of the subquery values meet the
+                      condition</td>
+                  </tr>
+                  <tr>
+                    <td><code>AS</code></td>
+                    <td>Renames a column or table with an alias.</td>
+                  </tr>
+                  <tr>
+                    <td><code>ASC</code></td>
+                    <td>Sorts the result set in ascending order</td>
+                  </tr>
+                  <tr>
+                    <td><code>AUTO_INCREMENT</code></td>
+                    <td>Generates unique values for a column.</td>
+                  </tr>
+                  <tr>
+                    <td><code>BACKUP DATABASE</code></td>
+                    <td>Creates a back up of an existing database</td>
+                  </tr>
+                  <tr>
+                    <td><code>BETWEEN</code></td>
+                    <td>Selects values within a given range</td>
+                  </tr>
+                  <tr>
+                    <td><code>CASE</code></td>
+                    <td>Creates different outputs based on conditions</td>
+                  </tr>
+                  <tr>
+                    <td><code>CHECK</code></td>
+                    <td>A constraint that limits the value that can be placed in a
+                      column</td>
+                  </tr>
+                  <tr>
+                    <td><code>COLUMN</code></td>
+                    <td>Changes the data type of a column or deletes a column in a table</td>
+                  </tr>
+                  <tr>
+                    <td><code>CONSTRAINT</code></td>
+                    <td>Adds or deletes a constraint</td>
+                  </tr>
+                  <tr>
+                    <td><code>CREATE</code></td>
+                    <td>Creates a database, index, view, table, or procedure</td>
+                  </tr>
+                  <tr>
+                    <td><code>CREATE DATABASE</code></td>
+                    <td>Creates a new SQL database</td>
+                  </tr>
+                  <tr>
+                    <td><code>CREATE INDEX</code></td>
+                    <td>Creates an index on a table (allows duplicate values)</td>
+                  </tr>
+                  <tr>
+                    <td><code>CREATE OR REPLACE VIEW</code></td>
+                    <td>Updates a view</td>
+                  </tr>
+                  <tr>
+                    <td><code>CREATE TABLE</code></td>
+                    <td>Creates a new table in the database</td>
+                  </tr>
+                  <tr>
+                    <td><code>CREATE PROCEDURE</code></td>
+                    <td>Creates a stored procedure</td>
+                  </tr>
+                  <tr>
+                    <td><code>CREATE UNIQUE INDEX</code></td>
+                    <td>Creates a unique index on a table (no duplicate values)</td>
+                  </tr>
+                  <tr>
+                    <td><code>CREATE VIEW</code></td>
+                    <td>Creates a view based on the result set of a SELECT statement</td>
+                  </tr>
+                  <tr>
+                    <td><code>DATABASE</code></td>
+                    <td>Creates or deletes an SQL database</td>
+                  </tr>
+                  <tr>
+                    <td><code>DEFAULT</code></td>
+                    <td>A constraint that provides a default value for a column</td>
+                  </tr>
+                  <tr>
+                    <td><code>DELETE</code></td>
+                    <td>Deletes rows from a table</td>
+                  </tr>
+                  <tr>
+                    <td><code>DESC</code></td>
+                    <td>Sorts the result set in descending order</td>
+                  </tr>
+                  <tr>
+                    <td><code>DISTINCT</code></td>
+                    <td>Selects only distinct (different) values</td>
+                  </tr>
+                  <tr>
+                    <td><code>DROP</code></td>
+                    <td>Deletes a column, constraint, database, index, table, or view</td>
+                  </tr>
+                  <tr>
+                    <td><code>DROP COLUMN</code></td>
+                    <td>Deletes a column in a table</td>
+                  </tr>
+                  <tr>
+                    <td><code>DROP CONSTRAINT</code></td>
+                    <td>Deletes a UNIQUE, PRIMARY KEY, FOREIGN KEY, or CHECK constraint</td>
+                  </tr>
+                  <tr>
+                    <td><code>DROP DATABASE</code></td>
+                    <td>Deletes an existing SQL database</td>
+                  </tr>
+                  <tr>
+                    <td><code>DROP DEFAULT</code></td>
+                    <td>Deletes a DEFAULT constraint</td>
+                  </tr>
+                  <tr>
+                    <td><code>DROP INDEX</code></td>
+                    <td>Deletes an index in a table</td>
+                  </tr>
+                  <tr>
+                    <td><code>DROP TABLE</code></td>
+                    <td>Deletes an existing table in the database</td>
+                  </tr>
+                  <tr>
+                    <td><code>DROP VIEW</code></td>
+                    <td>Deletes a view</td>
+                  </tr>
+                  <tr>
+                    <td><code>EXEC</code></td>
+                    <td>Executes a stored procedure</td>
+                  </tr>
+                  <tr>
+                    <td><code>EXISTS</code></td>
+                    <td>Tests for the existence of any record in a subquery</td>
+                  </tr>
+                  <tr>
+                    <td><code>FOREIGN KEY</code></td>
+                    <td>A constraint that is a key used to link two tables together</td>
+                  </tr>
+                  <tr>
+                    <td><code>FROM</code></td>
+                    <td>Specifies which table to select or delete data from</td>
+                  </tr>
+                  <tr>
+                    <td><code>FULL OUTER JOIN</code></td>
+                    <td>Returns all rows when there is a match in either left table or right table</td>
+                  </tr>
+                  <tr>
+                    <td><code>GROUP BY</code></td>
+                    <td>Groups the result set (used with aggregate functions: COUNT, MAX, MIN, SUM,
+                      AVG)</td>
+                  </tr>
+                  <tr>
+                    <td><code>HAVING</code></td>
+                    <td>Used instead of WHERE with aggregate functions</td>
+                  </tr>
+                  <tr>
+                    <td><code>IN</code></td>
+                    <td>Allows you to specify multiple values in a WHERE clause</td>
+                  </tr>
+                  <tr>
+                    <td><code>INDEX</code></td>
+                    <td>Creates or deletes an index in a table </td>
+                  </tr>
+                  <tr>
+                    <td><code>INNER JOIN</code></td>
+                    <td>Returns rows that have matching values in both tables</td>
+                  </tr>
+                  <tr>
+                    <td><code>INSERT INTO</code></td>
+                    <td>Inserts new rows in a table</td>
+                  </tr>
+                  <tr>
+                    <td><code>INSERT INTO SELECT</code></td>
+                    <td>Copies data from one table into another table</td>
+                  </tr>
+                  <tr>
+                    <td><code>IS NULL</code></td>
+                    <td>Tests for empty values</td>
+                  </tr>
+                  <tr>
+                    <td><code>IS NOT NULL</code></td>
+                    <td>Tests for non-empty values</td>
+                  </tr>
+                  <tr>
+                    <td><code>JOIN</code></td>
+                    <td>Joins tables</td>
+                  </tr>
+                  <tr>
+                    <td><code>LEFT JOIN</code></td>
+                    <td>Returns all rows from the left table, and the matching rows from the right
+                      table</td>
+                  </tr>
+                  <tr>
+                    <td><code>LIKE</code></td>
+                    <td>Searches for a specified pattern in a column</td>
+                  </tr>
+                  <tr>
+                    <td><code>LIMIT</code></td>
+                    <td>Specifies the number of records to return in the result set</td>
+                  </tr>
+                  <tr>
+                    <td><code>NOT</code></td>
+                    <td>Only includes rows where a condition is not true</td>
+                  </tr>
+                  <tr>
+                    <td><code>NOT NULL</code></td>
+                    <td>A constraint that enforces a column to not accept NULL values</td>
+                  </tr>
+                  <tr>
+                    <td><code>OR</code></td>
+                    <td>Includes rows where either condition is true</td>
+                  </tr>
+                  <tr>
+                    <td><code>ORDER BY</code></td>
+                    <td>Sorts the result set in ascending or descending order</td>
+                  </tr>
+                  <tr>
+                    <td><code>OFFSET number</code></td>
+                    <td>Skips first number of records.</td>
+                  </tr>
+                  
+                  <tr>
+                    <td><code>OUTER JOIN</code></td>
+                    <td>Returns all rows when there is a match in either left table or right table</td>
+                  </tr>
+                  <tr>
+                    <td><code>PRIMARY KEY</code></td>
+                    <td>A constraint that uniquely identifies each record in a database table</td>
+                  </tr>
+                  <tr>
+                    <td><code>PROCEDURE</code></td>
+                    <td>A stored procedure</td>
+                  </tr>
+                  <tr>
+                    <td><code>RIGHT JOIN</code></td>
+                    <td>Returns all rows from the right table, and the matching rows from the
+                      left table</td>
+                  </tr>
+                  <tr>
+                    <td><code>ROWNUM</code></td>
+                    <td>Specifies the number of records to return in the result set</td>
+                  </tr>
+                  <tr>
+                    <td><code>SELECT</code></td>
+                    <td>Selects data from a database</td>
+                  </tr>
+                  <tr>
+                    <td><code>SELECT DISTINCT</code></td>
+                    <td>Selects only distinct (different) values</td>
+                  </tr>
+                  <tr>
+                    <td><code>SELECT INTO</code></td>
+                    <td>Copies data from one table into a new table</td>
+                  </tr>
+                  <tr>
+                    <td><code>SELECT TOP</code></td>
+                    <td>Specifies the number of records to return in the result set</td>
+                  </tr>
+                  <tr>
+                    <td><code>SET</code></td>
+                    <td>Specifies which columns and values that should be updated in a table</td>
+                  </tr>
+                  <tr>
+                    <td><code>TABLE</code></td>
+                    <td>Creates a table, or adds, deletes, or modifies columns in a table, or
+                      deletes a table or data inside a table</td>
+                  </tr>
+                  <tr>
+                    <td><code>TOP</code></td>
+                    <td>Specifies the number of records to return in the result set</td>
+                  </tr>
+                  <tr>
+                    <td><code>TRUNCATE TABLE</code></td>
+                    <td>Deletes the data inside a table, but not the table itself</td>
+                  </tr>
+                  <tr>
+                    <td><code>UNION</code></td>
+                    <td>Combines the result set of two or more SELECT statements (only
+                      distinct values)</td>
+                  </tr>
+                  <tr>
+                    <td><code>UNION ALL</code></td>
+                    <td>Combines the result set of two or more SELECT statements (allows
+                      duplicate values)</td>
+                  </tr>
+                  <tr>
+                    <td><code>UNIQUE</code></td>
+                    <td>A constraint that ensures that all values in a column are unique</td>
+                  </tr>
+                  <tr>
+                    <td><code>UPDATE</code></td>
+                    <td>Updates existing rows in a table</td>
+                  </tr>
+                  <tr>
+                    <td><code>VALUES</code></td>
+                    <td>Specifies the values of an INSERT INTO statement</td>
+                  </tr>
+                  <tr>
+                    <td><code>VIEW</code></td>
+                    <td>Creates, updates, or deletes a view</td>
+                  </tr>
+                  <tr>
+                    <td><code>WHERE</code></td>
+                    <td>Filters a result set to include only records that fulfill a specified
+                      condition</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section>
+              <h3>Aggregate functions</h3>
+              <table frame="box" rules="all" summary="A reference that lists aggregate functions.">
+                <colgroup>
+                  <col style="width: 28%">
+                  <col style="width: 71%">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>AVG()</code></td>
+                    <td>
+                      Return the average value of the argument
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>BIT_AND()</code></a></td>
+                    <td>
+                      Return bitwise AND
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>BIT_OR()</code></a></td>
+                    <td>
+                      Return bitwise OR
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>BIT_XOR()</code></a></td>
+                    <td>
+                      Return bitwise XOR
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>COUNT()</code></a></td>
+                    <td>
+                      Return a count of the number of rows returned
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>COUNT(DISTINCT)</code></a></td>
+                    <td>
+                      Return the count of a number of different values
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>GROUP_CONCAT()</code></a></td>
+                    <td>
+                      Return a concatenated string
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>JSON_ARRAYAGG()</code></a></td>
+                    <td>
+                      Return result set as a single JSON array
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>JSON_OBJECTAGG()</code></a></td>
+                    <td>
+                      Return result set as a single JSON object
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>MAX()</code></a></td>
+                    <td>
+                      Return the maximum value
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>MIN()</code></a></td>
+                    <td>
+                      Return the minimum value
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>STD()</code></a></td>
+                    <td>
+                      Return the population standard deviation
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>STDDEV()</code></a></td>
+                    <td>
+                      Return the population standard deviation
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>STDDEV_POP()</code></a></td>
+                    <td>
+                      Return the population standard deviation
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>STDDEV_SAMP()</code></a></td>
+                    <td>
+                      Return the sample standard deviation
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>SUM()</code></a></td>
+                    <td>
+                      Return the sum
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>VAR_POP()</code></a></td>
+                    <td>
+                      Return the population standard variance
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>VAR_SAMP()</code></a></td>
+                    <td>
+                      Return the sample variance
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>VARIANCE()</code></a></td>
+                    <td>
+                      Return the population standard variance
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section>
+              <h3>Transaction Control Language</h3>
+              <table frame="box" rules="all" summary="A reference that lists Transaction Control Language.">
+                <thead>
+                  <tr>
+                    <th>Command</th>
+                    <th>Description</th>
+                    <th>Syntax</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>BEGIN TRANSACTION</code></td>
+                    <td>Starts a new transaction</td>
+                    <td><code>BEGIN TRANSACTION [transaction_name];</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>COMMIT</code></td>
+                    <td>Saves all changes made during the transaction</td>
+                    <td><code>COMMIT;</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>ROLLBACK</code></td>
+                    <td>Undoes all changes made during the transaction</td>
+                    <td><code>ROLLBACK;</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>SAVEPOINT</code></td>
+                    <td>Creates a savepoint within the current transaction</td>
+                    <td><code>SAVEPOINT savepoint_name;</code></td>
+                  </tr>
+                </tbody>
+              </table>
+              <pre><code>BEGIN TRANSACTION;
+UPDATE employees SET department = 'Marketing' WHERE department = 'Sales';
+SAVEPOINT before_update;
+UPDATE employees SET department = 'IT' WHERE department = 'HR';
+ROLLBACK TO SAVEPOINT before_update;
+COMMIT;</code></pre>
+            </section>
+            <section class="mysql-examples">
+              <h3>SQL commands examples</h3>
+              <section>
+                <h4>Order of execution</h4>
+                <ol>
+                  <li>FROM</li>
+                  <li>WHERE</li>
+                  <li>GROUP BY</li>
+                  <li>HAVING</li>
+                  <li>SELECT</li>
+                  <li>ORDER BY</li>
+                  <li>LIMIT</li>
+                </ol>
+              </section>
+              <h4>SQL SELECT</h4>
+              <p>Here is the formula <code>SELECT [1] FROM table_name [2];</code></p>
+              <p>At the position [1] can go either column name (<i>use <u>"field name"</u> for fields with spaces</i>)
+                or function. For example:</p>
+              <pre><code>-- Lists uniq value and combines into one column. Can work with multiple columns looking at uniq combined value without brackets, then creates two columns.
+DISTINCT(column_name);
+LOWER;
+UPPER;
+-- decimal is optional, if avoided, rounds to 0. Can be also negative. Example: ROUND(AVG(budget), 2).
+ROUND(number_to_round, decimal_places);
+-- Joins tables
+JOIN;</code></pre>
+              <p><dfn>Aggregate functions</dfn> - functions which performs a calculation on several values and return a
+                single value.</p>
+              <pre><code>-- Numeric fields only.
+AVG();
+SUM();
+-- Various data types. (A&lt;-&gt;Z - first or last in alphabet)
+MIN();
+MAX();
+-- Counts values in a field.
+COUNT(*);
+-- Counts records in a table.
+COUNT(field_name);</code></pre>
+              <p>It is possible to combine functions, e.g:</p>
+              <pre><code>COUNT(DISTINCT field_name);</code></pre>
+              <p>At the position [2] can go a keyword. For example:</p>
+              <pre><code>WHERE color = 'green';
+-- Note: &lt;&gt; - it is not equal sign. e.g. &lt;&gt; 2020 - all except 2020.
+WHERE year &lt;&gt; 2020;
+-- To treat something as something. Next time when I want to use this combination I need just to write n. I.e. it may rename e.g. column after query.
+COUNT(*) AS n;
+-- There are two wildcards often used in conjunction with the LIKE operator.
+-- The percent sign % represents zero, one, or multiple characters, e.g. 'Ade%' will find all words that contains 'Ade'
+-- The underscore sign _ represents one, single character, e.g. 'Ev_' will find only words where one character is missing, e.g. 'Eve'
+fieldName LIKE '%r';
+fieldName LIKE '__t%';
+-- In the all items from the result or specified values.
+IN (SELECT...);
+IN (value1, value2, ...);
+NOT IN(...);
+-- Orders by a single value.
+ORDER BY fieldName ASC;
+ORDER BY fieldName DESC;
+-- Order by multiple values. First it sorts by the first field, then by second.
+-- Note, that fieldName, when used Alias aka AS, needs to be an Alias name, because ORDER BY is executed after AS.
+ORDER BY field_one ASC, field_two DESC;
+GROUP BY field_one, field_two ORDER BY fieldName
+-- Filtering grouped data.
+HAVING;
+-- The single value in the result.
+= (SELECT...);
+-- Works with JOIN.
+ON keyTb1 = keyTb2;</code></pre>
+              <p>For multiple criteria:</p>
+              <pre><code>-- Combining statements:
+(Statement1 OR Statement2) AND (Statement3 OR Statement4);
+fieldName BETWEEN 1 AND 5 AND Statement1;</code></pre>
+              <pre><code>// NULL here places an empty column. * sing executes for each record separately.
+SELECT column_name1, column_name2*column_name3, NULL AS column_name4 FROM table_name;
+--  Join two tables based on the same key values.
+SELECT column1, column2 FROM table1 JOIN table2 ON table1Name.column_key_in_table1 = table2Name.column_key_in_table2 WHERE column2 >= value LIMIT value;
+--  Search based on key value between two tables.
+SELECT column1 FROM table WHERE column_key_in_table1 IN (SELECT column_key_in_table2 FROM table2 WHERE condition);
+--  Search in the first table based on a value from a second.
+SELECT column1 FROM table1 WHERE column2 = (SELECT column FROM table2 WHERE column3 = 'text');
+-- Search a value in a first table based on filtered result from other two tables.
+SELECT columnTb1 FROM table1 WHERE column2Tb1 IN (SELECT column1tb2 FROM table2 WHERE column2tb2 = (SELECT column1tb3 FROM table3 WHERE column2tb3 = 'Text'));
+-- Search in a first table based on filtered result from other tables.
+SELECT column1tb1 FROM tb1, tb2, tb3 WHERE tb1.cl1tb1 = tb2.cl1tb2 AND tb3.cm1tb3 = tb2.cl2tb2 AND cl2tb1 = 'TEXT';</code></pre>
+              <pre><code>// INNER JOIN
+SELECT table1.column1, table2.column2, ...
+FROM table1
+INNER JOIN table2 ON table1.column1 = table2.column2;
+// LEFT JOIN
+SELECT table1.column1, table2.column2, ...
+FROM table1
+LEFT JOIN table2 ON table1.column1 = table2.column2;
+// RIGHT JOIN
+SELECT table1.column1, table2.column2, ...
+FROM table1
+RIGHT JOIN table2 ON table1.column1 = table2.column2;
+// FULL JOIN
+SELECT table1.column1, table2.column2, ...
+FROM table1
+FULL JOIN table2 ON table1.column1 = table2.column2;
+              </code></pre>
+              <h4>SQL INSERT</h4>
+              <pre><code>INSERT INTO table_name
+  (column_name1, column_name2, ...) 
+  VALUES
+    ('String1', number1, ...),
+    ('String2', number2, ...);</code></pre>
+              <h4>SQL CREATE</h4>
+              <pre><code>-- Create table
+CREATE TABLE IF NOT EXISTS table_name
+(
+    column_name data_type NOT NULL AUTO_INCREMENT,
+    ...,
+    PRIMARY KEY (column_name)
+)
+-- Create index. if search on a column frequently, prepare data to search faster.
+CREATE INDEX IF NOT EXISTS indexName ON table (column, ...);
+-- Create virtual view which can be accessed any time. Updates from the original table as soon as new query is initiated. I.e. it stores a query in memory.
+CREATE VIEW viewName AS SELECT columnName FROM tableName;</code></pre>
+              <h4>SQL DELETE</h4>
+              <pre><code>-- Deletes a row. (e.g. WHERE column IS NULL).
+DELETE FROM table WHERE condition;
+-- Deletes everything.
+DELETE FROM table;</code></pre>
+              <h4>SQL UPDATE</h4>
+              <pre><code>-- Deletes a row. (e.g. WHERE column IS NULL).
+  UPDATE table SET column = value WHERE condition1, condition2;</code></pre>
+              <pre><code>ALTER TABLE table_name
+ADD COLUMN column_name VARCHAR(255);
+ALTER TABLE table_name RENAME TO column_name;</code></pre>
+            </section>
+          </section>
+        </article>
+        <article>
+          <section>
+            <h2>SQLITE</h2>
+            <section>
+              <h3>Creation of .db file and import of csv file into the .db file</h3>
+              <pre><code>sqlite3 FILE.db
+.mode csv
+.import FILE.csv table
+-- Check headers
+.schema</code></pre>
+            </section>
+          </section>
+        </article>
+      </section>
+      <section>
+        <h2 class="section">Links to helpful websites</h2>
+        <ul>
+          <li><a href="https://www.w3schools.com/sql/">SQL Tutorial</a></li>
+          <li><a href="https://www.w3schools.com/sql/sql_ref_keywords.asp">SQL Keywords Reference</a></li>
+          <li><a href="https://www.w3schools.com/sql/sql_wildcards.asp">SQL Wildcards</a></li>
+          <li><a href="https://www.sqlstyle.guide">SQL Style Guide</a></li>
+          <li><a href="https://www.sqltutorial.org/sql-cheat-sheet/">SQL Cheat Sheet</a></li>
         </ul>
-    </header>
-    <main>
-        <h1 class="title">Seventh Entry</h1>
-        <p class="left date">July 15, 2024</p>
-        <div class="block left">
-            <section>
-                <h2>My takeaways today</h2>
-                <h3>SQL</h3>
-                <h4>Creation of .db file and import of csv file into the .db file</h4>
-                <p><code>sqlite3 FILE.db</code></p>
-                <p><code>.mode csv</code></p>
-                <p><code>.import FILE.csv table</code></p>
-                <h4>Checking of headers</h4>
-                <p><code>.schema</code></p>
-                <h4>Selecting data</h4>
-                <p><code>SELECT .../1 FROM table .../2 = 'Text here';</code></p>
-                <p>In .../1 can go either column name (use "field name" for fields with spaces) or function</p>
-                <ul> 
-                    <li><code>DISTINCT(columnName)</code> - lists uniq value and combines into one column. Can work with multiple columns looking at uniq combined value without brackets, then creates two columns</li>
-                    <li><code>LOWER</code></li>
-                    <li><code>UPPER</code></li>
-                    <li><code>ROUND(number_to_round, decimal_places)</code>, decimal is optional, if avoided, rounds to 0. Can be also negative. <strong>Example: </strong><code>ROUND(AVG(budget), 2)</code></li>
-                    <li><code>JOIN</code> - joins tables</li>
-                    <h5>Aggregate functions</h5>
-                    <p>Functions which performs a calculation on several values and return a single value.</p>
-                    <ul>
-                        <h5>Numeric fields only</h5>
-                        <li><code>AVG()</code></li>
-                        <li><code>SUM()</code></li>
-                    </ul>
-                    <ul>
-                        <h5>Various data types</h5>
-                        <p>A<->Z - first or last in alphabet</p>
-                        <li><code>MIN()</code></li>
-                        <li><code>MAX()</code></li>
-                        <li><code>COUNT(*)</code> - counts values in a field and <code>COUNT(field_name)</code> - counts records in a table</li>    
-                    </ul>
-                    <p>It is possible to <strong>combine functions</strong>, e.g. <code>COUNT(DISTINCT field_name)</code></p>
-                </ul>
-                <p>In .../2 go key words:</p>
-                <ul>
-                    <li><code>WHERE</code>. E.g. <code>WHERE color = 'green'</code> or <code>WHERE year <> 2020</code>
-                        <p>Note: <code><></code> - not equal to. e.g. <> 2020 - all except 2020.</p>
-                    </li>
-                    <li><code>AS</code> to treat something as something, e.g. COUNT(*) AS n. Next time when I want to use this combination I need just to write n. I.e. it may rename e.g. column after query.</li>
-                    <li><code>IS</code>. <strong>Example:</strong> <code>IS NULL</code>, <code>IS NOT NULL</code></li>
-                    <li><code>LIKE</code> or <code>NOT LIKE</code> - the <code>LIKE</code> operator is used in a <code>WHERE</code> clause to search for a specified pattern in a column
-                        <p>There are two wildcards often used in conjunction with the LIKE operator:</p>
-                        <ul>
-                            <li>
-                                The percent sign <code>%</code> represents zero, one, or multiple characters, e.g. 'Ade%' will find all words that contains 'Ade'
-                            </li>
-                            <li>
-                                The underscore sign <code>_</code> represents one, single character, e.g. 'Ev_' will find only words where one character is missing, e.g. 'Eve'
-                            </li>
-                            <li>
-                                <strong>Examples:</strong>
-                                <ul>
-                                    <li><code>fieldName LIKE '%r'</code>, which ends with 'r'</li>
-                                    <li><code>fieldName LIKE '__t%'</code>, where third letter is 't' and something after</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><code>IN (SELECT...)</code> or <code>IN (<i>value1, value2, ...</i>)</code> or <code>NOT IN(...)</code> in the all items from the result or specified values</li>
-                    <li>
-                        <code>ORDER BY fieldName</code> +
-                        <ul>
-                            <li><code>ASC</code> - Ascending order</li>
-                            <li><code>DESC</code> - Descending order</li>
-                        </ul>
-                        <h5>Order by multiple values</h5>
-                        <code>ORDER BY field_one ASC, field_two DESC</code>. First it sorts by the first field, then by second.
-                        <p><strong>Note</strong>, that <code>fieldName</code>, when used Alias aka <code>AS</code>, needs to be an Alias name, because <code>ORDER BY</code> is executed after <code>AS</code></p>
-                    </li>
-                    <li><code>LIMIT</code></li>
-                    <li><code>GROUP BY field_one, field_two ORDER BY fieldName</code></li>
-                    <li><code>HAVING</code> - filtering grouped data</li>
-                    <li><code>= (SELECT...)</code> = the single value in the result</li>
-                    <li><code>ON keyTb1 = keyTb2</code> - works with JOIN</li>
-                    <h5>Multiple criteria</h5>
-                    <ul>
-                        <li><code>AND</code></li>
-                        <li><code>OR</code></li>
-                        <li><code>BETWEEN 1 AND 5</code> - is inclusive</li>
-                        <section><strong>Combining examples:</strong>
-                            <ul>
-                                <li><code>(Statement1 OR Statement2) AND (Statement3 OR Statement4)</code></li>
-                                <li><code>fieldName BETWEEN 1 AND 5 AND Statement1</code></li>
-                            </ul>
-                        </section>
-                    </ul>
-                    <h5>Order of execution</h5>
-                    <ol>
-                        <li>FROM</li>
-                        <li>WHERE</li>
-                        <li>GROUP BY</li>
-                        <li>HAVING</li>
-                        <li>SELECT</li>
-                        <li>ORDER BY</li>
-                        <li>LIMIT</li>
-                    </ol>
-                </ul>
-                <h5>Examples</h5>
-                <ul>
-                    <li><code>SELECT column1, column2 FROM table1 JOIN table2 ON table1Name.column_key_in_table1 = table2Name.column_key_in_table2 WHERE column2 >= value LIMIT value;</code> - join two tables based on the same key values.</li>
-                    <li><code>SELECT column1 FROM table WHERE column_key_in_table1 IN (SELECT column_key_in_table2 FROM table2 WHERE condition);</code> - search based on key value between two tables</li>
-                    <li><code>SELECT column1 FROM table1 WHERE column2 = (SELECT column FROM table2 WHERE column3 = 'text');</code> - search in the first table based on a value from a second.</li>
-                    <li><code>SELECT columnTb1 FROM table1 WHERE column2Tb1 IN (SELECT column1tb2 FROM table2 WHERE column2tb2 = (SELECT column1tb3 FROM table3 WHERE column2tb3 = 'Text'));</code>- search a value in a first table based on filtered result from other two tables.</li>
-                    <li><code>SELECT column1tb1 FROM tb1, tb2, tb3 WHERE tb1.cl1tb1 = tb2.cl1tb2 AND tb3.cm1tb3 = tb2.cl2tb2 AND cl2tb1 = 'TEXT';</code> - search in a first table based on filtered result from other tables.</li>
-                </ul>
-                <h5>Insertion of data</h5>
-                <p><code>INSERT INTO tableName (columnName1, columnName2) VALUES('Value1', 'Value2');</code></p>
-                <h5>Deletion of data</h5>
-                <p><code>DELETE FROM table WHERE condition;</code> - deletes a row. (e.g. WHERE column IS NULL)</p>
-                <p><code>DELETE FROM table;</code> - deletes everything.</p>
-                <h5>Update of data</h5>
-                <p><code>UPDATE table SET column = value WHERE condition1, condition2;</code> - deletes a row.</p>
-                <h5>Creation of Tables with certain data types</h5>
-                <p><code>CREATE TABLE table (key dataType);</code> do this before mode and import command.</p>
-                <h5>Data types</h5>
-                <ul>
-                    <li><code>BLOB</code> - binary large object</li>
-                    <li><code>INTEGER</code></li>
-                    <li><code>NUMERIC</code> - dates and times</li>
-                    <li><code>REAL</code> - decimal points in it</li>
-                    <li><code>TEXT</code></li>
-                </ul>
-                <h5>Data types - key words</h5>
-                <ul>
-                    <li><code>NOT NULL</code></li>
-                    <li><code>UNIQUE</code></li>
-                    <li><code>PRIMARY KEY</code> - is the column which uniquely identifies your data</li>
-                    <li><code>FOREIGN KEY</code> - appearance of those IDs elsewhere</li>
-                </ul>
-                <h5>Turn on a timer</h5>
-                <p><code>.timer ON</code></p>
-                <h5>Indexes</h5>
-                <p><code>CREATE INDEX indexName ON table (column, ...);</code> - if search on a column frequently, prepare data to search faster.</p>
-                <h5>Views</h5>
-                <p><code>CREATE VIEW viewName AS SELECT columnName FROM tableName</code> - creates a virtual view which can be accessed any time. Updates from the original table as soon as new query is initiated. I.e. it stores a query in memory.</p>
-                <h4>SQL using Python</h4>
-                <h5>Combining SQL and Python code</h5>
-                    <pre><code>
-from cs50 import SQL
-db = SQL("sqlite:///FILE.db") // Open db FILE
-var1 = input("TEXT: ")
-var2 = db.execute("SELECT COUNT(*) AS n FROM table WHERE column = ?", var1) // Gives back temporary table
-var3 = rows[0] // To get back only the first row in that result set or temporary table
-print(row["n"])</code></pre>
-                <h5>Execution of a code altogether - wrapping a code</h5>
-                    <pre><code>
-db.execute("BEGIN TRANSACTION")
-var1 = db.execute("SELECT column1 FROM table WHERE column2 = ?", column2);
-var1 = var1[0]["column1"]
-db.execute("UPDATE posts SET column1 = ? WHERE column2 = ?", column1 + 1, column2);
-db.execute("COMIT")</code></pre>
-            </section>
-            <section>
-                <h2 class="section">Links to helpful websites</h2>
-                <ul>
-                    <li><a href="cs50.readthedocs.io/libraries/cs50/python/#cs50.SQL">CS50 Library for Python</a></li>
-                    <li><a href="https://www.w3schools.com/sql/">SQL Tutorial</a></li>
-                    <li><a href="https://www.w3schools.com/sql/sql_ref_keywords.asp">SQL Keywords Reference</a></li>
-                    <li><a href="https://www.w3schools.com/sql/sql_wildcards.asp">SQL Wildcards</a></li>
-                    <li><a href="https://www.sqlstyle.guide">SQL Style Guide</a></li>
-                </ul>
-            </section>
-            <section>
-                <h2 class="section">Questions which I have got</h2>
-                <p></p>
-            </section>
-        </div>
-        <ul class="sticky-element">
-            <li class="left-tiem">
-                <a href="../6/index.html">
-                    <button class="arrow">
-                        <span class="arrow-previous"></span>
-                    </button>
-                </a>
-            </li>
-            <li class="right-tiem">
-                <a href="../8/index.html">
-                    <button class="arrow">
-                        <span class="arrow-next"></span>
-                    </button>
-                </a>
-            </li>
-        </ul>
-    </main>
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
+      </section>
+      <section>
+        <h2 class="section">Questions which I have got</h2>
+      </section>
+    </div>
+    <ul class="sticky-element">
+      <li class="left-tiem">
+        <a href="../21/index.html">
+          <button class="arrow">
+            <span class="arrow-previous"></span>
+          </button>
+        </a>
+      </li>
+    </ul>
+  </main>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
 </body>
 
 </html>

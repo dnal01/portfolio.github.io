@@ -257,12 +257,29 @@
                 <h4>if, elif, else</h4>
                     <pre><code>if condition :
     expression</code></pre>
+                <section>
+                    <h4>SQL using Python</h4>
+                        <h5>Combining SQL and Python code</h5>
+<pre><code>from cs50 import SQL
+db = SQL("sqlite:///FILE.db") // Open db FILE
+var1 = input("TEXT: ")
+var2 = db.execute("SELECT COUNT(*) AS n FROM table WHERE column = ?", var1) // Gives back temporary table
+var3 = rows[0] // To get back only the first row in that result set or temporary table
+print(row["n"])</code></pre>
+                        <h5>Execution of a code altogether - wrapping a code</h5>
+<pre><code>db.execute("BEGIN TRANSACTION")
+var1 = db.execute("SELECT column1 FROM table WHERE column2 = ?", column2);
+var1 = var1[0]["column1"]
+db.execute("UPDATE posts SET column1 = ? WHERE column2 = ?", column1 + 1, column2);
+db.execute("COMIT")</code></pre>
+                </section>
             </section>
             <section>
                 <h2 class="section">Links to helpful websites</h2>
                 <ul>
                     <li><a href="https://docs.python.org/3/library/functions.html">Built-in Python functions</a></li>
                     <li><a href="https://pip.pypa.io/en/stable/installation/">A package maintenance system for Python (pip) to install a package</a></li>
+                    <li><a href="cs50.readthedocs.io/libraries/cs50/python/#cs50.SQL">CS50 Library for Python</a></li>
                 </ul>
             </section>
             <section>

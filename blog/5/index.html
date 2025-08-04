@@ -19,52 +19,141 @@
         </ul>
     </header>
     <main>
-        <h1 class="title">Fifth Entry</h1>
+        <h1 class="title">JavaScript</h1>
         <p class="left date">July 10, 2024 - October 4, 2024</p>
         <div class="block left">
-            <h3>My takeaways today</h3>
-            <p>JavaScript time:</p>
+            <h2>Variables</h2>
+            <ul>
+                <li><code>let</code> - it is a new way to declare a variable in any scope - Global, Local, or Block. The value of this variable can be changed or reassigned anytime within its scope.</li>
+                <li><code>const</code> - it is also a way to declare constants in any scope - Global, Local, or Block. Once you are assigned a value to a <code>const</code> variable, the value of this variable CANNOT be changed or reassigned throughout the code.</li>
+                <li><code>var</code> - this is the old way of declaring variables in only two scope - Global, or Local. Variables declared with the var keyword can not have Block Scope. The value of this variable can be changed or reassigned anytime within its scope.</li>
+            </ul>
+<pre><code>let name = "Outer String 'inner String'";
+let name = 123;
+// will return Hello50"
+let name = "Hello" + 5 * 10 + \";
+let varName = condition1 || condition2 && expensiveFunction;
+// all bellow returns true
+let varName = ' ' == false;
+let varName = null == false;
+let varName = undefined == false;
+let varName = 0 == false;
+let varName = NaN == false;
+// and those returns true
+let varName = 'Hi' == true;
+let varName = "24" == true;</code></pre>
+            <p><strong>Alert messages:</strong> NaN - when the math calculation failed; undefined - when the variable has no value or when there is no return value from a function.</p>
+            <p><strong>Strict equality.</strong>  === / !==. "1" === 1  will be false, because "1" is a string with another code value.</p>
+            <h2>Methods</h2>
+<pre><code>// print to console
+console.log(varName[5]);
+// output a data onto a html page
+document.write("Name is " + name + "&lt;br&gt;");
+// opens a pop up window
+alert("Result is ");
+// writes the given text into the attribute with the specific class name
+document.getElementById("my-title").innerHTML = "My App!"
+// returns the length of a string or an array
+name.length();
+// returns index of the first or last match, if any
+varName.indexOf("amet");
+varName.lastIndexOf("amet");
+// returns a String in a range
+varName.slice(startIndex, endIndex);
+varName.substr(startIndex, length);
+// replaces the first match. Sensitive to register
+varName.replace(matchingString, newString);
+// returns the value in upper case
+varName.toUpperCase();
+varName.toLowerCase();
+// returns an ASCII code of a character
+varName.charCodeAt();
+// returns character of a string
+varName.charAt();
+varName();
+// returns number with 2 decimals, e.g. 250.00
+varName.toFixed(2);
+// converts string to a number, works well with toFixed, but as a string
+Number(varName);
+// passes a value with comas as per the locale "en-US"
+varName.toLocaleString("en-US");
+// prints "current time" with a delay in milliseconds
+setInterval(func/code, delay);</code></pre>
+            
+            <h2>Conditions</h2>
+<pre><code>// Ternary operator
+conditional ? (if condition is true) : (if condition is false);
+// switch
+switch (varName) {
+    case 1 (e.g. 'text'):
+        "action";
+        brake;
+    case 2:
+        "action for 2nd case";
+        break;
+    default:
+        "default action to execute if none above took place"
+}</code></pre>
+            <h2>Arrays</h2>
+<pre><code>// Initializing an array
+let varName = ["Apple", "Mango", "Banana", "Orange", "Kiwi"];
+var varName = new Array();
+varName[0] = "HTML"
+// add a new element to the end or beginning respectively
+varName.push("item");
+varName.unshift("item");
+// removes an element at the end or beginning respectively
+varName.pop();
+varName.shift();
+// extracts chunk of an array, but keeps the original array uncached
+varName.slice(1, 3);
+// returns an entire new array
+varName1.concat(varName2);</code></pre>
+            <h2>Loops</h2>
+<pre><code>// while
+while(a1 &lt;= 4) {
+    str1 += a1 + " ";
+    a1++;
+}
+// do while
+do {
+    str2 += a2 + " ";
+    a2++;
+}
+while(a2 &lt;= 4);
+// for-in (returns a key or an index or properties in an object)
+for(let prop in user) {
+    userStr += prop + "=" + user[prop] + " ";   
+}
+// for-of (works only with an array or Strings)
+for(let item of items) {
+    itemsStr3 += "&lt;br&gt;" + item;
+}</code></pre>
+            <h2>Events</h2>
+<pre><code>// left mouse click
+onclick=""
+// right mouse click
+oncontextmenu=""
+// hover over with mouse
+onmouseover=""
+// works only with forms
+onsubmit=""</code></pre>
+            <h2>Functions</h2>
+<pre><code>function getUserName(name = 'Tom') {
+    document.getElementById("result-3").innerHTML = "Name is " + name;
+}</code></pre>
+            <h2>Objects</h2>
+<pre><code>let user = {
+    firstName: "Tom",
+    "lastName": "Clark",
+    email: "tom@mail.com",
+    age: 27
+};
+user.firstName;
+user["firstName"];</code></pre>
             <ol>
-                <li><strong>Variables. </strong><code>var name = "String"; or var name = 123;</code></li>
-                <li><code>let varName = condition1 || or && expensiveFunction</code> you can use operators to decide which value to assign to the varName bases on conditions or functions.</li>
-                <li><strong>Print to console. </strong><code>console.log(name[5]);</code></li>
-                <li><strong>Specific behavior:</strong>
-                    <ul>
-                        <li><code>"Hello" + 5 * 10</code> will return Hello50</li>
-                        <li><code>\"</code> will return ". <code>\n</code> will return a new line. <code>\t</code> will return tab.</li>
-                        <li>Truthy and Falsy. <code>' ' == false</code>, as well as <code>null undefined 0 NaN</code> Returns: true. Both the operands on either side of the == operator are first converted to zero, before comparison. <code>"Hi" == true</code> as well as <code>24 true</code> will return true.</li>
-                    </ul>
-                </li>
-                <li><strong>Alert messages: </strong>NaN - when the math calculation failed; undefined - when the variable has no value or when there is no return value from a function.</li>
-                <li><strong>Strict equality. </strong> === / !==. "1" === 1  will be false, because "1" is a string with another code value.</li>
-                <li><strong><code>%</code></strong> - Reminder which returns the remainder left over when one operand is divided by a second operand. It always takes the sign of the dividend.</li>
-                <li><strong>Standard functions: </strong>
-                    <ul>
-                        <li><strong><code>name.charCodeAt()</code></strong>. returns an ASCII code of a character.</li>
-                        <li><strong><code>name.charAt()</code> or <code>name()</code></strong>. Returns character of a string.</li>
-                        <li><strong><code>name.toFixed(2)</code></strong>. Returns number with 2 decimals, e.g. 250.00.</li>
-                        <li><strong><code>Number(varName);</code></strong> converts string to a number, works well with toFixed, but as a string.</li>
-                        <li><strong><code>name.toLocaleString("en-US")</code></strong>. Passes a value with comas as per the locale "en-US.</li>
-                        <li><strong><code>name.length()</code></strong> - returns the length of a string or an array.</li>
-                        <li><strong><code>name.toUpperCase()</code></strong> - returns the value in upper case.</li>                        
-                        <li><strong><code>setInterval(func/code, delay);</code></strong> - prints "current time" with a delay in milliseconds.</li>                        
-                    </ul>
-                </li>
-                <li><strong>Ternary operator. </strong><code>conditional ? (if condition is true) : (if condition is false)</code>. I also can include as many as I want others conditions in true or false place. Example <code>x % y === 0 ? 1 : 2;</code>.
-                    <em>The ternary operator evaluates to an expression and expressions can't contain a return statement. However, you could very well return the result of a ternary operator, i.e. <code>return name.length >= 7 ? true : false;</code></em>
-                </li>
-                <li><strong>Switch Statement. </strong> If each condition is based on the same value. <code>switch (varName) {case 1 (e.g. 'text'): "action"; case 2: "action for 2nd case";}</code>,  etc. After it founds a case by bypassing the variable value then it continues executing other cases below. To prevent that use <code>break</code> operator. It works with all data types. You can add a <code>default:</code> case to a switch statement and it will be executed when none of the values match the value of the switch expression.</li>
                 <li><code>continue</code> statement breaks only one iteration in the loop and continues with the next iteration.</li>
-                <li><strong>Operators. </strong><code>x *= 2</code> same as <code>x = x*  2</code>. Instead of * can me any symbol.</li>
-                <li><strong>Block scope. </strong>It is a variable that is written in the {} and should be declared using <code>let</code> instead of <code class ="line-threw">var</code>, because variables declared with the `var` keyword can not have Block Scope.</li>
-                <li><strong>Variable declarations:</strong>
-                    <ul>
-                        <li><code>let</code> - it is a new way to declare a variable in any scope - Global, Local, or Block. The value of this variable can be changed or reassigned anytime within its scope.</li>
-                        <li><code>const</code> - it is also a way to declare constants in any scope - Global, Local, or Block. Once you are assigned a value to a <code>const</code> variable, the value of this variable CANNOT be changed or reassigned throughout the code.</li>
-                        <li><code>var</code> - this is the old way of declaring variables in only two scope - Global, or Local. Variables declared with the var keyword can not have Block Scope. The value of this variable can be changed or reassigned anytime within its scope.</li>
-                    </ul>
-                </li>
-                <li><strong>Functions:</strong>
+                <li><strong>:</strong>
                     <p><strong>Function declaration. </strong><code>function name(x, y) { // Your code here };</code></p>
                     <p><strong>Function expression. </strong><code>var name = function(parameter) { // Your code here };</code> Store functions in variables (anonymous functions). But the function expressions are not hoisted. <em><strong>Functions as parameters. </strong><code>name();</code> You can call a function using as a parameter a variable with anonymous function. It will not work with the Named function expression.</em></p>
                     <p><strong>Inline function expressions. </strong>When you pass a function inline as an argument to another function.</p>
@@ -421,6 +510,7 @@ script</code></pre>
                     <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">JavaScript Documentation</a></li>
                     <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank">Document: querySelector() method</a></li>
                     <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll" target="_blank">Document: querySelectorAll() method</a></li>
+                    <li><a href="https://www.taniarascia.com/es6-syntax-and-feature-overview/" target="_blank">ES6 Syntax and Feature Overview</a></li>
                 </ul>
             </section>
             <h2 class="section">Questions which I have got</h2>

@@ -2474,12 +2474,34 @@ public static native int identityHashCode(Object x)</code></pre>
                     </li>
                 </ul>
                 <section>
+                    <article>
+                        <h2>java.lang.reflect.Field Class in Java</h2>
+                        <p><code>Field class</code> allows you to get a field name of an Object and other details. When you need to see how many fields you have.</p>
+<pre><code>Product product = new Product();
+// getting all private fields. Write additionally setAccessible(true) to unblock the access to the private fields.
+Field[] fields = Product.class.getDeclaredFields();
+for (Field field : fields) {
+    field.setAccessible(true);
+    Object value = field.get(product);
+    System.out.println("Value of Field "
+            + field.getName()
+            + " is " + value
+            + " type " + field.getType());
+}</code></pre>
+                       <p><samp>Value of Field id is 0 type int<br>
+Value of Field name is null type class java.lang.String<br>
+Value of Field description is null type class java.lang.String<br>
+Value of Field price is 0.0 type double</samp></p>
+                    </article>
+                </section>
+                <section>
                 <h2 class="section">Links to helpful websites</h2>
                 <ul>
                     <li><a href="https://jenkov.com/tutorials/java-concurrency/java-memory-model.html">The Java Memory Model And The Hardware Memory Architecture</a></li>
                     <li><a href="https://jenkov.com/tutorials/java-concurrency/volatile.html">Java Volatile Keyword</a></li>
                     <li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String Object</a></li>
                     <li><a href="https://www.baeldung.com/java-string-operations">Common String Operations</a></li>
+                    <li><a href="https://www.geeksforgeeks.org/java/java-lang-reflect-field-class-in-java/">java.lang.reflect.Field Class in Java</a></li>
                 </ul>
             </section>
             <section>

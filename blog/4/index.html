@@ -20,11 +20,36 @@
     </header>
     <main>
         <hgroup>
-            <h1 class="title">Fourth Entry</h1>
+            <h1 class="title">HTML</h1>
             <p><time datetime="2024-07-07 19:00" class="left date">July 07, 2024</time></p>
         </hgroup>
         <div class="block left">
-            <h3>My takeaways today</h3>
+            <h2>Attributes</h2>
+            <ul>
+                <li><dfn><code>div</code></dfn> Defines elements not related to each other, not belong to the same semantic purpose.</li>
+                <li><dfn><code>aside</code></dfn> - for information that does not really belong to the page. Should be outside of the main.
+                <li><dfn><code>span</code></dfn> - for adding extra css code.</li>
+                <li><dfn><code>pre</code></dfn> - for bunch of code. Format stays as it was written.</li>
+                <li><dfn><code>kbd</code></dfn> Define some text as keyboard input</li>
+                <li><dfn><code>samp</code></dfn> Define some text as sample output from a computer program.</li>
+                <li><dfn><code>section</code></dfn> Sections are normally include headings. They represent chapters.</li>
+                <li><dfn><code>var</code></dfn> Define some text as variables.</li>
+                <li><dfn><code>hgroup</code></dfn> Use the hgroup element to mark that the heading and the paragraph are related. Normally consist of one Heading and one paragraph. Is often used for slogans or publishing date. Articles can begin with them.</li>
+                <li><dfn><code>br</code></dfn> Insert single line breaks in a text.</li>
+                <li><dfn><code>abbr title=""</code></dfn> defines an abbreviation or an acronym, like "HTML", "CSS", "Mr.", "Dr.", "ASAP", "ATM".</li>
+                <li><dfn><code>dfn title=""</code></dfn> stands for the "definition element", and it specifies a term that is going to be defined within the content. The nearest parent must also contain the definition/explanation for the term.</li>
+                <li><dfn><code>article</code></dfn> Used to wrap up entire blog content which includes sections and so on.</li>
+                <li><dfn><code>time datetime="YYYY-MM-DD HH:MM"</code></dfn></li>
+                <li><dfn><code>base</code></dfn> There can only be one single <code>&lt;base&gt;</code> element in a document, and it must be inside the <code>&lt;head&gt;</code> element</li>
+                <li>
+                    <dfn><code>address</code> Defines contact details.</dfn>
+                </li>
+            </ul>
+            <h2>Properties</h2>
+<pre><code>// executes js method
+onclick="document.write('My Text!')"</code></pre>
+
+
             <p>During the time from previous post I have learned:</p>
             <ol>
                 <li><strong>Animations. </strong><code>@keyframes</code> tag in css is responsible for animation. You also need to name the animation, simply adding the name before opening brackets. Then make some configuration and in the css class add <code>animation-name:</code> and other animation attributes.</li>
@@ -34,27 +59,8 @@
                 <li><strong><code>overflow-x: scroll or auto</code>. </strong>overflow with <code>display: flex</code> creates a block where you will need to scroll.</li>
                 <li><strong>Responsive website. </strong><code>@media all and (min-width: 1000px)</code> {class {parameters which will be replaced if width is more then 1000px}}.</li>
                 <li><strong>Most commonly used additional tags:</strong>
-                    <ul>
-                        <li><dfn><code>div</code></dfn> Defines elements not related to each other, not belong to the same semantic purpose.</li>
-                        <li><dfn><code>aside</code></dfn> - for information that does not really belong to the page. Should be outside of the main.
-                        <li><dfn><code>span</code></dfn> - for adding extra css code.</li>
-                        <li><dfn><code>pre</code></dfn> - for bunch of code. Format stays as it was written.</li>
-                        <li><dfn><code>kbd</code></dfn> Define some text as keyboard input</li>
-                        <li><dfn><code>samp</code></dfn> Define some text as sample output from a computer program.</li>
-                        <li><dfn><code>section</code></dfn> Sections are normally include headings. They represent chapters.</li>
-                        <li><dfn><code>var</code></dfn> Define some text as variables.</li>
-                        <li><dfn><code>hgroup</code></dfn> Use the hgroup element to mark that the heading and the paragraph are related. Normally consist of one Heading and one paragraph. Is often used for slogans or publishing date. Articles can begin with them.</li>
-                        <li><dfn><code>br</code></dfn> Insert single line breaks in a text.</li>
-                        <li><dfn><code>abbr title=""</code></dfn> defines an abbreviation or an acronym, like "HTML", "CSS", "Mr.", "Dr.", "ASAP", "ATM".</li>
-                        <li><dfn><code>dfn title=""</code></dfn> stands for the "definition element", and it specifies a term that is going to be defined within the content. The nearest parent must also contain the definition/explanation for the term.</li>
-                        <li><dfn><code>article</code></dfn> Used to wrap up entire blog content which includes sections and so on.</li>
-                        <li><dfn><code>time datetime="YYYY-MM-DD HH:MM"</code></dfn></li>
-                        <li><dfn><code>base</code></dfn> There can only be one single <code>&lt;base&gt;</code> element in a document, and it must be inside the <code>&lt;head&gt;</code> element</li>
-                        <li>
-                            <dfn><code>address</code> Defines contact details.</dfn>
-                        </li>
-                    </ul>
                 </li>
+
                 <li><strong>Page layouts. </strong><code>display: grid</code> - Container layout. First add it to a container together with <code>grid-template-rows:; grid-template-columns:; grid-template-areas:;</code>. And then add <code>grid-area:;</code> into a child element:
 <pre><code>/* Parent element */
 .myPageLayoutGrid {
